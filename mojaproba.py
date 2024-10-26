@@ -1,0 +1,1 @@
+print("Kristijanova proba")
