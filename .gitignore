@@ -84,3 +84,7 @@ artifacts/
 
 # Ignore any local IDE configuration for Visual Studio
 .vs/
+
+.fake
+
+appsettings.Development.json
