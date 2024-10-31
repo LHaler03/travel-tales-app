@@ -86,3 +86,5 @@ artifacts/
 .vs/
 
 .fake
+
+appsettings.Development.json
