@@ -19,11 +19,4 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/test", () =>
-{
-    return Results.Json(new { message = "Welcome to travel tales!" });
-})
-.WithName("Test")
-.WithOpenApi();
-
 app.Run();
