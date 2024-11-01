@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -38,7 +38,7 @@ namespace backend.Controllers
             }
             return Ok(user.MapToUserDto());
         }
-
+        // POST: api/user
         [HttpPost]
         public IActionResult CreateUser([FromBody] CreateUserRequestDto userDto)
         {
@@ -46,6 +46,26 @@ namespace backend.Controllers
             _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, user.MapToUserDto());
-        } 
+        }
+
+        // PUT: api/user/{id}
+        [HttpPut("{id}")]
+        public IActionResult UpdateUser([FromRoute] int id, [FromBody] UpdateUserRequestDto userUpdateDto)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            user.FirstName = userUpdateDto.FirstName;
+            user.LastName = userUpdateDto.LastName;
+            user.Email = userUpdateDto.Email;
+            user.UserName = userUpdateDto.UserName;
+            user.Password = userUpdateDto.Password;
+            user.RoleId = userUpdateDto.RoleId;
+
+            _context.SaveChanges();
+            return Ok(user.MapToUserDto());
+        }
     }
 }
