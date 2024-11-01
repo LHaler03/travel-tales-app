@@ -22,16 +22,16 @@ namespace backend.Controllers
         }
         // GET: api/user
         [HttpGet]
-        public IActionResult GetAllUsers()
+        public async Task<IActionResult> GetAllUsers()
         {
-            var users = _context.Users.Select(u => u.MapToUserDto()).ToList();
+            var users = await _context.Users.Select(u => u.MapToUserDto()).ToListAsync();
             return Ok(users);
         }
         // GET: api/user/{id}
         [HttpGet("{id}")]
-        public IActionResult GetUserById([FromRoute] int id)
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -40,19 +40,19 @@ namespace backend.Controllers
         }
         // POST: api/user
         [HttpPost]
-        public IActionResult CreateUser([FromBody] CreateUserRequestDto userDto)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserRequestDto userDto)
         {
             var user = userDto.ToUserFromDto();
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, user.MapToUserDto());
         }
 
         // PUT: api/user/{id}
         [HttpPut("{id}")]
-        public IActionResult UpdateUser([FromRoute] int id, [FromBody] UpdateUserRequestDto userUpdateDto)
+        public async Task<IActionResult> UpdateUser([FromRoute] int id, [FromBody] UpdateUserRequestDto userUpdateDto)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -64,21 +64,21 @@ namespace backend.Controllers
             user.Password = userUpdateDto.Password;
             user.RoleId = userUpdateDto.RoleId;
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return Ok(user.MapToUserDto());
         }
 
         // DELETE: api/user/{id}
         [HttpDelete("{id}")]
-        public IActionResult DeleteUser([FromRoute] int id)
+        public async Task<IActionResult> DeleteUser([FromRoute] int id)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
             _context.Users.Remove(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return NoContent();
         }
     }
