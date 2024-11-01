@@ -7,6 +7,7 @@ using backend.Dtos.Location;
 using backend.Mappers;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -16,17 +17,17 @@ namespace backend.Controllers
     private readonly ApplicationDBContext _context = context;
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-      var locations = _context.Locations.ToList();
+      var locations = await _context.Locations.ToListAsync();
 
       return Ok(locations);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-      var location = _context.Locations.Find(id);
+      var location = await _context.Locations.FindAsync(id);
 
       if (location == null) return NotFound();
 
@@ -34,20 +35,20 @@ namespace backend.Controllers
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateLocationRequestDto locationDto)
+    public async Task<IActionResult> Create([FromBody] CreateLocationRequestDto locationDto)
     {
       var locationModel = locationDto.ToLocationFromCreateDTO();
 
-      _context.Locations.Add(locationModel);
-      _context.SaveChanges();
+      await _context.Locations.AddAsync(locationModel);
+      await _context.SaveChangesAsync();
 
       return CreatedAtAction(nameof(GetById), new { id = locationModel.Id }, locationModel);
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update([FromRoute] int id, [FromBody] UpdateLocationRequestDto updateLocationDto)
+    public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateLocationRequestDto updateLocationDto)
     {
-      var locationModel = _context.Locations.FirstOrDefault(x => x.Id == id);
+      var locationModel = await _context.Locations.FirstOrDefaultAsync(x => x.Id == id);
 
       if (locationModel == null) return NotFound();
 
@@ -56,21 +57,21 @@ namespace backend.Controllers
       locationModel.Lat = updateLocationDto.Lat;
       locationModel.Lon = updateLocationDto.Lon;
 
-      _context.SaveChanges();
+      await _context.SaveChangesAsync();
 
       return Ok(locationModel);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete([FromRoute] int id)
+    public async Task<IActionResult> Delete([FromRoute] int id)
     {
-      var locationModel = _context.Locations.FirstOrDefault(x => x.Id == id);
+      var locationModel = await _context.Locations.FirstOrDefaultAsync(x => x.Id == id);
 
       if (locationModel == null) return NotFound();
 
       _context.Locations.Remove(locationModel);
 
-      _context.SaveChanges();
+      await _context.SaveChangesAsync();
 
       return NoContent();
     }
