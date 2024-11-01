@@ -1,3 +1,4 @@
+import { Logo } from './components/Logo/Logo';
 import { Navbar } from './components/Navbar/Navbar';
 import { GlobalStyles } from './styles/GlobalStyles';
 
@@ -6,8 +7,7 @@ function App() {
     <>
       <GlobalStyles />
       <Navbar />
-      <br />
-      <h1>travel tales</h1>
+      <Logo />
     </>
   );
 }
