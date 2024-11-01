@@ -67,5 +67,19 @@ namespace backend.Controllers
             _context.SaveChanges();
             return Ok(user.MapToUserDto());
         }
+
+        // DELETE: api/user/{id}
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser([FromRoute] int id)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }
