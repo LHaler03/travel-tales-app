@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
-  [Route("api/location")]
+  [Route("api/locations")]
   public class LocationController(ApplicationDBContext context) : ControllerBase
   {
     private readonly ApplicationDBContext _context = context;
