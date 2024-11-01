@@ -21,5 +21,9 @@ export const NavbarStyled = styled.nav`
     cursor: pointer;
     font-family: inherit;
     padding: 5px;
+
+    &:hover {
+      background-color: #5D89D5;
+    }
   }
 `;
