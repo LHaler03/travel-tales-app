@@ -4,7 +4,7 @@ export const NavbarStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #97BCD8;
+  background-color: #97bcd8;
   padding: 20px;
   margin: 0 8px 8px 8px;
 
@@ -23,7 +23,7 @@ export const NavbarStyled = styled.nav`
     padding: 5px;
 
     &:hover {
-      background-color: #5D89D5;
+      background-color: #5d89d5;
     }
   }
 `;
