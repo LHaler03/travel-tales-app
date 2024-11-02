@@ -13,7 +13,9 @@ export const Navbar = () => {
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <img src={traveltales_black} alt="Travel Tales" />
+          <a href="/">
+            <img src={traveltales_black} alt="Travel Tales" />
+          </a>
         </Logo>
       )}
       {isAboveMediumScreens ? (
@@ -42,7 +44,9 @@ export const Navbar = () => {
         <Sidebar>
           <div className="sidebar-header">
             <Logo>
-              <img src={traveltales_black} alt="Travel Tales" />
+              <a href="/">
+                <img src={traveltales_black} alt="Travel Tales" />
+              </a>
             </Logo>
             <CloseIcon onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon />
