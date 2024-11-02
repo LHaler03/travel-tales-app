@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 900px)");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
 
   return (
     <NavbarStyled>
@@ -26,7 +26,7 @@ export const Navbar = () => {
           </NavLinks>
           <ButtonContainer>
             <ActionButton>Login</ActionButton>
-            <ActionButton>Guest User</ActionButton>
+            <ActionButton>Register</ActionButton>
           </ButtonContainer>
         </>
       ) : (
@@ -52,7 +52,7 @@ export const Navbar = () => {
           {/* MENU ITEMS */}
           <MenuItems>
             <a href="/login" onClick={() => setIsMenuToggled(false)}>Login</a>
-            <a href="/guest" onClick={() => setIsMenuToggled(false)}>Guest User</a>
+            <a href="/register" onClick={() => setIsMenuToggled(false)}>Register</a>
             <a href="#explore" onClick={() => setIsMenuToggled(false)}>Explore</a>
             <a href="#about-us" onClick={() => setIsMenuToggled(false)}>About Us</a>
             <a href="#support" onClick={() => setIsMenuToggled(false)}>Support</a>

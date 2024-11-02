@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
     background-color: #5d89d5;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     padding: 8px 16px;
     font-size: 14px;
   }

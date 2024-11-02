@@ -1,14 +1,19 @@
-import { Logo } from './components/Logo/Logo';
-import { Navbar } from './components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { Card } from './components/Card/Card';
+import Home from './pages/Home';
+import Register_Login from './pages/Register_Login';
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
-      <Logo />
-      <Card />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register_Login act="register" />} />
+          <Route path="/login" element={<Register_Login act="login" />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
