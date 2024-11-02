@@ -1,4 +1,4 @@
-import { Container, Header, Input, Inputs, Submit, SubmitContainer, Text, Underline } from "./Signup-Login.styled";
+import { Container, Header, Input, Inputs, Question, RedirectContainer, RedirectLink, Submit, SubmitContainer, Text, Underline } from "./Signup-Login.styled";
 
 export const Signup = ({action}: { action: string }) => {
   return (
@@ -24,6 +24,17 @@ export const Signup = ({action}: { action: string }) => {
               <input type="password" placeholder="livaja>petkovic" />
             </Input>
           </Inputs>
+          {action === "login" ? (
+            <RedirectContainer>
+              <Question>Don't have an account?</Question>
+              <RedirectLink href="/register">Register</RedirectLink>
+            </RedirectContainer>
+          ) : (
+            <RedirectContainer>
+              <Question>Already have an account?</Question>
+              <RedirectLink href="/login">Log in</RedirectLink>
+            </RedirectContainer>
+          )}
           <SubmitContainer>
             {action === "login" ? (
               <Submit>Login</Submit>

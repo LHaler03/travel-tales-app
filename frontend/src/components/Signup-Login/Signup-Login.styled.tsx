@@ -90,10 +90,27 @@ export const Input = styled.div`
     }
 `;
 
+export const RedirectContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 5px;
+    gap: 5px;
+`
+
+export const Question = styled.div`
+    font-size: 1.2rem;
+`
+
+export const RedirectLink = styled.a`
+    font-size: 1.2rem;
+`
+
+
 export const SubmitContainer = styled.div`
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: 30px auto;
 
     @media (max-width: 375px) {
         gap: 15px;
