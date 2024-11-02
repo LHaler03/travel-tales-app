@@ -1,4 +1,7 @@
 import { Container, Header, Input, Inputs, Question, RedirectContainer, RedirectLink, Submit, SubmitContainer, Text, Underline, Wrapper } from "./Signup-Login.styled";
+import username from "/images/username.png";
+import password from "/images/password.png";
+import email from "/images/email.png";
 
 export const Signup = ({action}: { action: string }) => {
   return (
@@ -11,17 +14,17 @@ export const Signup = ({action}: { action: string }) => {
             </Header>
             <Inputs>
               <Input>
-                <img src="./images/username.png" alt="username" />
+                <img src={username} alt="username" />
                 <input type="text" placeholder="John Doe" />
               </Input>
               {action === "login" ? <div></div> : (
                 <Input>
-                  <img src="./images/email.png" alt="email" />
+                  <img src={email} alt="email" />
                   <input type="email" placeholder="john.doe@gmail.com" />
                 </Input>
               )}
               <Input>
-                <img src="./images/password.png" alt="password" />
+                <img src={password} alt="password" />
                 <input type="password" placeholder="testpw123" />
               </Input>
             </Inputs>

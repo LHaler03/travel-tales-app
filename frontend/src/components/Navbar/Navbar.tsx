@@ -4,16 +4,20 @@ import { ActionButton } from "../../shared/ActionButton";
 import traveltales_black from "/images/traveltales_black.png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
+  const navigate = useNavigate();
 
   return (
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <img src={traveltales_black} alt="Travel Tales" />
+          <a href="/">
+            <img src={traveltales_black} alt="Travel Tales" />
+          </a>
         </Logo>
       )}
       {isAboveMediumScreens ? (
@@ -25,8 +29,8 @@ export const Navbar = () => {
             <a href="#support">Support</a>
           </NavLinks>
           <ButtonContainer>
-            <ActionButton>Login</ActionButton>
-            <ActionButton>Register</ActionButton>
+            <ActionButton onClick={() => navigate('/login')}>Login</ActionButton>
+            <ActionButton onClick={() => navigate('/register')}>Register</ActionButton>
           </ButtonContainer>
         </>
       ) : (
@@ -42,7 +46,9 @@ export const Navbar = () => {
         <Sidebar>
           <div className="sidebar-header">
             <Logo>
-              <img src={traveltales_black} alt="Travel Tales" />
+              <a href="/">
+                <img src={traveltales_black} alt="Travel Tales" />
+              </a>
             </Logo>
             <CloseIcon onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon />
