@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Cards = styled.div`
-  width: 3/4;
+  width: 80%;
   margin: auto;
 
   .slick-slide > div{
