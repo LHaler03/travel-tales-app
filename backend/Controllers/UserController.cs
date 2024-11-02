@@ -17,7 +17,7 @@ namespace backend.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
-        public UserController(ApplicationDBContext context, IUserRepository userRepo)
+        public UserController(IUserRepository userRepo)
         {
             _userRepo = userRepo;
         }
