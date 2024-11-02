@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import { GlobalStyles } from './styles/GlobalStyles';
+import Home from './pages/Home';
+import Register_Login from './pages/Register_Login';
 function App() {
   return (
     <>
@@ -9,6 +10,8 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register_Login act="register" />} />
+          <Route path="/login" element={<Register_Login act="login" />} />
         </Routes>
       </BrowserRouter>
     </>
