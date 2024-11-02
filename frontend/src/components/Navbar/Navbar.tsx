@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 900px)");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
 
   return (
     <NavbarStyled>
