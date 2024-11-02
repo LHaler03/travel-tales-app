@@ -1,14 +1,16 @@
-import { Logo } from './components/Logo/Logo';
-import { Navbar } from './components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { Card } from './components/Card/Card';
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
-      <Logo />
-      <Card />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
