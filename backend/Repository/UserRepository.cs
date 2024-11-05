@@ -62,7 +62,7 @@ namespace backend.Repository
             user.Email = userDto.Email;
             user.UserName = userDto.UserName;
             user.Password = userDto.Password;
-            user.RoleId = userDto.RoleId;
+            // user.RoleId = userDto.RoleId;
 
             await _context.SaveChangesAsync();
             return user;

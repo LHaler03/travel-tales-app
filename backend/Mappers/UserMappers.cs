@@ -16,7 +16,7 @@ namespace backend.Mappers
             LastName = user.LastName, 
             Email = user.Email,
             UserName = user.UserName,
-            RoleId = user.RoleId
+            // RoleId = user.RoleId
         };
 
         public static User ToUserFromDto(this CreateUserRequestDto userDto) => new User
@@ -26,7 +26,7 @@ namespace backend.Mappers
             Email = userDto.Email,
             UserName = userDto.UserName,
             Password = userDto.Password,
-            RoleId = userDto.RoleId
+            // RoleId = userDto.RoleId
         };
     }
 }
