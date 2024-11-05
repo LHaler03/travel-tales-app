@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Data;
+using backend.Dtos.Account;
 using backend.Dtos.User;
 using backend.Interfaces;
 using backend.Mappers;
@@ -30,7 +31,7 @@ namespace backend.Controllers
         }
         // GET: api/user/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById([FromRoute] int id)
+        public async Task<IActionResult> GetUserById([FromRoute] string id)
         {
             var user = await _userRepo.GetByIdAsync(id);
             if (user == null)
@@ -39,20 +40,12 @@ namespace backend.Controllers
             }
             return Ok(user.MapToUserDto());
         }
-        // POST: api/user
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserRequestDto userDto)
-        {
-            var user = userDto.ToUserFromDto();
-            await _userRepo.CreateAsync(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, user.MapToUserDto());
-        }
 
         // PUT: api/user/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser([FromRoute] int id, [FromBody] UpdateUserRequestDto userUpdateDto)
+        public async Task<IActionResult> UpdateUser([FromRoute] string id, [FromBody] UpdateDto updateDto)
         {
-            var user = await _userRepo.UpdateAsync(id, userUpdateDto);
+            var user = await _userRepo.UpdateAsync(id, updateDto);
             if (user == null)
             {
                 return NotFound();
@@ -63,7 +56,7 @@ namespace backend.Controllers
 
         // DELETE: api/user/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser([FromRoute] int id)
+        public async Task<IActionResult> DeleteUser([FromRoute] string id)
         {
             var user = await _userRepo.DeleteAsync(id);
             if (user == null)
