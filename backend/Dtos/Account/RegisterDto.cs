@@ -20,6 +20,5 @@ namespace backend.Dtos.Account
         public string? FirstName { get; set; }
         [Required]
         public string? LastName { get; set; } 
-
     }
 }
