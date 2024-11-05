@@ -49,7 +49,7 @@ builder.Services.AddAuthentication(options => {
 }
 );
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+// builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
 var app = builder.Build();
