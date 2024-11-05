@@ -3,6 +3,7 @@ using backend.Data;
 using backend.Interfaces;
 using backend.Models;
 using backend.Repository;
+using backend.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddIdentity<User, IdentityRole>(options => {
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
     options.Password.RequireDigit = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
@@ -30,14 +32,16 @@ builder.Services.AddIdentity<User, IdentityRole>(options => {
 .AddDefaultTokenProviders()
 .AddEntityFrameworkStores<ApplicationDBContext>();
 
-builder.Services.AddAuthentication(options => {
-    options.DefaultAuthenticateScheme = 
-    options.DefaultChallengeScheme = 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme =
+    options.DefaultChallengeScheme =
     options.DefaultForbidScheme =
     options.DefaultScheme =
-    options.DefaultSignInScheme = 
+    options.DefaultSignInScheme =
     options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options => {
+}).AddJwtBearer(options =>
+{
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -52,6 +56,7 @@ builder.Services.AddAuthentication(options => {
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 
