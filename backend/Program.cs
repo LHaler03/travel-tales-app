@@ -26,7 +26,9 @@ builder.Services.AddIdentity<User, IdentityRole>(options => {
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequiredLength = 6;
+    options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
 })
+.AddDefaultTokenProviders()
 .AddEntityFrameworkStores<ApplicationDBContext>();
 
 builder.Services.AddAuthentication(options => {
@@ -49,7 +51,7 @@ builder.Services.AddAuthentication(options => {
 }
 );
 
-// builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
 var app = builder.Build();

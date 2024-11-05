@@ -27,7 +27,7 @@ namespace backend.Controllers
                     return BadRequest(ModelState);
             var user = new User
             {
-                UserName = registerDto.Username,
+                UserName = registerDto.UserName,
                 Email = registerDto.Email,
                 FirstName = registerDto.FirstName,
                 LastName = registerDto.LastName

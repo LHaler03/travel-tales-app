@@ -1,4 +1,3 @@
-/*
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +16,6 @@ namespace backend.Mappers
             LastName = user.LastName, 
             Email = user.Email,
             UserName = user.UserName,
-            // RoleId = user.RoleId
-        };
-
-        public static User ToUserFromDto(this CreateUserRequestDto userDto) => new User
-        {
-            FirstName = userDto.FirstName,
-            LastName = userDto.LastName,
-            Email = userDto.Email,
-            UserName = userDto.UserName,
-            Password = userDto.Password,
-            // RoleId = userDto.RoleId
         };
     }
 }
-*/
