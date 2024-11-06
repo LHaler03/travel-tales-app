@@ -88,4 +88,3 @@ artifacts/
 .fake
 
 appsettings.Development.json
-/backend/Migrations/
