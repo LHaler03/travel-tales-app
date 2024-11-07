@@ -55,10 +55,11 @@ builder.Services.AddAuthentication(options =>
 }
 );
 
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.Listen(IPAddress.Any, 5000);
-});
+// builder.WebHost.ConfigureKestrel(options =>
+// {
+//     options.Listen(IPAddress.Any, 5000);
+//     options.Listen(IPAddress.Any, 5185);
+// });
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
