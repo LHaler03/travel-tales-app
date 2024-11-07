@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { MapContainer } from 'react-leaflet';
 
-export const MAP = styled.div`
-    width: 100%;
-    height: 100%;
+export const StyledMapContainer = styled(MapContainer)`
+  height: 50vh;
+  max-width: 90%;
+  margin: auto;
+  border-radius: 20px;
 `;
