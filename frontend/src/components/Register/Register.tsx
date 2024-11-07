@@ -42,7 +42,7 @@ export const Register = () => {
               <InputContainer>
                 <InputDescription>First Name</InputDescription> 
                 <Input>
-                  <input type="text" name="firstName" placeholder="john" onChange={handleChange} />
+                  <input type="text" name="firstName" placeholder="John" onChange={handleChange} />
                 </Input>
               </InputContainer>
               <InputContainer>
@@ -54,7 +54,7 @@ export const Register = () => {
               <InputContainer>
                 <InputDescription>Username</InputDescription>
                 <Input>
-                  <input type="text" name="username" placeholder="John Doe" onChange={handleChange}/>
+                  <input type="text" name="username" placeholder="JohnDoe" onChange={handleChange}/>
                 </Input>
               </InputContainer>
               <InputContainer>

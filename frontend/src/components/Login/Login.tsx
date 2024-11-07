@@ -40,7 +40,7 @@ export const Login = () => {
               <InputContainer>
                 <InputDescription>Username</InputDescription>
                 <Input>
-                  <input type="text" name="username" placeholder="John Doe" onChange={handleChange}/>
+                  <input type="text" name="username" placeholder="JohnDoe" onChange={handleChange}/>
                 </Input>
               </InputContainer>
               <InputContainer>
