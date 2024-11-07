@@ -19,7 +19,6 @@ export const Login = () => {
     e.preventDefault();
     try {
       const url = 'http://localhost:5185/api/account/login';
-      console.log(formData)
       const response = await axios.post(url, formData);
       console.log(response.data);
     } catch (error) {
