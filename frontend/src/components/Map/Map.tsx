@@ -1,30 +1,33 @@
-import 'leaflet/dist/leaflet.css';
-import { TileLayer, Marker} from 'react-leaflet';
+import { TileLayer, Marker } from 'react-leaflet';
 import { StyledMapContainer } from './Map.styled';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+import 'leaflet/dist/leaflet.css'
 
 export const Map = () => {
-    const [markers, setMarkers] = useState<{ coordinates: [number, number]; popUp: string }[]>([]);
+  const [markers, setMarkers] = useState<{ id: number; geocode: [number, number]; popUp: string }[]>([]);
 
-    useEffect(() => {
-        const fetchLocations = async () => {
-            try {
-                const response = await axios.get('http://localhost:5185/api/locations');
-                const locations = response.data.map((location: { latitude: number; longitude: number; name: string }) => ({
-                    coordinates: [location.latitude, location.longitude] as [number, number],
-                    popUp: location.name,
-                }));
+  useEffect(() => {
+      const fetchLocations = async () => {
+          try {
+              const response = await axios.get('http://3.79.27.160/api/locations');
+              console.log(response);
+              const locations = response.data.map((location: { id: number; lat: number; lon: number; name: string }) => ({
+                  id: location.id,
+                  geocode: [location.lat, location.lon] as [number, number],
+                  popUp: location.name,
+              }));
+              /*console.log(locations);*/
+              setMarkers(locations);
+          } catch (error) {
+              console.error("Error fetching locations:", error);
+          }
+      };
+  
+      fetchLocations();
+  }, []);
 
-                setMarkers(locations);
-            } catch (error) {
-                console.error("Error fetching locations:", error);
-            }
-        };
-
-        fetchLocations(); 
-    }, []);
-
+  console.log(markers);
     return (
         <StyledMapContainer id="map" center={[54.5260, 15.2551]} zoom={3}>
             <TileLayer
@@ -32,7 +35,8 @@ export const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {markers.map((marker, index) => (
-                <Marker key={index} position={marker.coordinates}/>
+                <Marker key={index} position={marker.geocode}>
+                </Marker>
             ))}
         </StyledMapContainer>
     );
