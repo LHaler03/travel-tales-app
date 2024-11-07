@@ -1,4 +1,4 @@
-import { Container, Header, Input, Inputs, Question, RedirectContainer, RedirectLink, StyledForm, Submit, SubmitContainer, Text, Underline, Wrapper } from "./Signup-Login.styled";
+import { Container, Header, Input, InputContainer, InputDescription, Inputs, Question, RedirectContainer, RedirectLink, StyledForm, Submit, SubmitContainer, Text, Underline, Wrapper } from "./Signup-Login.styled";
 import username from "/images/username.png";
 import password from "/images/password.png";
 import email from "/images/email.png";
@@ -45,31 +45,41 @@ export const Signup = ({action}: { action: string }) => {
             </Header>
             <Inputs>
               {action === "login" ? <></> : (
-                <Input>
-                  <img src={username} />
-                  <input type="text" name="firstName" placeholder="john" onChange={handleChange} />
-                </Input>
+                <InputContainer>
+                  <InputDescription>First Name</InputDescription> 
+                  <Input>
+                    <input type="text" name="firstName" placeholder="john" onChange={handleChange} />
+                  </Input>
+                </InputContainer>
               )}
               {action === "login" ? <></> : (
-                <Input>
-                  <img src={username} alt="lastname" />
-                  <input type="text" name="lastName" placeholder="Doe" onChange={handleChange}/>
-                </Input>
+                <InputContainer>
+                  <InputDescription>Last Name</InputDescription>
+                  <Input>
+                    <input type="text" name="lastName" placeholder="Doe" onChange={handleChange}/>
+                  </Input>
+                </InputContainer>
               )}
-              <Input>
-                <img src={username} alt="username" />
-                <input type="text" name="username" placeholder="John Doe" onChange={handleChange}/>
-              </Input>
+              <InputContainer>
+                <InputDescription>Username</InputDescription>
+                <Input>
+                  <input type="text" name="username" placeholder="John Doe" onChange={handleChange}/>
+                </Input>
+              </InputContainer>
               {action === "login" ? <></> : (
-                <Input>
-                  <img src={email} alt="email" />
-                  <input type="email" name="email" placeholder="john.doe@gmail.com" onChange={handleChange}/>
-                </Input>
+                <InputContainer>
+                  <InputDescription>E-mail</InputDescription>
+                  <Input>
+                    <input type="email" name="email" placeholder="john.doe@gmail.com" onChange={handleChange}/>
+                  </Input>
+                </InputContainer>
               )}
-              <Input>
-                <img src={password} alt="password" />
-                <input type="password" name="password" placeholder="testpw123" onChange={handleChange}/>
-              </Input>
+              <InputContainer>
+                <InputDescription>Password</InputDescription>
+                <Input>
+                  <input type="password" name="password" placeholder="testpw123" onChange={handleChange}/>
+                </Input>
+              </InputContainer>
             </Inputs>
             {action === "login" ? (
               <RedirectContainer>
