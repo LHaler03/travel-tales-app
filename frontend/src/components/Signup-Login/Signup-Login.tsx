@@ -1,7 +1,4 @@
 import { Container, Header, Input, InputContainer, InputDescription, Inputs, Question, RedirectContainer, RedirectLink, StyledForm, Submit, SubmitContainer, Text, Underline, Wrapper } from "./Signup-Login.styled";
-import username from "/images/username.png";
-import password from "/images/password.png";
-import email from "/images/email.png";
 import React from "react";
 import { useState } from "react";
 import { RegisteredUser } from "../../types/User";
