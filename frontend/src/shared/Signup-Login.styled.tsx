@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 2rem);
     width: 100%;
     margin-top: 3rem;
 `;
@@ -19,6 +19,8 @@ export const Container = styled.div`
     border-radius: 20px;
 `;
 
+export const StyledForm = styled.form`
+`
 
 export const Header = styled.div`
     display: flex;
@@ -26,7 +28,7 @@ export const Header = styled.div`
     align-items: center;
     gap: 8px;
     width: 100%;
-    margin-top: 30px; 
+    margin-top: 25px; 
 }
 `;
 
@@ -47,24 +49,24 @@ export const Underline = styled.div`
 export const Inputs = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    gap: 20px;
+    margin-top: 10px;
+    gap: 5px;
 `;
+
+export const InputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0% 5%;
+`
 
 export const Input = styled.div`
     display: flex;
     align-items: center;
+    width: 100%;
     margin: auto;
-    width: 90%;
-    height: 10%;
     background-color: #b5cfe3;
     border-radius: 6px;
     padding: 5px;
-
-    img {
-        margin: 0px 20px;
-        width: 10%;
-    }
 
     input {
         background: transparent;
@@ -75,6 +77,10 @@ export const Input = styled.div`
         width: 95%;
     }
 `;
+
+export const InputDescription = styled.h4`
+
+`
 
 export const RedirectContainer = styled.div`
     display: flex;
@@ -95,14 +101,15 @@ export const RedirectLink = styled.a`
 
 export const SubmitContainer = styled.div`
     display: flex;
-    gap: 30px;
-    margin: 30px auto;
+    margin: 20px auto;
+    justify-content: center;
 `;
 
-export const Submit = styled.div`
+export const Submit = styled.button`
    display: flex;
    justify-content: center;
    align-items: center;
+   border: none;
    width: 220px;
    height: 59px;
    color: black;
