@@ -1,11 +1,11 @@
 import { Navbar } from '../components/Navbar/Navbar';
-import { Signup } from '../components/Signup-Login/Signup-Login'
+import { Login } from '../components/Login/Login'
 
-function Register_Login( {act}: { act: string } ) {
+function Register_Login() {
     return (
         <>
             <Navbar />
-            <Signup action={act} />
+            <Login />
         </>
     );
 }
