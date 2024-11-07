@@ -5,3 +5,8 @@ export interface RegisteredUser {
     email: string;
     password: string;
   }
+
+export interface LoggedUser {
+    username: string;
+    password: string;
+}

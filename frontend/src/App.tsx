@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
 import Home from './pages/Home';
-import Register_Login from './pages/Register_Login';
+import Register from './pages/RegisterPage';
+import Login from './pages/LoginPage';
+
 function App() {
   return (
     <>
@@ -10,8 +12,8 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/register" element={<Register_Login act="register" />} />
-          <Route path="/login" element={<Register_Login act="login" />} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </>
