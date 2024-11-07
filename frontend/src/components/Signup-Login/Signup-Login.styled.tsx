@@ -19,6 +19,8 @@ export const Container = styled.div`
     border-radius: 20px;
 `;
 
+export const StyledForm = styled.form`
+`
 
 export const Header = styled.div`
     display: flex;
@@ -97,12 +99,14 @@ export const SubmitContainer = styled.div`
     display: flex;
     gap: 30px;
     margin: 30px auto;
+    justify-content: center;
 `;
 
-export const Submit = styled.div`
+export const Submit = styled.button`
    display: flex;
    justify-content: center;
    align-items: center;
+   border: none;
    width: 220px;
    height: 59px;
    color: black;
