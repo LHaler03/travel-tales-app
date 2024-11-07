@@ -5,6 +5,7 @@ import email from "/images/email.png";
 import React from "react";
 import { useState } from "react";
 import { RegisteredUser } from "../../types/User";
+import axios from "axios";
 
 export const Signup = ({action}: { action: string }) => {
   const [formData, setFormData] = useState<RegisteredUser>({
@@ -13,7 +14,7 @@ export const Signup = ({action}: { action: string }) => {
     username: '',
     email: '',
     password: '',
-  });
+  }); //podaci iz forma
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,7 +23,16 @@ export const Signup = ({action}: { action: string }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  }
+    try {
+      const url = action === 'register' ? 'http://localhost:5185/api/account/register' : 'http://localhost:5185/api/account/login';
+      const submitData = action === 'login' ? 
+      { username: formData.username, password: formData.password } : formData;
+      const response = await axios.post(url, submitData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
