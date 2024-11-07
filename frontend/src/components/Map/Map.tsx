@@ -3,10 +3,15 @@ import { StyledMapContainer } from './Map.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css'
+import { Icon } from 'leaflet';
 
 export const Map = () => {
   const [markers, setMarkers] = useState<{ id: number; geocode: [number, number]; popUp: string }[]>([]);
 
+  const iconformarkers = new Icon({
+    iconUrl: './images/mapicon.png',
+    iconSize: [38, 38],
+  });
   useEffect(() => {
       const fetchLocations = async () => {
           try {
@@ -35,8 +40,7 @@ export const Map = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {markers.map((marker, index) => (
-                <Marker key={index} position={marker.geocode}>
-                </Marker>
+                <Marker key={index} position={marker.geocode} icon={iconformarkers}/>
             ))}
         </StyledMapContainer>
     );
