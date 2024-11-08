@@ -14,4 +14,3 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #b5cfe3;
   }
 `;
-

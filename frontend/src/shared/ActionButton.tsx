@@ -6,6 +6,9 @@ interface ActionButtonProps {
   onClick?: () => void;
 }
 
-export const ActionButton: React.FC<ActionButtonProps> = ({ children, onClick }) => {
+export const ActionButton: React.FC<ActionButtonProps> = ({
+  children,
+  onClick,
+}) => {
   return <StyledButton onClick={onClick}>{children}</StyledButton>;
 };

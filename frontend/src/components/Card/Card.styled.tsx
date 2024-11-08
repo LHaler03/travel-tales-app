@@ -4,10 +4,9 @@ export const Cards = styled.div`
   width: 80%;
   margin: auto;
 
-  .slick-slide > div{
-  margin: 0 10px;
-  
-}
+  .slick-slide > div {
+    margin: 0 10px;
+  }
 `;
 
 export const Cardmap = styled.div`
@@ -41,6 +40,4 @@ export const City = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 `;
-

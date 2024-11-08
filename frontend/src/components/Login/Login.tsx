@@ -1,8 +1,24 @@
-import { Container, Header, Input, InputContainer, InputDescription, Inputs, Question, RedirectContainer, RedirectLink, StyledForm, Submit, SubmitContainer, Text, Underline, Wrapper } from "../../shared/Signup-Login.styled";
-import React from "react";
-import { useState } from "react";
-import { LoggedUser } from "../../types/User";
-import axios from "axios";
+import {
+  Container,
+  Header,
+  Input,
+  InputContainer,
+  InputDescription,
+  Inputs,
+  Question,
+  RedirectContainer,
+  RedirectLink,
+  StyledForm,
+  Submit,
+  SubmitContainer,
+  Text,
+  Underline,
+  Wrapper,
+} from '../../shared/Signup-Login.styled';
+import React from 'react';
+import { useState } from 'react';
+import { LoggedUser } from '../../types/User';
+import axios from 'axios';
 
 export const Login = () => {
   const [formData, setFormData] = useState<LoggedUser>({
@@ -32,33 +48,43 @@ export const Login = () => {
         <Container>
           <StyledForm onSubmit={handleSubmit}>
             <Header>
-                <Text>Login</Text>
-                <Underline></Underline>
+              <Text>Login</Text>
+              <Underline></Underline>
             </Header>
             <Inputs>
               <InputContainer>
                 <InputDescription>Username</InputDescription>
                 <Input>
-                  <input type="text" name="username" placeholder="JohnDoe" onChange={handleChange}/>
+                  <input
+                    type='text'
+                    name='username'
+                    placeholder='JohnDoe'
+                    onChange={handleChange}
+                  />
                 </Input>
               </InputContainer>
               <InputContainer>
                 <InputDescription>Password</InputDescription>
                 <Input>
-                  <input type="password" name="password" placeholder="testpw123" onChange={handleChange}/>
+                  <input
+                    type='password'
+                    name='password'
+                    placeholder='testpw123'
+                    onChange={handleChange}
+                  />
                 </Input>
               </InputContainer>
             </Inputs>
             <RedirectContainer>
-            <Question>Don't have an account?</Question>
-            <RedirectLink href="/register">Register</RedirectLink>
+              <Question>Don't have an account?</Question>
+              <RedirectLink href='/register'>Register</RedirectLink>
             </RedirectContainer>
             <SubmitContainer>
-              <Submit type="submit">Login</Submit>
+              <Submit type='submit'>Login</Submit>
             </SubmitContainer>
           </StyledForm>
         </Container>
       </Wrapper>
     </>
   );
-}
+};
