@@ -19,8 +19,13 @@ import React from 'react';
 import { useState } from 'react';
 import { RegisteredUser } from '../../types/User';
 import axios from 'axios';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Register = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state?.redirectTo || '/';
+
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
     lastName: '',
@@ -40,6 +45,7 @@ export const Register = () => {
       const url = 'http://localhost:5185/api/account/register';
       const response = await axios.post(url, formData);
       console.log(response.data);
+      navigate(redirectTo);
     } catch (error) {
       console.error(error);
     }

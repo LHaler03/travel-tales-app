@@ -4,7 +4,8 @@ export const LogoStyled = styled.nav`
   text-align: center;
   margin-top: 30px;
 
-  h1, h2 {
+  h1,
+  h2 {
     @media (max-width: 600px) {
       display: none;
     }

@@ -19,8 +19,13 @@ import React from 'react';
 import { useState } from 'react';
 import { LoggedUser } from '../../types/User';
 import axios from 'axios';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state?.redirectTo || '/';
+
   const [formData, setFormData] = useState<LoggedUser>({
     username: '',
     password: '',
@@ -37,6 +42,7 @@ export const Login = () => {
       const url = 'http://localhost:5185/api/account/login';
       const response = await axios.post(url, formData);
       console.log(response.data);
+      navigate(redirectTo); // Navigate after successful login
     } catch (error) {
       console.error(error);
     }

@@ -15,15 +15,25 @@ import { ActionButton } from '../../shared/ActionButton';
 import traveltales_black from '/images/traveltales_black.png';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1200px)');
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state?.redirectTo || '/';
 
   const handleClose = () => {
     setIsMenuToggled(false);
+  };
+
+  const handleLogin = () => {
+    navigate('/login', { state: { redirectTo: '/' } });
+  };
+
+  const handleRegister = () => {
+    navigate('/register', { state: { redirectTo: '/' } });
   };
 
   return (
@@ -44,12 +54,8 @@ export const Navbar = () => {
             <a href='#support'>Support</a>
           </NavLinks>
           <ButtonContainer>
-            <ActionButton onClick={() => navigate('/login')}>
-              Login
-            </ActionButton>
-            <ActionButton onClick={() => navigate('/register')}>
-              Register
-            </ActionButton>
+            <ActionButton onClick={handleLogin}>Login</ActionButton>
+            <ActionButton onClick={handleRegister}>Register</ActionButton>
           </ButtonContainer>
         </>
       ) : (
@@ -78,10 +84,24 @@ export const Navbar = () => {
             <Divider />
             {/* MENU ITEMS */}
             <MenuItems>
-              <a href='/login' onClick={() => setIsMenuToggled(false)}>
+              <a
+                href='#'
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuToggled(false);
+                  handleLogin();
+                }}
+              >
                 Login
               </a>
-              <a href='/register' onClick={() => setIsMenuToggled(false)}>
+              <a
+                href='#'
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuToggled(false);
+                  handleRegister();
+                }}
+              >
                 Register
               </a>
               <a href='#explore' onClick={() => setIsMenuToggled(false)}>
