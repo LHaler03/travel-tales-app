@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   NavbarStyled,
   NavLinks,
@@ -35,11 +36,11 @@ export const Navbar = () => {
   };
 
   const handleLogin = () => {
-    navigate('/login', { state: { redirectTo: location.pathname } });
+    navigate('/login', { state: { redirectTo: location.pathname === '/register' ? '/' : location.pathname } });
   };
 
   const handleRegister = () => {
-    navigate('/register', { state: { redirectTo: location.pathname } });
+    navigate('/register', { state: { redirectTo: location.pathname === '/login' ? '/' : location.pathname } });
   };
 
   const handleLogout = () => {
@@ -51,15 +52,15 @@ export const Navbar = () => {
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <a href='/'>
+          <Link to='/'>
             <img src={traveltales_black} alt='Travel Tales' />
-          </a>
+          </Link>
         </Logo>
       )}
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <a href='/'>Home</a>
+            <Link to='/'>Home</Link>
             <a href='#explore'>Explore</a>
             <a href='#about-us'>About Us</a>
             <a href='#support'>Support</a>
@@ -93,50 +94,50 @@ export const Navbar = () => {
           <Sidebar>
             <div className='sidebar-header'>
               <Logo>
-                <a href='/'>
+                <Link to='/'>
                   <img src={traveltales_black} alt='Travel Tales' />
-                </a>
+                </Link>
               </Logo>
               <CloseIcon onClick={handleClose}>
                 <XMarkIcon />
               </CloseIcon>
             </div>
             <Divider />
-            {/* MENU ITEMS */}
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsMenuToggled(false);
-                      navigate('/profile');
-                    }}
-                  >
+                  <Link to="/profile" onClick={() => setIsMenuToggled(false)}>
                     My Profile
-                  </a>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsMenuToggled(false);
-                      handleLogout();
-                    }}
-                  >
+                  </Link>
+                  <a href="#" onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuToggled(false);
+                    handleLogout();
+                  }}>
                     Sign Out
                   </a>
                 </>
               ) : (
                 <>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuToggled(false); handleLogin(); }}>
+                  <a href="#" onClick={(e) => { 
+                    e.preventDefault(); 
+                    setIsMenuToggled(false); 
+                    handleLogin(); 
+                  }}>
                     Login
                   </a>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuToggled(false); handleRegister(); }}>
+                  <a href="#" onClick={(e) => { 
+                    e.preventDefault(); 
+                    setIsMenuToggled(false); 
+                    handleRegister(); 
+                  }}>
                     Register
                   </a>
                 </>
               )}
+              <Link to="/" onClick={() => setIsMenuToggled(false)}>
+                Home
+              </Link>
               <a href='#explore' onClick={() => setIsMenuToggled(false)}>
                 Explore
               </a>
