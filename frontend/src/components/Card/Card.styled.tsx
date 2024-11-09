@@ -10,7 +10,7 @@ export const Cards = styled.div`
 `;
 
 export const Cardmap = styled.div`
-  margin-top: 20px;
+  margin-top: 10rem;
 `;
 
 export const SingleCard = styled.div`

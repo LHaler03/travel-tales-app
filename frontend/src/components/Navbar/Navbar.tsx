@@ -9,6 +9,7 @@ import {
   HamburgerIcon,
   CloseIcon,
   MenuItems,
+  Overlay,
 } from './Navbar.styled';
 import { ActionButton } from '../../shared/ActionButton';
 import traveltales_black from '/images/traveltales_black.png';
@@ -20,6 +21,10 @@ export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1200px)');
   const navigate = useNavigate();
+
+  const handleClose = () => {
+    setIsMenuToggled(false);
+  };
 
   return (
     <NavbarStyled>
@@ -57,37 +62,40 @@ export const Navbar = () => {
 
       {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <Sidebar>
-          <div className='sidebar-header'>
-            <Logo>
-              <a href='/'>
-                <img src={traveltales_black} alt='Travel Tales' />
+        <>
+          <Overlay onClick={handleClose} />
+          <Sidebar>
+            <div className='sidebar-header'>
+              <Logo>
+                <a href='/'>
+                  <img src={traveltales_black} alt='Travel Tales' />
+                </a>
+              </Logo>
+              <CloseIcon onClick={handleClose}>
+                <XMarkIcon />
+              </CloseIcon>
+            </div>
+            <Divider />
+            {/* MENU ITEMS */}
+            <MenuItems>
+              <a href='/login' onClick={() => setIsMenuToggled(false)}>
+                Login
               </a>
-            </Logo>
-            <CloseIcon onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <XMarkIcon />
-            </CloseIcon>
-          </div>
-          <Divider />
-          {/* MENU ITEMS */}
-          <MenuItems>
-            <a href='/login' onClick={() => setIsMenuToggled(false)}>
-              Login
-            </a>
-            <a href='/register' onClick={() => setIsMenuToggled(false)}>
-              Register
-            </a>
-            <a href='#explore' onClick={() => setIsMenuToggled(false)}>
-              Explore
-            </a>
-            <a href='#about-us' onClick={() => setIsMenuToggled(false)}>
-              About Us
-            </a>
-            <a href='#support' onClick={() => setIsMenuToggled(false)}>
-              Support
-            </a>
-          </MenuItems>
-        </Sidebar>
+              <a href='/register' onClick={() => setIsMenuToggled(false)}>
+                Register
+              </a>
+              <a href='#explore' onClick={() => setIsMenuToggled(false)}>
+                Explore
+              </a>
+              <a href='#about-us' onClick={() => setIsMenuToggled(false)}>
+                About Us
+              </a>
+              <a href='#support' onClick={() => setIsMenuToggled(false)}>
+                Support
+              </a>
+            </MenuItems>
+          </Sidebar>
+        </>
       )}
     </NavbarStyled>
   );
