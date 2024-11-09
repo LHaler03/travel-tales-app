@@ -10,4 +10,9 @@ export const StyledMapContainer = styled(MapContainer)`
   margin-top: 3rem;
   margin-bottom: 8rem;
   border: 1px solid #333;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    height: 75vh;
+  }
 `;
