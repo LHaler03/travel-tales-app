@@ -6,4 +6,5 @@ export const StyledMapContainer = styled(MapContainer)`
   max-width: 90%;
   margin: auto;
   border-radius: 20px;
+  z-index: 10;
 `;

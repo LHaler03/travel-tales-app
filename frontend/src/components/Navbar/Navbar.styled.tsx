@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavbarStyled = styled.nav`
   display: flex;
@@ -53,7 +53,7 @@ export const Sidebar = styled.div`
   padding: 0;
   display: flex;
   flex-direction: column;
-  z-index: 40;
+  z-index: 9999;
 
   .sidebar-header {
     display: flex;
@@ -62,6 +62,7 @@ export const Sidebar = styled.div`
     width: 100%;
     height: 5rem;
     padding: 5px 20px;
+
   }
 `;
 
