@@ -25,6 +25,7 @@ export const NavLinks = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2.5rem;
+  transition: all 0.3s ease;
   a {
     text-decoration: none;
     color: #333;
@@ -32,6 +33,7 @@ export const NavLinks = styled.div`
     cursor: pointer;
     &:hover {
       color: #5d89d5;
+      transform: scale(1.1);
     }
   }
 `;

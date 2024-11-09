@@ -9,10 +9,21 @@ export const StyledButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   color: white;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     background-color: #5d89d5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+    &:active {
+    transform: scale(0.95);
+    background-color: #4a76c2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 600px) {
