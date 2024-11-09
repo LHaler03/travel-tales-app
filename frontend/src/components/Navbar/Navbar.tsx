@@ -33,7 +33,7 @@ export const Navbar = () => {
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <a href='#home'>Home</a>
+            <a href='/'>Home</a>
             <a href='#explore'>Explore</a>
             <a href='#about-us'>About Us</a>
             <a href='#support'>Support</a>
