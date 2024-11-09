@@ -12,5 +12,6 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     background-color: #b5cfe3;
+    padding-top: 5rem;
   }
 `;
