@@ -87,7 +87,7 @@ export const Login = () => {
             </Inputs>
             <RedirectContainer>
               <Question>Don't have an account?</Question>
-              <Link to="/register">Register</Link>
+              <Link to='/register'>Register</Link>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Login</Submit>
