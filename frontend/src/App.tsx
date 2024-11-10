@@ -3,10 +3,11 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import Home from './pages/Home';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -16,7 +17,7 @@ function App() {
           <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 

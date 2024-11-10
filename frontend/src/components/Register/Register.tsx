@@ -7,7 +7,6 @@ import {
   Inputs,
   Question,
   RedirectContainer,
-  RedirectLink,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -20,11 +19,14 @@ import { useState } from 'react';
 import { RegisteredUser } from '../../types/User';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const redirectTo = location.state?.redirectTo || '/';
+  const { login } = useAuth();
 
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
@@ -42,12 +44,26 @@ export const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:5185/api/account/register';
-      const response = await axios.post(url, formData);
-      console.log(response.data);
+      const registerUrl = 'http://localhost:5185/api/account/register';
+      const registerResponse = await axios.post(registerUrl, formData);
+      console.log('Registration successful:', registerResponse.data);
+
+      const loginUrl = 'http://localhost:5185/api/account/login';
+      const loginData = {
+        username: formData.username,
+        password: formData.password
+      };
+      
+      const loginResponse = await axios.post(loginUrl, loginData);
+      console.log('Auto-login successful:', loginResponse.data);
+
+      localStorage.setItem('token', loginResponse.data.token);
+      
+      login();
+      
       navigate(redirectTo);
     } catch (error) {
-      console.error(error);
+      console.error('Registration/Login error:', error);
     }
   };
 
@@ -119,7 +135,7 @@ export const Register = () => {
             </Inputs>
             <RedirectContainer>
               <Question>Already have an account?</Question>
-              <RedirectLink href='/login'>Log in</RedirectLink>
+              <Link to="/login">Log in</Link>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>

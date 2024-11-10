@@ -7,7 +7,6 @@ import {
   Inputs,
   Question,
   RedirectContainer,
-  RedirectLink,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -20,6 +19,8 @@ import { useState } from 'react';
 import { LoggedUser } from '../../types/User';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -30,6 +31,8 @@ export const Login = () => {
     username: '',
     password: '',
   }); //podaci iz forma
+
+  const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -42,6 +45,7 @@ export const Login = () => {
       const url = 'http://localhost:5185/api/account/login';
       const response = await axios.post(url, formData);
       console.log(response.data);
+      login(); // Set authenticated state
       navigate(redirectTo); // Navigate after successful login
     } catch (error) {
       console.error(error);
@@ -83,7 +87,7 @@ export const Login = () => {
             </Inputs>
             <RedirectContainer>
               <Question>Don't have an account?</Question>
-              <RedirectLink href='/register'>Register</RedirectLink>
+              <Link to="/register">Register</Link>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Login</Submit>
