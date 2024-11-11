@@ -16,11 +16,13 @@ export const Map = () => {
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
     iconSize: [38, 38],
+    iconAnchor: [17.5, 17.5],
+    popupAnchor: [0, -17.5],
   });
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.79.27.160/api/locations');
+        const response = await axios.get('http://3.74.155.131/api/locations');
         console.log(response);
         const locations = response.data.map(
           (location: {
@@ -46,7 +48,7 @@ export const Map = () => {
 
   console.log(markers);
 
-  const ToFullMap: FC = () => {
+  const HandleToFullMap: FC = () => {
     useMapEvents({
       click: () => navigate('/fullmap'),
     });
@@ -62,7 +64,7 @@ export const Map = () => {
       {markers.map((marker, index) => (
         <Marker key={index} position={marker.geocode} icon={iconformarkers} />
       ))}
-      <ToFullMap />
+      <HandleToFullMap />
     </StyledMapContainer>
   );
 };
