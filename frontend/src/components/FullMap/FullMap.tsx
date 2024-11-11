@@ -1,5 +1,5 @@
 import { TileLayer, Marker } from 'react-leaflet';
-import { StyledMapContainer } from './FullMap.styled';
+import { StyledMapContainer, Modal, Modal_button_generate, Modal_button_close, Modal_content } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
@@ -73,13 +73,14 @@ export const FullMap = () => {
       </StyledMapContainer>
 
       {showModal && (
-        <div onClick={handleCloseModal}>
-          <div onClick={(e) => e.stopPropagation()}>
-            <h2>{selectedCity}</h2>
+        <Modal>
+          <Modal_content>
+            <Modal_button_close onClick={handleCloseModal}>X</Modal_button_close>
+            <h1>{selectedCity}</h1>
             <p>Slike {selectedCity}...</p>
-            <button onClick={handleCloseModal}>Zatvori</button>
-          </div>
-        </div>
+            <Modal_button_generate>Generate postcard</Modal_button_generate>
+          </Modal_content>
+        </Modal>
       )}
     </>
   );
