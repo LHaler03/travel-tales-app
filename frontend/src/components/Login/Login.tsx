@@ -7,6 +7,7 @@ import {
   Inputs,
   Question,
   RedirectContainer,
+  RedError,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -32,11 +33,14 @@ export const Login = () => {
     password: '',
   }); //podaci iz forma
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,6 +56,7 @@ export const Login = () => {
       navigate(redirectTo); // Navigate after successful login
     } catch (error) {
       console.error(error);
+      setErrorMessage('Incorrect username and/or password!');
     }
   };
 
@@ -88,6 +93,7 @@ export const Login = () => {
                 </Input>
               </InputContainer>
             </Inputs>
+            {errorMessage && <RedError>{errorMessage}</RedError>}
             <RedirectContainer>
               <Question>Don't have an account?</Question>
               <Link to='/register'>Register</Link>

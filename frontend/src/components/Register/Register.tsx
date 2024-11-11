@@ -36,9 +36,12 @@ export const Register = () => {
     password: '',
   }); //podaci iz forma
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,6 +66,8 @@ export const Register = () => {
       navigate(redirectTo);
     } catch (error) {
       console.error('Registration/Login error:', error);
+      setErrorMessage('Error in registration!')
+      alert(errorMessage);
     }
   };
 

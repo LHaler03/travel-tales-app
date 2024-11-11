@@ -13,6 +13,6 @@ export const StyledMapContainer = styled(MapContainer)`
 
   @media (max-width: 600px) {
     margin-top: 1rem;
-    height: 75vh;
+    height: 70vh;
   }
 `;
