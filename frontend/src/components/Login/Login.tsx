@@ -20,7 +20,7 @@ import { LoggedUser } from '../../types/User';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth, UserType } from '../../context/AuthContext';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -44,8 +44,11 @@ export const Login = () => {
     try {
       const url = 'http://localhost:5185/api/account/login';
       const response = await axios.post(url, formData);
-      console.log(response.data);
-      login(); // Set authenticated state
+      const token = response.data.token;
+      const user: UserType = {
+        username: response.data.username
+      }
+      login(token, user); // Set authenticated state
       navigate(redirectTo); // Navigate after successful login
     } catch (error) {
       console.error(error);

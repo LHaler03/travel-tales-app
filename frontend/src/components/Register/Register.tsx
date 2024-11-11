@@ -20,7 +20,7 @@ import { RegisteredUser } from '../../types/User';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth, UserType } from '../../context/AuthContext';
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -54,13 +54,12 @@ export const Register = () => {
         password: formData.password,
       };
 
-      const loginResponse = await axios.post(loginUrl, loginData);
-      console.log('Auto-login successful:', loginResponse.data);
-
-      localStorage.setItem('token', loginResponse.data.token);
-
-      login();
-
+      const response = await axios.post(loginUrl, loginData);
+      console.log('Auto-login successful:', response.data);
+      const user: UserType = {
+        username: response.data.username
+      }
+      login(response.data.token, user);
       navigate(redirectTo);
     } catch (error) {
       console.error('Registration/Login error:', error);
