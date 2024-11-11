@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using backend.Dtos.Account;
 using backend.Interfaces;
 using backend.Models;
 using backend.Service;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -88,6 +91,64 @@ namespace backend.Controllers
                     Token = _tokenService.CreateToken(user),
                 }
             );
+        }
+    // Initiates the Google Sign-In process
+    [HttpGet("signin-google")]
+    public IActionResult GoogleSignIn()
+    {
+        var redirectUrl = Url.Action("GoogleCallback", "Account");
+        var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+        return Challenge(properties, "Google");
+    }
+
+    // Callback after Google sign-in
+    [HttpGet("google-callback")]
+        public async Task<IActionResult> GoogleCallback()
+        {
+            var authenticateResult = await HttpContext.AuthenticateAsync("Google");
+
+            if (!authenticateResult.Succeeded) return BadRequest("Google authentication failed.");
+
+            var claims = authenticateResult.Principal.Identities.First().Claims;
+            var googleEmail = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var googleName = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+
+            if (string.IsNullOrEmpty(googleEmail)) return BadRequest("Google authentication failed. Email not provided.");
+
+            var user = await _userManager.FindByEmailAsync(googleEmail);
+
+            if (user == null)
+            {
+                var nameParts = googleName.Split(' ');
+                
+                user = new User
+                {
+                    UserName = googleEmail,
+                    Email = googleEmail,
+                    FirstName = nameParts[0],
+                    LastName = nameParts.Length > 1 ? string.Join(" ", nameParts.Skip(1)) : ""
+                };
+
+                var createResult = await _userManager.CreateAsync(user);
+                if (!createResult.Succeeded)
+                {
+                    return StatusCode(500, "Failed to create a new user.");
+                }
+
+                await _userManager.AddToRoleAsync(user, "User");
+            }
+
+            await _signInManager.SignInAsync(user, isPersistent: false, "Identity.External");
+
+            // Generate a JWT token for the user
+            var token = _tokenService.CreateToken(user);
+
+            return Ok(new
+            {
+                Username = user.UserName,
+                Email = user.Email,
+                Token = token
+            });
         }
     }
 }
