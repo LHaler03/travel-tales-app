@@ -86,7 +86,7 @@ namespace backend.Controllers
 
             if (!result.Succeeded) return Unauthorized("Username not found and/or password is incorrect!");
 
-            var accessToken = _tokenService.CreateAccessToken(user);
+            var accessToken = await _tokenService.CreateAccessToken(user);
             var refreshToken = _tokenService.CreateRefreshToken();
 
             user.RefreshToken = refreshToken;
@@ -109,50 +109,78 @@ namespace backend.Controllers
                     Token = accessToken
                 }
             );
-    }
-
-    [HttpPost("refresh-token")]
-    public async Task<IActionResult> RefreshToken()
-    {
-        if (!Request.Cookies.TryGetValue("refreshToken", out var refreshToken))
-        {
-            return Unauthorized("No refresh token found.");
         }
-        
-        var user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
 
-        if (user == null || user.RefreshTokenExpiry <= DateTime.UtcNow)
-            return Unauthorized("Invalid or expired refresh token.");
-        
-        var newAccesToken = _tokenService.CreateAccessToken(user);
-        var newRefreshToken = _tokenService.CreateRefreshToken();
-
-        user.RefreshToken = newRefreshToken;
-        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
-        await _userManager.UpdateAsync(user);
-
-        var cookieOptions = new CookieOptions
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken()
         {
-            HttpOnly = true,
-            SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
-            Expires = DateTime.UtcNow.AddDays(7)
-        };
-        Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
+            if (!Request.Cookies.TryGetValue("refreshToken", out var refreshToken))
+            {
+                return Unauthorized("No refresh token found.");
+            }
+            
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
 
-        return Ok(new {AccessToken = newAccesToken});
-    }
+            if (user == null || user.RefreshTokenExpiry <= DateTime.UtcNow)
+                return Unauthorized("Invalid or expired refresh token.");
+            
+            var newAccesToken = await _tokenService.CreateAccessToken(user);
+            var newRefreshToken = _tokenService.CreateRefreshToken();
 
-    // Initiates the Google Sign-In process
-    [HttpGet("signin-google")]
-    public IActionResult GoogleSignIn()
-    {
-        var redirectUrl = Url.Action("GoogleCallback", "Account");
-        var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
-        return Challenge(properties, "Google");
-    }
+            user.RefreshToken = newRefreshToken;
+            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+            await _userManager.UpdateAsync(user);
 
-    // Callback after Google sign-in
-    [HttpGet("google-callback")]
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(7)
+            };
+            Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
+
+            return Ok(new {AccessToken = newAccesToken});
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            if (!Request.Cookies.TryGetValue("refreshToken", out var refreshToken))
+                return Unauthorized("No refresh token found.");
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
+
+            if (user != null)
+            {
+                user.RefreshToken = "";
+                user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(-1);
+                await _userManager.UpdateAsync(user);
+            }
+
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(-1)
+            };
+            Response.Cookies.Append("refreshToken", "", cookieOptions);
+
+            return Ok("Logged out successfully.");
+        }
+
+
+        // Initiates the Google Sign-In process
+        [HttpGet("signin-google")]
+        public IActionResult GoogleSignIn()
+        {
+            var redirectUrl = Url.Action("GoogleCallback", "Account");
+            Console.WriteLine(redirectUrl);
+            var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+            return Challenge(properties, "Google");
+        }
+
+        // Callback after Google sign-in
+        [HttpGet("google-callback")]
         public async Task<IActionResult> GoogleCallback()
         {
             var authenticateResult = await HttpContext.AuthenticateAsync("Google");
@@ -190,7 +218,7 @@ namespace backend.Controllers
 
             await _signInManager.SignInAsync(user, isPersistent: false, "Identity.External");
 
-            var accessToken = _tokenService.CreateAccessToken(user);
+            var accessToken = await _tokenService.CreateAccessToken(user);
             var refreshToken = _tokenService.CreateRefreshToken();
 
             user.RefreshToken = refreshToken;

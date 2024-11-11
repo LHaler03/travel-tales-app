@@ -9,7 +9,7 @@ namespace backend.Interfaces
 {
     public interface ITokenService
     {
-        string CreateAccessToken(User user);
+        Task<string> CreateAccessToken(User user);
         string CreateRefreshToken();
     }
 }

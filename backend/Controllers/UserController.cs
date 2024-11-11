@@ -23,16 +23,17 @@ namespace backend.Controllers
         {
             _userRepo = userRepo;
         }
-        // GET: api/user
+        // GET: api/users
         [HttpGet]
-        [Authorize]
+        //[Authorize (Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userRepo.GetAllAsync();
             return Ok(users);
         }
-        // GET: api/user/{id}
+        // GET: api/users/{id}
         [HttpGet("{id}")]
+        //[Authorize]
         public async Task<IActionResult> GetUserById([FromRoute] string id)
         {
             var user = await _userRepo.GetByIdAsync(id);
@@ -43,7 +44,7 @@ namespace backend.Controllers
             return Ok(user.MapToUserDto());
         }
 
-        // PUT: api/user/{id}
+        // PUT: api/users/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser([FromRoute] string id, [FromBody] UpdateDto updateDto)
         {
@@ -56,7 +57,7 @@ namespace backend.Controllers
             return Ok(user.MapToUserDto());
         }
 
-        // DELETE: api/user/{id}
+        // DELETE: api/users/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser([FromRoute] string id)
         {
