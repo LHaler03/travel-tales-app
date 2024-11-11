@@ -17,8 +17,8 @@ export const Map = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.79.27.160/api/locations');
-        console.log(response);
+        const response = await axios.get('http://3.74.155.131/api/locations');
+        /*console.log(response);*/
         const locations = response.data.map(
           (location: {
             id: number;
@@ -41,7 +41,7 @@ export const Map = () => {
     fetchLocations();
   }, []);
 
-  console.log(markers);
+  /*console.log(markers);*/
   return (
     <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
       <TileLayer
