@@ -3,7 +3,7 @@ import { StyledMapContainer } from './Map.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet';
+import L, { Icon } from 'leaflet';
 
 export const Map = () => {
   const [markers, setMarkers] = useState<
@@ -14,6 +14,7 @@ export const Map = () => {
     iconUrl: './images/mapicon.png',
     iconSize: [38, 38],
   });
+
   useEffect(() => {
     const fetchLocations = async () => {
       try {
@@ -41,9 +42,18 @@ export const Map = () => {
     fetchLocations();
   }, []);
 
+  const bounds = L.latLngBounds([-83, -199], [85, 202]);
+
   console.log(markers);
   return (
-    <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
+    <StyledMapContainer
+      id='map'
+      center={[54.526, 15.2551]}
+      zoom={3}
+      minZoom={2}
+      maxBounds={bounds}
+      maxBoundsViscosity={1}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
