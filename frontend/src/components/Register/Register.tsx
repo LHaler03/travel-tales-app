@@ -51,16 +51,16 @@ export const Register = () => {
       const loginUrl = 'http://localhost:5185/api/account/login';
       const loginData = {
         username: formData.username,
-        password: formData.password
+        password: formData.password,
       };
-      
+
       const loginResponse = await axios.post(loginUrl, loginData);
       console.log('Auto-login successful:', loginResponse.data);
 
       localStorage.setItem('token', loginResponse.data.token);
-      
+
       login();
-      
+
       navigate(redirectTo);
     } catch (error) {
       console.error('Registration/Login error:', error);
@@ -135,7 +135,7 @@ export const Register = () => {
             </Inputs>
             <RedirectContainer>
               <Question>Already have an account?</Question>
-              <Link to="/login">Log in</Link>
+              <Link to='/login'>Log in</Link>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>

@@ -36,11 +36,19 @@ export const Navbar = () => {
   };
 
   const handleLogin = () => {
-    navigate('/login', { state: { redirectTo: location.pathname === '/register' ? '/' : location.pathname } });
+    navigate('/login', {
+      state: {
+        redirectTo: location.pathname === '/register' ? '/' : location.pathname,
+      },
+    });
   };
 
   const handleRegister = () => {
-    navigate('/register', { state: { redirectTo: location.pathname === '/login' ? '/' : location.pathname } });
+    navigate('/register', {
+      state: {
+        redirectTo: location.pathname === '/login' ? '/' : location.pathname,
+      },
+    });
   };
 
   const handleLogout = () => {
@@ -68,7 +76,9 @@ export const Navbar = () => {
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={() => navigate('/profile')}>My Profile</ActionButton>
+                <ActionButton onClick={() => navigate('/profile')}>
+                  My Profile
+                </ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
               </>
             ) : (
@@ -106,36 +116,45 @@ export const Navbar = () => {
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <Link to="/profile" onClick={() => setIsMenuToggled(false)}>
+                  <Link to='/' onClick={() => setIsMenuToggled(false)}>
                     My Profile
                   </Link>
-                  <a href="#" onClick={(e) => {
-                    e.preventDefault();
-                    setIsMenuToggled(false);
-                    handleLogout();
-                  }}>
+                  <a
+                    href='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleLogout();
+                    }}
+                  >
                     Sign Out
                   </a>
                 </>
               ) : (
                 <>
-                  <a href="#" onClick={(e) => { 
-                    e.preventDefault(); 
-                    setIsMenuToggled(false); 
-                    handleLogin(); 
-                  }}>
+                  <a
+                    href='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleLogin();
+                    }}
+                  >
                     Login
                   </a>
-                  <a href="#" onClick={(e) => { 
-                    e.preventDefault(); 
-                    setIsMenuToggled(false); 
-                    handleRegister(); 
-                  }}>
+                  <a
+                    href='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleRegister();
+                    }}
+                  >
                     Register
                   </a>
                 </>
               )}
-              <Link to="/" onClick={() => setIsMenuToggled(false)}>
+              <Link to='/' onClick={() => setIsMenuToggled(false)}>
                 Home
               </Link>
               <a href='#explore' onClick={() => setIsMenuToggled(false)}>
