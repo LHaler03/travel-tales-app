@@ -1,7 +1,7 @@
 # Travel tales
 
 ## Opis projekta
-Ovaj projekt je rezultat timskog rada u sklopu projeknog zadatka kolegija [Programsko inženjerstvo](https://www.fer.unizg.hr/predmet/proinz) na Fakultetu elektrotehnike i računarstva Sveučilišta u Zagrebu. 
+Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija [Programsko inženjerstvo](https://www.fer.unizg.hr/predmet/proinz) na Fakultetu elektrotehnike i računarstva Sveučilišta u Zagrebu. 
 
 Cilj ovog projekta je omogućiti ljudima da lakše pokažu drugima gdje su bili, tako što mogu generirati razglednice s lokacija koje posjete! Jeste li ikada poželjeli poslati razglednicu, 
 ali niste imali vremena pronaći trgovinu ili vam se nije svidjela ponuda? Mi imamo rješenje! Na našoj stranici možete pregledavati 
