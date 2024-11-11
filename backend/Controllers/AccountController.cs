@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace backend.Controllers
 {
@@ -23,11 +24,13 @@ namespace backend.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ITokenService _tokenService;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService)
+        private readonly IConfiguration _config;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService, IConfiguration config)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _config = config;
         }
 
         [HttpPost("register")]
@@ -83,15 +86,62 @@ namespace backend.Controllers
 
             if (!result.Succeeded) return Unauthorized("Username not found and/or password is incorrect!");
 
+            var accessToken = _tokenService.CreateAccessToken(user);
+            var refreshToken = _tokenService.CreateRefreshToken();
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+            await _userManager.UpdateAsync(user);
+
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(7)
+            };
+            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+
             return Ok(
                 new LogedInUserDto
                 {
                     Username = user.UserName,
                     Email = user.Email,
-                    Token = _tokenService.CreateToken(user),
+                    Token = accessToken
                 }
             );
+    }
+
+    [HttpPost("refresh-token")]
+    public async Task<IActionResult> RefreshToken()
+    {
+        if (!Request.Cookies.TryGetValue("refreshToken", out var refreshToken))
+        {
+            return Unauthorized("No refresh token found.");
         }
+        
+        var user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
+
+        if (user == null || user.RefreshTokenExpiry <= DateTime.UtcNow)
+            return Unauthorized("Invalid or expired refresh token.");
+        
+        var newAccesToken = _tokenService.CreateAccessToken(user);
+        var newRefreshToken = _tokenService.CreateRefreshToken();
+
+        user.RefreshToken = newRefreshToken;
+        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+        await _userManager.UpdateAsync(user);
+
+        var cookieOptions = new CookieOptions
+        {
+            HttpOnly = true,
+            SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+            Expires = DateTime.UtcNow.AddDays(7)
+        };
+        Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
+
+        return Ok(new {AccessToken = newAccesToken});
+    }
+
     // Initiates the Google Sign-In process
     [HttpGet("signin-google")]
     public IActionResult GoogleSignIn()
@@ -140,14 +190,26 @@ namespace backend.Controllers
 
             await _signInManager.SignInAsync(user, isPersistent: false, "Identity.External");
 
-            // Generate a JWT token for the user
-            var token = _tokenService.CreateToken(user);
+            var accessToken = _tokenService.CreateAccessToken(user);
+            var refreshToken = _tokenService.CreateRefreshToken();
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+            await _userManager.UpdateAsync(user);
+
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(7)
+            };
+            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
 
             return Ok(new
             {
                 Username = user.UserName,
                 Email = user.Email,
-                Token = token
+                Token = accessToken
             });
         }
     }
