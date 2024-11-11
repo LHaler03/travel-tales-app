@@ -1,17 +1,14 @@
-import { TileLayer, Marker, useMapEvents} from 'react-leaflet';
-import { StyledMapContainer } from './Map.styled';
+import { TileLayer, Marker } from 'react-leaflet';
+import { StyledMapContainer } from './FullMap.styled';
 import axios from 'axios';
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
-import { useNavigate } from 'react-router-dom';
 
-
-export const Map = () => {
+export const FullMap = () => {
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
-  const navigate = useNavigate();
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -45,14 +42,6 @@ export const Map = () => {
   }, []);
 
   console.log(markers);
-
-  const ToFullMap: FC = () => {
-    useMapEvents({
-      click: () => navigate('/fullmap'),
-    });
-    return null;
-  };
-
   return (
     <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
       <TileLayer
@@ -62,7 +51,6 @@ export const Map = () => {
       {markers.map((marker, index) => (
         <Marker key={index} position={marker.geocode} icon={iconformarkers} />
       ))}
-      <ToFullMap />
     </StyledMapContainer>
   );
 };
