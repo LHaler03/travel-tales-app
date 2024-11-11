@@ -1,5 +1,11 @@
 import { TileLayer, Marker } from 'react-leaflet';
-import { StyledMapContainer, Modal, Modal_button_generate, Modal_button_close, Modal_content } from './FullMap.styled';
+import {
+  StyledMapContainer,
+  Modal,
+  Modal_button_generate,
+  Modal_button_close,
+  Modal_content,
+} from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
@@ -55,7 +61,6 @@ export const FullMap = () => {
     setSelectedCity(null);
   };
 
-
   console.log(markers);
   return (
     <>
@@ -65,17 +70,23 @@ export const FullMap = () => {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         {markers.map((marker, index) => (
-          <Marker key={index} position={marker.geocode} icon={iconformarkers} 
-          eventHandlers={{
+          <Marker
+            key={index}
+            position={marker.geocode}
+            icon={iconformarkers}
+            eventHandlers={{
               click: () => handleMarkerClick(marker.popUp),
-            }}/>
+            }}
+          />
         ))}
       </StyledMapContainer>
 
       {showModal && (
         <Modal>
           <Modal_content>
-            <Modal_button_close onClick={handleCloseModal}>X</Modal_button_close>
+            <Modal_button_close onClick={handleCloseModal}>
+              X
+            </Modal_button_close>
             <h1>{selectedCity}</h1>
             <p>Slike {selectedCity}...</p>
             <Modal_button_generate>Generate postcard</Modal_button_generate>

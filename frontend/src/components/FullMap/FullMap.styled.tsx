@@ -29,7 +29,7 @@ export const Modal_content = styled.div`
   padding: 20px;
   background: white;
   border-radius: 8px;
-  h1{
+  h1 {
     text-align: center;
   }
 `;
@@ -51,7 +51,7 @@ export const Modal_button_close = styled.button`
 export const Modal_button_generate = styled.button`
   position: absolute;
   bottom: 10px;
-  right: 10px; 
+  right: 10px;
   border-radius: 5px;
   cursor: pointer;
 `;

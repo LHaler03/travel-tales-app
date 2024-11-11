@@ -16,7 +16,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/fullmap' element={<MapPage/>} />
+          <Route path='/fullmap' element={<MapPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

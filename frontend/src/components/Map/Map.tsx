@@ -1,11 +1,10 @@
-import { TileLayer, Marker, useMapEvents} from 'react-leaflet';
+import { TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import { StyledMapContainer } from './Map.styled';
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { useNavigate } from 'react-router-dom';
-
 
 export const Map = () => {
   const [markers, setMarkers] = useState<
