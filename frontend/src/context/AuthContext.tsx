@@ -13,7 +13,15 @@ type AuthContextType = {
   token: string | null;
   login: (token: string, user: UserType) => void;
   logout: () => void;
-  googleLogin: (response: any) => Promise<void>;
+  googleLogin: (response: {
+    access_token: string;
+    userInfo?: {
+      given_name?: string;
+      family_name?: string;
+      email?: string;
+      picture?: string;
+    };
+  }) => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -34,25 +42,41 @@ function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   };
 
-  const googleLogin = async (response: any) => {
+  const googleLogin = async (response: {
+    access_token: string;
+    userInfo?: {
+      given_name?: string;
+      family_name?: string;
+      email?: string;
+      picture?: string;
+    };
+  }) => {
     try {
-      const googleLoginUrl = 'http://localhost:5185/api/account/google-login';
+      const googleLoginUrl = 'http://localhost:5185/api/account/signin-google';
+      
       const result = await axios.post(googleLoginUrl, {
-        credential: response.credential,
+        access_token: response.access_token,
+        provider: 'google',
+        userInfo: response.userInfo
       });
 
+      if (!result.data.token || !result.data.username) {
+        throw new Error('Invalid response from server');
+      }
+  
       const user: UserType = {
         username: result.data.username,
         email: result.data.email,
         picture: result.data.picture,
       };
-
+  
       login(result.data.token, user);
     } catch (error) {
       console.error('Google login error:', error);
       throw error;
     }
   };
+  
 
   return (
     <AuthContext.Provider

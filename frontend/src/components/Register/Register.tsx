@@ -75,8 +75,31 @@ export const Register = () => {
   };
 
   const handleGoogleLogin = useGoogleLogin({
+    flow: 'implicit',
     onSuccess: async (response) => {
       try {
+        // First, get user info from Google
+        const googleUserInfoResponse = await axios.get(
+          'https://www.googleapis.com/oauth2/v3/userinfo',
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
+
+        const googleUserInfo = googleUserInfoResponse.data;
+
+        // Update form data with Google user info
+        setFormData({
+          firstName: googleUserInfo.given_name || '',
+          lastName: googleUserInfo.family_name || '',
+          username: googleUserInfo.email.split('@')[0] || '', // Using email prefix as username
+          email: googleUserInfo.email,
+          password: '', // You might want to handle this differently
+        });
+
+        // Then proceed with Google login
         await googleLogin(response);
         navigate(redirectTo);
       } catch (error) {
@@ -84,8 +107,10 @@ export const Register = () => {
         setErrorMessage('Error during Google login!');
       }
     },
-    onError: () => {
-      setErrorMessage('Google login failed!');
+    scope: 'email profile', // Request email and profile info
+    onError: (errorResponse) => {
+      console.error('Google login failed:', errorResponse);
+      setErrorMessage('Google login failed. Please try again.');
     },
   });
 
