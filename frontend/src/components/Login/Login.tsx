@@ -63,10 +63,30 @@ export const Login = () => {
   };
 
   const handleGoogleLogin = useGoogleLogin({
-    flow: 'auth-code',
-    onSuccess: async (codeResponse) => {
+    flow: 'implicit',
+    onSuccess: async (response) => {
       try {
-        await googleLogin(codeResponse);
+        const userInfoResponse = await axios.get(
+          'https://www.googleapis.com/oauth2/v3/userinfo',
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
+
+        const userInfo = userInfoResponse.data;
+        
+        await googleLogin({
+          access_token: response.access_token,
+          userInfo: {
+            given_name: userInfo.given_name,
+            family_name: userInfo.family_name,
+            email: userInfo.email,
+            picture: userInfo.picture
+          }
+        });
+
         navigate(redirectTo);
       } catch (error) {
         console.error('Google login error:', error);
