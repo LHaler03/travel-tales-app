@@ -188,12 +188,12 @@ export const Register = () => {
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>
             </SubmitContainer>
+          </StyledForm>
             <SubmitContainer>
               <ActionButton onClick={() => handleGoogleLogin()}>
                 Continue with Google
               </ActionButton>
             </SubmitContainer>
-          </StyledForm>
         </Container>
       </Wrapper>
     </>
