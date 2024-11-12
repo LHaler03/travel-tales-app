@@ -119,4 +119,4 @@ export const RedError = styled.h4`
   color: red;
   text-align: center;
   margin: 5%;
-`
+`;
