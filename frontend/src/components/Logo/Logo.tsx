@@ -3,12 +3,17 @@ import { useAuth } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 
 export const Logo = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
 
-  // If user is authenticated, don't render the logo section
   if (isAuthenticated) {
-    return null;
-  }
+    return (
+      <>
+        <LogoStyled>
+          <h1>Welcome, {user?.username}!</h1>
+        </LogoStyled>
+      </>
+    );
+  };
 
   return (
     <>

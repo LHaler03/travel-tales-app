@@ -7,6 +7,7 @@ import {
   Inputs,
   Question,
   RedirectContainer,
+  RedError,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -20,7 +21,7 @@ import { LoggedUser } from '../../types/User';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth, UserType } from '../../context/AuthContext';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -32,11 +33,14 @@ export const Login = () => {
     password: '',
   }); //podaci iz forma
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const { login } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,11 +48,15 @@ export const Login = () => {
     try {
       const url = 'http://localhost:5185/api/account/login';
       const response = await axios.post(url, formData);
-      console.log(response.data);
-      login(); // Set authenticated state
+      const token = response.data.token;
+      const user: UserType = {
+        username: response.data.username
+      }
+      login(token, user); // Set authenticated state
       navigate(redirectTo); // Navigate after successful login
     } catch (error) {
       console.error(error);
+      setErrorMessage('Incorrect username and/or password!');
     }
   };
 
@@ -85,6 +93,7 @@ export const Login = () => {
                 </Input>
               </InputContainer>
             </Inputs>
+            {errorMessage && <RedError>{errorMessage}</RedError>}
             <RedirectContainer>
               <Question>Don't have an account?</Question>
               <Link to='/register'>Register</Link>
