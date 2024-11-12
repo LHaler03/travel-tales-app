@@ -39,8 +39,8 @@ export const Card = () => {
       <Cards>
         <Cardmap>
           <Slider {...settings}>
-            {data.map((d) => (
-              <SingleCard>
+            {data.map((d, index) => (
+              <SingleCard key={index}>
                 <Picture>
                   <img src={d.image} alt={d.grad} />
                 </Picture>
