@@ -78,8 +78,8 @@ export const Register = () => {
     flow: 'implicit',
     onSuccess: async (response) => {
       try {
-        // First, get user info from Google
-        const googleUserInfoResponse = await axios.get(
+        // Dohvaćanje korisničkih informacija s access tokenom
+        const userInfoResponse = await axios.get(
           'https://www.googleapis.com/oauth2/v3/userinfo',
           {
             headers: {
@@ -88,31 +88,31 @@ export const Register = () => {
           }
         );
 
-        const googleUserInfo = googleUserInfoResponse.data;
-
-        // Update form data with Google user info
-        setFormData({
-          firstName: googleUserInfo.given_name || '',
-          lastName: googleUserInfo.family_name || '',
-          username: googleUserInfo.email.split('@')[0] || '', // Using email prefix as username
-          email: googleUserInfo.email,
-          password: '', // You might want to handle this differently
+        const userInfo = userInfoResponse.data;
+        
+        // Pozivamo googleLogin s access tokenom i korisničkim podacima
+        await googleLogin({
+          access_token: response.access_token,
+          userInfo: {
+            given_name: userInfo.given_name,
+            family_name: userInfo.family_name,
+            email: userInfo.email,
+            picture: userInfo.picture
+          }
         });
 
-        // Then proceed with Google login
-        await googleLogin(response);
         navigate(redirectTo);
       } catch (error) {
         console.error('Google login error:', error);
         setErrorMessage('Error during Google login!');
       }
     },
-    scope: 'email profile', // Request email and profile info
-    onError: (errorResponse) => {
-      console.error('Google login failed:', errorResponse);
-      setErrorMessage('Google login failed. Please try again.');
+    onError: (error) => {
+      console.error('Google login failed:', error);
+      setErrorMessage('Google login failed!');
     },
   });
+  
 
   return (
     <>
