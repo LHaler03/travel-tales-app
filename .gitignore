@@ -88,3 +88,5 @@ artifacts/
 .fake
 
 appsettings.Development.json
+
+plantuml
