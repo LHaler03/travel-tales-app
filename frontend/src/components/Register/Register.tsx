@@ -60,13 +60,13 @@ export const Register = () => {
       const response = await axios.post(loginUrl, loginData);
       console.log('Auto-login successful:', response.data);
       const user: UserType = {
-        username: response.data.username
-      }
+        username: response.data.username,
+      };
       login(response.data.token, user);
       navigate(redirectTo);
     } catch (error) {
       console.error('Registration/Login error:', error);
-      setErrorMessage('Error in registration!')
+      setErrorMessage('Error in registration!');
       alert(errorMessage);
     }
   };

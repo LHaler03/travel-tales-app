@@ -50,8 +50,8 @@ export const Login = () => {
       const response = await axios.post(url, formData);
       const token = response.data.token;
       const user: UserType = {
-        username: response.data.username
-      }
+        username: response.data.username,
+      };
       login(token, user); // Set authenticated state
       navigate(redirectTo); // Navigate after successful login
     } catch (error) {

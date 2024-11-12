@@ -1,8 +1,11 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
+import axios from 'axios';
 
 export type UserType = {
   username: string;
-}
+  email?: string;
+  picture?: string;
+};
 
 type AuthContextType = {
   isAuthenticated: boolean;
@@ -10,6 +13,7 @@ type AuthContextType = {
   token: string | null;
   login: (token: string, user: UserType) => void;
   logout: () => void;
+  googleLogin: (response: any) => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -22,16 +26,38 @@ function AuthProvider({ children }: { children: ReactNode }) {
   const login = (token: string, user: UserType) => {
     setIsAuthenticated(true);
     setToken(token);
-    setUser(user)
-  }
+    setUser(user);
+  };
   const logout = () => {
     setIsAuthenticated(false);
     setToken(null);
     setUser(null);
-  }
+  };
+
+  const googleLogin = async (response: any) => {
+    try {
+      const googleLoginUrl = 'http://localhost:5185/api/account/google-login';
+      const result = await axios.post(googleLoginUrl, {
+        credential: response.credential,
+      });
+
+      const user: UserType = {
+        username: result.data.username,
+        email: result.data.email,
+        picture: result.data.picture,
+      };
+
+      login(result.data.token, user);
+    } catch (error) {
+      console.error('Google login error:', error);
+      throw error;
+    }
+  };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, token, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, user, token, login, logout, googleLogin }}
+    >
       {children}
     </AuthContext.Provider>
   );
