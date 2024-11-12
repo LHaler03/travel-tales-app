@@ -5,6 +5,8 @@ import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
 import { AuthProvider } from './context/AuthContext';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import MapPage from './pages/MapPage';
+
 
 function App() {
   
