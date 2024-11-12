@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
 import { AuthProvider } from './context/AuthContext';
+import MapPage from './pages/MapPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/fullmap' element={<MapPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
