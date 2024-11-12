@@ -22,7 +22,7 @@ export const Map = () => {
     const fetchLocations = async () => {
       try {
         const response = await axios.get('http://3.74.155.131/api/locations');
-        console.log(response);
+        /*console.log(response);*/
         const locations = response.data.map(
           (location: {
             id: number;
@@ -45,7 +45,6 @@ export const Map = () => {
     fetchLocations();
   }, []);
 
-  console.log(markers);
 
   const HandleToFullMap: FC = () => {
     useMapEvents({
@@ -53,6 +52,8 @@ export const Map = () => {
     });
     return null;
   };
+
+  /*console.log(markers);*/
 
   return (
     <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
