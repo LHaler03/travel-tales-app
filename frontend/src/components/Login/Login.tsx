@@ -22,6 +22,8 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth, UserType } from '../../context/AuthContext';
+import { ActionButton } from '../../shared/ActionButton';
+import { useGoogleLogin } from '@react-oauth/google';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ export const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -59,6 +61,23 @@ export const Login = () => {
       setErrorMessage('Incorrect username and/or password!');
     }
   };
+
+  const handleGoogleLogin = useGoogleLogin({
+    flow: 'auth-code',
+    onSuccess: async (codeResponse) => {
+      try {
+        await googleLogin(codeResponse);
+        navigate(redirectTo);
+      } catch (error) {
+        console.error('Google login error:', error);
+        setErrorMessage('Error during Google login!');
+      }
+    },
+    onError: (error) => {
+      console.error('Google login failed:', error);
+      setErrorMessage('Google login failed!');
+    },
+  });
 
   return (
     <>
@@ -100,6 +119,11 @@ export const Login = () => {
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Login</Submit>
+            </SubmitContainer>
+            <SubmitContainer>
+              <ActionButton onClick={() => handleGoogleLogin()}>
+                Continue with Google
+              </ActionButton>
             </SubmitContainer>
           </StyledForm>
         </Container>

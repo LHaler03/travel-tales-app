@@ -1,6 +1,6 @@
 import { Logo } from '../components/Logo/Logo';
 import { Navbar } from '../components/Navbar/Navbar';
-import { Card } from '../components/Card/Card';
+// import { Card } from '../components/Card/Card';
 import { Map } from '../components/Map/Map';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
       <Navbar />
       <Logo />
       <Map />
-      <Card />
+      {/* <Card /> */}
     </>
   );
 }

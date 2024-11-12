@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 import {
   NavbarStyled,
@@ -25,11 +25,6 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated, logout } = useAuth();
-
-  // Debug logging
-  useEffect(() => {
-    console.log('Navbar - isAuthenticated:', isAuthenticated);
-  }, [isAuthenticated]);
 
   const handleClose = () => {
     setIsMenuToggled(false);

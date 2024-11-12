@@ -21,12 +21,15 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth, UserType } from '../../context/AuthContext';
+import { ActionButton } from '../../shared/ActionButton';
+import { useGoogleLogin } from '@react-oauth/google';
+
 
 export const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const redirectTo = location.state?.redirectTo || '/';
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
 
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
@@ -70,6 +73,21 @@ export const Register = () => {
       alert(errorMessage);
     }
   };
+
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        await googleLogin(response);
+        navigate(redirectTo);
+      } catch (error) {
+        console.error('Google login error:', error);
+        setErrorMessage('Error during Google login!');
+      }
+    },
+    onError: () => {
+      setErrorMessage('Google login failed!');
+    },
+  });
 
   return (
     <>
@@ -140,9 +158,15 @@ export const Register = () => {
             <RedirectContainer>
               <Question>Already have an account?</Question>
               <Link to='/login'>Log in</Link>
+
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>
+            </SubmitContainer>
+            <SubmitContainer>
+              <ActionButton onClick={() => handleGoogleLogin()}>
+                Continue with Google
+              </ActionButton>
             </SubmitContainer>
           </StyledForm>
         </Container>
