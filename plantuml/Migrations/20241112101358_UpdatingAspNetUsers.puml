@@ -1,0 +1,5 @@
+@startuml
+class UpdatingAspNetUsers <<partial>> {
+}
+Migration <|-- UpdatingAspNetUsers
+@enduml

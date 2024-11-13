@@ -1,0 +1,10 @@
+@startuml
+class LocationController {
+    + <<async>> GetAll() : Task<IActionResult>
+    + <<async>> GetById(id:int) : Task<IActionResult>
+    + <<async>> Create(locationDto:CreateLocationRequestDto) : Task<IActionResult>
+    + <<async>> Update(id:int, updateLocationDto:UpdateLocationRequestDto) : Task<IActionResult>
+    + <<async>> Delete(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- LocationController
+@enduml

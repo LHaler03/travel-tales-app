@@ -8,12 +8,15 @@ using backend.Dtos.Account;
 using backend.Interfaces;
 using backend.Models;
 using backend.Service;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
+using System.Net.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers
 {
@@ -25,12 +28,16 @@ namespace backend.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IConfiguration _config;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService, IConfiguration config)
+        private readonly IAccountRepository _accountRepository;
+        private readonly HttpClient _httpClient;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService, IConfiguration config, IAccountRepository accountRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
             _config = config;
+            _accountRepository = accountRepository;
+            _httpClient = new HttpClient();
         }
 
         [HttpPost("register")]
@@ -111,20 +118,27 @@ namespace backend.Controllers
             );
         }
 
-        [HttpPost("refresh-token")]
+        [HttpGet("refresh-token")]
         public async Task<IActionResult> RefreshToken()
         {
+            Console.WriteLine("Refreshing the token");
+            Console.WriteLine();
+            Console.WriteLine();
+
             if (!Request.Cookies.TryGetValue("refreshToken", out var refreshToken))
             {
-                return Unauthorized("No refresh token found.");
+                Console.WriteLine("NEMA REFRESHA");
+                return StatusCode(403, "Unauthorized");
             }
-            
+
+            Console.WriteLine(refreshToken);
+
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
 
             if (user == null || user.RefreshTokenExpiry <= DateTime.UtcNow)
                 return Unauthorized("Invalid or expired refresh token.");
-            
-            var newAccesToken = await _tokenService.CreateAccessToken(user);
+
+            var newAccessToken = await _tokenService.CreateAccessToken(user);
             var newRefreshToken = _tokenService.CreateRefreshToken();
 
             user.RefreshToken = newRefreshToken;
@@ -139,7 +153,7 @@ namespace backend.Controllers
             };
             Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
 
-            return Ok(new {AccessToken = newAccesToken});
+            return Ok(new { AccessToken = newAccessToken });
         }
 
         [HttpPost("logout")]
@@ -168,77 +182,84 @@ namespace backend.Controllers
             return Ok("Logged out successfully.");
         }
 
-
-        // Initiates the Google Sign-In process
-        [HttpGet("signin-google")]
-        public IActionResult GoogleSignIn()
+        [HttpPost("google")]
+        public async Task<IActionResult> GoogleLogin([FromBody] GoogleLoginDto googleLoginDto)
         {
-            var redirectUrl = Url.Action("GoogleCallback", "Account");
-            Console.WriteLine(redirectUrl);
-            var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
-            return Challenge(properties, "Google");
-        }
-
-        // Callback after Google sign-in
-        [HttpGet("google-callback")]
-        public async Task<IActionResult> GoogleCallback()
-        {
-            var authenticateResult = await HttpContext.AuthenticateAsync("Google");
-
-            if (!authenticateResult.Succeeded) return BadRequest("Google authentication failed.");
-
-            var claims = authenticateResult.Principal.Identities.First().Claims;
-            var googleEmail = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var googleName = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
-
-            if (string.IsNullOrEmpty(googleEmail)) return BadRequest("Google authentication failed. Email not provided.");
-
-            var user = await _userManager.FindByEmailAsync(googleEmail);
-
-            if (user == null)
+            try
             {
-                var nameParts = googleName.Split(' ');
-                
-                user = new User
-                {
-                    UserName = googleEmail,
-                    Email = googleEmail,
-                    FirstName = nameParts[0],
-                    LastName = nameParts.Length > 1 ? string.Join(" ", nameParts.Skip(1)) : ""
-                };
+                var userInfoResponse = await _httpClient.GetAsync(
+                    $"https://www.googleapis.com/oauth2/v3/userinfo?access_token={googleLoginDto.Token}");
 
-                var createResult = await _userManager.CreateAsync(user);
-                if (!createResult.Succeeded)
+                if (!userInfoResponse.IsSuccessStatusCode)
                 {
-                    return StatusCode(500, "Failed to create a new user.");
+                    return BadRequest("Invalid Google token");
                 }
 
-                await _userManager.AddToRoleAsync(user, "User");
+                var googleUserInfo = await userInfoResponse.Content.ReadFromJsonAsync<GoogleUserInfo>();
+
+                Console.WriteLine(googleUserInfo.Email);
+                Console.WriteLine(googleUserInfo.Name);
+                Console.WriteLine(googleUserInfo.Picture);
+                Console.WriteLine(googleUserInfo.Email_verified);
+
+                var payload = new GoogleJsonWebSignature.Payload
+                {
+                    Email = googleUserInfo.Email,
+                    Name = googleUserInfo.Name,
+                    Picture = googleUserInfo.Picture,
+                    EmailVerified = googleUserInfo.Email_verified
+                };
+
+                var user = await _accountRepository.GetOrCreateUserAsync(payload);
+
+                var accessToken = await _tokenService.CreateAccessToken(user);
+                var refreshToken = _tokenService.CreateRefreshToken();
+
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+                await _userManager.UpdateAsync(user);
+
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                    Expires = DateTime.UtcNow.AddDays(7)
+                };
+                Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+
+                return Ok(new
+                {
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    Token = accessToken
+                });
             }
-
-            await _signInManager.SignInAsync(user, isPersistent: false, "Identity.External");
-
-            var accessToken = await _tokenService.CreateAccessToken(user);
-            var refreshToken = _tokenService.CreateRefreshToken();
-
-            user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
-            await _userManager.UpdateAsync(user);
-
-            var cookieOptions = new CookieOptions
+            catch (Exception ex)
             {
-                HttpOnly = true,
-                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
-                Expires = DateTime.UtcNow.AddDays(7)
-            };
-            Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
+                return BadRequest(new { Error = ex.Message });
+            }
+        }
+
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<IActionResult> GetCurrentUser()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return NotFound();
 
             return Ok(new
             {
                 Username = user.UserName,
-                Email = user.Email,
-                Token = accessToken
+                Email = user.Email
             });
+        }
+
+        public class GoogleUserInfo
+        {
+            public required string Email { get; set; }
+            public required string Name { get; set; }
+            public required string Picture { get; set; }
+            public bool Email_verified { get; set; }
         }
     }
 }

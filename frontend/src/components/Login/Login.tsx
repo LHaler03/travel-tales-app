@@ -18,10 +18,9 @@ import {
 import React from 'react';
 import { useState } from 'react';
 import { LoggedUser } from '../../types/User';
-import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth, UserType } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { ActionButton } from '../../shared/ActionButton';
 import { useGoogleLogin } from '@react-oauth/google';
 
@@ -37,7 +36,7 @@ export const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const { login, googleLogin } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -48,45 +47,18 @@ export const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:5185/api/account/login';
-      const response = await axios.post(url, formData);
-      const token = response.data.token;
-      const user: UserType = {
-        username: response.data.username,
-      };
-      login(token, user); // Set authenticated state
-      navigate(redirectTo); // Navigate after successful login
+      await login(formData);
+      navigate(redirectTo);
     } catch (error) {
-      console.error(error);
+      console.error('Login error:', error);
       setErrorMessage('Incorrect username and/or password!');
     }
   };
 
   const handleGoogleLogin = useGoogleLogin({
-    flow: 'implicit',
     onSuccess: async (response) => {
       try {
-        const userInfoResponse = await axios.get(
-          'https://www.googleapis.com/oauth2/v3/userinfo',
-          {
-            headers: {
-              Authorization: `Bearer ${response.access_token}`,
-            },
-          }
-        );
-
-        const userInfo = userInfoResponse.data;
-        
-        await googleLogin({
-          access_token: response.access_token,
-          userInfo: {
-            given_name: userInfo.given_name,
-            family_name: userInfo.family_name,
-            email: userInfo.email,
-            picture: userInfo.picture
-          }
-        });
-
+        await loginWithGoogle(response.access_token);
         navigate(redirectTo);
       } catch (error) {
         console.error('Google login error:', error);
@@ -140,12 +112,12 @@ export const Login = () => {
             <SubmitContainer>
               <Submit type='submit'>Login</Submit>
             </SubmitContainer>
-            <SubmitContainer>
-              <ActionButton onClick={() => handleGoogleLogin()}>
-                Continue with Google
-              </ActionButton>
-            </SubmitContainer>
           </StyledForm>
+          <SubmitContainer>
+            <ActionButton onClick={() => handleGoogleLogin()}>
+              Continue with Google
+            </ActionButton>
+          </SubmitContainer>
         </Container>
       </Wrapper>
     </>
