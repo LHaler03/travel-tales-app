@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useLayoutEffect } from 'react';
 import axios from 'axios';
 
 export type UserType = {
@@ -25,6 +25,11 @@ type AuthContextType = {
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
+
+const api = axios.create({
+  baseURL: 'http://localhost:5185/api',
+  withCredentials: true
+});
 
 function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -77,6 +82,94 @@ function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
   
+  // Request interceptor - adds token to requests
+  useLayoutEffect(() => {
+    const authInterceptor = api.interceptors.request.use((config) => {
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+      return config;
+    });
+
+    return () => {
+      api.interceptors.request.eject(authInterceptor);
+    };
+  }, [token]);
+
+  // Response interceptor - handles token refresh
+  useLayoutEffect(() => {
+    const refreshInterceptor = api.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        const originalRequest = error.config;
+        
+        // Check if error is due to invalid/expired token
+        if (error.response?.status === 401 && !originalRequest._retry) {
+          originalRequest._retry = true;
+          
+          try {
+            // Try to get a new token
+            const response = await api.post('/account/refresh-token');
+            
+            if (response.data.token) {
+              // Update auth state with new token
+              const newToken = response.data.token;
+              setToken(newToken);
+              
+              // Update user info if provided
+              if (response.data.username) {
+                setUser({
+                  username: response.data.username,
+                  email: response.data.email,
+                  picture: response.data.picture
+                });
+              }
+              
+              // Retry the original request with new token
+              originalRequest.headers.Authorization = `Bearer ${newToken}`;
+              return api(originalRequest);
+            }
+          } catch (refreshError) {
+            // If refresh fails, log out the user
+            logout();
+            return Promise.reject(refreshError);
+          }
+        }
+        
+        return Promise.reject(error);
+      }
+    );
+
+    return () => {
+      api.interceptors.response.eject(refreshInterceptor);
+    };
+  }, []);
+
+  // Check authentication status on initial load
+  useLayoutEffect(() => {
+    const checkAuth = async () => {
+      if (token) {
+        try {
+          const response = await api.post('/account/refresh-token');
+          if (response.data.token) {
+            setToken(response.data.token);
+            setUser({
+              username: response.data.username,
+              email: response.data.email,
+              picture: response.data.picture
+            });
+            setIsAuthenticated(true);
+          } else {
+            logout();
+          }
+        } catch (error) {
+          logout();
+        }
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -95,4 +188,4 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth };
+export { AuthProvider, useAuth, api };
