@@ -29,9 +29,8 @@ export const Modal = styled.div`
 export const Modal_content = styled.div`
   position: relative;
   width: 80vw;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
+  padding: 30px;
+  border-radius: 20px;
   background-color: #b5cfe3;
   border: 2px solid #696969;
   h1 {
@@ -67,8 +66,8 @@ export const Modal_button_close = styled.button`
 `;
 
 export const Modal_button_generate = styled.button`
-  border-radius: 10px;
-  padding: 8px;
+  border-radius: 20px;
+  padding: 10px;
   cursor: pointer;
   border: none;
   background-color: #7ea1de;
