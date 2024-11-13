@@ -178,7 +178,11 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       async (error) => {
         const originalRequest = error.config;
 
-        if (originalRequest._retry) {
+        if (
+          originalRequest.url === '/account/refresh-token' ||
+          originalRequest.url === '/account/me' ||
+          originalRequest._retry
+        ) {
           return Promise.reject(error);
         }
 
