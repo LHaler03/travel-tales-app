@@ -21,7 +21,6 @@ import { RegisteredUser } from '../../types/User';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { ActionButton } from '../../shared/ActionButton';
 import { useGoogleLogin } from '@react-oauth/google';
 
 export const Register = () => {
@@ -59,9 +58,9 @@ export const Register = () => {
   };
 
   const handleGoogleLogin = useGoogleLogin({
-    onSuccess: async (codeResponse: { code: string }) => {
+    onSuccess: async (response) => {
       try {
-        await loginWithGoogle(codeResponse.code);
+        await loginWithGoogle(response.access_token);
         navigate(redirectTo);
       } catch (error) {
         console.error('Google login error:', error);
