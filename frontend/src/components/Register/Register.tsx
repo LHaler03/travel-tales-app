@@ -17,19 +17,17 @@ import {
 import React from 'react';
 import { useState } from 'react';
 import { RegisteredUser } from '../../types/User';
-import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth, UserType } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { ActionButton } from '../../shared/ActionButton';
 import { useGoogleLogin } from '@react-oauth/google';
-
 
 export const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const redirectTo = location.state?.redirectTo || '/';
-  const { login, googleLogin } = useAuth();
+  const { register, loginWithGoogle } = useAuth();
 
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
@@ -50,57 +48,19 @@ export const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const registerUrl = 'http://localhost:5185/api/account/register';
-      const registerResponse = await axios.post(registerUrl, formData);
-      console.log('Registration successful:', registerResponse.data);
-
-      const loginUrl = 'http://localhost:5185/api/account/login';
-      const loginData = {
-        username: formData.username,
-        password: formData.password,
-      };
-
-      const response = await axios.post(loginUrl, loginData);
-      console.log('Auto-login successful:', response.data);
-      const user: UserType = {
-        username: response.data.username,
-      };
-      login(response.data.token, user);
+      await register(formData);
       navigate(redirectTo);
     } catch (error) {
-      console.error('Registration/Login error:', error);
+      console.error('Registration error:', error);
       setErrorMessage('Error in registration!');
       alert(errorMessage);
     }
   };
 
   const handleGoogleLogin = useGoogleLogin({
-    flow: 'implicit',
-    onSuccess: async (response) => {
+    onSuccess: async (codeResponse: { code: string }) => {
       try {
-        // Dohvaćanje korisničkih informacija s access tokenom
-        const userInfoResponse = await axios.get(
-          'https://www.googleapis.com/oauth2/v3/userinfo',
-          {
-            headers: {
-              Authorization: `Bearer ${response.access_token}`,
-            },
-          }
-        );
-
-        const userInfo = userInfoResponse.data;
-        
-        // Pozivamo googleLogin s access tokenom i korisničkim podacima
-        await googleLogin({
-          access_token: response.access_token,
-          userInfo: {
-            given_name: userInfo.given_name,
-            family_name: userInfo.family_name,
-            email: userInfo.email,
-            picture: userInfo.picture
-          }
-        });
-
+        await loginWithGoogle(codeResponse.code);
         navigate(redirectTo);
       } catch (error) {
         console.error('Google login error:', error);
@@ -112,7 +72,6 @@ export const Register = () => {
       setErrorMessage('Google login failed!');
     },
   });
-  
 
   return (
     <>
@@ -183,17 +142,16 @@ export const Register = () => {
             <RedirectContainer>
               <Question>Already have an account?</Question>
               <Link to='/login'>Log in</Link>
-
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>
             </SubmitContainer>
           </StyledForm>
-            <SubmitContainer>
-              <ActionButton onClick={() => handleGoogleLogin()}>
-                Continue with Google
-              </ActionButton>
-            </SubmitContainer>
+          <SubmitContainer>
+            <ActionButton onClick={() => handleGoogleLogin()}>
+              Continue with Google
+            </ActionButton>
+          </SubmitContainer>
         </Container>
       </Wrapper>
     </>

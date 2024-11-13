@@ -1,0 +1,10 @@
+@startuml
+class UserController {
+    + UserController(userRepo:IUserRepository)
+    + <<async>> GetAllUsers() : Task<IActionResult>
+    + <<async>> GetUserById(id:string) : Task<IActionResult>
+    + <<async>> UpdateUser(id:string, updateDto:UpdateDto) : Task<IActionResult>
+    + <<async>> DeleteUser(id:string) : Task<IActionResult>
+}
+ControllerBase <|-- UserController
+@enduml

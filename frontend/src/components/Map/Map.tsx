@@ -45,7 +45,6 @@ export const Map = () => {
     fetchLocations();
   }, []);
 
-
   const HandleToFullMap: FC = () => {
     useMapEvents({
       click: () => navigate('/fullmap'),

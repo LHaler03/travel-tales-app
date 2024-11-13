@@ -1,0 +1,8 @@
+@startuml
+class UpdateLocationRequestDto {
+    + Name : string <<get>> <<set>>
+    + Country : string <<get>> <<set>>
+    + Lat : decimal <<get>> <<set>>
+    + Lon : decimal <<get>> <<set>>
+}
+@enduml
