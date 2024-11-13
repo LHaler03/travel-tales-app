@@ -1,0 +1,10 @@
+@startuml
+class LocationRepository {
+    + <<async>> GetAllAsync() : Task<List<Location>>
+    + <<async>> GetByIdAsync(id:int) : Task<Location?>
+    + <<async>> CreateAsync(locationModel:Location) : Task<Location>
+    + <<async>> UpdateAsync(id:int, locationDto:UpdateLocationRequestDto) : Task<Location?>
+    + <<async>> DeleteAsync(id:int) : Task<Location?>
+}
+ILocationRepository <|-- LocationRepository
+@enduml

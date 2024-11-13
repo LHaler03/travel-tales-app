@@ -1,0 +1,10 @@
+@startuml
+class UserRepository {
+    + UserRepository(userManager:UserManager<User>)
+    + <<async>> DeleteAsync(id:string) : Task<User?>
+    + <<async>> GetAllAsync() : Task<List<UserDto>>
+    + <<async>> GetByIdAsync(id:string) : Task<User?>
+    + <<async>> UpdateAsync(id:string, updateDto:UpdateDto) : Task<User?>
+}
+IUserRepository <|-- UserRepository
+@enduml

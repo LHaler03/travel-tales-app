@@ -13,7 +13,7 @@ export const Logo = () => {
         </LogoStyled>
       </>
     );
-  };
+  }
 
   return (
     <>

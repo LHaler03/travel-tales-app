@@ -38,7 +38,7 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
-    options.DefaultForbidScheme = 
+    options.DefaultForbidScheme =
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
@@ -54,7 +54,7 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = System.TimeSpan.Zero
     };
 }
-).AddGoogle(GoogleOptions => 
+).AddGoogle(GoogleOptions =>
 {
     GoogleOptions.ClientId = builder.Configuration["Google:ClientId"];
     GoogleOptions.ClientSecret = builder.Configuration["Google:ClientSecret"];
@@ -71,18 +71,33 @@ builder.Services.AddAuthorization(options =>
 //     options.Listen(IPAddress.Any, 5185);
 // });
 
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowAllOrigins",
+//         builder =>
+//         {
+//             builder.AllowAnyOrigin()
+//                    .AllowAnyMethod()
+//                    .AllowAnyHeader()
+//                    .AllowCredentials();
+//         });
+// });
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
+    options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
+            builder
+                .WithOrigins("http://localhost:5173")  // Your frontend URL
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
         });
 });
 
@@ -117,6 +132,14 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Add middleware to set Cross-Origin headers
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Cross-Origin-Opener-Policy", "same-origin");
+    context.Response.Headers.Append("Cross-Origin-Embedder-Policy", "require-corp");
+    await next();
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -125,7 +148,7 @@ if (app.Environment.IsDevelopment())
 
 // app.UseHttpsRedirection();
 
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthentication();
 app.UseAuthorization();
