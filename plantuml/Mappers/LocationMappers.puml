@@ -1,5 +1,0 @@
-@startuml
-class LocationMappers <<static>> {
-    + {static} ToLocationFromCreateDTO(locationDto:CreateLocationRequestDto) : Location
-}
-@enduml

@@ -1,9 +1,0 @@
-@startuml
-class Location {
-    + Id : int <<get>> <<set>>
-    + Name : string <<get>> <<set>>
-    + Country : string <<get>> <<set>>
-    + Lat : decimal <<get>> <<set>>
-    + Lon : decimal <<get>> <<set>>
-}
-@enduml

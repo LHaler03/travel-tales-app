@@ -1,5 +1,0 @@
-@startuml
-class UserMappers <<static>> {
-    + {static} MapToUserDto(user:User) : UserDto
-}
-@enduml

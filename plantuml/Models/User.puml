@@ -1,9 +1,0 @@
-@startuml
-class User {
-    + FirstName : string <<get>> <<set>>
-    + LastName : string <<get>> <<set>>
-    + RefreshToken : string <<get>> <<set>>
-}
-IdentityUser <|-- User
-User --> "RefreshTokenExpiry" DateTime
-@enduml

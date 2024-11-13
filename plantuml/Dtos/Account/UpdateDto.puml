@@ -1,9 +1,0 @@
-@startuml
-class UpdateDto {
-    + UserName : string? <<get>> <<set>>
-    + Email : string? <<get>> <<set>>
-    + Password : string? <<get>> <<set>>
-    + FirstName : string? <<get>> <<set>>
-    + LastName : string? <<get>> <<set>>
-}
-@enduml

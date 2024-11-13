@@ -1,8 +1,0 @@
-@startuml
-class TokenService {
-    + TokenService(config:IConfiguration, userManager:UserManager<User>)
-    + <<async>> CreateAccessToken(user:User) : Task<string>
-    + CreateRefreshToken() : string
-}
-ITokenService <|-- TokenService
-@enduml

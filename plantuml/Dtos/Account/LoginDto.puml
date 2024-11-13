@@ -1,6 +1,0 @@
-@startuml
-class LoginDto {
-    + <<required>> Username : string <<get>> <<set>>
-    + <<required>> Password : string <<get>> <<set>>
-}
-@enduml

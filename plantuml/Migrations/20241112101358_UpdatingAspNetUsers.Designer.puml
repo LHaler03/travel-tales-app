@@ -1,4 +1,0 @@
-@startuml
-class UpdatingAspNetUsers <<partial>> {
-}
-@enduml

@@ -1,7 +1,0 @@
-@startuml
-class LogedInUserDto {
-    + <<required>> Username : string <<get>> <<set>>
-    + <<required>> Email : string <<get>> <<set>>
-    + <<required>> Token : string <<get>> <<set>>
-}
-@enduml
