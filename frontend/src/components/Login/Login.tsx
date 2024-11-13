@@ -14,6 +14,7 @@ import {
   Text,
   Underline,
   Wrapper,
+  GoogleButton,
 } from '../../shared/Signup-Login.styled';
 import React from 'react';
 import { useState } from 'react';
@@ -21,7 +22,6 @@ import { LoggedUser } from '../../types/User';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { ActionButton } from '../../shared/ActionButton';
 import { useGoogleLogin } from '@react-oauth/google';
 
 export const Login = () => {
@@ -114,9 +114,9 @@ export const Login = () => {
             </SubmitContainer>
           </StyledForm>
           <SubmitContainer>
-            <ActionButton onClick={() => handleGoogleLogin()}>
+            <GoogleButton onClick={() => handleGoogleLogin()}>
               Continue with Google
-            </ActionButton>
+            </GoogleButton>
           </SubmitContainer>
         </Container>
       </Wrapper>
