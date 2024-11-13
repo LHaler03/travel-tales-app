@@ -5,6 +5,7 @@ import {
   Modal_button_generate,
   Modal_button_close,
   Modal_content,
+  Wrapper,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -63,7 +64,7 @@ export const FullMap = () => {
 
   console.log(markers);
   return (
-    <>
+    <Wrapper>
       <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -88,11 +89,11 @@ export const FullMap = () => {
               X
             </Modal_button_close>
             <h1>{selectedCity}</h1>
-            <p>Slike {selectedCity}...</p>
+            <p>Images for {selectedCity}...</p>
             <Modal_button_generate>Generate postcard</Modal_button_generate>
           </Modal_content>
         </Modal>
       )}
-    </>
+    </Wrapper>
   );
 };

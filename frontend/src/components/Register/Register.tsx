@@ -1,5 +1,6 @@
 import {
   Container,
+  GoogleButton,
   Header,
   Input,
   InputContainer,
@@ -148,9 +149,9 @@ export const Register = () => {
             </SubmitContainer>
           </StyledForm>
           <SubmitContainer>
-            <ActionButton onClick={() => handleGoogleLogin()}>
+            <GoogleButton onClick={() => handleGoogleLogin()}>
               Continue with Google
-            </ActionButton>
+            </GoogleButton>
           </SubmitContainer>
         </Container>
       </Wrapper>
