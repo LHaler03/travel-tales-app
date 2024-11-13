@@ -19,14 +19,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers/LocationMappers.cs" line="12" column="32" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="12" bodyend="21"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" line="12" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="12" bodyend="21"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers/LocationMappers.cs" line="10" column="19" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="11" bodyend="22"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" line="10" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="11" bodyend="22"/>
     <listofallmembers>
       <member refid="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" prot="public" virt="non-virtual"><scope>backend::Mappers::LocationMappers</scope><name>ToLocationFromCreateDTO</name></member>
     </listofallmembers>

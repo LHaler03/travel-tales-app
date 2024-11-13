@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_5e63526ed4ac6d6465a5252b0529de5d" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Controllers</compoundname>
+    <innerfile refid="_account_controller_8cs">AccountController.cs</innerfile>
+    <innerfile refid="_location_controller_8cs">LocationController.cs</innerfile>
+    <innerfile refid="_user_controller_8cs">UserController.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/"/>
+  </compounddef>
+</doxygen>

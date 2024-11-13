@@ -21,10 +21,10 @@
 <codeline lineno="9"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="10" refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kindref="compound">IAccountRepository</ref></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;User&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" kindref="member">GetOrCreateUserAsync</ref>(GoogleJsonWebSignature.Payload<sp/>payload);</highlight></codeline>
+<codeline lineno="12" refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;User&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" kindref="member">GetOrCreateUserAsync</ref>(GoogleJsonWebSignature.Payload<sp/>payload);</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IAccountRepository.cs"/>
   </compounddef>
 </doxygen>

@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="14" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="14" bodyend="48"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="14" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="14" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="51" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="51" bodyend="79"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="51" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="51" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" line="19" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="19" bodyend="331"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" line="19" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="19" bodyend="331"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -85,7 +85,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="11" column="19" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="17" bodyend="332"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="11" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="17" bodyend="332"/>
     <listofallmembers>
       <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatingAspNetUsers</scope><name>BuildTargetModel</name></member>
       <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatingAspNetUsers</scope><name>Down</name></member>

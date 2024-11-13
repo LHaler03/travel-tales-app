@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="15" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" bodystart="15" bodyend="333"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="15" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" bodystart="15" bodyend="333"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_migrations_1_1_initial_create_1a03f6c74d45b898d391c658eda7a886ae" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="336" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" bodystart="336" bodyend="361"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="336" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" bodystart="336" bodyend="361"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_migrations_1_1_initial_create_1a18718b44794dd652e146aa4c7247d732" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" line="19" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" bodystart="19" bodyend="324"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" line="19" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" bodystart="19" bodyend="324"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -85,7 +85,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="12" column="19" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" bodystart="17" bodyend="325"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.cs" line="12" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20241105224710_InitialCreate.Designer.cs" bodystart="17" bodyend="325"/>
     <listofallmembers>
       <member refid="classbackend_1_1_migrations_1_1_initial_create_1a18718b44794dd652e146aa4c7247d732" prot="protected" virt="non-virtual"><scope>backend::Migrations::InitialCreate</scope><name>BuildTargetModel</name></member>
       <member refid="classbackend_1_1_migrations_1_1_initial_create_1a03f6c74d45b898d391c658eda7a886ae" prot="protected" virt="non-virtual"><scope>backend::Migrations::InitialCreate</scope><name>Down</name></member>

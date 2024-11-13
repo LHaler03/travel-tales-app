@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_d7bf7d3dea964d198e4012fb60a4987b" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Dtos/Location</compoundname>
+    <innerfile refid="_create_location_request_dto_8cs">CreateLocationRequestDto.cs</innerfile>
+    <innerfile refid="_update_location_request_dto_8cs">UpdateLocationRequestDto.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/"/>
+  </compounddef>
+</doxygen>

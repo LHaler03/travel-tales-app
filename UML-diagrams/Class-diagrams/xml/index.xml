@@ -76,6 +76,16 @@
     <member refid="classbackend_1_1_models_1_1_location_1a227e902542ee9c4c2cb240c9e9d37670" kind="property"><name>Lat</name></member>
     <member refid="classbackend_1_1_models_1_1_location_1ac77bf2cfc67a97cf810c8697dc1f4eda" kind="property"><name>Lon</name></member>
   </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_location_controller" kind="class"><name>backend::Controllers::LocationController</name>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1adda7e8704c2d3dc09eb55536fe64d6c5" kind="variable"><name>_context</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1ab5eaf8bea4b3014a357278ffa2c26cfd" kind="variable"><name>_locationRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1abfbe2ed70ebaa7248763b54e4c8f47fd" kind="function"><name>LocationController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1a9ac1eb40a4ed5b0e86f361cbb6d3f09a" kind="function"><name>GetAll</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1a1a0dddf0084df39f917c487bf8e85bcf" kind="function"><name>GetById</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1aafa169c99603d114369151a94d6d5100" kind="function"><name>Create</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1aa2780ec33e0fdb7f278d79c6ca19d9ef" kind="function"><name>Update</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1ae75e0c9c5bf34531c6e66a2eb8696077" kind="function"><name>Delete</name></member>
+  </compound>
   <compound refid="classbackend_1_1_mappers_1_1_location_mappers" kind="class"><name>backend::Mappers::LocationMappers</name>
     <member refid="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" kind="function"><name>ToLocationFromCreateDTO</name></member>
   </compound>
@@ -179,6 +189,38 @@
   </compound>
   <compound refid="namespacebackend_1_1_service" kind="namespace"><name>backend::Service</name>
   </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_asp_net_core_1_1_builder" kind="namespace"><name>global::Microsoft::AspNetCore::Builder</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_asp_net_core_1_1_hosting" kind="namespace"><name>global::Microsoft::AspNetCore::Hosting</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_asp_net_core_1_1_http" kind="namespace"><name>global::Microsoft::AspNetCore::Http</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_asp_net_core_1_1_routing" kind="namespace"><name>global::Microsoft::AspNetCore::Routing</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_extensions_1_1_configuration" kind="namespace"><name>global::Microsoft::Extensions::Configuration</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_extensions_1_1_dependency_injection" kind="namespace"><name>global::Microsoft::Extensions::DependencyInjection</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_extensions_1_1_hosting" kind="namespace"><name>global::Microsoft::Extensions::Hosting</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_microsoft_1_1_extensions_1_1_logging" kind="namespace"><name>global::Microsoft::Extensions::Logging</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system" kind="namespace"><name>global::System</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_collections_1_1_generic" kind="namespace"><name>global::System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_i_o" kind="namespace"><name>global::System::IO</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_linq" kind="namespace"><name>global::System::Linq</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_net_1_1_http" kind="namespace"><name>global::System::Net::Http</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_net_1_1_http_1_1_json" kind="namespace"><name>global::System::Net::Http::Json</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_threading" kind="namespace"><name>global::System::Threading</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_threading_1_1_tasks" kind="namespace"><name>global::System::Threading::Tasks</name>
+  </compound>
   <compound refid="namespace_google_1_1_apis_1_1_auth" kind="namespace"><name>Google::Apis::Auth</name>
   </compound>
   <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_authentication" kind="namespace"><name>Microsoft::AspNetCore::Authentication</name>
@@ -230,6 +272,8 @@
   <compound refid="namespace_system_1_1_net" kind="namespace"><name>System::Net</name>
   </compound>
   <compound refid="namespace_system_1_1_net_1_1_http" kind="namespace"><name>System::Net::Http</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
   </compound>
   <compound refid="namespace_system_1_1_runtime_1_1_intrinsics_1_1_x86" kind="namespace"><name>System::Runtime::Intrinsics::X86</name>
   </compound>
@@ -293,6 +337,14 @@
   </compound>
   <compound refid="_user_8cs" kind="file"><name>User.cs</name>
   </compound>
+  <compound refid="_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs" kind="file"><name>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs</name>
+  </compound>
+  <compound refid="backend_8_assembly_info_8cs" kind="file"><name>backend.AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="backend_8_global_usings_8g_8cs" kind="file"><name>backend.GlobalUsings.g.cs</name>
+  </compound>
+  <compound refid="backend_8_mvc_application_parts_assembly_info_8cs" kind="file"><name>backend.MvcApplicationPartsAssemblyInfo.cs</name>
+  </compound>
   <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
     <member refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kind="variable"><name>builder</name></member>
     <member refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kind="variable"><name>app</name></member>
@@ -325,32 +377,40 @@
   </compound>
   <compound refid="_token_service_8cs" kind="file"><name>TokenService.cs</name>
   </compound>
-  <compound refid="dir_e6c86aab5cad0bd6cbe7516b7bd53b0e" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account</name>
+  <compound refid="dir_2ffbe2baeff82cfa1e04f886ba8f2499" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Account</name>
   </compound>
-  <compound refid="dir_58c993dbbfcac0e6644b7ca865a5a49d" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend</name>
+  <compound refid="dir_f94f3b407e22ac3106893fd8ce92f353" kind="dir"><name>C:/PROGI/travel-tales-app/backend</name>
   </compound>
-  <compound refid="dir_094c674d150a0eb48421672d40a663d2" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers</name>
+  <compound refid="dir_5e63526ed4ac6d6465a5252b0529de5d" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Controllers</name>
   </compound>
-  <compound refid="dir_c9f50e17ebf0cfa3a6ee52790b19fde5" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Data</name>
+  <compound refid="dir_4b0957dd969ad3c7fa6504278293fff4" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Data</name>
   </compound>
-  <compound refid="dir_069605e1ba0039deb9d2aedd7538443a" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos</name>
+  <compound refid="dir_d5f0e114c3689aefbcd2a0910354395e" kind="dir"><name>C:/PROGI/travel-tales-app/backend/obj/Debug</name>
   </compound>
-  <compound refid="dir_ccad09b5f07207202c638d203aae0f04" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces</name>
+  <compound refid="dir_c4877f0fa4f3b504f97206f18b953cdb" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos</name>
   </compound>
-  <compound refid="dir_cbb0f9826ccd53bcf5bb656a95da9128" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location</name>
+  <compound refid="dir_35d6c25b7f18d38ff1e50b7361d756eb" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Interfaces</name>
   </compound>
-  <compound refid="dir_94b42890bf3ad210aa8ab5f6811cd9cf" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers</name>
+  <compound refid="dir_6163cd6c302f129ddd0f7395cfa97076" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Location</name>
   </compound>
-  <compound refid="dir_9ce0bbf1cf5725c1c61f709e9b4f893f" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations</name>
+  <compound refid="dir_17d07494539c49132b810f028fe9cae0" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Mappers</name>
   </compound>
-  <compound refid="dir_4cb564945e99b343e659d5a75541d484" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models</name>
+  <compound refid="dir_3b834ef6d67a3c71e970a02c1e22a314" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Migrations</name>
   </compound>
-  <compound refid="dir_9e28d21cc006cab4fe5bf5d6ec0e8c97" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository</name>
+  <compound refid="dir_a14ae5186f9736e2284a1faad02cf955" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Models</name>
   </compound>
-  <compound refid="dir_445c6349156c82c48a9737b0916f70f4" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Service</name>
+  <compound refid="dir_ae0450143288492f53d35b84f7d4f233" kind="dir"><name>C:/PROGI/travel-tales-app/backend/obj/Debug/net8.0</name>
   </compound>
-  <compound refid="dir_7bb65d0d9f9969953e12c845895a8c8f" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app</name>
+  <compound refid="dir_ad2ed221c7a18ff861af2026e6c02a22" kind="dir"><name>C:/PROGI/travel-tales-app/backend/obj</name>
   </compound>
-  <compound refid="dir_c54c6c839f05b131b4c71c86c2753859" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/User</name>
+  <compound refid="dir_e8eafb186e11258c152b3e96f004d5d6" kind="dir"><name>C:/PROGI</name>
+  </compound>
+  <compound refid="dir_b20006f99825ef22b39200956831f9a1" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Repository</name>
+  </compound>
+  <compound refid="dir_5721f36172bbfe5306dcba1f91ab514e" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Service</name>
+  </compound>
+  <compound refid="dir_393049df252068d7d167a7c563cbb464" kind="dir"><name>C:/PROGI/travel-tales-app</name>
+  </compound>
+  <compound refid="dir_32ac2574cc8b8c0cfd13e406a3ab9759" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/User</name>
   </compound>
 </doxygenindex>

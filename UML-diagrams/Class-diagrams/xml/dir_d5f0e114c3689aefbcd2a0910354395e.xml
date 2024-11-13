@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_d5f0e114c3689aefbcd2a0910354395e" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/obj/Debug</compoundname>
+    <innerdir refid="dir_ae0450143288492f53d35b84f7d4f233">C:/PROGI/travel-tales-app/backend/obj/Debug/net8.0</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/obj/Debug/"/>
+  </compounddef>
+</doxygen>

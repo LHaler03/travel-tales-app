@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="13" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="13" bodyend="13"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="13" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="13" bodyend="13"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1af913a663d44fd10dfeeca77f5a547bb7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string?</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="16" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="16" bodyend="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="16" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="16" bodyend="16"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1aeb2dcb6ff1cf7fce25bed6a53556f9dd" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string?</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="18" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="18" bodyend="18"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="18" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="18" bodyend="18"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ab32f9dd2818e15d77b2d3ca0d11ccf51" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string?</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="20" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="20" bodyend="20"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="20" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="20" bodyend="20"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ac56e7f6a1c770696cbe2a042737521d7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string?</type>
@@ -71,14 +71,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="22" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="22" bodyend="22"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="22" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="22" bodyend="22"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="10" column="11" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="11" bodyend="23"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" line="10" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/RegisterDto.cs" bodystart="11" bodyend="23"/>
     <listofallmembers>
       <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1af913a663d44fd10dfeeca77f5a547bb7" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::RegisterDto</scope><name>Email</name></member>
       <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ab32f9dd2818e15d77b2d3ca0d11ccf51" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::RegisterDto</scope><name>FirstName</name></member>

@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/ITokenService.cs" line="12" column="14"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="12" column="14"/>
       </memberdef>
       <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/ITokenService.cs" line="13" column="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="13" column="16"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/ITokenService.cs" line="10" column="22" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/ITokenService.cs" bodystart="11" bodyend="14"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="10" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" bodystart="11" bodyend="14"/>
     <listofallmembers>
       <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f" prot="public" virt="non-virtual"><scope>backend::Interfaces::ITokenService</scope><name>CreateAccessToken</name></member>
       <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" prot="public" virt="non-virtual"><scope>backend::Interfaces::ITokenService</scope><name>CreateRefreshToken</name></member>

@@ -25,7 +25,7 @@
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>[DbContext(typeof(<ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref>))]</highlight></codeline>
 <codeline lineno="14" refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" kindref="compound">ApplicationDBContextModelSnapshot</ref><sp/>:<sp/>ModelSnapshot</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" kindref="member">BuildModel</ref>(ModelBuilder<sp/>modelBuilder)</highlight></codeline>
+<codeline lineno="16" refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" kindref="member">BuildModel</ref>(ModelBuilder<sp/>modelBuilder)</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>warning<sp/>disable<sp/>612,<sp/>618</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>modelBuilder</highlight></codeline>
@@ -341,6 +341,6 @@
 <codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="330"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs"/>
   </compounddef>
 </doxygen>

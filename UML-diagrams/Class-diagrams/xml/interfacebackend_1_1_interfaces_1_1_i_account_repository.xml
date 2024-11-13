@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="12" column="14"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="12" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -40,7 +40,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="10" column="22" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" bodystart="11" bodyend="13"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="10" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IAccountRepository.cs" bodystart="11" bodyend="13"/>
     <listofallmembers>
       <member refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" prot="public" virt="non-virtual"><scope>backend::Interfaces::IAccountRepository</scope><name>GetOrCreateUserAsync</name></member>
     </listofallmembers>
