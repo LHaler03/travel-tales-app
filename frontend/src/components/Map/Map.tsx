@@ -1,25 +1,32 @@
-import { TileLayer, Marker } from 'react-leaflet';
+import { TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import { StyledMapContainer } from './Map.styled';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
+import { useNavigate } from 'react-router-dom';
+
 
 export const Map = () => {
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
+  const navigate = useNavigate();
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
     iconSize: [38, 38],
+    iconAnchor: [17.5, 17.5],
+    popupAnchor: [0, -17.5],
   });
+
+  const bounds = L.latLngBounds([-83, -199], [85, 202]);
 
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.79.27.160/api/locations');
-        console.log(response);
+        const response = await axios.get('http://3.74.155.131/api/locations');
+        /*console.log(response);*/
         const locations = response.data.map(
           (location: {
             id: number;
@@ -42,9 +49,15 @@ export const Map = () => {
     fetchLocations();
   }, []);
 
-  const bounds = L.latLngBounds([-83, -199], [85, 202]);
+  const HandleToFullMap: FC = () => {
+    useMapEvents({
+      click: () => navigate('/fullmap'),
+    });
+    return null;
+  };
 
-  console.log(markers);
+  /*console.log(markers);*/
+
   return (
     <StyledMapContainer
       id='map'
@@ -61,6 +74,7 @@ export const Map = () => {
       {markers.map((marker, index) => (
         <Marker key={index} position={marker.geocode} icon={iconformarkers} />
       ))}
+      <HandleToFullMap />
     </StyledMapContainer>
   );
 };

@@ -17,16 +17,17 @@ import {
 import React from 'react';
 import { useState } from 'react';
 import { RegisteredUser } from '../../types/User';
-import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { ActionButton } from '../../shared/ActionButton';
+import { useGoogleLogin } from '@react-oauth/google';
 
 export const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const redirectTo = location.state?.redirectTo || '/';
-  const { login } = useAuth();
+  const { register, loginWithGoogle } = useAuth();
 
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
@@ -36,36 +37,41 @@ export const Register = () => {
     password: '',
   }); //podaci iz forma
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const registerUrl = 'http://localhost:5185/api/account/register';
-      const registerResponse = await axios.post(registerUrl, formData);
-      console.log('Registration successful:', registerResponse.data);
-
-      const loginUrl = 'http://localhost:5185/api/account/login';
-      const loginData = {
-        username: formData.username,
-        password: formData.password,
-      };
-
-      const loginResponse = await axios.post(loginUrl, loginData);
-      console.log('Auto-login successful:', loginResponse.data);
-
-      localStorage.setItem('token', loginResponse.data.token);
-
-      login();
-
+      await register(formData);
       navigate(redirectTo);
     } catch (error) {
-      console.error('Registration/Login error:', error);
+      console.error('Registration error:', error);
+      setErrorMessage('Error in registration!');
+      alert(errorMessage);
     }
   };
+
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (codeResponse: { code: string }) => {
+      try {
+        await loginWithGoogle(codeResponse.code);
+        navigate(redirectTo);
+      } catch (error) {
+        console.error('Google login error:', error);
+        setErrorMessage('Error during Google login!');
+      }
+    },
+    onError: (error) => {
+      console.error('Google login failed:', error);
+      setErrorMessage('Google login failed!');
+    },
+  });
 
   return (
     <>
@@ -141,6 +147,11 @@ export const Register = () => {
               <Submit type='submit'>Register</Submit>
             </SubmitContainer>
           </StyledForm>
+          <SubmitContainer>
+            <ActionButton onClick={() => handleGoogleLogin()}>
+              Continue with Google
+            </ActionButton>
+          </SubmitContainer>
         </Container>
       </Wrapper>
     </>

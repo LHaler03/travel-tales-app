@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Net;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +22,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+}).AddTransient<ApplicationDBContext>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
@@ -36,11 +38,8 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
-    options.DefaultChallengeScheme =
     options.DefaultForbidScheme =
-    options.DefaultScheme =
-    options.DefaultSignInScheme =
-    options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -50,10 +49,21 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidAudience = builder.Configuration["JWT:Audience"],
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"]))
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"])),
+        ValidateLifetime = true,
+        ClockSkew = System.TimeSpan.Zero
     };
 }
-);
+).AddGoogle(GoogleOptions =>
+{
+    GoogleOptions.ClientId = builder.Configuration["Google:ClientId"];
+    GoogleOptions.ClientSecret = builder.Configuration["Google:ClientSecret"];
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+});
 
 // builder.WebHost.ConfigureKestrel(options =>
 // {
@@ -61,22 +71,74 @@ builder.Services.AddAuthentication(options =>
 //     options.Listen(IPAddress.Any, 5185);
 // });
 
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowAllOrigins",
+//         builder =>
+//         {
+//             builder.AllowAnyOrigin()
+//                    .AllowAnyMethod()
+//                    .AllowAnyHeader()
+//                    .AllowCredentials();
+//         });
+// });
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
+    options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
+            builder
+                .WithOrigins("http://localhost:5173")  // Your frontend URL
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
         });
 });
 
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
+});
+
+
 var app = builder.Build();
+
+// Add middleware to set Cross-Origin headers
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Cross-Origin-Opener-Policy", "same-origin");
+    context.Response.Headers.Append("Cross-Origin-Embedder-Policy", "require-corp");
+    await next();
+});
 
 if (app.Environment.IsDevelopment())
 {
@@ -84,9 +146,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthentication();
 app.UseAuthorization();

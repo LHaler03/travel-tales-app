@@ -14,8 +14,8 @@ export const Container = styled.div`
   flex-direction: column;
   height: auto;
   margin: auto;
-  background-color: #7ea1de;
   max-width: 90%;
+  background-color: #7ea1de;
   border-radius: 20px;
 `;
 
@@ -113,4 +113,10 @@ export const Submit = styled.button`
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
+`;
+
+export const RedError = styled.h4`
+  color: red;
+  text-align: center;
+  margin: 5%;
 `;

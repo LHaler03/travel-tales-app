@@ -7,6 +7,7 @@ import {
   Inputs,
   Question,
   RedirectContainer,
+  RedError,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -17,10 +18,11 @@ import {
 import React from 'react';
 import { useState } from 'react';
 import { LoggedUser } from '../../types/User';
-import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { ActionButton } from '../../shared/ActionButton';
+import { useGoogleLogin } from '@react-oauth/google';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -32,25 +34,42 @@ export const Login = () => {
     password: '',
   }); //podaci iz forma
 
-  const { login } = useAuth();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const { login, loginWithGoogle } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost:5185/api/account/login';
-      const response = await axios.post(url, formData);
-      console.log(response.data);
-      login(); // Set authenticated state
-      navigate(redirectTo); // Navigate after successful login
+      await login(formData);
+      navigate(redirectTo);
     } catch (error) {
-      console.error(error);
+      console.error('Login error:', error);
+      setErrorMessage('Incorrect username and/or password!');
     }
   };
+
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        await loginWithGoogle(response.access_token);
+        navigate(redirectTo);
+      } catch (error) {
+        console.error('Google login error:', error);
+        setErrorMessage('Error during Google login!');
+      }
+    },
+    onError: (error) => {
+      console.error('Google login failed:', error);
+      setErrorMessage('Google login failed!');
+    },
+  });
 
   return (
     <>
@@ -85,6 +104,7 @@ export const Login = () => {
                 </Input>
               </InputContainer>
             </Inputs>
+            {errorMessage && <RedError>{errorMessage}</RedError>}
             <RedirectContainer>
               <Question>Don't have an account?</Question>
               <Link to='/register'>Register</Link>
@@ -93,6 +113,11 @@ export const Login = () => {
               <Submit type='submit'>Login</Submit>
             </SubmitContainer>
           </StyledForm>
+          <SubmitContainer>
+            <ActionButton onClick={() => handleGoogleLogin()}>
+              Continue with Google
+            </ActionButton>
+          </SubmitContainer>
         </Container>
       </Wrapper>
     </>
