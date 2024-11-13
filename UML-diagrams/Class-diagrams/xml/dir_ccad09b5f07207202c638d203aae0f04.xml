@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_ccad09b5f07207202c638d203aae0f04" kind="dir">
+    <compoundname>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces</compoundname>
+    <innerfile refid="_i_account_repository_8cs">IAccountRepository.cs</innerfile>
+    <innerfile refid="_i_location_repository_8cs">ILocationRepository.cs</innerfile>
+    <innerfile refid="_i_token_service_8cs">ITokenService.cs</innerfile>
+    <innerfile refid="_i_user_repository_8cs">IUserRepository.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/"/>
+  </compounddef>
+</doxygen>

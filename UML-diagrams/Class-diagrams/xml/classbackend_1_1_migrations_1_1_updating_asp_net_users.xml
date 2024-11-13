@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_migrations_1_1_updating_asp_net_users" kind="class" language="C#" prot="public">
+    <compoundname>backend::Migrations::UpdatingAspNetUsers</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Migration</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a0e5734007170b5e9c057caf6c26b5296" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatingAspNetUsers.Up</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Up</name>
+        <qualifiedname>backend.Migrations.UpdatingAspNetUsers.Up</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="14" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="14" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatingAspNetUsers.Down</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Down</name>
+        <qualifiedname>backend.Migrations.UpdatingAspNetUsers.Down</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="51" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" bodystart="51" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatingAspNetUsers.BuildTargetModel</definition>
+        <argsstring>(ModelBuilder modelBuilder)</argsstring>
+        <name>BuildTargetModel</name>
+        <qualifiedname>backend.Migrations.UpdatingAspNetUsers.BuildTargetModel</qualifiedname>
+        <param>
+          <type>ModelBuilder</type>
+          <declname>modelBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" line="19" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="19" bodyend="331"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.UpdatingAspNetUsers</label>
+        <link refid="classbackend_1_1_migrations_1_1_updating_asp_net_users"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.UpdatingAspNetUsers</label>
+        <link refid="classbackend_1_1_migrations_1_1_updating_asp_net_users"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.cs" line="11" column="19" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/20241112101358_UpdatingAspNetUsers.Designer.cs" bodystart="17" bodyend="332"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatingAspNetUsers</scope><name>BuildTargetModel</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatingAspNetUsers</scope><name>Down</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a0e5734007170b5e9c057caf6c26b5296" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatingAspNetUsers</scope><name>Up</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

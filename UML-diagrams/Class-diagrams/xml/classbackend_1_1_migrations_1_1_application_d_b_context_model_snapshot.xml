@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" kind="class" language="C#" prot="public">
+    <compoundname>backend::Migrations::ApplicationDBContextModelSnapshot</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ModelSnapshot</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.ApplicationDBContextModelSnapshot.BuildModel</definition>
+        <argsstring>(ModelBuilder modelBuilder)</argsstring>
+        <name>BuildModel</name>
+        <qualifiedname>backend.Migrations.ApplicationDBContextModelSnapshot.BuildModel</qualifiedname>
+        <param>
+          <type>ModelBuilder</type>
+          <declname>modelBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="16" column="33" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="16" bodyend="328"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ModelSnapshot</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.ApplicationDBContextModelSnapshot</label>
+        <link refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ModelSnapshot</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.ApplicationDBContextModelSnapshot</label>
+        <link refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="14" column="12" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="15" bodyend="329"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" prot="protected" virt="non-virtual"><scope>backend::Migrations::ApplicationDBContextModelSnapshot</scope><name>BuildModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

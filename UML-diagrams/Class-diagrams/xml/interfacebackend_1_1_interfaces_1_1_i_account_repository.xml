@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_account_repository" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IAccountRepository</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_repository_1_1_account_repository" prot="public" virt="non-virtual">backend.Repository.AccountRepository</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>Task&lt; User &gt; backend.Interfaces.IAccountRepository.GetOrCreateUserAsync</definition>
+        <argsstring>(GoogleJsonWebSignature.Payload payload)</argsstring>
+        <name>GetOrCreateUserAsync</name>
+        <qualifiedname>backend.Interfaces.IAccountRepository.GetOrCreateUserAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_account_repository_1a493a8d9a4ea61df0b060303ea3ba4dd0">GetOrCreateUserAsync</reimplementedby>
+        <param>
+          <type>GoogleJsonWebSignature.Payload</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="12" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IAccountRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_account_repository"/>
+      </node>
+      <node id="2">
+        <label>backend.Repository.AccountRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_account_repository"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" line="10" column="22" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces/IAccountRepository.cs" bodystart="11" bodyend="13"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" prot="public" virt="non-virtual"><scope>backend::Interfaces::IAccountRepository</scope><name>GetOrCreateUserAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

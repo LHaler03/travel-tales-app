@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Location::CreateLocationRequestDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1add9d132dad44507cb696136fa5a74189" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Location.CreateLocationRequestDto.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>backend.Dtos.Location.CreateLocationRequestDto.Name</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="10" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a770ddd27d5ae25aafc9859c66ed2ed90" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Location.CreateLocationRequestDto.Country</definition>
+        <argsstring></argsstring>
+        <name>Country</name>
+        <qualifiedname>backend.Dtos.Location.CreateLocationRequestDto.Country</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="11" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Dtos.Location.CreateLocationRequestDto.Lat</definition>
+        <argsstring></argsstring>
+        <name>Lat</name>
+        <qualifiedname>backend.Dtos.Location.CreateLocationRequestDto.Lat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="12" column="24" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Dtos.Location.CreateLocationRequestDto.Lon</definition>
+        <argsstring></argsstring>
+        <name>Lon</name>
+        <qualifiedname>backend.Dtos.Location.CreateLocationRequestDto.Lon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="13" column="24" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="8" column="11" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a770ddd27d5ae25aafc9859c66ed2ed90" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Country</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Lat</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Lon</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1add9d132dad44507cb696136fa5a74189" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

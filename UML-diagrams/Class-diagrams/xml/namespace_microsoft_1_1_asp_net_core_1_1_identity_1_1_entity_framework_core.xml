@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespace_microsoft_1_1_asp_net_core_1_1_identity_1_1_entity_framework_core" kind="namespace" language="C#">
+    <compoundname>Microsoft::AspNetCore::Identity::EntityFrameworkCore</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Data/ApplicationDBContext.cs" line="7" column="56"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info" kind="class" language="C#" prot="public">
+    <compoundname>backend::Controllers::AccountController::GoogleUserInfo</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a28798e1b7108dba18e7b3342a4a26d2c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Controllers.AccountController.GoogleUserInfo.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>backend.Controllers.AccountController.GoogleUserInfo.Email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="259" column="36" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a963a9fa9c718c191a19f23285e655e98" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Controllers.AccountController.GoogleUserInfo.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>backend.Controllers.AccountController.GoogleUserInfo.Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="260" column="36" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="260" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a1e7e79fa8b1a700ff30b628f8df3d1bf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Controllers.AccountController.GoogleUserInfo.Picture</definition>
+        <argsstring></argsstring>
+        <name>Picture</name>
+        <qualifiedname>backend.Controllers.AccountController.GoogleUserInfo.Picture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="261" column="36" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="261" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1af494b690592a5d6f5ccffa40738ba020" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool backend.Controllers.AccountController.GoogleUserInfo.Email_verified</definition>
+        <argsstring></argsstring>
+        <name>Email_verified</name>
+        <qualifiedname>backend.Controllers.AccountController.GoogleUserInfo.Email_verified</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="262" column="25" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="262" bodyend="262"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="257" column="15" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="258" bodyend="263"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a28798e1b7108dba18e7b3342a4a26d2c" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Email</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1af494b690592a5d6f5ccffa40738ba020" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Email_verified</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a963a9fa9c718c191a19f23285e655e98" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Name</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a1e7e79fa8b1a700ff30b628f8df3d1bf" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Picture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

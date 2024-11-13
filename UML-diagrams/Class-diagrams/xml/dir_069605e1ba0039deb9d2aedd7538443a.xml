@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_069605e1ba0039deb9d2aedd7538443a" kind="dir">
+    <compoundname>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos</compoundname>
+    <innerdir refid="dir_e6c86aab5cad0bd6cbe7516b7bd53b0e">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account</innerdir>
+    <innerdir refid="dir_cbb0f9826ccd53bcf5bb656a95da9128">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location</innerdir>
+    <innerdir refid="dir_c54c6c839f05b131b4c71c86c2753859">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/User</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/"/>
+  </compounddef>
+</doxygen>

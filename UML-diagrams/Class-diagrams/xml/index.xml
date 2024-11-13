@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="en-US">
+  <compound refid="classbackend_1_1_controllers_1_1_account_controller" kind="class"><name>backend::Controllers::AccountController</name>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a65a592eba35eb6bd6975e3b15c70706f" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa7956050c96e7196e6e6643710a2e074" kind="variable"><name>_signInManager</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a0ac9b3bd9bfaf61a2064d3680c24f5eb" kind="variable"><name>_tokenService</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1af447478f84b04bb004fff1077867a008" kind="variable"><name>_config</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa67ebbf46416ad66799a011e03860ac3" kind="variable"><name>_accountRepository</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a505309d35eebd4136b63ff039c9fba7e" kind="variable"><name>_httpClient</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a91f5fd476afe1b1c05aaf03b7c175695" kind="function"><name>AccountController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a43010c50302bcb5dccecef628fa15997" kind="function"><name>Register</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1acb60e7d472bfdbae03a916b01ea9e30d" kind="function"><name>Login</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a24ee98719e60696cc27d27478f0e2ec7" kind="function"><name>RefreshToken</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1ad73a1790629eab18d7eb9f62762ce6e6" kind="function"><name>Logout</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1ab9fb8e447505422b5b5830c9e07505b6" kind="function"><name>GoogleLogin</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1ad317fa1cf98edbfc4741b20a8d17d9f3" kind="function"><name>GetCurrentUser</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_repository_1_1_account_repository" kind="class"><name>backend::Repository::AccountRepository</name>
+    <member refid="classbackend_1_1_repository_1_1_account_repository_1a359ba4d9f7a18d2d2066491c1ee26dce" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_repository_1_1_account_repository_1a104d232d486267abf2034f8ee0ddc362" kind="function"><name>AccountRepository</name></member>
+    <member refid="classbackend_1_1_repository_1_1_account_repository_1a493a8d9a4ea61df0b060303ea3ba4dd0" kind="function"><name>GetOrCreateUserAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_data_1_1_application_d_b_context" kind="class"><name>backend::Data::ApplicationDBContext</name>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1ae27b1b51b0224b60b7234ef7f15b92ed" kind="property"><name>Users</name></member>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1aa0917ef671c925a080e05a4aebb13cd7" kind="property"><name>Locations</name></member>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1ac07ec68a51962a8c07daca70ef386e91" kind="function"><name>ApplicationDBContext</name></member>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1afbbfa222aa0525941ac90d6ed68b6dca" kind="function"><name>OnModelCreating</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" kind="class"><name>backend::Migrations::ApplicationDBContextModelSnapshot</name>
+    <member refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" kind="function"><name>BuildModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto" kind="class"><name>backend::Dtos::Location::CreateLocationRequestDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1add9d132dad44507cb696136fa5a74189" kind="property"><name>Name</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a770ddd27d5ae25aafc9859c66ed2ed90" kind="property"><name>Country</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" kind="property"><name>Lat</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" kind="property"><name>Lon</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" kind="class"><name>backend::Dtos::Account::GoogleLoginDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto_1a37a1786d019c0f92426deb1145974a10" kind="property"><name>Token</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info" kind="class"><name>backend::Controllers::AccountController::GoogleUserInfo</name>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a28798e1b7108dba18e7b3342a4a26d2c" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a963a9fa9c718c191a19f23285e655e98" kind="property"><name>Name</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a1e7e79fa8b1a700ff30b628f8df3d1bf" kind="property"><name>Picture</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1af494b690592a5d6f5ccffa40738ba020" kind="property"><name>Email_verified</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kind="interface"><name>backend::Interfaces::IAccountRepository</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" kind="function"><name>GetOrCreateUserAsync</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kind="interface"><name>backend::Interfaces::ILocationRepository</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a01e2fcde8c2129e040e90d840d6be407" kind="function"><name>GetAllAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1ad6df71cfca40284357ecef452c7837c2" kind="function"><name>GetByIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1aa71de4964e964fcabf1a5475b46c11da" kind="function"><name>CreateAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a5415715967b1345d2da7df20963d82b3" kind="function"><name>UpdateAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1acb24da05cef773d6977696b9f8d64f2a" kind="function"><name>DeleteAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_initial_create" kind="class"><name>backend::Migrations::InitialCreate</name>
+    <member refid="classbackend_1_1_migrations_1_1_initial_create_1a1414527a9cbb704b5529cdd3f8d9b54b" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_initial_create_1a03f6c74d45b898d391c658eda7a886ae" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_initial_create_1a18718b44794dd652e146aa4c7247d732" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kind="interface"><name>backend::Interfaces::ITokenService</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f" kind="function"><name>CreateAccessToken</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" kind="function"><name>CreateRefreshToken</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kind="interface"><name>backend::Interfaces::IUserRepository</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a269df732e55b1eee000f6db4fff1bb1c" kind="function"><name>GetAllAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a3d8c257574f10146e0d2b22bf9ef7eb4" kind="function"><name>GetByIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a36bfdcf40fa9b83513ea956febb71b72" kind="function"><name>UpdateAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1ab47efc6276134223fec9251f424cf33b" kind="function"><name>DeleteAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_models_1_1_location" kind="class"><name>backend::Models::Location</name>
+    <member refid="classbackend_1_1_models_1_1_location_1abbd1696eff399090bbc0af0595405b7e" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_models_1_1_location_1a1b31c02ce5a276b0dcfce2160910435e" kind="property"><name>Name</name></member>
+    <member refid="classbackend_1_1_models_1_1_location_1ac7a38974818817fafce2028574d9cd6b" kind="property"><name>Country</name></member>
+    <member refid="classbackend_1_1_models_1_1_location_1a227e902542ee9c4c2cb240c9e9d37670" kind="property"><name>Lat</name></member>
+    <member refid="classbackend_1_1_models_1_1_location_1ac77bf2cfc67a97cf810c8697dc1f4eda" kind="property"><name>Lon</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_mappers_1_1_location_mappers" kind="class"><name>backend::Mappers::LocationMappers</name>
+    <member refid="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" kind="function"><name>ToLocationFromCreateDTO</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" kind="class"><name>backend::Dtos::Account::LogedInUserDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1a3e1a0f2311054029cd60e205f7fad367" kind="property"><name>Username</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ae700fc7d6c0b76f1110f71317239c64a" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ad4130627a108a99d389773d1d933f122" kind="property"><name>Token</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto" kind="class"><name>backend::Dtos::Account::LoginDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1af42c8b1f90121359753ed09c18d03422" kind="property"><name>Username</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1ad36f2674dbfde70d0c4a25029d903cb5" kind="property"><name>Password</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto" kind="class"><name>backend::Dtos::Account::RegisterDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1a5cb8051a1d0cf41b9dc63f8fb8962bdb" kind="property"><name>UserName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1af913a663d44fd10dfeeca77f5a547bb7" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1aeb2dcb6ff1cf7fce25bed6a53556f9dd" kind="property"><name>Password</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ab32f9dd2818e15d77b2d3ca0d11ccf51" kind="property"><name>FirstName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ac56e7f6a1c770696cbe2a042737521d7" kind="property"><name>LastName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_service_1_1_token_service" kind="class"><name>backend::Service::TokenService</name>
+    <member refid="classbackend_1_1_service_1_1_token_service_1adf947e5a322ae008d9d0413c61cbdf5a" kind="variable"><name>_config</name></member>
+    <member refid="classbackend_1_1_service_1_1_token_service_1a234444a9e5557ea62abc955127f062ac" kind="variable"><name>_key</name></member>
+    <member refid="classbackend_1_1_service_1_1_token_service_1aa78f7a3d98a519ff157be1a140b57724" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_service_1_1_token_service_1a69e9b22fe535fe8d3d110832ae0f2643" kind="function"><name>TokenService</name></member>
+    <member refid="classbackend_1_1_service_1_1_token_service_1a634c302f356fc2d3965d5457d4ea9fd5" kind="function"><name>CreateAccessToken</name></member>
+    <member refid="classbackend_1_1_service_1_1_token_service_1ae2b655d61b295a74de4f89b2a420ee1f" kind="function"><name>CreateRefreshToken</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto" kind="class"><name>backend::Dtos::Account::UpdateDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a00d6182ff84ed578e50c719659e7e6ee" kind="property"><name>UserName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1ab057f66b6563f72330d44170ae1900d0" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1aa2c1827a31c6d93d522d5c5028f4ad83" kind="property"><name>Password</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1acd9c1ab498866c8894a1e7475ca3db13" kind="property"><name>FirstName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a1fc8ca5f2cbab3e4b9439df08f03fcc8" kind="property"><name>LastName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto" kind="class"><name>backend::Dtos::Location::UpdateLocationRequestDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a016c04eeb82a8bd511b1216714644412" kind="property"><name>Name</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a8b484b971bc187e282e4ed6073db6dd1" kind="property"><name>Country</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a1c9ede611ca1aa61586921ecbc876904" kind="property"><name>Lat</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a6fed74aee2dbe75f964ed1d047f34b38" kind="property"><name>Lon</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_updating_asp_net_users" kind="class"><name>backend::Migrations::UpdatingAspNetUsers</name>
+    <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a0e5734007170b5e9c057caf6c26b5296" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_models_1_1_user" kind="class"><name>backend::Models::User</name>
+    <member refid="classbackend_1_1_models_1_1_user_1a1f2f19dfd204cb6b45c33160e91ebd00" kind="property"><name>FirstName</name></member>
+    <member refid="classbackend_1_1_models_1_1_user_1ada69d62d5cca1e5ca7ac1b1120599077" kind="property"><name>LastName</name></member>
+    <member refid="classbackend_1_1_models_1_1_user_1a7fee0bae73632a55ebb17853753652a1" kind="property"><name>RefreshToken</name></member>
+    <member refid="classbackend_1_1_models_1_1_user_1a630965989383e874fcfe8eed0f2cde28" kind="property"><name>RefreshTokenExpiry</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_user_controller" kind="class"><name>backend::Controllers::UserController</name>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a79e3840bf039e9011a8639493d37d92a" kind="variable"><name>_userRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" kind="function"><name>UserController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" kind="function"><name>GetAllUsers</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" kind="function"><name>GetUserById</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" kind="function"><name>UpdateUser</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" kind="function"><name>DeleteUser</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto" kind="class"><name>backend::Dtos::User::UserDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1ac94476fdfb26c16ebe7ad2b33aeb66c3" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a300e8e695b7d6c97db51b0227d138efd" kind="property"><name>FirstName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a616f88d38288a004b86e3e6e24d070d6" kind="property"><name>LastName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a8ce28b90f1974aea1413acb3f0719eed" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a94067be4a652f83788e039470422a85e" kind="property"><name>UserName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_mappers_1_1_user_mappers" kind="class"><name>backend::Mappers::UserMappers</name>
+    <member refid="classbackend_1_1_mappers_1_1_user_mappers_1a047b33d5438e443d9c4cdc925d2236f6" kind="function"><name>MapToUserDto</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_repository_1_1_user_repository" kind="class"><name>backend::Repository::UserRepository</name>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1a8ac433df78dff2867da8500eee915cf4" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1a6d5cdae6de4a6d0db811457d19c2bb3e" kind="function"><name>UserRepository</name></member>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1a3b75769f78aefe95933ec63d24bda940" kind="function"><name>DeleteAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1ab5a17f8ecbcb70ce8af3f55df80721d6" kind="function"><name>GetAllAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1a2b45b49ca7ae59a329eb6d542da3eac7" kind="function"><name>GetByIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_user_repository_1a2b306f56a7d85fcf34b951c04091885c" kind="function"><name>UpdateAsync</name></member>
+  </compound>
+  <compound refid="namespacebackend" kind="namespace"><name>backend</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_controllers" kind="namespace"><name>backend::Controllers</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_data" kind="namespace"><name>backend::Data</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos" kind="namespace"><name>backend::Dtos</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_account" kind="namespace"><name>backend::Dtos::Account</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_location" kind="namespace"><name>backend::Dtos::Location</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_user" kind="namespace"><name>backend::Dtos::User</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_interfaces" kind="namespace"><name>backend::Interfaces</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_mappers" kind="namespace"><name>backend::Mappers</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_migrations" kind="namespace"><name>backend::Migrations</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_models" kind="namespace"><name>backend::Models</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_repository" kind="namespace"><name>backend::Repository</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_service" kind="namespace"><name>backend::Service</name>
+  </compound>
+  <compound refid="namespace_google_1_1_apis_1_1_auth" kind="namespace"><name>Google::Apis::Auth</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_authentication" kind="namespace"><name>Microsoft::AspNetCore::Authentication</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_authentication_1_1_google" kind="namespace"><name>Microsoft::AspNetCore::Authentication::Google</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_authentication_1_1_jwt_bearer" kind="namespace"><name>Microsoft::AspNetCore::Authentication::JwtBearer</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_authorization" kind="namespace"><name>Microsoft::AspNetCore::Authorization</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_http_1_1_http_results" kind="namespace"><name>Microsoft::AspNetCore::Http::HttpResults</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_identity" kind="namespace"><name>Microsoft::AspNetCore::Identity</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_identity_1_1_entity_framework_core" kind="namespace"><name>Microsoft::AspNetCore::Identity::EntityFrameworkCore</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_mvc" kind="namespace"><name>Microsoft::AspNetCore::Mvc</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core" kind="namespace"><name>Microsoft::EntityFrameworkCore</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_infrastructure" kind="namespace"><name>Microsoft::EntityFrameworkCore::Infrastructure</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_metadata_1_1_internal" kind="namespace"><name>Microsoft::EntityFrameworkCore::Metadata::Internal</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_migrations" kind="namespace"><name>Microsoft::EntityFrameworkCore::Migrations</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_query_1_1_internal" kind="namespace"><name>Microsoft::EntityFrameworkCore::Query::Internal</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_storage_1_1_value_conversion" kind="namespace"><name>Microsoft::EntityFrameworkCore::Storage::ValueConversion</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_extensions_1_1_options" kind="namespace"><name>Microsoft::Extensions::Options</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_identity_model_1_1_tokens" kind="namespace"><name>Microsoft::IdentityModel::Tokens</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_open_api_1_1_models" kind="namespace"><name>Microsoft::OpenApi::Models</name>
+  </compound>
+  <compound refid="namespace_npgsql_1_1_entity_framework_core_1_1_postgre_s_q_l_1_1_metadata" kind="namespace"><name>Npgsql::EntityFrameworkCore::PostgreSQL::Metadata</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_component_model_1_1_data_annotations" kind="namespace"><name>System::ComponentModel::DataAnnotations</name>
+  </compound>
+  <compound refid="namespace_system_1_1_identity_model_1_1_tokens_1_1_jwt" kind="namespace"><name>System::IdentityModel::Tokens::Jwt</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net" kind="namespace"><name>System::Net</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net_1_1_http" kind="namespace"><name>System::Net::Http</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_intrinsics_1_1_x86" kind="namespace"><name>System::Runtime::Intrinsics::X86</name>
+  </compound>
+  <compound refid="namespace_system_1_1_security_1_1_claims" kind="namespace"><name>System::Security::Claims</name>
+  </compound>
+  <compound refid="namespace_system_1_1_security_1_1_cryptography" kind="namespace"><name>System::Security::Cryptography</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="_account_controller_8cs" kind="file"><name>AccountController.cs</name>
+  </compound>
+  <compound refid="_location_controller_8cs" kind="file"><name>LocationController.cs</name>
+  </compound>
+  <compound refid="_user_controller_8cs" kind="file"><name>UserController.cs</name>
+  </compound>
+  <compound refid="_application_d_b_context_8cs" kind="file"><name>ApplicationDBContext.cs</name>
+  </compound>
+  <compound refid="_google_login_dto_8cs" kind="file"><name>GoogleLoginDto.cs</name>
+  </compound>
+  <compound refid="_loged_in_user_dto_8cs" kind="file"><name>LogedInUserDto.cs</name>
+  </compound>
+  <compound refid="_login_dto_8cs" kind="file"><name>LoginDto.cs</name>
+  </compound>
+  <compound refid="_register_dto_8cs" kind="file"><name>RegisterDto.cs</name>
+  </compound>
+  <compound refid="_update_dto_8cs" kind="file"><name>UpdateDto.cs</name>
+  </compound>
+  <compound refid="_create_location_request_dto_8cs" kind="file"><name>CreateLocationRequestDto.cs</name>
+  </compound>
+  <compound refid="_update_location_request_dto_8cs" kind="file"><name>UpdateLocationRequestDto.cs</name>
+  </compound>
+  <compound refid="_user_dto_8cs" kind="file"><name>UserDto.cs</name>
+  </compound>
+  <compound refid="_i_account_repository_8cs" kind="file"><name>IAccountRepository.cs</name>
+  </compound>
+  <compound refid="_i_location_repository_8cs" kind="file"><name>ILocationRepository.cs</name>
+  </compound>
+  <compound refid="_i_token_service_8cs" kind="file"><name>ITokenService.cs</name>
+  </compound>
+  <compound refid="_i_user_repository_8cs" kind="file"><name>IUserRepository.cs</name>
+  </compound>
+  <compound refid="_location_mappers_8cs" kind="file"><name>LocationMappers.cs</name>
+  </compound>
+  <compound refid="_role_mappers_8cs" kind="file"><name>RoleMappers.cs</name>
+  </compound>
+  <compound refid="_user_mappers_8cs" kind="file"><name>UserMappers.cs</name>
+  </compound>
+  <compound refid="20241105224710___initial_create_8cs" kind="file"><name>20241105224710_InitialCreate.cs</name>
+  </compound>
+  <compound refid="20241105224710___initial_create_8_designer_8cs" kind="file"><name>20241105224710_InitialCreate.Designer.cs</name>
+  </compound>
+  <compound refid="20241112101358___updating_asp_net_users_8cs" kind="file"><name>20241112101358_UpdatingAspNetUsers.cs</name>
+  </compound>
+  <compound refid="20241112101358___updating_asp_net_users_8_designer_8cs" kind="file"><name>20241112101358_UpdatingAspNetUsers.Designer.cs</name>
+  </compound>
+  <compound refid="_application_d_b_context_model_snapshot_8cs" kind="file"><name>ApplicationDBContextModelSnapshot.cs</name>
+  </compound>
+  <compound refid="_location_8cs" kind="file"><name>Location.cs</name>
+  </compound>
+  <compound refid="_user_8cs" kind="file"><name>User.cs</name>
+  </compound>
+  <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
+    <member refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kind="variable"><name>builder</name></member>
+    <member refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kind="variable"><name>app</name></member>
+    <member refid="_program_8cs_1abc3694a0e15618f2499e5a540264f833" kind="function"><name>AddControllers</name></member>
+    <member refid="_program_8cs_1a0d7859f9cad50e8e9fdf015100780e07" kind="function"><name>AddEndpointsApiExplorer</name></member>
+    <member refid="_program_8cs_1ae0ce43c019a5621d731d0c622c793644" kind="function"><name>AddSwaggerGen</name></member>
+    <member refid="_program_8cs_1a9778b1936411e27c5c21e23a6963e8bb" kind="function"><name>AddDbContext&lt; ApplicationDBContext &gt;</name></member>
+    <member refid="_program_8cs_1aa2c4aed93a4bd8176d86a6992b859050" kind="function"><name>AddIdentity&lt; User, IdentityRole &gt;</name></member>
+    <member refid="_program_8cs_1ad21d6edb3707063a587749add60b3153" kind="function"><name>AddAuthentication</name></member>
+    <member refid="_program_8cs_1a68e8e699aeab2fec37e126b50a1cf484" kind="function"><name>AddAuthorization</name></member>
+    <member refid="_program_8cs_1a983cef133bfc2fb38a757c7dc5b20494" kind="function"><name>AddScoped&lt; IAccountRepository, AccountRepository &gt;</name></member>
+    <member refid="_program_8cs_1a9139f4d5b9d552d9e1ec835b32711c24" kind="function"><name>AddScoped&lt; IUserRepository, UserRepository &gt;</name></member>
+    <member refid="_program_8cs_1a9849950cec908df52f64670df4e18f77" kind="function"><name>AddScoped&lt; ILocationRepository, LocationRepository &gt;</name></member>
+    <member refid="_program_8cs_1a6866196205f918f00031e6f9e8174e04" kind="function"><name>AddScoped&lt; ITokenService, TokenService &gt;</name></member>
+    <member refid="_program_8cs_1a04ddb3d6e7440b1c2e1b4a00d011196a" kind="function"><name>AddCors</name></member>
+    <member refid="_program_8cs_1ae4852beee8ee6738630e9a333695edec" kind="function"><name>AddSwaggerGen</name></member>
+    <member refid="_program_8cs_1a07573b2ad5cf983fb1fc078d54a4c884" kind="function"><name>Use</name></member>
+    <member refid="_program_8cs_1a79a944c7f0e25196ca3c5a8638b919b9" kind="function"><name>if</name></member>
+    <member refid="_program_8cs_1a7153e43f2a5653ea857551462407813b" kind="function"><name>UseCors</name></member>
+    <member refid="_program_8cs_1a6435d8beeff4999dc0b0c6d60a86a4e2" kind="function"><name>UseAuthentication</name></member>
+    <member refid="_program_8cs_1af6f72d752b2e73aa0292f74bd13237ab" kind="function"><name>UseAuthorization</name></member>
+    <member refid="_program_8cs_1a9e2ee3170aa6279b68eefd1651f7d96c" kind="function"><name>MapControllers</name></member>
+    <member refid="_program_8cs_1aaa3dbf02e269c3ef7e8546d290c6b3dd" kind="function"><name>Run</name></member>
+  </compound>
+  <compound refid="_account_repository_8cs" kind="file"><name>AccountRepository.cs</name>
+  </compound>
+  <compound refid="_location_repository_8cs" kind="file"><name>LocationRepository.cs</name>
+  </compound>
+  <compound refid="_user_repository_8cs" kind="file"><name>UserRepository.cs</name>
+  </compound>
+  <compound refid="_token_service_8cs" kind="file"><name>TokenService.cs</name>
+  </compound>
+  <compound refid="dir_e6c86aab5cad0bd6cbe7516b7bd53b0e" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account</name>
+  </compound>
+  <compound refid="dir_58c993dbbfcac0e6644b7ca865a5a49d" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend</name>
+  </compound>
+  <compound refid="dir_094c674d150a0eb48421672d40a663d2" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers</name>
+  </compound>
+  <compound refid="dir_c9f50e17ebf0cfa3a6ee52790b19fde5" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Data</name>
+  </compound>
+  <compound refid="dir_069605e1ba0039deb9d2aedd7538443a" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos</name>
+  </compound>
+  <compound refid="dir_ccad09b5f07207202c638d203aae0f04" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces</name>
+  </compound>
+  <compound refid="dir_cbb0f9826ccd53bcf5bb656a95da9128" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Location</name>
+  </compound>
+  <compound refid="dir_94b42890bf3ad210aa8ab5f6811cd9cf" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers</name>
+  </compound>
+  <compound refid="dir_9ce0bbf1cf5725c1c61f709e9b4f893f" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations</name>
+  </compound>
+  <compound refid="dir_4cb564945e99b343e659d5a75541d484" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models</name>
+  </compound>
+  <compound refid="dir_9e28d21cc006cab4fe5bf5d6ec0e8c97" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository</name>
+  </compound>
+  <compound refid="dir_445c6349156c82c48a9737b0916f70f4" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Service</name>
+  </compound>
+  <compound refid="dir_7bb65d0d9f9969953e12c845895a8c8f" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app</name>
+  </compound>
+  <compound refid="dir_c54c6c839f05b131b4c71c86c2753859" kind="dir"><name>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/User</name>
+  </compound>
+</doxygenindex>

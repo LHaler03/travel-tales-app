@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_repository_1_1_account_repository" kind="class" language="C#" prot="public">
+    <compoundname>backend::Repository::AccountRepository</compoundname>
+    <basecompoundref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" prot="public" virt="non-virtual">backend.Interfaces.IAccountRepository</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_repository_1_1_account_repository_1a359ba4d9f7a18d2d2066491c1ee26dce" prot="private" static="no" mutable="no">
+        <type>readonly UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly UserManager&lt;User&gt; backend.Repository.AccountRepository._userManager</definition>
+        <argsstring></argsstring>
+        <name>_userManager</name>
+        <qualifiedname>backend.Repository.AccountRepository._userManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" line="16" column="38" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_account_repository_1a104d232d486267abf2034f8ee0ddc362" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Repository.AccountRepository.AccountRepository</definition>
+        <argsstring>(UserManager&lt; User &gt; userManager)</argsstring>
+        <name>AccountRepository</name>
+        <qualifiedname>backend.Repository.AccountRepository.AccountRepository</qualifiedname>
+        <param>
+          <type>UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>userManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" line="17" column="16" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_account_repository_1a493a8d9a4ea61df0b060303ea3ba4dd0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>async Task&lt; User &gt; backend.Repository.AccountRepository.GetOrCreateUserAsync</definition>
+        <argsstring>(GoogleJsonWebSignature.Payload payload)</argsstring>
+        <name>GetOrCreateUserAsync</name>
+        <qualifiedname>backend.Repository.AccountRepository.GetOrCreateUserAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e">GetOrCreateUserAsync</reimplements>
+        <param>
+          <type>GoogleJsonWebSignature.Payload</type>
+          <declname>payload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" line="21" column="27" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" bodystart="21" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IAccountRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_account_repository"/>
+      </node>
+      <node id="1">
+        <label>backend.Repository.AccountRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_account_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IAccountRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_account_repository"/>
+      </node>
+      <node id="1">
+        <label>backend.Repository.AccountRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_account_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" line="13" column="11" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository/AccountRepository.cs" bodystart="14" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_repository_1_1_account_repository_1a359ba4d9f7a18d2d2066491c1ee26dce" prot="private" virt="non-virtual"><scope>backend::Repository::AccountRepository</scope><name>_userManager</name></member>
+      <member refid="classbackend_1_1_repository_1_1_account_repository_1a104d232d486267abf2034f8ee0ddc362" prot="public" virt="non-virtual"><scope>backend::Repository::AccountRepository</scope><name>AccountRepository</name></member>
+      <member refid="classbackend_1_1_repository_1_1_account_repository_1a493a8d9a4ea61df0b060303ea3ba4dd0" prot="public" virt="non-virtual"><scope>backend::Repository::AccountRepository</scope><name>GetOrCreateUserAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

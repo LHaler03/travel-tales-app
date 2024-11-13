@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_58c993dbbfcac0e6644b7ca865a5a49d" kind="dir">
+    <compoundname>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend</compoundname>
+    <innerdir refid="dir_094c674d150a0eb48421672d40a663d2">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers</innerdir>
+    <innerdir refid="dir_c9f50e17ebf0cfa3a6ee52790b19fde5">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Data</innerdir>
+    <innerdir refid="dir_069605e1ba0039deb9d2aedd7538443a">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos</innerdir>
+    <innerdir refid="dir_ccad09b5f07207202c638d203aae0f04">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Interfaces</innerdir>
+    <innerdir refid="dir_94b42890bf3ad210aa8ab5f6811cd9cf">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers</innerdir>
+    <innerdir refid="dir_9ce0bbf1cf5725c1c61f709e9b4f893f">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Migrations</innerdir>
+    <innerdir refid="dir_4cb564945e99b343e659d5a75541d484">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models</innerdir>
+    <innerdir refid="dir_9e28d21cc006cab4fe5bf5d6ec0e8c97">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Repository</innerdir>
+    <innerdir refid="dir_445c6349156c82c48a9737b0916f70f4">C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Service</innerdir>
+    <innerfile refid="_program_8cs">Program.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespacebackend" kind="namespace" language="C#">
+    <compoundname>backend</compoundname>
+    <innernamespace refid="namespacebackend_1_1_controllers">backend::Controllers</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_data">backend::Data</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos">backend::Dtos</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_interfaces">backend::Interfaces</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_mappers">backend::Mappers</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_migrations">backend::Migrations</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_models">backend::Models</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_repository">backend::Repository</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_service">backend::Service</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/AccountController.cs" line="21" column="1"/>
+  </compounddef>
+</doxygen>

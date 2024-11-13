@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_models_1_1_user" kind="class" language="C#" prot="public">
+    <compoundname>backend::Models::User</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IdentityUser</basecompoundref>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_user_1a1f2f19dfd204cb6b45c33160e91ebd00" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.User.FirstName</definition>
+        <argsstring></argsstring>
+        <name>FirstName</name>
+        <qualifiedname>backend.Models.User.FirstName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" line="11" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_user_1ada69d62d5cca1e5ca7ac1b1120599077" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.User.LastName</definition>
+        <argsstring></argsstring>
+        <name>LastName</name>
+        <qualifiedname>backend.Models.User.LastName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" line="12" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_user_1a7fee0bae73632a55ebb17853753652a1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.User.RefreshToken</definition>
+        <argsstring></argsstring>
+        <name>RefreshToken</name>
+        <qualifiedname>backend.Models.User.RefreshToken</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" line="13" column="23" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_user_1a630965989383e874fcfe8eed0f2cde28" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime backend.Models.User.RefreshTokenExpiry</definition>
+        <argsstring></argsstring>
+        <name>RefreshTokenExpiry</name>
+        <qualifiedname>backend.Models.User.RefreshTokenExpiry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" line="14" column="25" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IdentityUser</label>
+      </node>
+      <node id="1">
+        <label>backend.Models.User</label>
+        <link refid="classbackend_1_1_models_1_1_user"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IdentityUser</label>
+      </node>
+      <node id="1">
+        <label>backend.Models.User</label>
+        <link refid="classbackend_1_1_models_1_1_user"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" line="9" column="11" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Models/User.cs" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_models_1_1_user_1a1f2f19dfd204cb6b45c33160e91ebd00" prot="public" virt="non-virtual"><scope>backend::Models::User</scope><name>FirstName</name></member>
+      <member refid="classbackend_1_1_models_1_1_user_1ada69d62d5cca1e5ca7ac1b1120599077" prot="public" virt="non-virtual"><scope>backend::Models::User</scope><name>LastName</name></member>
+      <member refid="classbackend_1_1_models_1_1_user_1a7fee0bae73632a55ebb17853753652a1" prot="public" virt="non-virtual"><scope>backend::Models::User</scope><name>RefreshToken</name></member>
+      <member refid="classbackend_1_1_models_1_1_user_1a630965989383e874fcfe8eed0f2cde28" prot="public" virt="non-virtual"><scope>backend::Models::User</scope><name>RefreshTokenExpiry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

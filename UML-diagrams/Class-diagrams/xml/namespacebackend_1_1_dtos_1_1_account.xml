@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespacebackend_1_1_dtos_1_1_account" kind="namespace" language="C#">
+    <compoundname>backend::Dtos::Account</compoundname>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" prot="public">backend::Dtos::Account::GoogleLoginDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" prot="public">backend::Dtos::Account::LogedInUserDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto" prot="public">backend::Dtos::Account::LoginDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto" prot="public">backend::Dtos::Account::RegisterDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto" prot="public">backend::Dtos::Account::UpdateDto</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Dtos/Account/GoogleLoginDto.cs" line="6" column="1"/>
+  </compounddef>
+</doxygen>

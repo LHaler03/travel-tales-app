@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_controllers_1_1_user_controller" kind="class" language="C#" prot="public">
+    <compoundname>backend::Controllers::UserController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ControllerBase</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_user_controller_1a79e3840bf039e9011a8639493d37d92a" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kindref="compound">IUserRepository</ref></type>
+        <definition>readonly IUserRepository backend.Controllers.UserController._userRepo</definition>
+        <argsstring></argsstring>
+        <name>_userRepo</name>
+        <qualifiedname>backend.Controllers.UserController._userRepo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="21" column="42" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Controllers.UserController.UserController</definition>
+        <argsstring>(IUserRepository userRepo)</argsstring>
+        <name>UserController</name>
+        <qualifiedname>backend.Controllers.UserController.UserController</qualifiedname>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kindref="compound">IUserRepository</ref></type>
+          <declname>userRepo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="22" column="16" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.UserController.GetAllUsers</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllUsers</name>
+        <qualifiedname>backend.Controllers.UserController.GetAllUsers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="29" column="27" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.UserController.GetUserById</definition>
+        <argsstring>([FromRoute] string id)</argsstring>
+        <name>GetUserById</name>
+        <qualifiedname>backend.Controllers.UserController.GetUserById</qualifiedname>
+        <param>
+          <attributes>[FromRoute]</attributes>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="37" column="27" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.UserController.UpdateUser</definition>
+        <argsstring>([FromRoute] string id, [FromBody] UpdateDto updateDto)</argsstring>
+        <name>UpdateUser</name>
+        <qualifiedname>backend.Controllers.UserController.UpdateUser</qualifiedname>
+        <param>
+          <attributes>[FromRoute]</attributes>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto" kindref="compound">UpdateDto</ref></type>
+          <declname>updateDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="49" column="27" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.UserController.DeleteUser</definition>
+        <argsstring>([FromRoute] string id)</argsstring>
+        <name>DeleteUser</name>
+        <qualifiedname>backend.Controllers.UserController.DeleteUser</qualifiedname>
+        <param>
+          <attributes>[FromRoute]</attributes>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="62" column="27" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="62" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.UserController</label>
+        <link refid="classbackend_1_1_controllers_1_1_user_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.UserController</label>
+        <link refid="classbackend_1_1_controllers_1_1_user_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" line="19" column="11" bodyfile="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Controllers/UserController.cs" bodystart="20" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a79e3840bf039e9011a8639493d37d92a" prot="private" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>_userRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>DeleteUser</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>GetAllUsers</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>GetUserById</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>UpdateUser</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>UserController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

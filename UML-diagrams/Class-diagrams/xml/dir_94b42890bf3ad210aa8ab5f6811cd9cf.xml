@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_94b42890bf3ad210aa8ab5f6811cd9cf" kind="dir">
+    <compoundname>C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers</compoundname>
+    <innerfile refid="_location_mappers_8cs">LocationMappers.cs</innerfile>
+    <innerfile refid="_role_mappers_8cs">RoleMappers.cs</innerfile>
+    <innerfile refid="_user_mappers_8cs">UserMappers.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/DATA_JAKI/FAKS/PROGI/TravelTales/travel-tales-app/backend/Mappers/"/>
+  </compounddef>
+</doxygen>
