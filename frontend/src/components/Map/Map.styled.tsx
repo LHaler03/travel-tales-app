@@ -11,7 +11,7 @@ export const StyledMapContainer = styled(MapContainer)`
   margin-bottom: 0.5rem;
   border: 1px solid #333;
 
-  @media (min-width: 601px) {
+  @media (min-width: 600px) {
     margin-top: 1.5rem;
     height: 68vh;
   }
