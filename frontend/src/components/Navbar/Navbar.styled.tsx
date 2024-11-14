@@ -16,7 +16,7 @@ export const NavbarStyled = styled.nav`
 export const Logo = styled.div`
   img {
     width: 10rem;
-    height: 10rem;
+    height: 100%;
     object-fit: contain;
   }
 `;

@@ -57,7 +57,7 @@ export const DestinationCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-
+    
     @media (max-width: 600px) {
       transform: translateY(-3px);
     }
@@ -72,14 +72,6 @@ export const DestinationImage = styled.div`
 
   @media (max-width: 600px) {
     height: 180px;
-  }
-`;
-
-export const DestinationInfo = styled.div`
-  padding: 1rem;
-
-  @media (max-width: 600px) {
-    padding: 0.8rem;
   }
 `;
 

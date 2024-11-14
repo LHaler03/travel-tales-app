@@ -28,3 +28,14 @@ export const LogoStyled = styled.div`
     margin: 0 5%;
   }
 `;
+
+export const LinksText = styled.a`
+  font-size: 1.1rem;
+  color: #4b89dc;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: #0056b3;
+  }
+`;
