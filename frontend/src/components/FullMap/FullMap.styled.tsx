@@ -35,25 +35,32 @@ export const Modal = styled.div`
 export const Modal_content = styled.div`
   position: relative;
   width: 80vw;
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   background-color: #b5cfe3;
   border: 2px solid #696969;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   h1 {
     text-align: center;
     margin-bottom: 5%;
   }
 
-  @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-
-    p {
+  p {
       margin-bottom: 10px;
       width: 100%;
       text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    display: block;
+    padding: 30px;
+
+    p {
+      margin-bottom: 0px;
+      text-align: left;
     }
 `;
 
@@ -84,7 +91,7 @@ export const Modal_button_generate = styled.button`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  @media (min-width: 601px) {
+  @media (min-width: 600px) {
     position: absolute;
     bottom: 10%;
     right: 2%;

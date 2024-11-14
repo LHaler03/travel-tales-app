@@ -15,12 +15,12 @@ import {
   Underline,
   Wrapper,
   GoogleButton,
+  RedirectLink,
 } from '../../shared/Signup-Login.styled';
 import React from 'react';
 import { useState } from 'react';
 import { LoggedUser } from '../../types/User';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useGoogleLogin } from '@react-oauth/google';
 
@@ -107,7 +107,7 @@ export const Login = () => {
             {errorMessage && <RedError>{errorMessage}</RedError>}
             <RedirectContainer>
               <Question>Don't have an account?</Question>
-              <Link to='/register'>Register</Link>
+              <RedirectLink href='/register'>Register</RedirectLink>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Login</Submit>

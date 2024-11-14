@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-export const LogoStyled = styled.nav`
+export const LogoStyled = styled.div`
   text-align: center;
-  margin-top: 30px;
+  margin-top: 25px;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    @media (max-width: 600px) {
-      font-size: 1.6rem;
+    @media (min-width: 600px) {
+      font-size: 2.5rem;
     }
   }
 
@@ -16,14 +16,26 @@ export const LogoStyled = styled.nav`
     font-size: 1.2rem;
     font-weight: 500;
     padding: 0 1rem;
+    display: none;
 
-    @media (max-width: 600px) {
-      display: none;
+    @media (min-width: 600px) {
+      display: block;
     }
   }
 
   img {
     width: 90%;
     margin: 0 5%;
+  }
+`;
+
+export const LinksText = styled.a`
+  font-size: 1.1rem;
+  color: #4b89dc;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: #0056b3;
   }
 `;
