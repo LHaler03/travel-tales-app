@@ -141,7 +141,7 @@ export const TroubleshootingList = styled.ul`
     margin-bottom: 0.5rem;
     padding-left: 0.5rem;
     
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       margin-bottom: 0.4rem;
     }
   }
