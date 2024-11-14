@@ -57,7 +57,7 @@ export const DestinationCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    
+
     @media (max-width: 600px) {
       transform: translateY(-3px);
     }
@@ -76,7 +76,7 @@ export const DestinationImage = styled.div`
 `;
 
 export const DestinationName = styled.h2`
-  margin: 0;
+  margin-left: 1rem;
   font-size: 1.5rem;
   color: #333;
 
@@ -86,6 +86,7 @@ export const DestinationName = styled.h2`
 `;
 
 export const DestinationCountry = styled.p`
-  margin: 0.5rem 0 0;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
   color: #666;
 `;

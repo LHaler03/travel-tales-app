@@ -58,8 +58,6 @@ export const Map = () => {
     return null;
   };
 
-  /*console.log(markers);*/
-
   return (
     <StyledMapWrapper
       onMouseEnter={() => setIsOverlayVisible(true)}

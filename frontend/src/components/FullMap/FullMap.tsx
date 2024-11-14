@@ -62,7 +62,6 @@ export const FullMap = () => {
     setSelectedCity(null);
   };
 
-  console.log(markers);
   return (
     <Wrapper>
       <StyledFullMapContainer

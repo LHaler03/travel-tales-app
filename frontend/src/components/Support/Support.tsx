@@ -84,8 +84,8 @@ const Support: React.FC = () => {
         <SubTitle>Contact Us</SubTitle>
         <Text>
           Need additional help? Reach out to us at:
-          <EmailLink href='mailto:travelTales@gmail.com'>
-            travelTales@gmail.com
+          <EmailLink href='mailto:ttalesteam@gmail.com'>
+            ttalesteam@gmail.com
           </EmailLink>
         </Text>
       </SectionContainer>

@@ -1,6 +1,5 @@
-import { LogoStyled, LinksText} from './Logo.styled';
+import { LogoStyled, LinksText } from './Logo.styled';
 import { useAuth } from '../../context/AuthContext';
-
 
 export const Logo = () => {
   const { isAuthenticated, user } = useAuth();
