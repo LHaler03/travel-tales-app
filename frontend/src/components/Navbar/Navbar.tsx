@@ -65,7 +65,7 @@ export const Navbar = () => {
           <NavLinks>
             <Link to='/'>Home</Link>
             <a href='#explore'>Explore</a>
-            <a href='#about-us'>About Us</a>
+            <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
           </NavLinks>
           <ButtonContainer>
@@ -155,9 +155,9 @@ export const Navbar = () => {
               <a href='#explore' onClick={() => setIsMenuToggled(false)}>
                 Explore
               </a>
-              <a href='#about-us' onClick={() => setIsMenuToggled(false)}>
+              <Link to='/about' onClick={() => setIsMenuToggled(false)}>
                 About Us
-              </a>
+              </Link>
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>

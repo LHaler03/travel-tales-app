@@ -95,7 +95,7 @@ export const FAQItem = styled.div`
 
 export const ContactSection = styled(SectionContainer)`
   background: #f8f9fa;
-  text-align: center;
+
 `;
 
 export const EmailLink = styled.a`
