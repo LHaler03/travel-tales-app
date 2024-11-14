@@ -6,6 +6,7 @@ import Login from './pages/LoginPage';
 import { AuthProvider } from './context/AuthContext';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import MapPage from './pages/MapPage';
+import SupportPage from './pages/SupportPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/fullmap' element={<MapPage />} />
+            <Route path="/support" element={<SupportPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
