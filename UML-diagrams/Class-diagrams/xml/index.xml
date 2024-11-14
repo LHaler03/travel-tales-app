@@ -89,6 +89,15 @@
   <compound refid="classbackend_1_1_mappers_1_1_location_mappers" kind="class"><name>backend::Mappers::LocationMappers</name>
     <member refid="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" kind="function"><name>ToLocationFromCreateDTO</name></member>
   </compound>
+  <compound refid="classbackend_1_1_repository_1_1_location_repository" kind="class"><name>backend::Repository::LocationRepository</name>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1a0be016ee8221ab01eae4d1433d71d125" kind="variable"><name>_context</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1ae2346062af6c146f02747ef999e61827" kind="function"><name>LocationRepository</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1a8b5e58de1d6065a6556fadb8780e0402" kind="function"><name>GetAllAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1a8e3ac7f6b6ec31788600d51722504cdd" kind="function"><name>GetByIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1ab501f1cc10e4eafa46744e5bf4503735" kind="function"><name>CreateAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1a6abbbaf827008523805862a6fbc7d5e3" kind="function"><name>UpdateAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_location_repository_1a64165e2f1aa834bc1a660f471f8e65c9" kind="function"><name>DeleteAsync</name></member>
+  </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" kind="class"><name>backend::Dtos::Account::LogedInUserDto</name>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1a3e1a0f2311054029cd60e205f7fad367" kind="property"><name>Username</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ae700fc7d6c0b76f1110f71317239c64a" kind="property"><name>Email</name></member>
