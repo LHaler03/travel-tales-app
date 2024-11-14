@@ -22,7 +22,8 @@ export const Logo = () => {
         <h2>
           Start your journey across the globe with us,{' '}
           <RedirectLink href='/login'>log in</RedirectLink> or{' '}
-          <RedirectLink href='/register'>register</RedirectLink> to get the full experience!
+          <RedirectLink href='/register'>register</RedirectLink> to get the full
+          experience!
         </h2>
         {/* <img src='./images/traveltales_black.png' alt='Travel Tales'></img> */}
       </LogoStyled>

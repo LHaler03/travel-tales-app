@@ -57,7 +57,7 @@ export const DestinationCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    
+
     @media (max-width: 600px) {
       transform: translateY(-3px);
     }

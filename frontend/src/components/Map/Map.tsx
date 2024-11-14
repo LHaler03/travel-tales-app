@@ -1,5 +1,10 @@
 import { TileLayer, Marker, useMapEvents } from 'react-leaflet';
-import { StyledMapContainer } from './Map.styled';
+import {
+  Overlay,
+  OverlayText,
+  StyledMapContainer,
+  StyledMapWrapper,
+} from './Map.styled';
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
@@ -10,6 +15,7 @@ export const Map = () => {
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const navigate = useNavigate();
 
   const iconformarkers = new Icon({
@@ -24,7 +30,6 @@ export const Map = () => {
     const fetchLocations = async () => {
       try {
         const response = await axios.get('http://3.74.155.131/api/locations');
-        /*console.log(response);*/
         const locations = response.data.map(
           (location: {
             id: number;
@@ -37,7 +42,6 @@ export const Map = () => {
             popUp: location.name,
           }),
         );
-        /*console.log(locations);*/
         setMarkers(locations);
       } catch (error) {
         console.error('Error fetching locations:', error);
@@ -57,22 +61,31 @@ export const Map = () => {
   /*console.log(markers);*/
 
   return (
-    <StyledMapContainer
-      id='map'
-      center={[25, 0]}
-      zoom={2}
-      minZoom={2}
-      maxBounds={bounds}
-      maxBoundsViscosity={1}
+    <StyledMapWrapper
+      onMouseEnter={() => setIsOverlayVisible(true)}
+      onMouseLeave={() => setIsOverlayVisible(false)}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-      />
-      {markers.map((marker, index) => (
-        <Marker key={index} position={marker.geocode} icon={iconformarkers} />
-      ))}
-      <HandleToFullMap />
-    </StyledMapContainer>
+      <StyledMapContainer
+        id='map'
+        center={[25, 0]}
+        zoom={2}
+        minZoom={2}
+        maxBounds={bounds}
+        maxBoundsViscosity={1}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        />
+        {markers.map((marker, index) => (
+          <Marker key={index} position={marker.geocode} icon={iconformarkers} />
+        ))}
+        <HandleToFullMap />
+        {isOverlayVisible && <Overlay />}
+        {isOverlayVisible && (
+          <OverlayText>Click to show map on full screen</OverlayText>
+        )}
+      </StyledMapContainer>
+    </StyledMapWrapper>
   );
 };

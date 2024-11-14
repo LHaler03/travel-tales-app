@@ -15,11 +15,11 @@ export const Explore: React.FC = () => {
     <S.ExploreContainer>
       <S.ExploreTitle>Explore our top destinations</S.ExploreTitle>
       <S.Text>
-      Take a virtual journey through some of the world's 
-      most iconic destinations! Discover postcards from legendary 
-      cities and must-see spots that everyone dreams of visiting. 
-      Each destination holds unique stories, stunning landmarks, and rich cultures. 
-      Click through and create your own memories from places that inspire.
+        Take a virtual journey through some of the world's most iconic
+        destinations! Discover postcards from legendary cities and must-see
+        spots that everyone dreams of visiting. Each destination holds unique
+        stories, stunning landmarks, and rich cultures. Click through and create
+        your own memories from places that inspire.
       </S.Text>
       <S.DestinationsGrid>
         {destinations.map((destination) => (
@@ -36,4 +36,4 @@ export const Explore: React.FC = () => {
   );
 };
 
-export default Explore; 
+export default Explore;

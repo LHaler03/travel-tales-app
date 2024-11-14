@@ -31,7 +31,6 @@ export const FullMap = () => {
     const fetchLocations = async () => {
       try {
         const response = await axios.get('http://3.74.155.131/api/locations');
-        console.log(response);
         const locations = response.data.map(
           (location: {
             id: number;
@@ -44,7 +43,6 @@ export const FullMap = () => {
             popUp: location.name,
           }),
         );
-        /*console.log(locations);*/
         setMarkers(locations);
       } catch (error) {
         console.error('Error fetching locations:', error);
