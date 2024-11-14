@@ -4,24 +4,13 @@ export const SupportContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 2rem;
   
   @media (max-width: 1200px) {
     padding: 1rem 0.5rem;
   }
 `;
 
-export const SectionContainer = styled.section`
-  margin: 1.5rem 0;
-  padding: 1.25rem;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-  @media (max-width: 1200px) {
-    margin: 1rem 0;
-    padding: 1rem;
-  }
-`;
 
 export const Title = styled.h1`
   font-size: 2.5rem;
@@ -43,6 +32,7 @@ export const SubTitle = styled.h2`
   @media (max-width: 1200px) {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
+    margin-left: 0.5rem;
   }
 `;
 
@@ -62,6 +52,9 @@ export const FAQContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   
   @media (max-width: 1200px) {
     gap: 1rem;
@@ -69,7 +62,7 @@ export const FAQContainer = styled.div`
 `;
 
 export const FAQItem = styled.div`
-  background: #f8f9fa;
+
   padding: 1rem;
   border-radius: 6px;
   
@@ -93,11 +86,6 @@ export const FAQItem = styled.div`
   }
 `;
 
-export const ContactSection = styled(SectionContainer)`
-  background: #f8f9fa;
-
-`;
-
 export const EmailLink = styled.a`
   color: #007bff;
   text-decoration: none;
@@ -111,11 +99,11 @@ export const EmailLink = styled.a`
 export const LinkContainer = styled.div`
   display: flex;
   gap: 1rem;
+
   
   @media (max-width: 1200px) {
     flex-direction: column;
     gap: 0.5rem;
-    align-items: center;
   }
   
   a {
@@ -141,8 +129,24 @@ export const TroubleshootingList = styled.ul`
     margin-bottom: 0.5rem;
     padding-left: 0.5rem;
     
-    @media (max-width: 1200px) {
+    @media (max-width: 600px) {
       margin-bottom: 0.4rem;
     }
+  }
+`;
+
+export const SectionContainer = styled.div`
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1200px) {
+    margin-left: 0.5rem;
+    align-items: center;
   }
 `;

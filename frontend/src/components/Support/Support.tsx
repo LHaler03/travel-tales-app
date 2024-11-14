@@ -1,15 +1,14 @@
 import React from 'react';
 import {
   SupportContainer,
-  SectionContainer,
   Title,
   SubTitle,
   Text,
   FAQContainer,
   FAQItem,
-  ContactSection,
   EmailLink,
   LinkContainer,
+  SectionContainer,
 } from './Support.styled';
 
 const Support: React.FC = () => {
@@ -39,36 +38,36 @@ const Support: React.FC = () => {
 
   return (
     <SupportContainer>
+      <SectionContainer>
       <Title>Welcome to Support</Title>
       <Text>
         Welcome to our support center! Here you'll find answers to common questions,
         helpful guides, and ways to get in touch if you need additional assistance.
       </Text>
-
-      <SectionContainer>
-        <SubTitle>Frequently Asked Questions</SubTitle>
-        <FAQContainer>
-          {faqs.map((category) => (
-            <div key={category.category}>
-              <SubTitle>{category.category}</SubTitle>
-              {category.questions.map((faq, index) => (
-                <FAQItem key={index}>
-                  <h4>{faq.q}</h4>
-                  <p>{faq.a}</p>
-                </FAQItem>
-              ))}
-            </div>
-          ))}
-        </FAQContainer>
       </SectionContainer>
 
-      <ContactSection>
+      <SubTitle>Frequently Asked Questions</SubTitle>
+      <FAQContainer>
+        {faqs.map((category) => (
+          <SectionContainer key={category.category}>
+            <SubTitle>{category.category}</SubTitle>
+            {category.questions.map((faq, index) => (
+              <FAQItem key={index}>
+                <h4>{faq.q}</h4>
+                <p>{faq.a}</p>
+              </FAQItem>
+            ))}
+          </SectionContainer>
+        ))}
+      </FAQContainer>
+
+      <SectionContainer>
         <SubTitle>Contact Us</SubTitle>
         <Text>
           Need additional help? Reach out to us at:
           <EmailLink href="mailto:travelTales@gmail.com">travelTales@gmail.com</EmailLink>
         </Text>
-      </ContactSection>
+      </SectionContainer>
 
       <SectionContainer>
         <SubTitle>Community Support</SubTitle>
@@ -83,12 +82,12 @@ const Support: React.FC = () => {
         <Text>
           If you're experiencing technical issues:
         </Text>
-        <ul>
+          <Text>
           <li>Clear your browser cache and cookies</li>
           <li>Make sure you're using a supported browser</li>
           <li>Check your internet connection</li>
           <li>Try logging out and back in</li>
-        </ul>
+          </Text>
       </SectionContainer>
 
       <SectionContainer>
