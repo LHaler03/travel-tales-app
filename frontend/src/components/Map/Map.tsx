@@ -6,7 +6,6 @@ import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
 import { useNavigate } from 'react-router-dom';
 
-
 export const Map = () => {
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
@@ -16,8 +15,7 @@ export const Map = () => {
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
     iconSize: [38, 38],
-    iconAnchor: [17.5, 17.5],
-    popupAnchor: [0, -17.5],
+    iconAnchor: [19, 38],
   });
 
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
@@ -61,8 +59,8 @@ export const Map = () => {
   return (
     <StyledMapContainer
       id='map'
-      center={[54.526, 15.2551]}
-      zoom={3}
+      center={[25, 0]}
+      zoom={2}
       minZoom={2}
       maxBounds={bounds}
       maxBoundsViscosity={1}

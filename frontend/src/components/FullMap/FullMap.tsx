@@ -1,16 +1,16 @@
 import { TileLayer, Marker } from 'react-leaflet';
 import {
-  StyledMapContainer,
   Modal,
   Modal_button_generate,
   Modal_button_close,
   Modal_content,
   Wrapper,
+  StyledFullMapContainer,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet';
+import L, { Icon } from 'leaflet';
 
 export const FullMap = () => {
   const [markers, setMarkers] = useState<
@@ -22,9 +22,11 @@ export const FullMap = () => {
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
     iconSize: [38, 38],
-    iconAnchor: [17.5, 17.5],
-    popupAnchor: [0, -17.5],
+    iconAnchor: [19, 38],
   });
+
+  const bounds = L.latLngBounds([-83, -199], [85, 202]);
+
   useEffect(() => {
     const fetchLocations = async () => {
       try {
@@ -65,7 +67,14 @@ export const FullMap = () => {
   console.log(markers);
   return (
     <Wrapper>
-      <StyledMapContainer id='map' center={[54.526, 15.2551]} zoom={3}>
+      <StyledFullMapContainer
+        id='map'
+        center={[50, 10]}
+        zoom={2}
+        minZoom={2}
+        maxBounds={bounds}
+        maxBoundsViscosity={1}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -80,7 +89,7 @@ export const FullMap = () => {
             }}
           />
         ))}
-      </StyledMapContainer>
+      </StyledFullMapContainer>
 
       {showModal && (
         <Modal>
