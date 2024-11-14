@@ -91,6 +91,17 @@ export const Question = styled.div`
 
 export const RedirectLink = styled.a`
   font-size: 1.1rem;
+  color: #202d59;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:visited {
+    color: #182648;
+  }
+
+  &:hover {
+    color: #204263;
+  }
 `;
 
 export const SubmitContainer = styled.div`

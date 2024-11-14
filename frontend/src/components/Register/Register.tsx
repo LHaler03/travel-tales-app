@@ -8,6 +8,7 @@ import {
   Inputs,
   Question,
   RedirectContainer,
+  RedirectLink,
   StyledForm,
   Submit,
   SubmitContainer,
@@ -19,7 +20,6 @@ import React from 'react';
 import { useState } from 'react';
 import { RegisteredUser } from '../../types/User';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useGoogleLogin } from '@react-oauth/google';
 
@@ -141,7 +141,7 @@ export const Register = () => {
             </Inputs>
             <RedirectContainer>
               <Question>Already have an account?</Question>
-              <Link to='/login'>Log in</Link>
+              <RedirectLink href='/login'>Log in</RedirectLink>
             </RedirectContainer>
             <SubmitContainer>
               <Submit type='submit'>Register</Submit>

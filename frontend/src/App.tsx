@@ -9,12 +9,14 @@ import MapPage from './pages/MapPage';
 import SupportPage from './pages/SupportPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ExplorePage from './pages/ExplorePage';
+import { Navbar } from './components/Navbar/Navbar';
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
       <AuthProvider>
         <GlobalStyles />
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route index element={<Home />} />
             <Route path='/home' element={<Home />} />

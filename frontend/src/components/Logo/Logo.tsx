@@ -1,6 +1,6 @@
 import { LogoStyled } from './Logo.styled';
 import { useAuth } from '../../context/AuthContext';
-import { Link } from 'react-router-dom';
+import { RedirectLink } from '../../shared/Signup-Login.styled';
 
 export const Logo = () => {
   const { isAuthenticated, user } = useAuth();
@@ -21,8 +21,8 @@ export const Logo = () => {
         <h1>Welcome to Travel Tales!</h1>
         <h2>
           Start your journey across the globe with us,{' '}
-          <Link to='/login'>log in</Link> or{' '}
-          <Link to='/register'>register</Link> to get the full experience!
+          <RedirectLink href='/login'>log in</RedirectLink> or{' '}
+          <RedirectLink href='/register'>register</RedirectLink> to get the full experience!
         </h2>
         {/* <img src='./images/traveltales_black.png' alt='Travel Tales'></img> */}
       </LogoStyled>

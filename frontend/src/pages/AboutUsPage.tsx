@@ -1,10 +1,8 @@
-import { Navbar } from '../components/Navbar/Navbar';
 import AboutUs from '../components/AboutUs/AboutUs';
 
 function AboutUsPage() {
   return (
     <>
-      <Navbar />
       <AboutUs />
     </>
   );
