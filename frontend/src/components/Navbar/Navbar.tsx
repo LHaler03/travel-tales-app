@@ -64,9 +64,9 @@ export const Navbar = () => {
         <>
           <NavLinks>
             <Link to='/'>Home</Link>
-            <a href='#explore'>Explore</a>
-            <a href='#about-us'>About Us</a>
-            <a href='#support'>Support</a>
+            <Link to='/explore'>Explore</Link>
+            <Link to='/about'>About Us</Link>
+            <Link to='/support'>Support</Link>
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -152,15 +152,15 @@ export const Navbar = () => {
               <Link to='/' onClick={() => setIsMenuToggled(false)}>
                 Home
               </Link>
-              <a href='#explore' onClick={() => setIsMenuToggled(false)}>
+              <Link to='/explore' onClick={() => setIsMenuToggled(false)}>
                 Explore
-              </a>
-              <a href='#about-us' onClick={() => setIsMenuToggled(false)}>
+              </Link>
+              <Link to='/about' onClick={() => setIsMenuToggled(false)}>
                 About Us
-              </a>
-              <a href='#support' onClick={() => setIsMenuToggled(false)}>
+              </Link>
+              <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
-              </a>
+              </Link>
             </MenuItems>
           </Sidebar>
         </>
