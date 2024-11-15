@@ -46,7 +46,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://localhost:5185/api',
+  baseURL: 'http://3.74.155.131/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -62,11 +62,30 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const initializeAuth = async () => {
       try {
+        const savedToken = localStorage.getItem('token');
+        if (savedToken) {
+          try {
+            const userResponse = await api.get('/account/me', {
+              headers: {
+                Authorization: `Bearer ${savedToken}`,
+              },
+            });
+
+            setIsAuthenticated(true);
+            setToken(savedToken);
+            setUser(userResponse.data);
+            setIsLoading(false);
+            return;
+          } catch (error) {
+            localStorage.removeItem('token');
+          }
+        }
+
         const response = await api.get<{ accessToken: string }>(
           '/account/refresh-token',
         );
-
         if (response.data.accessToken) {
+          localStorage.setItem('token', response.data.accessToken);
           const userResponse = await api.get('/account/me', {
             headers: {
               Authorization: `Bearer ${response.data.accessToken}`,
@@ -82,6 +101,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         setIsAuthenticated(false);
         setToken(null);
         setUser(null);
+        localStorage.removeItem('token');
       } finally {
         setIsLoading(false);
       }
@@ -102,6 +122,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         email: response.data.email,
       };
 
+      localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
       setToken(response.data.token);
       setUser(user);
@@ -135,6 +156,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           username: response.data.username,
           email: response.data.email,
         };
+        localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);
         setToken(response.data.token);
         setUser(user);
@@ -143,6 +165,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     } catch (error) {
       console.error('Google login error:', error);
+      localStorage.removeItem('token');
       throw error;
     }
   };
@@ -150,12 +173,13 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = async () => {
     try {
       await api.post('/account/logout');
+    } catch (error) {
+      console.error('Logout failed:', error);
+    } finally {
+      localStorage.removeItem('token');
       setIsAuthenticated(false);
       setToken(null);
       setUser(null);
-    } catch (error) {
-      console.error('Logout failed:', error);
-      throw error;
     }
   };
 
