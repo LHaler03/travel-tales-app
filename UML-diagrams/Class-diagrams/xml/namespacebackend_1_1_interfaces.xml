@@ -3,6 +3,7 @@
   <compounddef id="namespacebackend_1_1_interfaces" kind="namespace" language="C#">
     <compoundname>backend::Interfaces</compoundname>
     <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" prot="public">backend::Interfaces::IAccountRepository</innerclass>
+    <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_email_sender" prot="public">backend::Interfaces::IEmailSender</innerclass>
     <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" prot="public">backend::Interfaces::ILocationRepository</innerclass>
     <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_token_service" prot="public">backend::Interfaces::ITokenService</innerclass>
     <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" prot="public">backend::Interfaces::IUserRepository</innerclass>

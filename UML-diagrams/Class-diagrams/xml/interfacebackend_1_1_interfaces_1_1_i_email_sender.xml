@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_email_sender" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IEmailSender</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_controllers_1_1_email_sender" prot="public" virt="non-virtual">backend.Controllers.EmailSender</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_email_sender_1a97ca482a1c817b541fc7d2dee3077e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task</type>
+        <definition>Task backend.Interfaces.IEmailSender.SendEmailAsync</definition>
+        <argsstring>(string email, string subject, string message)</argsstring>
+        <name>SendEmailAsync</name>
+        <qualifiedname>backend.Interfaces.IEmailSender.SendEmailAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_controllers_1_1_email_sender_1ab51c8de9f9949a2dbef6112382982b69">SendEmailAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>email</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>subject</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IEmailSender.cs" line="10" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IEmailSender</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_email_sender"/>
+      </node>
+      <node id="2">
+        <label>backend.Controllers.EmailSender</label>
+        <link refid="classbackend_1_1_controllers_1_1_email_sender"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IEmailSender.cs" line="8" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IEmailSender.cs" bodystart="9" bodyend="11"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_email_sender_1a97ca482a1c817b541fc7d2dee3077e0a" prot="public" virt="non-virtual"><scope>backend::Interfaces::IEmailSender</scope><name>SendEmailAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -3,7 +3,7 @@
   <compounddef id="namespacebackend_1_1_dtos_1_1_account" kind="namespace" language="C#">
     <compoundname>backend::Dtos::Account</compoundname>
     <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" prot="public">backend::Dtos::Account::GoogleLoginDto</innerclass>
-    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" prot="public">backend::Dtos::Account::LogedInUserDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto" prot="public">backend::Dtos::Account::LoggedInUserDto</innerclass>
     <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto" prot="public">backend::Dtos::Account::LoginDto</innerclass>
     <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto" prot="public">backend::Dtos::Account::RegisterDto</innerclass>
     <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto" prot="public">backend::Dtos::Account::UpdateDto</innerclass>

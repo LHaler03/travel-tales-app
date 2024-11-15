@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Account::LoggedInUserDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a381a787a4e08c8deee8eed1f83f1c52a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Dtos.Account.LoggedInUserDto.Username</definition>
+        <argsstring></argsstring>
+        <name>Username</name>
+        <qualifiedname>backend.Dtos.Account.LoggedInUserDto.Username</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" line="10" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1af99f224978b24b9b413c3a10a0ea911b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Dtos.Account.LoggedInUserDto.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>backend.Dtos.Account.LoggedInUserDto.Email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" line="11" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a08e20aa803773d1f205034c066e886dc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Dtos.Account.LoggedInUserDto.Token</definition>
+        <argsstring></argsstring>
+        <name>Token</name>
+        <qualifiedname>backend.Dtos.Account.LoggedInUserDto.Token</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" line="12" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a28d686b43ab4db4abe67e7d5c584eb76" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required bool</type>
+        <definition>required bool backend.Dtos.Account.LoggedInUserDto.EmailConfirmed</definition>
+        <argsstring></argsstring>
+        <name>EmailConfirmed</name>
+        <qualifiedname>backend.Dtos.Account.LoggedInUserDto.EmailConfirmed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" line="13" column="30" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoggedInUserDto.cs" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1af99f224978b24b9b413c3a10a0ea911b" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoggedInUserDto</scope><name>Email</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a28d686b43ab4db4abe67e7d5c584eb76" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoggedInUserDto</scope><name>EmailConfirmed</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a08e20aa803773d1f205034c066e886dc" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoggedInUserDto</scope><name>Token</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a381a787a4e08c8deee8eed1f83f1c52a" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoggedInUserDto</scope><name>Username</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
