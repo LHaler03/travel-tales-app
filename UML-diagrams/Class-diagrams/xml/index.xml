@@ -7,8 +7,10 @@
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1af447478f84b04bb004fff1077867a008" kind="variable"><name>_config</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa67ebbf46416ad66799a011e03860ac3" kind="variable"><name>_accountRepository</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1a505309d35eebd4136b63ff039c9fba7e" kind="variable"><name>_httpClient</name></member>
-    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a91f5fd476afe1b1c05aaf03b7c175695" kind="function"><name>AccountController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa73ab8e98d67ed16246f41e677d735d3" kind="variable"><name>_emailSender</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1a080cfaad9294ffb1213790bc338743ac" kind="function"><name>AccountController</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1a43010c50302bcb5dccecef628fa15997" kind="function"><name>Register</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_account_controller_1afdbcf426219aa208ee2e1c6116823ced" kind="function"><name>ConfirmEmail</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1acb60e7d472bfdbae03a916b01ea9e30d" kind="function"><name>Login</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1a24ee98719e60696cc27d27478f0e2ec7" kind="function"><name>RefreshToken</name></member>
     <member refid="classbackend_1_1_controllers_1_1_account_controller_1ad73a1790629eab18d7eb9f62762ce6e6" kind="function"><name>Logout</name></member>
@@ -35,6 +37,11 @@
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" kind="property"><name>Lat</name></member>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" kind="property"><name>Lon</name></member>
   </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_email_sender" kind="class"><name>backend::Controllers::EmailSender</name>
+    <member refid="classbackend_1_1_controllers_1_1_email_sender_1abd66edfe50f284207222849eb257eb49" kind="variable"><name>_configuration</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_email_sender_1a202653038eac91f30dde312347885446" kind="function"><name>EmailSender</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_email_sender_1ab51c8de9f9949a2dbef6112382982b69" kind="function"><name>SendEmailAsync</name></member>
+  </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" kind="class"><name>backend::Dtos::Account::GoogleLoginDto</name>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto_1a37a1786d019c0f92426deb1145974a10" kind="property"><name>Token</name></member>
   </compound>
@@ -46,6 +53,9 @@
   </compound>
   <compound refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kind="interface"><name>backend::Interfaces::IAccountRepository</name>
     <member refid="interfacebackend_1_1_interfaces_1_1_i_account_repository_1a69ec57c5b511da9819b1dd0e9714811e" kind="function"><name>GetOrCreateUserAsync</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_email_sender" kind="interface"><name>backend::Interfaces::IEmailSender</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_email_sender_1a97ca482a1c817b541fc7d2dee3077e0a" kind="function"><name>SendEmailAsync</name></member>
   </compound>
   <compound refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kind="interface"><name>backend::Interfaces::ILocationRepository</name>
     <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a01e2fcde8c2129e040e90d840d6be407" kind="function"><name>GetAllAsync</name></member>
@@ -98,10 +108,11 @@
     <member refid="classbackend_1_1_repository_1_1_location_repository_1a6abbbaf827008523805862a6fbc7d5e3" kind="function"><name>UpdateAsync</name></member>
     <member refid="classbackend_1_1_repository_1_1_location_repository_1a64165e2f1aa834bc1a660f471f8e65c9" kind="function"><name>DeleteAsync</name></member>
   </compound>
-  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" kind="class"><name>backend::Dtos::Account::LogedInUserDto</name>
-    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1a3e1a0f2311054029cd60e205f7fad367" kind="property"><name>Username</name></member>
-    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ae700fc7d6c0b76f1110f71317239c64a" kind="property"><name>Email</name></member>
-    <member refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ad4130627a108a99d389773d1d933f122" kind="property"><name>Token</name></member>
+  <compound refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto" kind="class"><name>backend::Dtos::Account::LoggedInUserDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a381a787a4e08c8deee8eed1f83f1c52a" kind="property"><name>Username</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1af99f224978b24b9b413c3a10a0ea911b" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a08e20aa803773d1f205034c066e886dc" kind="property"><name>Token</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a28d686b43ab4db4abe67e7d5c584eb76" kind="property"><name>EmailConfirmed</name></member>
   </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto" kind="class"><name>backend::Dtos::Account::LoginDto</name>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1af42c8b1f90121359753ed09c18d03422" kind="property"><name>Username</name></member>
@@ -246,6 +257,8 @@
   </compound>
   <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_identity_1_1_entity_framework_core" kind="namespace"><name>Microsoft::AspNetCore::Identity::EntityFrameworkCore</name>
   </compound>
+  <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_identity_1_1_u_i_1_1_services" kind="namespace"><name>Microsoft::AspNetCore::Identity::UI::Services</name>
+  </compound>
   <compound refid="namespace_microsoft_1_1_asp_net_core_1_1_mvc" kind="namespace"><name>Microsoft::AspNetCore::Mvc</name>
   </compound>
   <compound refid="namespace_microsoft_1_1_entity_framework_core" kind="namespace"><name>Microsoft::EntityFrameworkCore</name>
@@ -282,6 +295,8 @@
   </compound>
   <compound refid="namespace_system_1_1_net_1_1_http" kind="namespace"><name>System::Net::Http</name>
   </compound>
+  <compound refid="namespace_system_1_1_net_1_1_mail" kind="namespace"><name>System::Net::Mail</name>
+  </compound>
   <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
   </compound>
   <compound refid="namespace_system_1_1_runtime_1_1_intrinsics_1_1_x86" kind="namespace"><name>System::Runtime::Intrinsics::X86</name>
@@ -296,6 +311,8 @@
   </compound>
   <compound refid="_account_controller_8cs" kind="file"><name>AccountController.cs</name>
   </compound>
+  <compound refid="_email_sender_8cs" kind="file"><name>EmailSender.cs</name>
+  </compound>
   <compound refid="_location_controller_8cs" kind="file"><name>LocationController.cs</name>
   </compound>
   <compound refid="_user_controller_8cs" kind="file"><name>UserController.cs</name>
@@ -304,7 +321,7 @@
   </compound>
   <compound refid="_google_login_dto_8cs" kind="file"><name>GoogleLoginDto.cs</name>
   </compound>
-  <compound refid="_loged_in_user_dto_8cs" kind="file"><name>LogedInUserDto.cs</name>
+  <compound refid="_logged_in_user_dto_8cs" kind="file"><name>LoggedInUserDto.cs</name>
   </compound>
   <compound refid="_login_dto_8cs" kind="file"><name>LoginDto.cs</name>
   </compound>
@@ -319,6 +336,8 @@
   <compound refid="_user_dto_8cs" kind="file"><name>UserDto.cs</name>
   </compound>
   <compound refid="_i_account_repository_8cs" kind="file"><name>IAccountRepository.cs</name>
+  </compound>
+  <compound refid="_i_email_sender_8cs" kind="file"><name>IEmailSender.cs</name>
   </compound>
   <compound refid="_i_location_repository_8cs" kind="file"><name>ILocationRepository.cs</name>
   </compound>
@@ -363,6 +382,7 @@
     <member refid="_program_8cs_1a9778b1936411e27c5c21e23a6963e8bb" kind="function"><name>AddDbContext&lt; ApplicationDBContext &gt;</name></member>
     <member refid="_program_8cs_1aa2c4aed93a4bd8176d86a6992b859050" kind="function"><name>AddIdentity&lt; User, IdentityRole &gt;</name></member>
     <member refid="_program_8cs_1ad21d6edb3707063a587749add60b3153" kind="function"><name>AddAuthentication</name></member>
+    <member refid="_program_8cs_1a22f45e2b2befe5b3aca68abcffd13677" kind="function"><name>AddTransient&lt; IEmailSender, EmailSender &gt;</name></member>
     <member refid="_program_8cs_1a68e8e699aeab2fec37e126b50a1cf484" kind="function"><name>AddAuthorization</name></member>
     <member refid="_program_8cs_1a983cef133bfc2fb38a757c7dc5b20494" kind="function"><name>AddScoped&lt; IAccountRepository, AccountRepository &gt;</name></member>
     <member refid="_program_8cs_1a9139f4d5b9d552d9e1ec835b32711c24" kind="function"><name>AddScoped&lt; IUserRepository, UserRepository &gt;</name></member>

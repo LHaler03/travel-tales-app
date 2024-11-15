@@ -3,6 +3,7 @@
   <compounddef id="dir_5e63526ed4ac6d6465a5252b0529de5d" kind="dir">
     <compoundname>C:/PROGI/travel-tales-app/backend/Controllers</compoundname>
     <innerfile refid="_account_controller_8cs">AccountController.cs</innerfile>
+    <innerfile refid="_email_sender_8cs">EmailSender.cs</innerfile>
     <innerfile refid="_location_controller_8cs">LocationController.cs</innerfile>
     <innerfile refid="_user_controller_8cs">UserController.cs</innerfile>
     <briefdescription>

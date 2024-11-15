@@ -3,6 +3,7 @@
   <compounddef id="dir_35d6c25b7f18d38ff1e50b7361d756eb" kind="dir">
     <compoundname>C:/PROGI/travel-tales-app/backend/Interfaces</compoundname>
     <innerfile refid="_i_account_repository_8cs">IAccountRepository.cs</innerfile>
+    <innerfile refid="_i_email_sender_8cs">IEmailSender.cs</innerfile>
     <innerfile refid="_i_location_repository_8cs">ILocationRepository.cs</innerfile>
     <innerfile refid="_i_token_service_8cs">ITokenService.cs</innerfile>
     <innerfile refid="_i_user_repository_8cs">IUserRepository.cs</innerfile>

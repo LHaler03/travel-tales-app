@@ -3,12 +3,13 @@
   <compounddef id="namespacebackend_1_1_controllers" kind="namespace" language="C#">
     <compoundname>backend::Controllers</compoundname>
     <innerclass refid="classbackend_1_1_controllers_1_1_account_controller" prot="public">backend::Controllers::AccountController</innerclass>
+    <innerclass refid="classbackend_1_1_controllers_1_1_email_sender" prot="public">backend::Controllers::EmailSender</innerclass>
     <innerclass refid="classbackend_1_1_controllers_1_1_location_controller" prot="public">backend::Controllers::LocationController</innerclass>
     <innerclass refid="classbackend_1_1_controllers_1_1_user_controller" prot="public">backend::Controllers::UserController</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="21" column="1"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="22" column="1"/>
   </compounddef>
 </doxygen>
