@@ -105,16 +105,16 @@ namespace backend.Controllers
             var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
             if (result.Succeeded)
             {
-                user.refreshToken = "";
-                user.refreshTokenExpiry = DateTime.UtcNow.AddDays(-1);
+                user.RefreshToken = "";
+                user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(-1);
                 await _userManager.UpdateAsync(user);
                 var cookieOptions = new CookieOptions
-            {
+                {
                 HttpOnly = true,
                 SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
                 Expires = DateTime.UtcNow.AddDays(-1)
-            };
-            Response.Cookies.Append("refreshToken", "", cookieOptions);
+                };
+                Response.Cookies.Append("refreshToken", "", cookieOptions);
                 return Ok("Email confirmed successfully");
             }
             else
