@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_application_d_b_context_8cs" kind="file" language="C#">
+    <compoundname>ApplicationDBContext.cs</compoundname>
+    <innerclass refid="classbackend_1_1_data_1_1_application_d_b_context" prot="public">backend::Data::ApplicationDBContext</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_data">backend::Data</innernamespace>
+    <innernamespace refid="namespace_microsoft_1_1_asp_net_core_1_1_identity_1_1_entity_framework_core">Microsoft::AspNetCore::Identity::EntityFrameworkCore</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Linq;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_models" kindref="compound">backend.Models</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.AspNetCore.Identity;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.AspNetCore.Identity.EntityFrameworkCore;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.EntityFrameworkCore;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespacebackend_1_1_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_data" kindref="compound">backend.Data</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="classbackend_1_1_data_1_1_application_d_b_context" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref><sp/>:<sp/>IdentityDbContext&lt;User&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_data_1_1_application_d_b_context_1ac07ec68a51962a8c07daca70ef386e91" kindref="member">ApplicationDBContext</ref>(DbContextOptions<sp/>dbContextOptions)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>base(dbContextOptions)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>DbSet&lt;User&gt;<sp/><ref refid="classbackend_1_1_data_1_1_application_d_b_context_1ae27b1b51b0224b60b7234ef7f15b92ed" kindref="member">Users</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>DbSet&lt;Location&gt;<sp/><ref refid="classbackend_1_1_data_1_1_application_d_b_context_1aa0917ef671c925a080e05a4aebb13cd7" kindref="member">Locations</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_data_1_1_application_d_b_context_1afbbfa222aa0525941ac90d6ed68b6dca" kindref="member">OnModelCreating</ref>(ModelBuilder<sp/>modelBuilder)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>base.OnModelCreating(modelBuilder);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;IdentityRole&gt;<sp/>roles<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>List&lt;IdentityRole&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>IdentityRole<sp/>{<sp/>Name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">,<sp/>NormalizedName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ADMIN&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>IdentityRole<sp/>{<sp/>Name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;User&quot;</highlight><highlight class="normal">,<sp/>NormalizedName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;USER&quot;</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>modelBuilder.Entity&lt;IdentityRole&gt;().HasData(roles);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Data/ApplicationDBContext.cs"/>
+  </compounddef>
+</doxygen>

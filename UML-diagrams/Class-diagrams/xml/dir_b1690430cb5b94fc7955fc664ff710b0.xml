@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_b1690430cb5b94fc7955fc664ff710b0" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend</compoundname>
+    <innerdir refid="dir_f3be615a8184887f80559b7fa0808a4a">C:/PROGI/travel-tales-app/backend/Controllers</innerdir>
+    <innerdir refid="dir_d2c5c0eb1c19b0d9e3df2bc55b0b5eda">C:/PROGI/travel-tales-app/backend/Data</innerdir>
+    <innerdir refid="dir_f1d23897c8a91bc1b0f6d614167152ff">C:/PROGI/travel-tales-app/backend/Dtos</innerdir>
+    <innerdir refid="dir_48ed3975ebe59710263c6ea81c1cfcb5">C:/PROGI/travel-tales-app/backend/Interfaces</innerdir>
+    <innerdir refid="dir_19199b34b5952e4267b068d949528b4f">C:/PROGI/travel-tales-app/backend/Mappers</innerdir>
+    <innerdir refid="dir_c7795318499388f4ea6187db39152565">C:/PROGI/travel-tales-app/backend/Migrations</innerdir>
+    <innerdir refid="dir_17fd8623fc592133310ec436a760636f">C:/PROGI/travel-tales-app/backend/Models</innerdir>
+    <innerdir refid="dir_8e48ec4e0478f5bf1c3f784f10953c98">C:/PROGI/travel-tales-app/backend/obj</innerdir>
+    <innerdir refid="dir_3f3ffec244952f79d4541137a8247919">C:/PROGI/travel-tales-app/backend/Repository</innerdir>
+    <innerdir refid="dir_b4d29ae5240a77e326d8d19d8438909f">C:/PROGI/travel-tales-app/backend/Service</innerdir>
+    <innerfile refid="_program_8cs">Program.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/"/>
+  </compounddef>
+</doxygen>

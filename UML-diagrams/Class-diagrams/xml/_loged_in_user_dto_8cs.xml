@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_loged_in_user_dto_8cs" kind="file" language="C#">
+    <compoundname>LogedInUserDto.cs</compoundname>
+    <innerclass refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" prot="public">backend::Dtos::Account::LogedInUserDto</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos">backend::Dtos</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos_1_1_account">backend::Dtos::Account</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Linq;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_account" kindref="compound">backend.Dtos.Account</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto" kindref="compound">LogedInUserDto</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>required<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1a3e1a0f2311054029cd60e205f7fad367" kindref="member">Username</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>required<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ae700fc7d6c0b76f1110f71317239c64a" kindref="member">Email</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>required<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_account_1_1_loged_in_user_dto_1ad4130627a108a99d389773d1d933f122" kindref="member">Token</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LogedInUserDto.cs"/>
+  </compounddef>
+</doxygen>

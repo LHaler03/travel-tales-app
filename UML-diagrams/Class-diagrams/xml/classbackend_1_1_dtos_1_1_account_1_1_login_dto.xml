@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_account_1_1_login_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Account::LoginDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1af42c8b1f90121359753ed09c18d03422" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Dtos.Account.LoginDto.Username</definition>
+        <argsstring></argsstring>
+        <name>Username</name>
+        <qualifiedname>backend.Dtos.Account.LoginDto.Username</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" line="12" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1ad36f2674dbfde70d0c4a25029d903cb5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>required string</type>
+        <definition>required string backend.Dtos.Account.LoginDto.Password</definition>
+        <argsstring></argsstring>
+        <name>Password</name>
+        <qualifiedname>backend.Dtos.Account.LoginDto.Password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" line="14" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" line="9" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/LoginDto.cs" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1ad36f2674dbfde70d0c4a25029d903cb5" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoginDto</scope><name>Password</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1af42c8b1f90121359753ed09c18d03422" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::LoginDto</scope><name>Username</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

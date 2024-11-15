@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_controllers_1_1_account_controller" kind="class" language="C#" prot="public">
+    <compoundname>backend::Controllers::AccountController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ControllerBase</basecompoundref>
+    <innerclass refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info" prot="public">backend::Controllers::AccountController::GoogleUserInfo</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1a65a592eba35eb6bd6975e3b15c70706f" prot="private" static="no" mutable="no">
+        <type>readonly UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly UserManager&lt;User&gt; backend.Controllers.AccountController._userManager</definition>
+        <argsstring></argsstring>
+        <name>_userManager</name>
+        <qualifiedname>backend.Controllers.AccountController._userManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="27" column="38" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1aa7956050c96e7196e6e6643710a2e074" prot="private" static="no" mutable="no">
+        <type>readonly SignInManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly SignInManager&lt;User&gt; backend.Controllers.AccountController._signInManager</definition>
+        <argsstring></argsstring>
+        <name>_signInManager</name>
+        <qualifiedname>backend.Controllers.AccountController._signInManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="28" column="40" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1a0ac9b3bd9bfaf61a2064d3680c24f5eb" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kindref="compound">ITokenService</ref></type>
+        <definition>readonly ITokenService backend.Controllers.AccountController._tokenService</definition>
+        <argsstring></argsstring>
+        <name>_tokenService</name>
+        <qualifiedname>backend.Controllers.AccountController._tokenService</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="29" column="40" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1af447478f84b04bb004fff1077867a008" prot="private" static="no" mutable="no">
+        <type>readonly IConfiguration</type>
+        <definition>readonly IConfiguration backend.Controllers.AccountController._config</definition>
+        <argsstring></argsstring>
+        <name>_config</name>
+        <qualifiedname>backend.Controllers.AccountController._config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="30" column="41" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1aa67ebbf46416ad66799a011e03860ac3" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kindref="compound">IAccountRepository</ref></type>
+        <definition>readonly IAccountRepository backend.Controllers.AccountController._accountRepository</definition>
+        <argsstring></argsstring>
+        <name>_accountRepository</name>
+        <qualifiedname>backend.Controllers.AccountController._accountRepository</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="31" column="45" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_account_controller_1a505309d35eebd4136b63ff039c9fba7e" prot="private" static="no" mutable="no">
+        <type>readonly HttpClient</type>
+        <definition>readonly HttpClient backend.Controllers.AccountController._httpClient</definition>
+        <argsstring></argsstring>
+        <name>_httpClient</name>
+        <qualifiedname>backend.Controllers.AccountController._httpClient</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="32" column="37" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1a91f5fd476afe1b1c05aaf03b7c175695" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Controllers.AccountController.AccountController</definition>
+        <argsstring>(UserManager&lt; User &gt; userManager, SignInManager&lt; User &gt; signInManager, ITokenService tokenService, IConfiguration config, IAccountRepository accountRepository)</argsstring>
+        <name>AccountController</name>
+        <qualifiedname>backend.Controllers.AccountController.AccountController</qualifiedname>
+        <param>
+          <type>UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>userManager</declname>
+        </param>
+        <param>
+          <type>SignInManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>signInManager</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kindref="compound">ITokenService</ref></type>
+          <declname>tokenService</declname>
+        </param>
+        <param>
+          <type>IConfiguration</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kindref="compound">IAccountRepository</ref></type>
+          <declname>accountRepository</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="33" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="33" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1a43010c50302bcb5dccecef628fa15997" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.Register</definition>
+        <argsstring>([FromBody] RegisterDto registerDto)</argsstring>
+        <name>Register</name>
+        <qualifiedname>backend.Controllers.AccountController.Register</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto" kindref="compound">RegisterDto</ref></type>
+          <declname>registerDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="44" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="44" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1acb60e7d472bfdbae03a916b01ea9e30d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.Login</definition>
+        <argsstring>(LoginDto loginDto)</argsstring>
+        <name>Login</name>
+        <qualifiedname>backend.Controllers.AccountController.Login</qualifiedname>
+        <param>
+          <type><ref refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto" kindref="compound">LoginDto</ref></type>
+          <declname>loginDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="84" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="84" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1a24ee98719e60696cc27d27478f0e2ec7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.RefreshToken</definition>
+        <argsstring>()</argsstring>
+        <name>RefreshToken</name>
+        <qualifiedname>backend.Controllers.AccountController.RefreshToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="122" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="122" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ad73a1790629eab18d7eb9f62762ce6e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.Logout</definition>
+        <argsstring>()</argsstring>
+        <name>Logout</name>
+        <qualifiedname>backend.Controllers.AccountController.Logout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="160" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="160" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ab9fb8e447505422b5b5830c9e07505b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.GoogleLogin</definition>
+        <argsstring>([FromBody] GoogleLoginDto googleLoginDto)</argsstring>
+        <name>GoogleLogin</name>
+        <qualifiedname>backend.Controllers.AccountController.GoogleLogin</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" kindref="compound">GoogleLoginDto</ref></type>
+          <declname>googleLoginDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="186" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="186" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ad317fa1cf98edbfc4741b20a8d17d9f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.AccountController.GetCurrentUser</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentUser</name>
+        <qualifiedname>backend.Controllers.AccountController.GetCurrentUser</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="245" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="245" bodyend="255"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.AccountController</label>
+        <link refid="classbackend_1_1_controllers_1_1_account_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.AccountController</label>
+        <link refid="classbackend_1_1_controllers_1_1_account_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="25" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="26" bodyend="264"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa67ebbf46416ad66799a011e03860ac3" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_accountRepository</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1af447478f84b04bb004fff1077867a008" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_config</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a505309d35eebd4136b63ff039c9fba7e" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_httpClient</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa7956050c96e7196e6e6643710a2e074" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_signInManager</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a0ac9b3bd9bfaf61a2064d3680c24f5eb" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_tokenService</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a65a592eba35eb6bd6975e3b15c70706f" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_userManager</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a91f5fd476afe1b1c05aaf03b7c175695" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>AccountController</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1ad317fa1cf98edbfc4741b20a8d17d9f3" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>GetCurrentUser</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1ab9fb8e447505422b5b5830c9e07505b6" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>GoogleLogin</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1acb60e7d472bfdbae03a916b01ea9e30d" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>Login</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1ad73a1790629eab18d7eb9f62762ce6e6" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>Logout</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a24ee98719e60696cc27d27478f0e2ec7" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>RefreshToken</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_account_controller_1a43010c50302bcb5dccecef628fa15997" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>Register</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

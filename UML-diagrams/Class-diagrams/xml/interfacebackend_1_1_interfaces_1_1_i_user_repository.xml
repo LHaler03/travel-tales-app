@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_user_repository" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IUserRepository</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_repository_1_1_user_repository" prot="public" virt="non-virtual">backend.Repository.UserRepository</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a269df732e55b1eee000f6db4fff1bb1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; <ref refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto" kindref="compound">UserDto</ref> &gt; &gt;</type>
+        <definition>Task&lt; List&lt; UserDto &gt; &gt; backend.Interfaces.IUserRepository.GetAllAsync</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllAsync</name>
+        <qualifiedname>backend.Interfaces.IUserRepository.GetAllAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_user_repository_1ab5a17f8ecbcb70ce8af3f55df80721d6">GetAllAsync</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" line="13" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a3d8c257574f10146e0d2b22bf9ef7eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>?&gt;</type>
+        <definition>Task&lt; User?&gt; backend.Interfaces.IUserRepository.GetByIdAsync</definition>
+        <argsstring>(string id)</argsstring>
+        <name>GetByIdAsync</name>
+        <qualifiedname>backend.Interfaces.IUserRepository.GetByIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_user_repository_1a2b45b49ca7ae59a329eb6d542da3eac7">GetByIdAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" line="14" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a36bfdcf40fa9b83513ea956febb71b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>?&gt;</type>
+        <definition>Task&lt; User?&gt; backend.Interfaces.IUserRepository.UpdateAsync</definition>
+        <argsstring>(string id, UpdateDto updateDto)</argsstring>
+        <name>UpdateAsync</name>
+        <qualifiedname>backend.Interfaces.IUserRepository.UpdateAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_user_repository_1a2b306f56a7d85fcf34b951c04091885c">UpdateAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto" kindref="compound">UpdateDto</ref></type>
+          <declname>updateDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" line="15" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_user_repository_1ab47efc6276134223fec9251f424cf33b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>?&gt;</type>
+        <definition>Task&lt; User?&gt; backend.Interfaces.IUserRepository.DeleteAsync</definition>
+        <argsstring>(string id)</argsstring>
+        <name>DeleteAsync</name>
+        <qualifiedname>backend.Interfaces.IUserRepository.DeleteAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_user_repository_1a3b75769f78aefe95933ec63d24bda940">DeleteAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" line="16" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IUserRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_user_repository"/>
+      </node>
+      <node id="2">
+        <label>backend.Repository.UserRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_user_repository"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" line="11" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IUserRepository.cs" bodystart="12" bodyend="17"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1ab47efc6276134223fec9251f424cf33b" prot="public" virt="non-virtual"><scope>backend::Interfaces::IUserRepository</scope><name>DeleteAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a269df732e55b1eee000f6db4fff1bb1c" prot="public" virt="non-virtual"><scope>backend::Interfaces::IUserRepository</scope><name>GetAllAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a3d8c257574f10146e0d2b22bf9ef7eb4" prot="public" virt="non-virtual"><scope>backend::Interfaces::IUserRepository</scope><name>GetByIdAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_user_repository_1a36bfdcf40fa9b83513ea956febb71b72" prot="public" virt="non-virtual"><scope>backend::Interfaces::IUserRepository</scope><name>UpdateAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Location::UpdateLocationRequestDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a016c04eeb82a8bd511b1216714644412" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Location.UpdateLocationRequestDto.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>backend.Dtos.Location.UpdateLocationRequestDto.Name</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" line="10" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a8b484b971bc187e282e4ed6073db6dd1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Location.UpdateLocationRequestDto.Country</definition>
+        <argsstring></argsstring>
+        <name>Country</name>
+        <qualifiedname>backend.Dtos.Location.UpdateLocationRequestDto.Country</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" line="11" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a1c9ede611ca1aa61586921ecbc876904" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Dtos.Location.UpdateLocationRequestDto.Lat</definition>
+        <argsstring></argsstring>
+        <name>Lat</name>
+        <qualifiedname>backend.Dtos.Location.UpdateLocationRequestDto.Lat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" line="12" column="24" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a6fed74aee2dbe75f964ed1d047f34b38" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Dtos.Location.UpdateLocationRequestDto.Lon</definition>
+        <argsstring></argsstring>
+        <name>Lon</name>
+        <qualifiedname>backend.Dtos.Location.UpdateLocationRequestDto.Lon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" line="13" column="24" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/UpdateLocationRequestDto.cs" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a8b484b971bc187e282e4ed6073db6dd1" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::UpdateLocationRequestDto</scope><name>Country</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a1c9ede611ca1aa61586921ecbc876904" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::UpdateLocationRequestDto</scope><name>Lat</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a6fed74aee2dbe75f964ed1d047f34b38" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::UpdateLocationRequestDto</scope><name>Lon</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a016c04eeb82a8bd511b1216714644412" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::UpdateLocationRequestDto</scope><name>Name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

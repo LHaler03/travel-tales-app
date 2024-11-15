@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_user_1_1_user_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::User::UserDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1ac94476fdfb26c16ebe7ad2b33aeb66c3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.User.UserDto.Id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <qualifiedname>backend.Dtos.User.UserDto.Id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="10" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a300e8e695b7d6c97db51b0227d138efd" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.User.UserDto.FirstName</definition>
+        <argsstring></argsstring>
+        <name>FirstName</name>
+        <qualifiedname>backend.Dtos.User.UserDto.FirstName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="11" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a616f88d38288a004b86e3e6e24d070d6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.User.UserDto.LastName</definition>
+        <argsstring></argsstring>
+        <name>LastName</name>
+        <qualifiedname>backend.Dtos.User.UserDto.LastName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="12" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a8ce28b90f1974aea1413acb3f0719eed" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.User.UserDto.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>backend.Dtos.User.UserDto.Email</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="13" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a94067be4a652f83788e039470422a85e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.User.UserDto.UserName</definition>
+        <argsstring></argsstring>
+        <name>UserName</name>
+        <qualifiedname>backend.Dtos.User.UserDto.UserName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="14" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/User/UserDto.cs" bodystart="9" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a8ce28b90f1974aea1413acb3f0719eed" prot="public" virt="non-virtual"><scope>backend::Dtos::User::UserDto</scope><name>Email</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a300e8e695b7d6c97db51b0227d138efd" prot="public" virt="non-virtual"><scope>backend::Dtos::User::UserDto</scope><name>FirstName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1ac94476fdfb26c16ebe7ad2b33aeb66c3" prot="public" virt="non-virtual"><scope>backend::Dtos::User::UserDto</scope><name>Id</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a616f88d38288a004b86e3e6e24d070d6" prot="public" virt="non-virtual"><scope>backend::Dtos::User::UserDto</scope><name>LastName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto_1a94067be4a652f83788e039470422a85e" prot="public" virt="non-virtual"><scope>backend::Dtos::User::UserDto</scope><name>UserName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

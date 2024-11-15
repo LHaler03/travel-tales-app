@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_account_1_1_update_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Account::UpdateDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a00d6182ff84ed578e50c719659e7e6ee" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? backend.Dtos.Account.UpdateDto.UserName</definition>
+        <argsstring></argsstring>
+        <name>UserName</name>
+        <qualifiedname>backend.Dtos.Account.UpdateDto.UserName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="11" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1ab057f66b6563f72330d44170ae1900d0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? backend.Dtos.Account.UpdateDto.Email</definition>
+        <argsstring></argsstring>
+        <name>Email</name>
+        <qualifiedname>backend.Dtos.Account.UpdateDto.Email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="13" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1aa2c1827a31c6d93d522d5c5028f4ad83" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? backend.Dtos.Account.UpdateDto.Password</definition>
+        <argsstring></argsstring>
+        <name>Password</name>
+        <qualifiedname>backend.Dtos.Account.UpdateDto.Password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="14" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1acd9c1ab498866c8894a1e7475ca3db13" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? backend.Dtos.Account.UpdateDto.FirstName</definition>
+        <argsstring></argsstring>
+        <name>FirstName</name>
+        <qualifiedname>backend.Dtos.Account.UpdateDto.FirstName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="15" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a1fc8ca5f2cbab3e4b9439df08f03fcc8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? backend.Dtos.Account.UpdateDto.LastName</definition>
+        <argsstring></argsstring>
+        <name>LastName</name>
+        <qualifiedname>backend.Dtos.Account.UpdateDto.LastName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="16" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="16" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" line="9" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Account/UpdateDto.cs" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1ab057f66b6563f72330d44170ae1900d0" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::UpdateDto</scope><name>Email</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1acd9c1ab498866c8894a1e7475ca3db13" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::UpdateDto</scope><name>FirstName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a1fc8ca5f2cbab3e4b9439df08f03fcc8" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::UpdateDto</scope><name>LastName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1aa2c1827a31c6d93d522d5c5028f4ad83" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::UpdateDto</scope><name>Password</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_account_1_1_update_dto_1a00d6182ff84ed578e50c719659e7e6ee" prot="public" virt="non-virtual"><scope>backend::Dtos::Account::UpdateDto</scope><name>UserName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

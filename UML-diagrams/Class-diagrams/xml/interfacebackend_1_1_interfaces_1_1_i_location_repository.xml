@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_location_repository" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::ILocationRepository</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_repository_1_1_location_repository" prot="public" virt="non-virtual">backend.Repository.LocationRepository</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a01e2fcde8c2129e040e90d840d6be407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref> &gt; &gt;</type>
+        <definition>Task&lt; List&lt; Location &gt; &gt; backend.Interfaces.ILocationRepository.GetAllAsync</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllAsync</name>
+        <qualifiedname>backend.Interfaces.ILocationRepository.GetAllAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_location_repository_1a8b5e58de1d6065a6556fadb8780e0402">GetAllAsync</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="13" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_location_repository_1ad6df71cfca40284357ecef452c7837c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref>?&gt;</type>
+        <definition>Task&lt; Location?&gt; backend.Interfaces.ILocationRepository.GetByIdAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>GetByIdAsync</name>
+        <qualifiedname>backend.Interfaces.ILocationRepository.GetByIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_location_repository_1a8e3ac7f6b6ec31788600d51722504cdd">GetByIdAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="14" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_location_repository_1aa71de4964e964fcabf1a5475b46c11da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref> &gt;</type>
+        <definition>Task&lt; Location &gt; backend.Interfaces.ILocationRepository.CreateAsync</definition>
+        <argsstring>(Location locationModel)</argsstring>
+        <name>CreateAsync</name>
+        <qualifiedname>backend.Interfaces.ILocationRepository.CreateAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_location_repository_1ab501f1cc10e4eafa46744e5bf4503735">CreateAsync</reimplementedby>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref></type>
+          <declname>locationModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="15" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a5415715967b1345d2da7df20963d82b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref>?&gt;</type>
+        <definition>Task&lt; Location?&gt; backend.Interfaces.ILocationRepository.UpdateAsync</definition>
+        <argsstring>(int id, UpdateLocationRequestDto locationDto)</argsstring>
+        <name>UpdateAsync</name>
+        <qualifiedname>backend.Interfaces.ILocationRepository.UpdateAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_location_repository_1a6abbbaf827008523805862a6fbc7d5e3">UpdateAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto" kindref="compound">UpdateLocationRequestDto</ref></type>
+          <declname>locationDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="16" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_location_repository_1acb24da05cef773d6977696b9f8d64f2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref>?&gt;</type>
+        <definition>Task&lt; Location?&gt; backend.Interfaces.ILocationRepository.DeleteAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>DeleteAsync</name>
+        <qualifiedname>backend.Interfaces.ILocationRepository.DeleteAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_location_repository_1a64165e2f1aa834bc1a660f471f8e65c9">DeleteAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="17" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.ILocationRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_location_repository"/>
+      </node>
+      <node id="2">
+        <label>backend.Repository.LocationRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_location_repository"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" line="11" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/ILocationRepository.cs" bodystart="12" bodyend="18"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1aa71de4964e964fcabf1a5475b46c11da" prot="public" virt="non-virtual"><scope>backend::Interfaces::ILocationRepository</scope><name>CreateAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1acb24da05cef773d6977696b9f8d64f2a" prot="public" virt="non-virtual"><scope>backend::Interfaces::ILocationRepository</scope><name>DeleteAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a01e2fcde8c2129e040e90d840d6be407" prot="public" virt="non-virtual"><scope>backend::Interfaces::ILocationRepository</scope><name>GetAllAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1ad6df71cfca40284357ecef452c7837c2" prot="public" virt="non-virtual"><scope>backend::Interfaces::ILocationRepository</scope><name>GetByIdAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_location_repository_1a5415715967b1345d2da7df20963d82b3" prot="public" virt="non-virtual"><scope>backend::Interfaces::ILocationRepository</scope><name>UpdateAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

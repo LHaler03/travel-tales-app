@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_d2c5c0eb1c19b0d9e3df2bc55b0b5eda" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Data</compoundname>
+    <innerfile refid="_application_d_b_context_8cs">ApplicationDBContext.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Data/"/>
+  </compounddef>
+</doxygen>

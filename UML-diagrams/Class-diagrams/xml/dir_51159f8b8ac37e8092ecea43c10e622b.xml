@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_51159f8b8ac37e8092ecea43c10e622b" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Dtos/Account</compoundname>
+    <innerfile refid="_loged_in_user_dto_8cs">LogedInUserDto.cs</innerfile>
+    <innerfile refid="_login_dto_8cs">LoginDto.cs</innerfile>
+    <innerfile refid="_register_dto_8cs">RegisterDto.cs</innerfile>
+    <innerfile refid="_update_dto_8cs">UpdateDto.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Account/"/>
+  </compounddef>
+</doxygen>

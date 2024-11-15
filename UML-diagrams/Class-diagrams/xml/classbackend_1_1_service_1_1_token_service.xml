@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_service_1_1_token_service" kind="class" language="C#" prot="public">
+    <compoundname>backend::Service::TokenService</compoundname>
+    <basecompoundref refid="interfacebackend_1_1_interfaces_1_1_i_token_service" prot="public" virt="non-virtual">backend.Interfaces.ITokenService</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_token_service_1adf947e5a322ae008d9d0413c61cbdf5a" prot="private" static="no" mutable="no">
+        <type>readonly IConfiguration</type>
+        <definition>readonly IConfiguration backend.Service.TokenService._config</definition>
+        <argsstring></argsstring>
+        <name>_config</name>
+        <qualifiedname>backend.Service.TokenService._config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="19" column="41" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_token_service_1a234444a9e5557ea62abc955127f062ac" prot="private" static="no" mutable="no">
+        <type>readonly SymmetricSecurityKey</type>
+        <definition>readonly SymmetricSecurityKey backend.Service.TokenService._key</definition>
+        <argsstring></argsstring>
+        <name>_key</name>
+        <qualifiedname>backend.Service.TokenService._key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="20" column="47" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_token_service_1aa78f7a3d98a519ff157be1a140b57724" prot="private" static="no" mutable="no">
+        <type>readonly UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly UserManager&lt;User&gt; backend.Service.TokenService._userManager</definition>
+        <argsstring></argsstring>
+        <name>_userManager</name>
+        <qualifiedname>backend.Service.TokenService._userManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="21" column="38" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_token_service_1a69e9b22fe535fe8d3d110832ae0f2643" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Service.TokenService.TokenService</definition>
+        <argsstring>(IConfiguration config, UserManager&lt; User &gt; userManager)</argsstring>
+        <name>TokenService</name>
+        <qualifiedname>backend.Service.TokenService.TokenService</qualifiedname>
+        <param>
+          <type>IConfiguration</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>userManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="23" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_token_service_1a634c302f356fc2d3965d5457d4ea9fd5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; string &gt;</type>
+        <definition>async Task&lt; string &gt; backend.Service.TokenService.CreateAccessToken</definition>
+        <argsstring>(User user)</argsstring>
+        <name>CreateAccessToken</name>
+        <qualifiedname>backend.Service.TokenService.CreateAccessToken</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f">CreateAccessToken</reimplements>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref></type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="30" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="30" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_token_service_1ae2b655d61b295a74de4f89b2a420ee1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string backend.Service.TokenService.CreateRefreshToken</definition>
+        <argsstring>()</argsstring>
+        <name>CreateRefreshToken</name>
+        <qualifiedname>backend.Service.TokenService.CreateRefreshToken</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c">CreateRefreshToken</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="63" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="63" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ITokenService</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_token_service"/>
+      </node>
+      <node id="1">
+        <label>backend.Service.TokenService</label>
+        <link refid="classbackend_1_1_service_1_1_token_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ITokenService</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_token_service"/>
+      </node>
+      <node id="1">
+        <label>backend.Service.TokenService</label>
+        <link refid="classbackend_1_1_service_1_1_token_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" line="17" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Service/TokenService.cs" bodystart="18" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_service_1_1_token_service_1adf947e5a322ae008d9d0413c61cbdf5a" prot="private" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>_config</name></member>
+      <member refid="classbackend_1_1_service_1_1_token_service_1a234444a9e5557ea62abc955127f062ac" prot="private" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>_key</name></member>
+      <member refid="classbackend_1_1_service_1_1_token_service_1aa78f7a3d98a519ff157be1a140b57724" prot="private" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>_userManager</name></member>
+      <member refid="classbackend_1_1_service_1_1_token_service_1a634c302f356fc2d3965d5457d4ea9fd5" prot="public" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>CreateAccessToken</name></member>
+      <member refid="classbackend_1_1_service_1_1_token_service_1ae2b655d61b295a74de4f89b2a420ee1f" prot="public" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>CreateRefreshToken</name></member>
+      <member refid="classbackend_1_1_service_1_1_token_service_1a69e9b22fe535fe8d3d110832ae0f2643" prot="public" virt="non-virtual"><scope>backend::Service::TokenService</scope><name>TokenService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_mappers_1_1_location_mappers" kind="class" language="C#" prot="public">
+    <compoundname>backend::Mappers::LocationMappers</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref></type>
+        <definition>static Location backend.Mappers.LocationMappers.ToLocationFromCreateDTO</definition>
+        <argsstring>(this CreateLocationRequestDto locationDto)</argsstring>
+        <name>ToLocationFromCreateDTO</name>
+        <qualifiedname>backend.Mappers.LocationMappers.ToLocationFromCreateDTO</qualifiedname>
+        <param>
+          <type>this <ref refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto" kindref="compound">CreateLocationRequestDto</ref></type>
+          <declname>locationDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" line="12" column="32" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="12" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" line="10" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/LocationMappers.cs" bodystart="11" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_mappers_1_1_location_mappers_1a680a3a6eb331c33ef8cd353ee6c96a2b" prot="public" virt="non-virtual"><scope>backend::Mappers::LocationMappers</scope><name>ToLocationFromCreateDTO</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

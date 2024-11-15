@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_token_service" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::ITokenService</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_service_1_1_token_service" prot="public" virt="non-virtual">backend.Service.TokenService</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; string &gt;</type>
+        <definition>Task&lt; string &gt; backend.Interfaces.ITokenService.CreateAccessToken</definition>
+        <argsstring>(User user)</argsstring>
+        <name>CreateAccessToken</name>
+        <qualifiedname>backend.Interfaces.ITokenService.CreateAccessToken</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_token_service_1a634c302f356fc2d3965d5457d4ea9fd5">CreateAccessToken</reimplementedby>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref></type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="12" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string backend.Interfaces.ITokenService.CreateRefreshToken</definition>
+        <argsstring>()</argsstring>
+        <name>CreateRefreshToken</name>
+        <qualifiedname>backend.Interfaces.ITokenService.CreateRefreshToken</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_token_service_1ae2b655d61b295a74de4f89b2a420ee1f">CreateRefreshToken</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="13" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.ITokenService</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_token_service"/>
+      </node>
+      <node id="2">
+        <label>backend.Service.TokenService</label>
+        <link refid="classbackend_1_1_service_1_1_token_service"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" line="10" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/ITokenService.cs" bodystart="11" bodyend="14"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f" prot="public" virt="non-virtual"><scope>backend::Interfaces::ITokenService</scope><name>CreateAccessToken</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" prot="public" virt="non-virtual"><scope>backend::Interfaces::ITokenService</scope><name>CreateRefreshToken</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

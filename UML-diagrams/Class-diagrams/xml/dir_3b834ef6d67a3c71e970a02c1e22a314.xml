@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_3b834ef6d67a3c71e970a02c1e22a314" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Migrations</compoundname>
+    <innerfile refid="20241105224710___initial_create_8cs">20241105224710_InitialCreate.cs</innerfile>
+    <innerfile refid="20241105224710___initial_create_8_designer_8cs">20241105224710_InitialCreate.Designer.cs</innerfile>
+    <innerfile refid="20241112101358___updating_asp_net_users_8cs">20241112101358_UpdatingAspNetUsers.cs</innerfile>
+    <innerfile refid="20241112101358___updating_asp_net_users_8_designer_8cs">20241112101358_UpdatingAspNetUsers.Designer.cs</innerfile>
+    <innerfile refid="_application_d_b_context_model_snapshot_8cs">ApplicationDBContextModelSnapshot.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/"/>
+  </compounddef>
+</doxygen>

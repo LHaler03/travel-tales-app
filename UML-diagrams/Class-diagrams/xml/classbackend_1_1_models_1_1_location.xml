@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_models_1_1_location" kind="class" language="C#" prot="public">
+    <compoundname>backend::Models::Location</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_location_1abbd1696eff399090bbc0af0595405b7e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Models.Location.Id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <qualifiedname>backend.Models.Location.Id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="10" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_location_1a1b31c02ce5a276b0dcfce2160910435e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.Location.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>backend.Models.Location.Name</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="11" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_location_1ac7a38974818817fafce2028574d9cd6b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.Location.Country</definition>
+        <argsstring></argsstring>
+        <name>Country</name>
+        <qualifiedname>backend.Models.Location.Country</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="12" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_location_1a227e902542ee9c4c2cb240c9e9d37670" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Models.Location.Lat</definition>
+        <argsstring></argsstring>
+        <name>Lat</name>
+        <qualifiedname>backend.Models.Location.Lat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="13" column="24" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_location_1ac77bf2cfc67a97cf810c8697dc1f4eda" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>decimal</type>
+        <definition>decimal backend.Models.Location.Lon</definition>
+        <argsstring></argsstring>
+        <name>Lon</name>
+        <qualifiedname>backend.Models.Location.Lon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="14" column="24" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Location.cs" bodystart="9" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_models_1_1_location_1ac7a38974818817fafce2028574d9cd6b" prot="public" virt="non-virtual"><scope>backend::Models::Location</scope><name>Country</name></member>
+      <member refid="classbackend_1_1_models_1_1_location_1abbd1696eff399090bbc0af0595405b7e" prot="public" virt="non-virtual"><scope>backend::Models::Location</scope><name>Id</name></member>
+      <member refid="classbackend_1_1_models_1_1_location_1a227e902542ee9c4c2cb240c9e9d37670" prot="public" virt="non-virtual"><scope>backend::Models::Location</scope><name>Lat</name></member>
+      <member refid="classbackend_1_1_models_1_1_location_1ac77bf2cfc67a97cf810c8697dc1f4eda" prot="public" virt="non-virtual"><scope>backend::Models::Location</scope><name>Lon</name></member>
+      <member refid="classbackend_1_1_models_1_1_location_1a1b31c02ce5a276b0dcfce2160910435e" prot="public" virt="non-virtual"><scope>backend::Models::Location</scope><name>Name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
