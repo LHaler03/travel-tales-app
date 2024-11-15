@@ -11,6 +11,7 @@ import axios from 'axios';
 interface UserType {
   username: string;
   email?: string;
+  emailConfirmed: boolean;
 }
 
 interface LoginFormData {
@@ -30,6 +31,7 @@ interface LoginResponse {
   username: string;
   email: string;
   token: string;
+  emailConfirmed: boolean;
 }
 
 type AuthContextType = {
@@ -46,7 +48,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://3.74.155.131/api',
+  baseURL: 'http://localhost:5185/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -120,6 +122,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       const user: UserType = {
         username: response.data.username,
         email: response.data.email,
+        emailConfirmed: response.data.emailConfirmed
       };
 
       localStorage.setItem('token', response.data.token);
@@ -155,6 +158,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         const user: UserType = {
           username: response.data.username,
           email: response.data.email,
+          emailConfirmed: response.data.emailConfirmed
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);

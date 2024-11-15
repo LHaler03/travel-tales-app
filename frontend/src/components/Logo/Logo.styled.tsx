@@ -39,3 +39,8 @@ export const LinksText = styled.a`
     color: #0056b3;
   }
 `;
+
+export const EmailVerificationLetter = styled.div`
+  font-size: 1.1rem;
+  color: darkred;
+`
