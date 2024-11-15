@@ -48,7 +48,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://localhost:5185/api',
+  baseURL:  'http://3.74.155.131/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
