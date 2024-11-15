@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Net;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.OpenApi.Models;
+using backend.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,6 +60,8 @@ builder.Services.AddAuthentication(options =>
     GoogleOptions.ClientId = builder.Configuration["Google:ClientId"];
     GoogleOptions.ClientSecret = builder.Configuration["Google:ClientSecret"];
 });
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Services.AddAuthorization(options =>
 {
