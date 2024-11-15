@@ -302,7 +302,8 @@ namespace backend.Controllers
             return Ok(new
             {
                 Username = user.UserName,
-                Email = user.Email
+                Email = user.Email,
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
             });
         }
 
