@@ -11,7 +11,7 @@ const fadeIn = keyframes`
 `;
 
 export const StyledMapContainer = styled(MapContainer)`
-  height: 70vh;
+  height: 65vh;
   max-width: 95%;
   margin: auto;
   border-radius: 10px;

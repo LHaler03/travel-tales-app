@@ -1,14 +1,23 @@
-import { LogoStyled, LinksText } from './Logo.styled';
+import { LogoStyled, LinksText, EmailVerificationLetter } from './Logo.styled';
 import { useAuth } from '../../context/AuthContext';
 
 export const Logo = () => {
   const { isAuthenticated, user } = useAuth();
 
-  if (isAuthenticated) {
+  if (isAuthenticated && user) {
     return (
       <>
         <LogoStyled>
-          <h1>Welcome, {user?.username}!</h1>
+          {user.username ? (
+            <h1>Welcome, {user?.username}!</h1>
+          ) : (
+            <h1>Welcome, {user?.email}</h1>
+          )}
+          {user.emailConfirmed ? (
+            <></>
+          ) : (
+            <EmailVerificationLetter>Please, verify your email. Check your spam folder.</EmailVerificationLetter>
+          )}
         </LogoStyled>
       </>
     );
