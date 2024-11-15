@@ -250,7 +250,7 @@ namespace backend.Controllers
                     Email = googleUserInfo.Email,
                     Name = googleUserInfo.Name,
                     Picture = googleUserInfo.Picture,
-                    emailConfirmed = googleUserInfo.Email_verified
+                    EmailVerified¢ = googleUserInfo.Email_verified
                 };
 
                 var user = await _accountRepository.GetOrCreateUserAsync(payload);
