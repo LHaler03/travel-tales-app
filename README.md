@@ -1,6 +1,8 @@
 # Travel Tales
-![Travel Tales logo](https://github.com/mislav333/travel-tales-app/blob/main/traveltaleslogo.png?raw=true)
-[Link na aplikaciju](http://ec2-3-74-155-131.eu-central-1.compute.amazonaws.com/)
+<p align="center">
+  ![Travel Tales logo](https://github.com/mislav333/travel-tales-app/blob/main/traveltaleslogo.png?raw=true)
+  [Link na aplikaciju](http://ec2-3-74-155-131.eu-central-1.compute.amazonaws.com/)
+</p>
 ## Opis projekta
 Ovaj projekt je rezultat timskog rada u sklopu projektnog zadatka kolegija [Programsko inženjerstvo](https://www.fer.unizg.hr/predmet/proinz) na Fakultetu elektrotehnike i računarstva Sveučilišta u Zagrebu. 
 
