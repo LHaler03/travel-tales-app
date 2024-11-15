@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Net.Http;
 using Microsoft.AspNetCore.Authorization;
+using System.Net;
 
 namespace backend.Controllers
 {
@@ -30,7 +31,8 @@ namespace backend.Controllers
         private readonly IConfiguration _config;
         private readonly IAccountRepository _accountRepository;
         private readonly HttpClient _httpClient;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService, IConfiguration config, IAccountRepository accountRepository)
+        private readonly IEmailSender _emailSender;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenService, IConfiguration config, IAccountRepository accountRepository, IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -38,6 +40,7 @@ namespace backend.Controllers
             _config = config;
             _accountRepository = accountRepository;
             _httpClient = new HttpClient();
+            _emailSender = emailSender;
         }
 
         [HttpPost("register")]
@@ -60,14 +63,20 @@ namespace backend.Controllers
                 if (result.Succeeded)
                 {
                     var roleResult = await _userManager.AddToRoleAsync(user, "User");
-                    if (roleResult.Succeeded)
-                    {
-                        return Ok("User created successfully");
-                    }
-                    else
-                    {
-                        return StatusCode(500, result.Errors);
-                    }
+                    if (!roleResult.Succeeded)
+                        return StatusCode(500, "Failed to assign role.");
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var confirmationLink = Url.Action(
+                        nameof(ConfirmEmail), 
+                        "Account", 
+                        new { userId = user.Id, token = WebUtility.UrlEncode(token) }, 
+                        Request.Scheme);
+                    
+                    var emailBody = $"Please confirm your account by clicking <a href='{confirmationLink}'>here</a>";
+                    await _emailSender.SendEmailAsync(user.Email, "Please confirm your email", emailBody);
+
+                    return Ok("User registered successfully. Please check your email to confirm your account.");
+
                 }
                 else
                 {
@@ -76,10 +85,43 @@ namespace backend.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return StatusCode(500, new { Error = e.Message, Details = e.StackTrace });
             }
         }
 
+        [HttpGet("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null)
+            {
+                return BadRequest("Invalid email confirmation link");
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+            var decodedToken = WebUtility.UrlDecode(token);
+            var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
+            if (result.Succeeded)
+            {
+                user.RefreshToken = "";
+                user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(-1);
+                await _userManager.UpdateAsync(user);
+                var cookieOptions = new CookieOptions
+                {
+                HttpOnly = true,
+                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddDays(-1)
+                };
+                Response.Cookies.Append("refreshToken", "", cookieOptions);
+                return Ok("Email confirmed successfully");
+            }
+            else
+            {
+                return StatusCode(500, result.Errors);
+            }
+        }
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -109,11 +151,12 @@ namespace backend.Controllers
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
 
             return Ok(
-                new LogedInUserDto
+                new LoggedInUserDto
                 {
                     Username = user.UserName,
                     Email = user.Email,
-                    Token = accessToken
+                    Token = accessToken,
+                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
                 }
             );
         }
@@ -212,6 +255,12 @@ namespace backend.Controllers
 
                 var user = await _accountRepository.GetOrCreateUserAsync(payload);
 
+                if (!user.EmailConfirmed)
+                {
+                    user.EmailConfirmed = true;
+                    await _userManager.UpdateAsync(user);
+                }
+
                 var accessToken = await _tokenService.CreateAccessToken(user);
                 var refreshToken = _tokenService.CreateRefreshToken();
 
@@ -227,12 +276,15 @@ namespace backend.Controllers
                 };
                 Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
 
-                return Ok(new
+                return Ok(
+                new LoggedInUserDto
                 {
+                    Username = user.UserName,
                     Email = user.Email,
-                    UserName = user.UserName,
-                    Token = accessToken
-                });
+                    Token = accessToken,
+                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
+                }
+            );
             }
             catch (Exception ex)
             {
@@ -250,7 +302,8 @@ namespace backend.Controllers
             return Ok(new
             {
                 Username = user.UserName,
-                Email = user.Email
+                Email = user.Email,
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
             });
         }
 
