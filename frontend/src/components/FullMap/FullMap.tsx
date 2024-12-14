@@ -18,6 +18,9 @@ export const FullMap = () => {
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [pictures, setPictures] = useState<
+  { pictureurl: string }[]
+>([]);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -52,9 +55,19 @@ export const FullMap = () => {
     fetchLocations();
   }, []);
 
+  const fetchPictures = async (cityName: string) => {
+    try {
+      const response = await axios.get(`http://localhost:5185/api/s3/${cityName}`);
+      setPictures(response.data);
+    } catch (error) {
+      console.log(`Error fetching pictures for ${cityName}:`, error);
+    }
+  };
+
   const handleMarkerClick = (cityName: string) => {
     setSelectedCity(cityName);
     setShowModal(true);
+    fetchPictures(cityName);
   };
 
   const handleCloseModal = () => {
