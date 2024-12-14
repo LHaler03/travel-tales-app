@@ -16,7 +16,9 @@ export const Logo = () => {
           {user.emailConfirmed ? (
             <></>
           ) : (
-            <EmailVerificationLetter>Please, verify your email. Check your spam folder.</EmailVerificationLetter>
+            <EmailVerificationLetter>
+              Please, verify your email. Check your spam folder.
+            </EmailVerificationLetter>
           )}
         </LogoStyled>
       </>

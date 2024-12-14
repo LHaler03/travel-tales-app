@@ -18,9 +18,7 @@ export const FullMap = () => {
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
-  const [pictures, setPictures] = useState<
-  { pictureurl: string }[]
->([]);
+  const [pictures, setPictures] = useState<{ pictureurl: string }[]>([]);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -57,7 +55,10 @@ export const FullMap = () => {
 
   const fetchPictures = async (cityName: string) => {
     try {
-      const response = await axios.get(`http://localhost:5185/api/s3/${cityName}`);
+      const response = await axios.get(
+        `http://localhost:5185/api/s3/${cityName}`,
+      );
+      //console.log(response.data)
       setPictures(response.data);
     } catch (error) {
       console.log(`Error fetching pictures for ${cityName}:`, error);
@@ -109,6 +110,13 @@ export const FullMap = () => {
             </Modal_button_close>
             <h1>{selectedCity}</h1>
             <p>Images for {selectedCity}...</p>
+            {pictures.map((picture, index) => (
+              <img
+                key={index}
+                src={picture.pictureurl}
+                alt={`${selectedCity}`}
+              />
+            ))}
             <Modal_button_generate>Generate postcard</Modal_button_generate>
           </Modal_content>
         </Modal>

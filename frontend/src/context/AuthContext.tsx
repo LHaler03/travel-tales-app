@@ -48,7 +48,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL:  'http://3.74.155.131/api',
+  baseURL: 'http://3.74.155.131/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       const user: UserType = {
         username: response.data.username,
         email: response.data.email,
-        emailConfirmed: response.data.emailConfirmed
+        emailConfirmed: response.data.emailConfirmed,
       };
 
       localStorage.setItem('token', response.data.token);
@@ -158,7 +158,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         const user: UserType = {
           username: response.data.username,
           email: response.data.email,
-          emailConfirmed: response.data.emailConfirmed
+          emailConfirmed: response.data.emailConfirmed,
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);
