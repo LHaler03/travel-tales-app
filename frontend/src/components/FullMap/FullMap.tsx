@@ -11,6 +11,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
+import { FaStar } from 'react-icons/fa';
 
 export const FullMap = () => {
   const [markers, setMarkers] = useState<
@@ -19,6 +20,9 @@ export const FullMap = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [pictures, setPictures] = useState<{ pictureurl: string }[]>([]);
+  const [rating, setRating] = useState<number>(0);
+  const [starcolor, setStarcolor] = useState<number>(0);
+  const [hoverstar, setHoverstar] = useState<number>(0);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -117,6 +121,35 @@ export const FullMap = () => {
                 alt={`${selectedCity}`}
               />
             ))}
+            <div>
+              {[...Array(5)].map((star, index) => {
+                const currentrating = index + 1;
+                return (
+                  <>
+                    <label>
+                      <input
+                        type='radio'
+                        name='rate'
+                        value={currentrating}
+                        onClick={() => setRating(currentrating)}
+                        aria-label={`Rate ${selectedCity} ${currentrating} stars`}
+                        style={{ display: 'none' }}
+                      />
+                      <FaStar
+                        color={
+                          currentrating <=
+                          (hoverstar || starcolor || rating || 0)
+                            ? 'yellow'
+                            : 'white'
+                        }
+                        onMouseEnter={() => setHoverstar(currentrating)}
+                        onMouseLeave={() => setHoverstar(0)}
+                      />
+                    </label>
+                  </>
+                );
+              })}
+            </div>
             <Modal_button_generate>Generate postcard</Modal_button_generate>
           </Modal_content>
         </Modal>
