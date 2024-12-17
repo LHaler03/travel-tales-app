@@ -23,7 +23,7 @@ export const MyImage = () => {
          />
          <div id="upperbox" style={{position: 'absolute', top: 0, left: 0, width: '270px', height: '110px', background: 'white', opacity: '30%'}}/>
          <h2 style={{position: 'absolute', top: '5px', left: '30px', fontFamily: 'Roboto, sans-serif'}}>Berlin</h2>
-         <h3 style={{position: 'absolute', top: '40px', left: '30px', fontFamily: 'Roboto, sans-serif'}}>from: Kristijan Šagovac</h3>
+         <h3 style={{position: 'absolute', top: '40px', left: '30px', fontFamily: 'Roboto, sans-serif'}}>from: travel tales</h3>
        </div>
     );
    }
