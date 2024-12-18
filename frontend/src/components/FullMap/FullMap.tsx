@@ -6,6 +6,7 @@ import {
   Modal_content,
   Wrapper,
   StyledFullMapContainer,
+  CityPicture,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -19,7 +20,7 @@ export const FullMap = () => {
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
-  const [pictures, setPictures] = useState<{ pictureurl: string }[]>([]);
+  const [pictures, setPictures] = useState<string[]>([]);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -112,11 +113,7 @@ export const FullMap = () => {
             <h1>{selectedCity}</h1>
             <p>Images for {selectedCity}...</p>
             {pictures.map((picture, index) => (
-              <img
-                key={index}
-                src={picture.pictureurl}
-                alt={`${selectedCity}`}
-              />
+              <CityPicture key={index} src={picture} alt={`${selectedCity}`} />
             ))}
             <div>
               <div>Food:</div>

@@ -97,3 +97,10 @@ export const Modal_button_generate = styled.button`
     right: 2%;
   }
 `;
+
+export const CityPicture = styled.img`
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  margin: 10px;
+`;
