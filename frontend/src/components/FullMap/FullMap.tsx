@@ -23,8 +23,19 @@ export const FullMap = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
@@ -122,7 +133,6 @@ export const FullMap = () => {
               X
             </Modal_button_close>
             <h1>{selectedCity}</h1>
-            <p>Images for {selectedCity}...</p>
             <Cards>
               <Cardmap>
                 <Slider {...settings}>

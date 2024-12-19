@@ -100,7 +100,12 @@ export const Modal_button_generate = styled.button`
 
 export const CityPicture = styled.img`
   width: 200px;
-  height: 100px;
+  height: 200px;
   object-fit: cover;
-  margin: 10px;
+  border-radius: 8px;
+
+  @media (min-width: 1024px) {
+    width: 400px;
+    height: 300px;
+  }
 `;

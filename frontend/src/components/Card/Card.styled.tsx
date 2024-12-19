@@ -3,20 +3,27 @@ import styled from 'styled-components';
 export const Cards = styled.div`
   width: 80%;
   margin: auto;
-
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
   .slick-slide > div {
-    margin: 0 10px;
+    margin: 0 5px;
   }
 `;
 
 export const Cardmap = styled.div`
-  margin-top: 10rem;
+  margin-bottom: 2rem;
 `;
 
 export const SingleCard = styled.div`
-  background-color: white;
-  height: 100px;
-  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 export const Picture = styled.div`
