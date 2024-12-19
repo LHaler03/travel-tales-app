@@ -13,8 +13,19 @@ import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
 import { Star } from '../Star/Star';
+import { Cards, Cardmap, SingleCard } from '../Card/Card.styled';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export const FullMap = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
@@ -112,9 +123,21 @@ export const FullMap = () => {
             </Modal_button_close>
             <h1>{selectedCity}</h1>
             <p>Images for {selectedCity}...</p>
-            {pictures.map((picture, index) => (
-              <CityPicture key={index} src={picture} alt={`${selectedCity}`} />
-            ))}
+            <Cards>
+              <Cardmap>
+                <Slider {...settings}>
+                  {pictures.map((picture, index) => (
+                    <SingleCard key={index}>
+                      <CityPicture
+                        key={index}
+                        src={picture}
+                        alt={`${selectedCity}`}
+                      />
+                    </SingleCard>
+                  ))}
+                </Slider>
+              </Cardmap>
+            </Cards>
             <div>
               <div>Food:</div>
               <Star />
