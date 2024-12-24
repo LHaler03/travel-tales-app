@@ -17,6 +17,7 @@ import { Cards, Cardmap, SingleCard } from '../Card/Card.styled';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useNavigate } from 'react-router-dom';
 
 export const FullMap = () => {
   const settings = {
@@ -51,6 +52,8 @@ export const FullMap = () => {
   });
 
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -99,6 +102,13 @@ export const FullMap = () => {
     setShowModal(false);
     setSelectedCity(null);
   };
+
+  /*const HandleToGeneratePage: FC = () => {
+    useMapEvents({
+      click: () => navigate('/generate'),
+    });
+    return null;
+  };*/
 
   return (
     <Wrapper>
@@ -160,7 +170,9 @@ export const FullMap = () => {
               <div>Local culture:</div>
               <Star />
             </div>
-            <Modal_button_generate>Generate postcard</Modal_button_generate>
+            <Modal_button_generate onClick={() => navigate('/generate')}>
+              Generate postcard
+            </Modal_button_generate>
           </Modal_content>
         </Modal>
       )}
