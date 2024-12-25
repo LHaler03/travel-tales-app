@@ -1,5 +1,6 @@
 import CityInfo from '../components/CityInfo/CityInfo';
 import { useLocation } from 'react-router-dom';
+import Pictures from '../components/Pictures/Pictures';
 
 function GeneratePage() {
   const location = useLocation();
@@ -11,6 +12,7 @@ function GeneratePage() {
   return (
     <>
       <CityInfo city={city} geocode={geocode} />
+      <Pictures city={city} />
     </>
   );
 }
