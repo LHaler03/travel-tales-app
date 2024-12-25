@@ -44,6 +44,9 @@ export const FullMap = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [pictures, setPictures] = useState<string[]>([]);
+  const [selectedGeocode, setSelectedGeocode] = useState<
+    [number, number] | null
+  >(null);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -92,10 +95,11 @@ export const FullMap = () => {
     }
   };
 
-  const handleMarkerClick = (cityName: string) => {
+  const handleMarkerClick = (cityName: string, geocode: [number, number]) => {
     setSelectedCity(cityName);
     setShowModal(true);
     fetchPictures(cityName);
+    setSelectedGeocode(geocode);
   };
 
   const handleCloseModal = () => {
@@ -130,7 +134,7 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () => handleMarkerClick(marker.popUp),
+              click: () => handleMarkerClick(marker.popUp, marker.geocode),
             }}
           />
         ))}
@@ -170,7 +174,13 @@ export const FullMap = () => {
               <div>Local culture:</div>
               <Star />
             </div>
-            <Modal_button_generate onClick={() => navigate('/generate')}>
+            <Modal_button_generate
+              onClick={() =>
+                navigate('/generate', {
+                  state: { city: selectedCity, geocode: selectedGeocode },
+                })
+              }
+            >
               Generate postcard
             </Modal_button_generate>
           </Modal_content>
