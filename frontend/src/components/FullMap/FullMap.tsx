@@ -6,18 +6,47 @@ import {
   Modal_content,
   Wrapper,
   StyledFullMapContainer,
+  CityPicture,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
+import { Star } from '../Star/Star';
+import { Cards, Cardmap, SingleCard } from '../Card/Card.styled';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useNavigate } from 'react-router-dom';
 
 export const FullMap = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [pictures, setPictures] = useState<string[]>([]);
+  const [selectedGeocode, setSelectedGeocode] = useState<
+    [number, number] | null
+  >(null);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -26,6 +55,8 @@ export const FullMap = () => {
   });
 
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -52,15 +83,36 @@ export const FullMap = () => {
     fetchLocations();
   }, []);
 
-  const handleMarkerClick = (cityName: string) => {
+  const fetchPictures = async (cityName: string) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5185/api/s3/${cityName}`,
+      );
+      //console.log(response.data)
+      setPictures(response.data);
+    } catch (error) {
+      console.log(`Error fetching pictures for ${cityName}:`, error);
+    }
+  };
+
+  const handleMarkerClick = (cityName: string, geocode: [number, number]) => {
     setSelectedCity(cityName);
     setShowModal(true);
+    fetchPictures(cityName);
+    setSelectedGeocode(geocode);
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedCity(null);
   };
+
+  /*const HandleToGeneratePage: FC = () => {
+    useMapEvents({
+      click: () => navigate('/generate'),
+    });
+    return null;
+  };*/
 
   return (
     <Wrapper>
@@ -82,7 +134,7 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () => handleMarkerClick(marker.popUp),
+              click: () => handleMarkerClick(marker.popUp, marker.geocode),
             }}
           />
         ))}
@@ -95,8 +147,42 @@ export const FullMap = () => {
               X
             </Modal_button_close>
             <h1>{selectedCity}</h1>
-            <p>Images for {selectedCity}...</p>
-            <Modal_button_generate>Generate postcard</Modal_button_generate>
+            <Cards>
+              <Cardmap>
+                <Slider {...settings}>
+                  {pictures.map((picture, index) => (
+                    <SingleCard key={index}>
+                      <CityPicture
+                        key={index}
+                        src={picture}
+                        alt={`${selectedCity}`}
+                      />
+                    </SingleCard>
+                  ))}
+                </Slider>
+              </Cardmap>
+            </Cards>
+            <div>
+              <div>Food:</div>
+              <Star />
+            </div>
+            <div>
+              <div>Weather:</div>
+              <Star />
+            </div>
+            <div>
+              <div>Local culture:</div>
+              <Star />
+            </div>
+            <Modal_button_generate
+              onClick={() =>
+                navigate('/generate', {
+                  state: { city: selectedCity, geocode: selectedGeocode },
+                })
+              }
+            >
+              Generate postcard
+            </Modal_button_generate>
           </Modal_content>
         </Modal>
       )}
