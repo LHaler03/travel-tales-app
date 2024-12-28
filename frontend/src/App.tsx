@@ -9,6 +9,8 @@ import MapPage from './pages/MapPage';
 import SupportPage from './pages/SupportPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ExplorePage from './pages/ExplorePage';
+import ImageReviewPage from './pages/ImageReviewPage';
+import UsersReviewPage from './pages/UsersReviewPage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
 function App() {
@@ -28,6 +30,8 @@ function App() {
             <Route path='/about' element={<AboutUsPage />} />
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
+            <Route path='/image-review' element={<ImageReviewPage />} />
+            <Route path='/users-review' element={<UsersReviewPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

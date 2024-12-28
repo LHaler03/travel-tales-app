@@ -278,3 +278,4 @@ const useAuth = () => {
 };
 
 export { useAuth, AuthProvider };
+export type { UserType };

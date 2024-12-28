@@ -68,12 +68,12 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
-            {user && user.role === 'Admin' && (
-              <>
-                <Link to="/usersreview">Users Review</Link>
-                <Link to="/postcardsreview">Postcards Review</Link>
-              </>
-            )}
+            {/* {user && user.role === 'Admin' && (
+              <> */}
+                <Link to="/users-review">Users Review</Link>
+                <Link to="/image-review">Image Review</Link>
+              {/* </>
+            )} */}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -170,11 +170,11 @@ export const Navbar = () => {
               </Link>
               {user && user.role === 'Admin' && (
                 <>
-                  <Link to="/usersreview" onClick={() => setIsMenuToggled(false)}>
+                  <Link to="/users-review" onClick={() => setIsMenuToggled(false)}>
                     Users Review
                   </Link>
-                  <Link to="/postcardsreview" onClick={() => setIsMenuToggled(false)}>
-                    Postcards Review
+                  <Link to="/image-review" onClick={() => setIsMenuToggled(false)}>
+                    Image Review
                   </Link>
                 </>
               )}
