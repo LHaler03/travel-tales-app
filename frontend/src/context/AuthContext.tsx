@@ -12,6 +12,7 @@ interface UserType {
   username: string;
   email?: string;
   emailConfirmed: boolean;
+  role: string; //admin role
 }
 
 interface LoginFormData {
@@ -123,6 +124,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         username: response.data.username,
         email: response.data.email,
         emailConfirmed: response.data.emailConfirmed,
+        role: 'admin', //admin role
       };
 
       localStorage.setItem('token', response.data.token);
@@ -159,6 +161,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           username: response.data.username,
           email: response.data.email,
           emailConfirmed: response.data.emailConfirmed,
+          role: 'admin', //admin role
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);

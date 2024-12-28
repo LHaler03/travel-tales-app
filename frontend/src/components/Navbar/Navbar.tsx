@@ -25,6 +25,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated, logout } = useAuth();
+  const { user } = useAuth();
 
   const handleClose = () => {
     setIsMenuToggled(false);
@@ -67,6 +68,12 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
+            {user && user.role === 'Admin' && (
+              <>
+                <Link to="/usersreview">Users Review</Link>
+                <Link to="/postcardsreview">Postcards Review</Link>
+              </>
+            )}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -161,6 +168,16 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
+              {user && user.role === 'Admin' && (
+                <>
+                  <Link to="/usersreview" onClick={() => setIsMenuToggled(false)}>
+                    Users Review
+                  </Link>
+                  <Link to="/postcardsreview" onClick={() => setIsMenuToggled(false)}>
+                    Postcards Review
+                  </Link>
+                </>
+              )}
             </MenuItems>
           </Sidebar>
         </>
