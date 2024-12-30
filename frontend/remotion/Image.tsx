@@ -1,10 +1,24 @@
 import React from 'react';
 import { Img, staticFile } from 'remotion'
 import { loadFont } from "@remotion/google-fonts/Nunito";
+import { z } from "zod";
+import { zColor } from "@remotion/zod-types";
 
 const { fontFamily } = loadFont();
 
-export const MyImage = () => {
+export const ImageSchema = z.object({
+  fromText: z.string(),
+  titleColor: zColor(),
+  fromColor: zColor(),
+  borderColor: zColor(),
+});
+
+export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
+  fromText: text1,
+  titleColor: color1,
+  fromColor: color2,
+  borderColor: color3,
+}) => {
     return (
        <div 
           style={{ 
@@ -12,7 +26,7 @@ export const MyImage = () => {
             width: '1920px', 
             height: '1080px', 
             overflow: 'hidden', 
-            border: '12px solid white' 
+            border: `12px solid ${color3}` 
           }}>
          <Img 
            src={staticFile("images/1.avif")} 
@@ -33,7 +47,7 @@ export const MyImage = () => {
               width: '85%',
               height: '100%',
               clipPath: 'polygon(78% 0%, 100% 0%, 100% 100%, 0% 100%)',
-              backgroundColor: 'white'
+              backgroundColor: color3
             }} />
          <Img 
            src={staticFile("images/2.jpg")} 
@@ -60,14 +74,16 @@ export const MyImage = () => {
               fontSize: '70px', 
               margin: '20px', 
               fontWeight: 'bold', 
-              fontFamily: 'Nunito, sans-serif'
+              fontFamily: 'Nunito, sans-serif',
+              color: color1
             }}>Berlin</div>
           <div 
             style={{
               fontSize: '50px', 
               margin: '20px', 
-              fontFamily: 'Nunito, sans-serif'
-            }}>from: travel tales</div>
+              fontFamily: 'Nunito, sans-serif',
+              color: color2
+            }}>from: {text1} </div>
          </div>
        </div>
     );

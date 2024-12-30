@@ -1,14 +1,21 @@
 import React from 'react';
 import { Still } from 'remotion';
-import { MyImage } from './Image';
+import { ImageSchema, MyImage } from './Image';
  
 export const RemotionRoot: React.FC = () => {
   return (
     <Still
-        id="MyImage"
-        component={MyImage}
-        width={1920}
-        height={1080}
+      schema={ImageSchema}
+      defaultProps={{
+        fromText: 'travel tales',
+        titleColor: 'black',
+        fromColor: 'black',
+        borderColor: 'white',
+      }}
+      id="MyImage"
+      component={MyImage}
+      width={1920}
+      height={1080}
     />
   );
 };
