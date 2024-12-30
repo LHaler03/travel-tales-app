@@ -19,15 +19,15 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
             width: '1080px', 
             height: '1920px', 
             overflow: 'hidden', 
-            border: `12px solid ${color3}` 
+            border: `20px solid ${color3}` 
           }}>
          <Img 
            src={staticFile("images/1.avif")} 
            style={{ 
             position: 'absolute', 
             top: 0, 
-            left: 0, 
-            height: '60%', 
+            left: '-45%', 
+            height: '59%', 
             width: 'auto', 
             objectFit: 'cover' 
           }} 
@@ -47,8 +47,8 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
            style={{ 
             position: 'absolute', 
             bottom: 0, 
-            right: 0, 
-            height: '55%', 
+            right: '-45%', 
+            height: '59%', 
             width: 'auto', 
             objectFit: 'cover', 
             clipPath: 'polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%)'
@@ -57,10 +57,11 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
          <div id="upperbox" 
             style={{
               position: 'absolute', 
-              top: 0, 
-              left: 0, 
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
               padding: '35px', 
-              background: 'rgba(255, 255, 255, 0.3)'
+              background: 'rgba(255, 255, 255, 0.6)'
             }}>
           <div 
             style={{
@@ -72,7 +73,7 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
             }}>Berlin</div>
           <div 
             style={{
-              fontSize: '50px', 
+              fontSize: '52px', 
               margin: '20px', 
               fontFamily: 'Nunito, sans-serif',
               color: color2

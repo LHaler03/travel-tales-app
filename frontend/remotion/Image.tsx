@@ -67,7 +67,7 @@ export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
               top: 0, 
               left: 0, 
               padding: '35px', 
-              background: 'rgba(255, 255, 255, 0.3)'
+              background: 'rgba(255, 255, 255, 0.4)'
             }}>
           <div 
             style={{
@@ -79,7 +79,7 @@ export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
             }}>Berlin</div>
           <div 
             style={{
-              fontSize: '50px', 
+              fontSize: '52px', 
               margin: '20px', 
               fontFamily: 'Nunito, sans-serif',
               color: color2
