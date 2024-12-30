@@ -7,8 +7,8 @@ export const RemotionRoot: React.FC = () => {
     <Still
         id="MyImage"
         component={MyImage}
-        width={900}
-        height={472}
+        width={1920}
+        height={1080}
     />
   );
 };
