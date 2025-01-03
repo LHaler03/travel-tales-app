@@ -103,6 +103,8 @@ builder.Services.AddScoped<IS3Service, S3Service>(sp =>
 //         });
 // });
 
+builder.Services.AddHostedService<PostcardCleanupService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",

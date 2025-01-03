@@ -108,4 +108,15 @@ public class S3Service : IS3Service
             throw new Exception($"Error uploading postcard: {ex.Message}", ex);
         }
     }
+
+    public async Task DeleteObjectAsync(string key)
+    {
+        var deleteRequest = new DeleteObjectRequest
+        {
+            BucketName = _bucketName,
+            Key = key
+        };
+        
+        await _s3Client.DeleteObjectAsync(deleteRequest);
+    }
 }
