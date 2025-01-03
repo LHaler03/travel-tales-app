@@ -106,9 +106,20 @@ namespace backend.Repository
             var postcard = await _context.Postcards.FindAsync(id);
             if (postcard == null) return false;
 
-            _context.Postcards.Remove(postcard);
-            await _context.SaveChangesAsync();
-            return true;
+            try
+            {
+                var uri = new Uri(postcard.ImageUrl);
+                var key = uri.AbsolutePath.TrimStart('/');
+                await _s3Service.DeleteObjectAsync(key);
+                _context.Postcards.Remove(postcard);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to delete postcard {id}: {ex.Message}");
+                throw; // Re-throw to let the controller handle the error
+            }
         }
     }
 }

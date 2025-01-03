@@ -71,8 +71,15 @@ namespace backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePostcard(int id)
         {
-            var result = await _postcardRepo.DeletePostcardAsync(id);
-            return result ? NoContent() : NotFound();
+            try
+            {
+                var result = await _postcardRepo.DeletePostcardAsync(id);
+                return result ? NoContent() : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error deleting postcard: {ex.Message}");
+            }
         }
     }
 } 
