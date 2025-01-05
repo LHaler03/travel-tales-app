@@ -85,6 +85,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPostcardRepository, PostcardRepository>();
 
 builder.Services.AddSingleton<IAmazonS3>(sp => new AmazonS3Client(Amazon.RegionEndpoint.GetBySystemName(region)));
 builder.Services.AddScoped<IS3Service, S3Service>(sp =>
@@ -101,6 +102,8 @@ builder.Services.AddScoped<IS3Service, S3Service>(sp =>
 //                    .AllowCredentials();
 //         });
 // });
+
+builder.Services.AddHostedService<PostcardCleanupService>();
 
 builder.Services.AddCors(options =>
 {
