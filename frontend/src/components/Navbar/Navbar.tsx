@@ -68,7 +68,7 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
-            {/* {user && user.role === 'Admin' && (
+            {/* {user && user.role === 'admin' && (
               <> */}
                 <Link to="/users-review">Users Review</Link>
                 <Link to="/image-review">Image Review</Link>

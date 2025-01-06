@@ -124,7 +124,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         username: response.data.username,
         email: response.data.email,
         emailConfirmed: response.data.emailConfirmed,
-        role: 'admin', //admin role
+        role: response.data.role, //admin role
       };
 
       localStorage.setItem('token', response.data.token);
@@ -161,7 +161,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           username: response.data.username,
           email: response.data.email,
           emailConfirmed: response.data.emailConfirmed,
-          role: 'admin', //admin role
+          role: response.data.role, //admin role
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);
