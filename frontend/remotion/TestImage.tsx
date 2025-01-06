@@ -21,6 +21,7 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
   borderColor: color3,
 }) => {
     const [pictures, setPictures] = useState<string[]>([]);
+    const [imageHeight, setImageHeight] = useState(0);
 
     const fetchPictures = async (cityName: string) => {
         try {
@@ -33,11 +34,16 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
         }
     };
 
+    const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+      setImageHeight(event.currentTarget.offsetHeight);
+    };
+
     React.useEffect(() => {
-        fetchPictures('Berlin');
+        fetchPictures('Reykjavik');
     }, []);
 
-    console.log(pictures);
+    const imageSource1 = pictures[0] || staticFile("images/white.avif");
+    const imageSource2 = pictures[1] || staticFile("images/white.avif");
 
     return (
        <div 
@@ -49,7 +55,7 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
             border: `12px solid ${color3}` 
           }}>
          <Img 
-           src={staticFile("images/1.avif")} 
+           src={imageSource1} 
            style={{ 
             position: 'absolute', 
             top: 0, 
@@ -62,23 +68,25 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
          <div 
             style={{
               position: 'absolute',
-              top: 0,
+              top: 'auto',
+              bottom: 0,
               right: 0,
-              width: '85%',
+              width: '1600px',
               height: '100%',
-              clipPath: 'polygon(78% 0%, 100% 0%, 100% 100%, 0% 100%)',
+              clipPath: 'polygon(76% 0%, 100% 0%, 100% 100%, 0% 100%)',
               backgroundColor: color3
             }} />
          <Img 
-           src={staticFile("images/2.jpg")} 
+           src={imageSource2}
+           onLoad={handleImageLoad} 
            style={{ 
             position: 'absolute', 
-            top: 0, 
+            bottom: 0, 
             right: 0, 
-            height: '100%', 
-            width: 'auto', 
+            height: imageHeight || 1080, 
+            width: '1584px', 
             objectFit: 'cover', 
-            clipPath: 'polygon(80% 0%, 100% 0%, 100% 100%, 0% 100%)'
+            clipPath: 'polygon(79% 0%, 100% 0%, 100% 100%, 0% 100%)'
           }} 
          />
          <div id="upperbox" 
@@ -96,7 +104,7 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
               fontWeight: 'bold', 
               fontFamily: 'Nunito, sans-serif',
               color: color1
-            }}>Berlin</div>
+            }}>Reykjavik</div>
           <div 
             style={{
               fontSize: '52px', 
@@ -108,4 +116,3 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
        </div>
     );
    }
-   

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Img, staticFile } from 'remotion'
 import { loadFont } from "@remotion/google-fonts/Nunito";
 import { z } from "zod";
 import { zColor } from "@remotion/zod-types";
+import axios from 'axios';
 
 const { fontFamily } = loadFont();
 
@@ -19,6 +20,26 @@ export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
   fromColor: color2,
   borderColor: color3,
 }) => {
+    const [pictures, setPictures] = useState<string[]>([]);
+
+    const fetchPictures = async (cityName: string) => {
+        try {
+            const response = await axios.get(
+            `http://localhost:5185/api/s3/${cityName}`,
+            );
+            setPictures(response.data);
+        } catch (error) {
+            console.log(`Error fetching pictures for ${cityName}:`, error);
+        }
+    };
+
+    React.useEffect(() => {
+        fetchPictures('Berlin');
+    }, []);
+
+    const imageSource1 = pictures[0] || staticFile("images/white.avif");
+    const imageSource2 = pictures[1] || staticFile("images/white.avif");
+
     return (
        <div 
           style={{ 
@@ -29,7 +50,7 @@ export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
             border: `12px solid ${color3}` 
           }}>
          <Img 
-           src={staticFile("images/1.avif")} 
+           src={imageSource1} 
            style={{ 
             position: 'absolute', 
             top: 0, 
@@ -50,7 +71,7 @@ export const MyImage: React.FC<z.infer<typeof ImageSchema>> = ({
               backgroundColor: color3
             }} />
          <Img 
-           src={staticFile("images/2.jpg")} 
+           src={imageSource2} 
            style={{ 
             position: 'absolute', 
             top: 0, 
