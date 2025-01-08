@@ -1,8 +1,7 @@
 import React from 'react';
 import { Still } from 'remotion';
-import { ImageSchema, MyImage } from './Image';
 import { VerticalImage } from './VerticalImage';
-import { TestImage } from './TestImage';
+import { HorizontalImage, ImageSchema } from './HorizontalImage';
  
 export const RemotionRoot: React.FC = () => {
   return (
@@ -15,8 +14,8 @@ export const RemotionRoot: React.FC = () => {
           fromColor: 'black',
           borderColor: 'white',
         }}
-        id="MyImage"
-        component={MyImage}
+        id="HorizontalImage"
+        component={HorizontalImage}
         width={1920}
         height={1080}
       />
@@ -33,20 +32,6 @@ export const RemotionRoot: React.FC = () => {
         component={VerticalImage}
         width={1080}
         height={1920}
-      />
-
-      <Still
-        schema={ImageSchema}
-        defaultProps={{
-          fromText: 'travel tales',
-          titleColor: 'black',
-          fromColor: 'black',
-          borderColor: 'white',
-        }}
-        id="TestImage"
-        component={TestImage}
-        width={1920}
-        height={1080}
       />
     </>
   );

@@ -14,7 +14,7 @@ export const ImageSchema = z.object({
   borderColor: zColor(),
 });
 
-export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
+export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   fromText: text1,
   titleColor: color1,
   fromColor: color2,
@@ -22,6 +22,10 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
 }) => {
     const [pictures, setPictures] = useState<string[]>([]);
     const [imageHeight, setImageHeight] = useState(0);
+    const [imageHeight2, setImageHeight2] = useState(0);
+    const [imageWidth, setImageWidth] = useState(0);
+
+    const cityName = 'Reykjavik'
 
     const fetchPictures = async (cityName: string) => {
         try {
@@ -38,8 +42,15 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
       setImageHeight(event.currentTarget.offsetHeight);
     };
 
+    const handleImageLoad2 = (event: React.SyntheticEvent<HTMLImageElement>) => {
+      const height = event.currentTarget.naturalHeight;
+      const width = event.currentTarget.naturalWidth;
+      setImageWidth(width);
+      setImageHeight2(height)
+    };
+
     React.useEffect(() => {
-        fetchPictures('Reykjavik');
+        fetchPictures(cityName);
     }, []);
 
     const imageSource1 = pictures[0] || staticFile("images/white.avif");
@@ -55,13 +66,14 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
             border: `12px solid ${color3}` 
           }}>
          <Img 
-           src={imageSource1} 
+           src={imageSource1}
+           onLoad={handleImageLoad2}  
            style={{ 
             position: 'absolute', 
             top: 0, 
             left: 0, 
-            height: '100%', 
-            width: 'auto', 
+            height: imageWidth / imageHeight2 * 1080 >= 1510 ? '100%' : 'auto', 
+            width: imageWidth / imageHeight2 * 1080 >= 1510 ? 'auto' : '1510px', 
             objectFit: 'cover' 
           }} 
          />
@@ -104,7 +116,7 @@ export const TestImage: React.FC<z.infer<typeof ImageSchema>> = ({
               fontWeight: 'bold', 
               fontFamily: 'Nunito, sans-serif',
               color: color1
-            }}>Reykjavik</div>
+            }}>{cityName}</div>
           <div 
             style={{
               fontSize: '52px', 
