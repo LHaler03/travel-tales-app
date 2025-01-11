@@ -59,9 +59,11 @@ export const ModalImage = styled.img`
 export const ModalButtons = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 2rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 1rem;
+  gap: 2rem;
+  width: 100%;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -69,12 +71,3 @@ export const ModalButtons = styled.div`
   }
 `;
 
-export const ApproveButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-`;
-
-export const DisapproveButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-`;
