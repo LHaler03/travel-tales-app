@@ -11,17 +11,30 @@ export const ImageGrid = styled.div`
   gap: 10px;
   justify-items: center;
   padding: 10px;
+  width: 100vw;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `;
 
+export const ThumbnailContainer = styled.div`
+  position: relative;
+  width: 20rem;
+  height: 17rem;
+  overflow: hidden;
+`;
+
 export const Thumbnail = styled.img`
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Modal = styled.div`
@@ -34,17 +47,21 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 `;
 
 export const ModalImage = styled.img`
-  max-width: 80%;
-  max-height: 80%;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 100px);
+  object-fit: contain;
 `;
 
 export const ModalButtons = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
 
   @media (max-width: 600px) {
     flex-direction: column;

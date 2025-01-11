@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
-import { Title, ImageGrid, Modal, ModalImage, ModalButtons, ApproveButton, DisapproveButton } from './ImageReview.styled.tsx'; // Uključujemo stilove
+import { useState } from 'react';
+import { Title, ImageGrid, Modal, ModalImage, ModalButtons, ApproveButton, DisapproveButton, Thumbnail } from './ImageReview.styled.tsx'; // Uključujemo stilove
 
 const images = [
   '/images/1.avif',
   '/images/2.jpg',
-  '/images/image3.jpg',
-  '/images/image4.jpg',
-  // Dodajte više slika po potrebi
+  '/images/1.avif',
+  '/images/2.jpg',
+  '/images/1.avif',
+  '/images/2.jpg',
+  '/images/1.avif',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/2.jpg',
+  '/images/1.avif',
+  '/images/1.avif',
+  '/images/1.avif',
+  '/images/1.avif',
+  '/images/1.avif',
+
+
 ];
 
 const ImageReview = () => {
@@ -25,12 +41,11 @@ const ImageReview = () => {
       <Title>Image Review</Title>
       <ImageGrid>
         {images.map((image, index) => (
-          <img
+          <Thumbnail
             key={index}
             src={image}
             alt={`Review ${index}`}
             onClick={() => handleImageClick(image)}
-            className="thumbnail"
           />
         ))}
       </ImageGrid>
