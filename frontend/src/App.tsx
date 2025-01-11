@@ -13,6 +13,7 @@ import ImageReviewPage from './pages/ImageReviewPage';
 import UsersReviewPage from './pages/UsersReviewPage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
+import SingleUserPage from './pages/SingleUserPage'
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -32,6 +33,7 @@ function App() {
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/image-review' element={<ImageReviewPage />} />
             <Route path='/users-review' element={<UsersReviewPage />} />
+            <Route path='/single-user-review' element={<SingleUserPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

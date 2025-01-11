@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { UserList, UserItem, Title, RedActionButton, VerificationText, EmailLink, SearchContainer, SearchInput, SearchButton } from './UsersReview.styled';
+import { UserList, UserItem, Title, RedActionButton, /*VerificationText,*/ EmailLink, SearchContainer, SearchInput, SearchButton } from './UsersReview.styled';
 import { UserType } from '../../../context/AuthContext';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const UsersReview = () => {
   const [users, setUsers] = useState<UserType[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -63,6 +65,7 @@ const UsersReview = () => {
 
 const handleReview = (username: string) => {
   console.log(`Reviewing profile for user: ${username}`);
+  // navigate('/single-user-review');
 };
 
 export default UsersReview;
