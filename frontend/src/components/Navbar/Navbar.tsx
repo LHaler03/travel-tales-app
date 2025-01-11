@@ -168,7 +168,7 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {user && user.role === 'Admin' && (
+              {user && user.role === 'admin' && (
                 <>
                   <Link to="/users-review" onClick={() => setIsMenuToggled(false)}>
                     Users Review
