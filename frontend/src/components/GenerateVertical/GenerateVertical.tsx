@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { Player } from '@remotion/player';
 import { HorizontalImage } from '../../../remotion/HorizontalImage';
-import { CityName, PlayerContainer, Wrapper, Sidebar } from './Generate.styled';
+import { CityName, PlayerContainer, Wrapper, Sidebar } from './GenerateVertical.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';

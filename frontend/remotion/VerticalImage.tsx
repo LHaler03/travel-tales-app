@@ -51,8 +51,8 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
       fetchPictures(cityName);
   }, []);
 
-  const imageSource1 = pictures[0] || staticFile("images/white.avif");
-  const imageSource2 = pictures[1] || staticFile("images/white.avif");
+  const imageSource1 = pictures[0] || staticFile("images/white.jpg");
+  const imageSource2 = pictures[1] || staticFile("images/white.jpg");
 
     return (
        <div 

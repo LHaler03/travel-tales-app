@@ -111,7 +111,7 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder
-                .WithOrigins("http://localhost:5173", "http://localhost:3000")  // Your frontend URL
+                .WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:3001")  // Your frontend URL
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
