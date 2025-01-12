@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Player } from '@remotion/player';
 import { HorizontalImage } from '../../../remotion/HorizontalImage';
 import { CityName, PlayerContainer, Wrapper, Sidebar } from './Generate.styled';
@@ -8,6 +8,7 @@ import { ActionButton } from '../../shared/ActionButton';
 
 export const Generate = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { city } = location.state || {
     city: 'Default City',
   };
@@ -19,6 +20,12 @@ export const Generate = () => {
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
   const [customImage2, setCustomImage2] = useState<string>('');
+
+  const handleFormatReverse = () => {
+    navigate('/generatevertical', {
+        state: { city: city},
+      });
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, imageNumber: 1 | 2) => {
     const file = e.target.files?.[0];
@@ -90,7 +97,7 @@ export const Generate = () => {
                     value={fromText} 
                     onChange={(e) => setFromText(e.target.value)} 
                 />
-                <ActionButton>Reverse Format</ActionButton>
+                <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
                 <ActionButton>Generate</ActionButton>
             </Sidebar>
             <PlayerContainer>

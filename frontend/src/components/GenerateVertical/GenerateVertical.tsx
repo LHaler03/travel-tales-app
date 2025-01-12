@@ -1,13 +1,14 @@
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Player } from '@remotion/player';
-import { HorizontalImage } from '../../../remotion/HorizontalImage';
+import { VerticalImage } from '../../../remotion/VerticalImage';
 import { CityName, PlayerContainer, Wrapper, Sidebar } from './GenerateVertical.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
 
-export const Generate = () => {
+export const GenerateVertical = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { city } = location.state || {
     city: 'Default City',
   };
@@ -19,6 +20,12 @@ export const Generate = () => {
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
   const [customImage2, setCustomImage2] = useState<string>('');
+
+  const handleFormatReverse = () => {
+    navigate('/generate', {
+        state: { city: city},
+      });
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, imageNumber: 1 | 2) => {
     const file = e.target.files?.[0];
@@ -90,15 +97,15 @@ export const Generate = () => {
                     value={fromText} 
                     onChange={(e) => setFromText(e.target.value)} 
                 />
-                <ActionButton>Reverse Format</ActionButton>
+                <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
                 <ActionButton>Generate</ActionButton>
             </Sidebar>
             <PlayerContainer>
                 <Player
                     key={debouncedKey}
-                    component={HorizontalImage}
-                    compositionWidth={1920}
-                    compositionHeight={1080}
+                    component={VerticalImage}
+                    compositionWidth={1080}
+                    compositionHeight={1920}
                     durationInFrames={1}
                     fps={30}
                     style={{

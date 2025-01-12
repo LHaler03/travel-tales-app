@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const PlayerContainer = styled.div`
-    width: 90vw;
-    margin: 5vw;
+    width: 50vw;
+    margin-left: 25vw;
 
     @media (min-width: 600px) {
-        width: 70vw;
-        margin: 5vh 5vw 5vh 5vw;
+        width: 22vw;
+        margin: 5vh 0vw 0vh 18vw;
     }
 `;
 
@@ -31,7 +31,7 @@ export const Sidebar = styled.div`
     width: 100vw;
 
     @media (min-width: 600px) {
-        width: 30vw;
+        width: 40vw;
         border-right: 2px solid black;
     }
 `
