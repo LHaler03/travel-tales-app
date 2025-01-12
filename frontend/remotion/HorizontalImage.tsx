@@ -12,6 +12,7 @@ export const ImageSchema = z.object({
   titleColor: zColor(),
   fromColor: zColor(),
   borderColor: zColor(),
+  cityName: z.string()
 });
 
 export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
@@ -19,13 +20,12 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
+  cityName,
 }) => {
     const [pictures, setPictures] = useState<string[]>([]);
     const [imageHeight, setImageHeight] = useState(0);
     const [imageHeight2, setImageHeight2] = useState(0);
     const [imageWidth, setImageWidth] = useState(0);
-
-    const cityName = 'Reykjavik'
 
     const fetchPictures = async (cityName: string) => {
         try {

@@ -13,6 +13,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor: 'black',
           fromColor: 'black',
           borderColor: 'white',
+          cityName: 'Berlin'
         }}
         id="HorizontalImage"
         component={HorizontalImage}
@@ -27,6 +28,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor: 'black',
           fromColor: 'black',
           borderColor: 'white',
+          cityName: 'Berlin'
         }}
         id="VerticalImage"
         component={VerticalImage}
