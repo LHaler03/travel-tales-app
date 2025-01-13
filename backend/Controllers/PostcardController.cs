@@ -39,35 +39,6 @@ namespace backend.Controllers
             return Ok(PostcardMapper.ToDto(postcard));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreatePostcard([FromBody] CreatePostcardDto createPostcardDto)
-        {
-            var location = await _locationRepo.GetByIdAsync(createPostcardDto.LocationId);
-            if (location == null)
-                return NotFound($"Location {createPostcardDto.LocationId} not found");
-
-            // Validate user exists if userId is provided
-            if (!string.IsNullOrEmpty(createPostcardDto.UserId))
-            {
-                var user = await _userManager.FindByIdAsync(createPostcardDto.UserId);
-                if (user == null)
-                    return NotFound($"User {createPostcardDto.UserId} not found");
-            }
-
-            var postcard = PostcardMapper.ToModel(createPostcardDto);
-            postcard.UserId = string.IsNullOrEmpty(createPostcardDto.UserId) ? null : createPostcardDto.UserId;
-            
-            var imageUrl = await _s3Service.UploadPostcardAsync(
-                createPostcardDto.ImageUrl,
-                string.IsNullOrEmpty(createPostcardDto.UserId) ? "anonymous" : createPostcardDto.UserId,
-                "postcard"
-            );
-            postcard.ImageUrl = imageUrl;
-
-            await _postcardRepo.CreatePostcardAsync(postcard);
-            return Ok(PostcardMapper.ToDto(postcard));
-        }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePostcard(int id)
         {

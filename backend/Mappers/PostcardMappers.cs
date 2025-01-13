@@ -10,7 +10,7 @@ namespace backend.Mappers
             return new PostcardDto
             {
                 Id = postcard.Id,
-                ImageUrl = postcard.ImageUrl,
+                Base64Image = postcard.Base64Image,
                 CreatedAt = postcard.CreatedAt,
                 ExpiresAt = postcard.ExpiresAt,
                 UserName = postcard.User?.UserName ?? string.Empty,
@@ -22,7 +22,7 @@ namespace backend.Mappers
         {
             return new Postcard
             {
-                ImageUrl = dto.ImageUrl,
+                Base64Image = dto.Base64Image,
                 LocationId = dto.LocationId,
                 UserId = dto.UserId
             };

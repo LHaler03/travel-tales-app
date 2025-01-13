@@ -59,7 +59,7 @@ public class S3Service : IS3Service
         return await Task.FromResult(_s3Client.GetPreSignedURL(request));
     }
 
-    public async Task<string> UploadPostcardAsync(string base64Image, string userId, string locationName)
+    public async Task<string> UploadFileAsync(string base64Image, string folderPath)
     {
         try
         {
@@ -72,12 +72,7 @@ public class S3Service : IS3Service
                 base64Data = base64Image.Split(',')[1];
             }
 
-            string fileName = $"{Guid.NewGuid()}.jpg";
-            
-            string folderPath = string.IsNullOrEmpty(userId) || userId == "anonymous"
-                ? "postcards/temporary" 
-                : $"postcards/users/{userId}";
-            
+            string fileName = $"{Guid.NewGuid()}.jpg";         
             string key = $"{folderPath}/{fileName}";
 
             // Convert base64 to bytes
@@ -93,11 +88,8 @@ public class S3Service : IS3Service
             };
 
             await _s3Client.PutObjectAsync(putRequest);
-
-            // Set expiration to 1 hour for anonymous uploads, 1 week for registered users
-            int expirationMinutes = (userId == "anonymous") ? 60 : 10080;
             
-            return await GetPreSignedUrlAsync(key, expirationMinutes);
+            return await GetPreSignedUrlAsync(key, expirationMinutes: 10);
         }
         catch (AmazonS3Exception ex)
         {
