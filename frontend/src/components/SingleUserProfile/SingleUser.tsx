@@ -7,14 +7,15 @@ const SingleUser = () => {
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  console.log('User ID:', user?.id);
-
   useEffect(() => {
     const fetchUserById = async () => {
       if (isAuthenticated && user) {
         console.log('User ID:', user.id);
         try {
-          const response = await axios.get(`http://3.74.155.131/api/users/${user.id}`);
+          const response = await axios.get(
+            `http://localhost:5185/api/users/${user.id}`,
+          );
+          console.log(response);
           setUserData(response.data);
         } catch (error) {
           console.error('Error fetching user data:', error);
@@ -28,14 +29,16 @@ const SingleUser = () => {
     fetchUserById();
   }, [isAuthenticated, user]);
 
+  console.log('User ID:', user?.id);
+
   if (error) return <div>{error}</div>;
   if (!userData) return <div>Loading...</div>;
 
   return (
     <div>
-      <h1>{userData.name}'s Profile</h1>
+      <h1>{userData.firstName}'s Profile</h1>
       <p>Email: {userData.email}</p>
-      <p>Username: {userData.username}</p>
+      <p>Username: {userData.userName}</p>
     </div>
   );
 };
