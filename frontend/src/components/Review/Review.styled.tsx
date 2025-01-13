@@ -23,6 +23,9 @@ export const Form = styled.form`
 
 export const InputContainer = styled.div`
   max-width: 75px;
+  @media (min-width: 600px) {
+    max-width: 100px;
+  }
 `;
 
 export const Rating = styled.input`

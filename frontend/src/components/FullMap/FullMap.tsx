@@ -13,6 +13,8 @@ import {
   StarsTitle,
   CityTitle,
   Buttons,
+  Comment,
+  Comments,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -25,7 +27,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 
 export const FullMap = () => {
-  const settings = {
+  const imageSliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -43,6 +45,26 @@ export const FullMap = () => {
       },
     ],
   };
+
+  const commentSliderSettings = (itemCount: number) => ({
+    dots: true,
+    infinite: itemCount > 2,
+    speed: 500,
+    slidesToShow: Math.min(2, itemCount),
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: itemCount > 1,
+          dots: true,
+        },
+      },
+    ],
+  });
+
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
@@ -131,7 +153,7 @@ export const FullMap = () => {
           userName: rate.userName,
         }),
       );
-      //console.log(rates);
+      console.log(rates);
       setInforating(rates);
     } catch (error) {
       console.log(`Error fetching rating for ${id}:`, error);
@@ -199,7 +221,7 @@ export const FullMap = () => {
             <CityTitle>{selectedCity}</CityTitle>
             <Cards>
               <Cardmap>
-                <Slider {...settings}>
+                <Slider {...imageSliderSettings}>
                   {pictures.map((picture, index) => (
                     <SingleCard key={index}>
                       <CityPicture
@@ -238,7 +260,27 @@ export const FullMap = () => {
                 })}
               </div>
             </StarsContainer>
-
+            <Cards>
+              <Cardmap>
+                <Slider {...commentSliderSettings(inforating.length)}>
+                  {inforating.length > 0 ? (
+                    inforating.map((inforat, index) => (
+                      <SingleCard key={index}>
+                        <Comments>
+                          <Comment>{inforat.comment}</Comment>
+                        </Comments>
+                      </SingleCard>
+                    ))
+                  ) : (
+                    <SingleCard>
+                      <Comments>
+                        <Comment>No reviews yet</Comment>
+                      </Comments>
+                    </SingleCard>
+                  )}
+                </Slider>
+              </Cardmap>
+            </Cards>
             <Buttons>
               <Modal_button_generate
                 onClick={() =>

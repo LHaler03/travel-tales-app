@@ -65,7 +65,7 @@ export const CityTitle = styled.h1`
   margin-bottom: 2%;
   font-size: 1.5rem;
   @media (min-width: 600px) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 `;
 
@@ -111,7 +111,7 @@ export const CityPicture = styled.img`
 
   @media (min-width: 1024px) {
     width: 400px;
-    height: 300px;
+    height: 250px;
   }
 `;
 
@@ -120,7 +120,7 @@ export const StyledFaStar = styled(FaStar)`
   margin: 0 5px;
   margin-bottom: 5px;
   @media (min-width: 600px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -129,7 +129,7 @@ export const StyledFaStarHalfAlt = styled(FaStarHalfAlt)`
   margin: 0 5px;
   margin-bottom: 5px;
   @media (min-width: 600px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -143,7 +143,7 @@ export const StarsContainer = styled.div`x
 export const StarsTitle = styled.h1`
   font-size: 1rem;
   @media (min-width: 600px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 
@@ -152,4 +152,22 @@ export const Buttons = styled.div`
   justify-content: space-between;
   width: 100%;
   gap: 10px;
+`;
+
+export const Comments = styled.div`
+  border-radius: 8px;
+  border-width: 1px;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  overflow-y: auto;
+  @media (min-width: 1024px) {
+    width: 400px;
+    height: 75px;
+  }
+`;
+
+export const Comment = styled.div`
+  word-wrap: break-word;
 `;

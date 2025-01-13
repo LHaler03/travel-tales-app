@@ -63,6 +63,7 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
             onChange={(c) => setComment(c.target.value)}
             placeholder='Write your review here...'
             required
+            maxLength={500}
           />
           <Buttons>
             <SubmitButton type='submit'>Submit review</SubmitButton>
