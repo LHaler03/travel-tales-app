@@ -7,12 +7,16 @@ import {
   Wrapper,
   StyledFullMapContainer,
   CityPicture,
+  StyledFaStarHalfAlt,
+  StyledFaStar,
+  StarsContainer,
+  StarsTitle,
+  CityTitle,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
-import { Star } from '../Star/Star';
 import { Cards, Cardmap, SingleCard } from '../Card/Card.styled';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -44,6 +48,7 @@ export const FullMap = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [pictures, setPictures] = useState<string[]>([]);
+  const [rating, setRating] = useState<number>(2.5);
   const [selectedGeocode, setSelectedGeocode] = useState<
     [number, number] | null
   >(null);
@@ -95,10 +100,27 @@ export const FullMap = () => {
     }
   };
 
-  const handleMarkerClick = (cityName: string, geocode: [number, number]) => {
+  const fetchRating = async (id: number) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5185/api/reviews/location/${id}`,
+      );
+      //console.log(response.data)
+      setRating(response.data);
+    } catch (error) {
+      console.log(`Error fetching pictures for ${id}:`, error);
+    }
+  };
+
+  const handleMarkerClick = (
+    cityName: string,
+    geocode: [number, number],
+    id: number,
+  ) => {
     setSelectedCity(cityName);
     setShowModal(true);
     fetchPictures(cityName);
+    fetchRating(id);
     setSelectedGeocode(geocode);
   };
 
@@ -134,7 +156,8 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () => handleMarkerClick(marker.popUp, marker.geocode),
+              click: () =>
+                handleMarkerClick(marker.popUp, marker.geocode, marker.id),
             }}
           />
         ))}
@@ -146,7 +169,7 @@ export const FullMap = () => {
             <Modal_button_close onClick={handleCloseModal}>
               X
             </Modal_button_close>
-            <h1>{selectedCity}</h1>
+            <CityTitle>{selectedCity}</CityTitle>
             <Cards>
               <Cardmap>
                 <Slider {...settings}>
@@ -162,18 +185,28 @@ export const FullMap = () => {
                 </Slider>
               </Cardmap>
             </Cards>
-            <div>
-              <div>Food:</div>
-              <Star />
-            </div>
-            <div>
-              <div>Weather:</div>
-              <Star />
-            </div>
-            <div>
-              <div>Local culture:</div>
-              <Star />
-            </div>
+            <StarsContainer>
+              <StarsTitle>Average rating:</StarsTitle>
+              <div>
+                {[...Array(5)].map((_, index) => {
+                  const currentrating = index + 1;
+                  let starIcon;
+                  if (currentrating <= Math.floor(rating)) {
+                    starIcon = <StyledFaStar key={index} color='yellow' />;
+                  } else if (
+                    currentrating === Math.ceil(rating) &&
+                    rating % 1 !== 0
+                  ) {
+                    starIcon = (
+                      <StyledFaStarHalfAlt key={index} color='yellow' />
+                    );
+                  } else {
+                    starIcon = <StyledFaStar key={index} color='white' />;
+                  }
+                  return <label key={currentrating}>{starIcon}</label>;
+                })}
+              </div>
+            </StarsContainer>
             <Modal_button_generate
               onClick={() =>
                 navigate('/generate', {

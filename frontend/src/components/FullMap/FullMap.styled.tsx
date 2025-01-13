@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { MapContainer } from 'react-leaflet';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 export const Wrapper = styled.div`
   height: calc(100vh - 5rem);
@@ -43,11 +44,6 @@ export const Modal_content = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1 {
-    text-align: center;
-    margin-bottom: 5%;
-  }
-
   p {
       margin-bottom: 10px;
       width: 100%;
@@ -62,6 +58,15 @@ export const Modal_content = styled.div`
       margin-bottom: 0px;
       text-align: left;
     }
+`;
+
+export const CityTitle = styled.h1`
+  text-align: center;
+  margin-bottom: 2%;
+  font-size: 1.5rem;
+  @media (min-width: 600px) {
+    font-size: 4rem;
+  }
 `;
 
 export const Modal_button_close = styled.button`
@@ -107,5 +112,37 @@ export const CityPicture = styled.img`
   @media (min-width: 1024px) {
     width: 400px;
     height: 300px;
+  }
+`;
+
+export const StyledFaStar = styled(FaStar)`
+  font-size: 1.5rem;
+  margin: 0 5px;
+  margin-bottom: 5px;
+  @media (min-width: 600px) {
+    font-size: 3rem;
+  }
+`;
+
+export const StyledFaStarHalfAlt = styled(FaStarHalfAlt)`
+  font-size: 1.5rem;
+  margin: 0 5px;
+  margin-bottom: 5px;
+  @media (min-width: 600px) {
+    font-size: 3rem;
+  }
+`;
+
+export const StarsContainer = styled.div`x
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center
+`;
+
+export const StarsTitle = styled.h1`
+  font-size: 1rem;
+  @media (min-width: 600px) {
+    font-size: 2.5rem;
   }
 `;

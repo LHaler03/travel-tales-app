@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyledFaStar, StarInput } from './Star.styled';
 
 export const Star = () => {
-  const [rating, setRating] = useState<number>(0);
+  const [rating, setRating] = useState<number>(3);
   const [starcolor, _] = useState<number>(0);
   const [hoverstar, setHoverstar] = useState<number>(0);
 
