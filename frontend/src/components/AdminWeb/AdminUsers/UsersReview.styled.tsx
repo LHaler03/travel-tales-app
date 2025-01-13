@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-
 export const UserList = styled.ul`
-    list-style-type: none;
-    padding: 2rem;
+  list-style-type: none;
+  padding: 2rem;
 `;
 
 export const Title = styled.h1`
@@ -18,22 +17,21 @@ export const Title = styled.h1`
 `;
 
 export const UserItem = styled.li`
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
 
-    @media (max-width: 600px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const VerificationText = styled.div`
-    color: red;
+  color: red;
 `;
-
 
 export const RedActionButton = styled.button`
   background-color: #007bff;

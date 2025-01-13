@@ -70,4 +70,3 @@ export const ModalButtons = styled.div`
     align-items: center;
   }
 `;
-

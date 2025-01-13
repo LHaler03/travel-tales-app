@@ -70,9 +70,9 @@ export const Navbar = () => {
             <Link to='/support'>Support</Link>
             {/* {user && user.role === 'admin' && (
               <> */}
-                <Link to="/users-review">Users Review</Link>
-                <Link to="/image-review">Image Review</Link>
-              {/* </>
+            <Link to='/users-review'>Users Review</Link>
+            <Link to='/image-review'>Image Review</Link>
+            {/* </>
             )} */}
           </NavLinks>
           <ButtonContainer>
@@ -118,7 +118,10 @@ export const Navbar = () => {
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <Link to='/single-user-review' onClick={() => setIsMenuToggled(false)}>
+                  <Link
+                    to='/single-user-review'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
                     My Profile
                   </Link>
                   <a
@@ -170,10 +173,16 @@ export const Navbar = () => {
               </Link>
               {user && user.role === 'admin' && (
                 <>
-                  <Link to="/users-review" onClick={() => setIsMenuToggled(false)}>
+                  <Link
+                    to='/users-review'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
                     Users Review
                   </Link>
-                  <Link to="/image-review" onClick={() => setIsMenuToggled(false)}>
+                  <Link
+                    to='/image-review'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
                     Image Review
                   </Link>
                 </>

@@ -1,5 +1,9 @@
 import React from 'react';
-import { StyledButton, ApproveButton as StyledApproveButton, DisapproveButton as StyledDisapproveButton } from './ActionButton.styled';
+import {
+  StyledButton,
+  ApproveButton as StyledApproveButton,
+  DisapproveButton as StyledDisapproveButton,
+} from './ActionButton.styled';
 
 interface ActionButtonProps {
   children: React.ReactNode;

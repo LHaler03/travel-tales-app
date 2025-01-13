@@ -34,6 +34,7 @@ interface LoginResponse {
   email: string;
   token: string;
   emailConfirmed: boolean;
+  role: string;
   id: string;
 }
 
@@ -51,7 +52,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://3.74.155.131/api',
+  baseURL: 'http://localhost:5185/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -130,12 +131,10 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         username: response.data.username,
         email: response.data.email,
         emailConfirmed: response.data.emailConfirmed,
-        role: response.data.role, //admin role
+        role: response.data.role,
         id: response.data.id,
       };
 
-      console.log('User ID:', user.id);
-      
       localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
       setToken(response.data.token);
