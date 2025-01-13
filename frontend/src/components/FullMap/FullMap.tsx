@@ -48,7 +48,15 @@ export const FullMap = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [pictures, setPictures] = useState<string[]>([]);
-  const [rating, setRating] = useState<number>(2.5);
+  const [inforating, setInforating] = useState<
+    {
+      id: number;
+      comment: string;
+      rating: number;
+      createdAt: string;
+      userName: string;
+    }[]
+  >([]);
   const [selectedGeocode, setSelectedGeocode] = useState<
     [number, number] | null
   >(null);
@@ -105,10 +113,26 @@ export const FullMap = () => {
       const response = await axios.get(
         `http://localhost:5185/api/reviews/location/${id}`,
       );
-      //console.log(response.data)
-      setRating(response.data);
+      //console.log(response.data);
+      const rates = response.data.map(
+        (rate: {
+          id: number;
+          comment: string;
+          rating: number;
+          createdAt: string;
+          userName: string;
+        }) => ({
+          id: rate.id,
+          comment: rate.comment,
+          rating: rate.rating,
+          createdAt: rate.createdAt,
+          userName: rate.userName,
+        }),
+      );
+      console.log(rates);
+      setInforating(rates);
     } catch (error) {
-      console.log(`Error fetching pictures for ${id}:`, error);
+      console.log(`Error fetching rating for ${id}:`, error);
     }
   };
 
@@ -190,12 +214,16 @@ export const FullMap = () => {
               <div>
                 {[...Array(5)].map((_, index) => {
                   const currentrating = index + 1;
+                  const averageRating =
+                    inforating.reduce((acc, curr) => acc + curr.rating, 0) /
+                      inforating.length || 0;
+
                   let starIcon;
-                  if (currentrating <= Math.floor(rating)) {
+                  if (currentrating <= Math.floor(averageRating)) {
                     starIcon = <StyledFaStar key={index} color='yellow' />;
                   } else if (
-                    currentrating === Math.ceil(rating) &&
-                    rating % 1 !== 0
+                    currentrating === Math.ceil(averageRating) &&
+                    averageRating % 1 !== 0
                   ) {
                     starIcon = (
                       <StyledFaStarHalfAlt key={index} color='yellow' />
