@@ -47,6 +47,7 @@ export const FullMap = () => {
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
   const [pictures, setPictures] = useState<string[]>([]);
   const [inforating, setInforating] = useState<
     {
@@ -129,7 +130,7 @@ export const FullMap = () => {
           userName: rate.userName,
         }),
       );
-      console.log(rates);
+      //console.log(rates);
       setInforating(rates);
     } catch (error) {
       console.log(`Error fetching rating for ${id}:`, error);
@@ -146,6 +147,7 @@ export const FullMap = () => {
     fetchPictures(cityName);
     fetchRating(id);
     setSelectedGeocode(geocode);
+    setSelectedId(id);
   };
 
   const handleCloseModal = () => {
@@ -243,6 +245,15 @@ export const FullMap = () => {
               }
             >
               Generate postcard
+            </Modal_button_generate>
+            <Modal_button_generate
+              onClick={() =>
+                navigate('/review', {
+                  state: { city: selectedCity, id: selectedId },
+                })
+              }
+            >
+              Make review
             </Modal_button_generate>
           </Modal_content>
         </Modal>

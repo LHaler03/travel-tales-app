@@ -11,6 +11,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import ExplorePage from './pages/ExplorePage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
+import ReviewsPage from './pages/ReviewsPage';
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -28,6 +29,7 @@ function App() {
             <Route path='/about' element={<AboutUsPage />} />
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
+            <Route path='/review' element={<ReviewsPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
