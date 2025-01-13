@@ -12,6 +12,7 @@ import {
   StarsContainer,
   StarsTitle,
   CityTitle,
+  Buttons,
 } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -237,24 +238,27 @@ export const FullMap = () => {
                 })}
               </div>
             </StarsContainer>
-            <Modal_button_generate
-              onClick={() =>
-                navigate('/generate', {
-                  state: { city: selectedCity, geocode: selectedGeocode },
-                })
-              }
-            >
-              Generate postcard
-            </Modal_button_generate>
-            <Modal_button_generate
-              onClick={() =>
-                navigate('/review', {
-                  state: { city: selectedCity, id: selectedId },
-                })
-              }
-            >
-              Make review
-            </Modal_button_generate>
+
+            <Buttons>
+              <Modal_button_generate
+                onClick={() =>
+                  navigate('/generate', {
+                    state: { city: selectedCity, geocode: selectedGeocode },
+                  })
+                }
+              >
+                Generate postcard
+              </Modal_button_generate>
+              <Modal_button_generate
+                onClick={() =>
+                  navigate('/review', {
+                    state: { city: selectedCity, id: selectedId },
+                  })
+                }
+              >
+                Make review
+              </Modal_button_generate>
+            </Buttons>
           </Modal_content>
         </Modal>
       )}

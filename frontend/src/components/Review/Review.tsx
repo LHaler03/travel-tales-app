@@ -1,5 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import {
+  City,
+  Form,
+  FormContainer,
+  Comment,
+  Rating,
+  InputContainer,
+  SubmitButton,
+  Buttons,
+} from './Review.styled';
 
 type ReviewProps = {
   city: string;
@@ -30,11 +40,12 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
 
   return (
     <>
-      <h1>{city}</h1>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input
+      <City>{city}</City>
+      <FormContainer>
+        <Form onSubmit={handleSubmit}>
+          <p>Rating:</p>
+          <InputContainer>
+            <Rating
               type='number'
               min={1}
               max={5}
@@ -45,16 +56,19 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
               placeholder='Rate 1-5'
               required
             />
-          </div>
-          <textarea
+          </InputContainer>
+          <p>Comment:</p>
+          <Comment
             value={comment}
             onChange={(c) => setComment(c.target.value)}
             placeholder='Write your review here...'
             required
           />
-          <button type='submit'>Submit review</button>
-        </form>
-      </div>
+          <Buttons>
+            <SubmitButton type='submit'>Submit review</SubmitButton>
+          </Buttons>
+        </Form>
+      </FormContainer>
     </>
   );
 };

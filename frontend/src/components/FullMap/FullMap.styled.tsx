@@ -146,3 +146,10 @@ export const StarsTitle = styled.h1`
     font-size: 2.5rem;
   }
 `;
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+`;
