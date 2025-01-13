@@ -66,7 +66,7 @@ export const Horizontal1Image: React.FC<z.infer<typeof ImageSchema>> = ({
            onLoad={handleImageLoad}
            style={{ 
             position: 'absolute', 
-            top: 0, 
+            bottom: 0, 
             left: 0, 
             height: imageHeight * 1920 / imageWidth >= 1080 ? 'auto' : '1080px',
             width: imageHeight * 1920 / imageWidth >= 1080 ? '1920px' : 'auto',

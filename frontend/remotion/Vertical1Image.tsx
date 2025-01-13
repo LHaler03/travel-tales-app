@@ -75,11 +75,12 @@ export const Vertical1Image: React.FC<z.infer<typeof ImageSchema>> = ({
          />
          <div id="upperbox" 
             style={{
-              position: 'absolute', 
-              top: 0, 
-              left: 0, 
-              padding: '35px', 
-              background: 'rgba(255, 255, 255, 0.4)'
+                position: 'absolute', 
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                padding: '35px', 
+                background: 'rgba(255, 255, 255, 0.6)'
             }}>
           <div 
             style={{

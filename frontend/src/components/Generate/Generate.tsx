@@ -27,6 +27,12 @@ export const Generate = () => {
       });
   };
 
+  const handleNumberChange = () => {
+    navigate('/generate1', {
+        state: { city: city},
+      });
+  };
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, imageNumber: 1 | 2) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -77,27 +83,40 @@ export const Generate = () => {
                         onChange={(e) => handleImageUpload(e, 2)}
                     />
                 </div>
-                <input 
-                    type="color" 
-                    value={titleColor} 
-                    onChange={(e) => setTitleColor(e.target.value)} 
-                />
-                <input 
-                    type="color" 
-                    value={fromColor} 
-                    onChange={(e) => setFromColor(e.target.value)} 
-                />
-                <input 
-                    type="color" 
-                    value={borderColor} 
-                    onChange={(e) => setBorderColor(e.target.value)} 
-                />
-                <input 
-                    type="text" 
-                    value={fromText} 
-                    onChange={(e) => setFromText(e.target.value)} 
-                />
+                <div>
+                    <label>Title Color:</label>
+                    <input 
+                        type="color" 
+                        value={titleColor} 
+                        onChange={(e) => setTitleColor(e.target.value)} 
+                    />
+                </div>
+                <div>
+                    <label>From Text Color:</label>
+                    <input 
+                        type="color" 
+                        value={fromColor} 
+                        onChange={(e) => setFromColor(e.target.value)} 
+                    />
+                </div>
+                <div>
+                    <label>Border Color:</label>
+                    <input 
+                        type="color" 
+                        value={borderColor} 
+                        onChange={(e) => setBorderColor(e.target.value)} 
+                    />
+                </div>
+                <div>
+                    <label>From Text:</label>
+                    <input 
+                        type="text" 
+                        value={fromText} 
+                        onChange={(e) => setFromText(e.target.value)} 
+                    />
+                </div>
                 <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
+                <ActionButton onClick={handleNumberChange}>1 Image</ActionButton>
                 <ActionButton>Generate</ActionButton>
             </Sidebar>
             <PlayerContainer>

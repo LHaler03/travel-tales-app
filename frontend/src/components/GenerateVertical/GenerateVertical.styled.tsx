@@ -6,7 +6,7 @@ export const PlayerContainer = styled.div`
 
     @media (min-width: 600px) {
         width: 22vw;
-        margin: 5vh 0vw 0vh 18vw;
+        margin: 5vh 0vw 0vh 23vw;
     }
 `;
 
@@ -31,7 +31,7 @@ export const Sidebar = styled.div`
     width: 100vw;
 
     @media (min-width: 600px) {
-        width: 40vw;
+        width: 30vw;
         border-right: 2px solid black;
     }
 `

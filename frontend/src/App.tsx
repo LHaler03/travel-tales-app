@@ -12,6 +12,8 @@ import ExplorePage from './pages/ExplorePage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
 import GeneratePageVertical from './pages/GeneratePageVertical';
+import Generate1ImagePage from './pages/Generate1ImagePage';
+import Generate1VerticalPage from './pages/Generate1VerticalPage';
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -30,6 +32,8 @@ function App() {
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/generatevertical' element={<GeneratePageVertical />} />
+            <Route path='/generate1' element={<Generate1ImagePage />} />
+            <Route path='/generate1vertical' element={<Generate1VerticalPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
