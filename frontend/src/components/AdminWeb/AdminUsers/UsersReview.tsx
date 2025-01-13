@@ -53,7 +53,7 @@ const UsersReview = () => {
             ) : (
               <VerificationText>Email not verified</VerificationText>
             )} */}
-            <RedActionButton onClick={() => handleReview(user.username)}>
+            <RedActionButton onClick={() => navigate('/single-user-review')}>
               Review Profile
             </RedActionButton>
           </UserItem>
@@ -61,11 +61,6 @@ const UsersReview = () => {
       </UserList>
     </>
   );
-};
-
-const handleReview = (username: string) => {
-  console.log(`Reviewing profile for user: ${username}`);
-  // navigate('/single-user-review');
 };
 
 export default UsersReview;

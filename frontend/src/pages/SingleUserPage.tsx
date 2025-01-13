@@ -1,4 +1,4 @@
-import SingleUser from '../components/AdminWeb/AdminUsers/SingleUserReview/SingleUser';
+import SingleUser from '../components/SingleUserProfile/SingleUser';
 
 function SingleUserPage() {
   return (

@@ -78,7 +78,7 @@ export const Navbar = () => {
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={() => navigate('/profile')}>
+                <ActionButton onClick={() => navigate('/single-user-review')}>
                   My Profile
                 </ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
