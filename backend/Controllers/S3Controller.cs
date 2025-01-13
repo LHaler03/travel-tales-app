@@ -4,6 +4,7 @@ using backend.Data;
 using backend.Dtos.Postcard;
 using backend.Mappers;
 using backend.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Collections.Generic;
@@ -48,6 +49,9 @@ public class S3Controller : ControllerBase
                 return BadRequest("You must upload at least one image and at most two images");
             if (string.IsNullOrEmpty(request.UserId) && request.ReviewRequired == true)
                 return BadRequest("User ID is required for review");
+            var location = await _context.Locations.FindAsync(request.LocationId);
+            if (location == null)
+                throw new KeyNotFoundException($"Location with ID {request.LocationId} not found");
 
             var urls = new List<string>();
             foreach (var image in request.Images)
@@ -66,10 +70,10 @@ public class S3Controller : ControllerBase
                     if (user == null)
                         throw new KeyNotFoundException($"User {request.UserId} not found");
 
-                    var reviewFolderPath = $"images/review/{request.UserId}";
+                    var reviewFolderPath = $"images/review/{request.LocationId}";
                     var reviewUrl = await _s3Service.UploadFileAsync(image, reviewFolderPath);
                     
-                    var userFolderPath = $"images/users/{request.UserId}";
+                    var userFolderPath = $"images/users/{request.UserId}/{location.Name}";
                     var userUrl = await _s3Service.UploadFileAsync(image, userFolderPath);
 
                     urls.Add(userUrl);
@@ -130,4 +134,49 @@ public class S3Controller : ControllerBase
             return StatusCode(500, new { Error = ex.Message });
         }
     }
+
+    [HttpGet("images-to-review")]
+    [Authorize (Roles = "Admin")]
+    public async Task<IActionResult> GetImagesToReview()
+    {
+        var imagesToReview = await _s3Service.ListFilesInFolderAsync("images/review");
+        return Ok(imagesToReview);
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost("approve-image")]
+    public async Task<IActionResult> ApproveImage([FromBody] ApproveRejectImageRequest request)
+    {
+        try
+        {
+            var imageKey = $"images/review/{request.LocationId}/{request.ImageName}.jpg";
+            var validFolderPath = $"valid/{request.CityName}/{request.ImageName}.jpg";
+
+            var url = await _s3Service.MoveFileAsync(imageKey, validFolderPath);
+            return Ok(new { Message = "Image approved", Url = url });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+    [Authorize(Roles = "Admin")]
+    [HttpPost("reject-image")]
+    public async Task<IActionResult> RejectImage([FromBody] ApproveRejectImageRequest request)
+    {
+        try
+        {
+            var imageKey = $"images/review/{request.LocationId}/{request.ImageName}.jpg";
+            var success = await _s3Service.DeleteObjectAsync(imageKey);
+            
+            return success 
+                ? Ok(new { Message = "Image rejected" })
+                : NotFound(new { Message = "Image not found" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
 }
