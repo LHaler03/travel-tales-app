@@ -13,6 +13,7 @@ interface UserType {
   email?: string;
   emailConfirmed: boolean;
   role: string; //admin role
+  id: string;
 }
 
 interface LoginFormData {
@@ -33,6 +34,7 @@ interface LoginResponse {
   email: string;
   token: string;
   emailConfirmed: boolean;
+  id: string;
 }
 
 type AuthContextType = {
@@ -120,13 +122,20 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         formData,
       );
 
+      if (!response.data.id) {
+        throw new Error('Invalid user ID received');
+      }
+
       const user: UserType = {
         username: response.data.username,
         email: response.data.email,
         emailConfirmed: response.data.emailConfirmed,
         role: response.data.role, //admin role
+        id: response.data.id,
       };
 
+      console.log('User ID:', user.id);
+      
       localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
       setToken(response.data.token);
@@ -162,6 +171,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           email: response.data.email,
           emailConfirmed: response.data.emailConfirmed,
           role: response.data.role, //admin role
+          id: response.data.id,
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);

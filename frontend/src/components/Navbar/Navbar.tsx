@@ -118,7 +118,7 @@ export const Navbar = () => {
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <Link to='/' onClick={() => setIsMenuToggled(false)}>
+                  <Link to='/single-user-review' onClick={() => setIsMenuToggled(false)}>
                     My Profile
                   </Link>
                   <a
