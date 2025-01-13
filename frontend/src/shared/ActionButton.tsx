@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledButton } from './ActionButton.styled';
+import { StyledButton, ApproveButton as StyledApproveButton, DisapproveButton as StyledDisapproveButton } from './ActionButton.styled';
 
 interface ActionButtonProps {
   children: React.ReactNode;
@@ -12,3 +12,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
 }) => {
   return <StyledButton onClick={onClick}>{children}</StyledButton>;
 };
+
+// Export the styled buttons
+export const ApproveButton = StyledApproveButton;
+export const DisapproveButton = StyledDisapproveButton;

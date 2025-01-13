@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Title, ImageGrid, Modal, ModalImage, ModalButtons, Thumbnail } from './ImageReview.styled.tsx'; // Uključujemo stilove
-import { ActionButton } from '../../../shared/ActionButton'; // Import ActionButton
+import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton'; // Import novih gumba
 
 const images = [
   '/images/1.avif',
@@ -55,12 +55,12 @@ const ImageReview = () => {
         <Modal onClick={closeModal}>
           <ModalImage src={selectedImage} alt="Selected" />
           <ModalButtons>
-            <ActionButton onClick={() => {/* Handle approve logic */}}>
+            <ApproveButton onClick={() => {/* Handle approve logic */}}>
               Approve
-            </ActionButton>
-            <ActionButton onClick={() => {/* Handle disapprove logic */}}>
+            </ApproveButton>
+            <DisapproveButton onClick={() => {/* Handle disapprove logic */}}>
               Disapprove  
-            </ActionButton>
+            </DisapproveButton>
           </ModalButtons>
         </Modal>
       )}
