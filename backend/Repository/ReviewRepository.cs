@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using backend.Interfaces;
 using backend.Models;
 using backend.Data;
+using backend.Dtos.Review;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -54,6 +55,24 @@ namespace backend.Repository
             return reviewModel;
         }
 
+        public async Task<Review> UpdateReviewAsync(int reviewId, UpdateReviewDto updateReviewDto)
+        {
+            var review = await _context.Reviews.Include(r => r.User).FirstOrDefaultAsync(r => r.Id == reviewId);
+            if (review == null)
+            {
+                throw new KeyNotFoundException($"Review with ID {reviewId} not found.");
+            }
+
+            review.Comment = updateReviewDto.Comment;
+            review.Rating = updateReviewDto.Rating;
+            review.UpdatedAt = DateTime.UtcNow;
+
+            _context.Reviews.Update(review);
+            await _context.SaveChangesAsync();
+
+            return review;
+        }
+
         public async Task<Review?> DeleteReviewAsync(int id)
         {
             var review = await _context.Reviews.FindAsync(id);
@@ -61,6 +80,13 @@ namespace backend.Repository
             _context.Reviews.Remove(review);
             await _context.SaveChangesAsync();
             return review;
+        }
+
+        public async Task<Review?> GetReviewsByUserAsync(string userId, int locationId)
+        {
+            return await _context.Reviews
+                .Include(r => r.User)
+                .FirstOrDefaultAsync(r => r.UserId == userId && r.LocationId == locationId);
         }
     }
 }
