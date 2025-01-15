@@ -4,7 +4,7 @@ export const PlayerContainer = styled.div`
     width: 50vw;
     margin: 0vw 0vw 2vh 25vw;
 
-    @media (min-width: 600px) {
+    @media (min-width: 1200px) {
         width: 22vw;
         margin: 5vh 0vw 0vh 23vw;
     }
@@ -15,6 +15,10 @@ export const CityName = styled.div`
     font-size: 40px;
     font-weight: bold;
     margin: 3vh 0vh 3vh 0vh;
+
+    @media (min-width: 600px) and (max-width: 1199px) {
+        font-size: 60px;
+    }
 `
 
 export const Wrapper = styled.div`
@@ -22,7 +26,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 600px) {
+    @media (min-width: 1200px) {
         flex-direction: row;
     }
 `
@@ -30,7 +34,7 @@ export const Wrapper = styled.div`
 export const Sidebar = styled.div`
     width: 100vw;
 
-    @media (min-width: 600px) {
+    @media (min-width: 1200px) {
         width: 30vw;
         border-right: 2px solid black;
     }
@@ -92,6 +96,11 @@ export const InputContainer = styled.div`
             box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
         }
     }
+
+    @media (min-width: 600px) and (max-width: 1199px) {
+        margin-left: 25vw;
+        font-size: 1.8rem;
+    }
 `
 
 export const ButtonsContainer = styled.div`
@@ -104,7 +113,13 @@ export const ButtonsContainer = styled.div`
         font-size: 0.75rem;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 600px) and (max-width: 1199px) {
+        & > button {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
         flex-direction: column;
 
         & > button {
