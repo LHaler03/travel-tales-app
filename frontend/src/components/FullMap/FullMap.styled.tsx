@@ -45,9 +45,9 @@ export const Modal_content = styled.div`
   align-items: center;
 
   p {
-      margin-bottom: 10px;
-      width: 100%;
-      text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
   }
 
   @media (min-width: 600px) {
@@ -58,6 +58,7 @@ export const Modal_content = styled.div`
       margin-bottom: 0px;
       text-align: left;
     }
+  }
 `;
 
 export const CityTitle = styled.h1`
@@ -84,6 +85,7 @@ export const Modal_button_close = styled.button`
 `;
 
 export const Modal_button_generate = styled.button`
+  font-size: 25px;
   border-radius: 20px;
   padding: 10px;
   cursor: pointer;
@@ -94,12 +96,6 @@ export const Modal_button_generate = styled.button`
     background-color: #5d89d5;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  @media (min-width: 600px) {
-    position: absolute;
-    bottom: 10%;
-    right: 2%;
   }
 `;
 
@@ -133,11 +129,11 @@ export const StyledFaStarHalfAlt = styled(FaStarHalfAlt)`
   }
 `;
 
-export const StarsContainer = styled.div`x
+export const StarsContainer = styled.div`
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
-  text-align: center
+  text-align: center;
 `;
 
 export const StarsTitle = styled.h1`
@@ -149,8 +145,8 @@ export const StarsTitle = styled.h1`
 
 export const Buttons = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: row;
+  justify-content: center;
   gap: 10px;
 `;
 

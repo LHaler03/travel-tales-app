@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Img, staticFile, continueRender, delayRender } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Nunito';
 import { z } from 'zod';
 import axios from 'axios';
 import { ImageSchema } from './HorizontalImage';
-
-const { fontFamily } = loadFont();
 
 export const Horizontal1Image: React.FC<z.infer<typeof ImageSchema>> = ({
   fromText: text1,
@@ -38,7 +35,7 @@ export const Horizontal1Image: React.FC<z.infer<typeof ImageSchema>> = ({
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (customImage1) {
       setPictures([customImage1]);
       continueRender(handle);
