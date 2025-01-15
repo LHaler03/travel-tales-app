@@ -32,6 +32,17 @@ namespace backend.Controllers
       var reviewDto = review.ToReviewDto();
       return Ok(reviewDto);
     }
+
+    [HttpGet("user/{userId}/location/{locationId}")]
+    public async Task<IActionResult> GetReviewsByUser(string userId, int locationId)
+    {
+      var review = await _reviewRepo.GetReviewsByUserAsync(userId, locationId);
+      if (review == null)
+      {
+        return NotFound($"No reviews found for user with ID {userId} at location with ID {locationId} ");
+      }
+      return Ok(review.ToReviewDto());
+    }
     [HttpPost]
     public async Task<IActionResult> CreateReview([FromBody] CreateReviewDto createReviewDto)
     {
@@ -55,6 +66,28 @@ namespace backend.Controllers
         return StatusCode(500, "An error occurred while creating the review");
       }
     }
+
+    [HttpPut("{reviewId}")]
+    public async Task<IActionResult> UpdateReview(int reviewId, [FromBody] UpdateReviewDto updateReviewDto)
+    {
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState);
+      
+      try
+      {
+        var updatedReview = await _reviewRepo.UpdateReviewAsync(reviewId, updateReviewDto);
+        return Ok(updatedReview.ToReviewDto());
+      }
+      catch (KeyNotFoundException ex)
+      {
+        return NotFound(ex.Message);
+      }
+      catch (InvalidOperationException ex)
+      {
+        return BadRequest(new { message = ex.Message });
+      }
+    }
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteReview([FromRoute] int id)
     {

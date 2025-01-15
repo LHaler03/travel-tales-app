@@ -13,6 +13,7 @@ namespace backend.Mappers
                 Comment = reviewModel.Comment,
                 Rating = reviewModel.Rating,
                 CreatedAt = reviewModel.CreatedAt,
+                UpdatedAt = reviewModel.UpdatedAt,
                 UserName = reviewModel.User.UserName
             };
         }
