@@ -67,11 +67,11 @@ namespace backend.Controllers
                         return StatusCode(500, "Failed to assign role.");
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var confirmationLink = Url.Action(
-                        nameof(ConfirmEmail), 
-                        "Account", 
-                        new { userId = user.Id, token = WebUtility.UrlEncode(token) }, 
+                        nameof(ConfirmEmail),
+                        "Account",
+                        new { userId = user.Id, token = WebUtility.UrlEncode(token) },
                         Request.Scheme);
-                    
+
                     var emailBody = $"Please confirm your account by clicking <a href='{confirmationLink}'>here</a>";
                     await _emailSender.SendEmailAsync(user.Email, "Please confirm your email", emailBody);
 
@@ -110,9 +110,9 @@ namespace backend.Controllers
                 await _userManager.UpdateAsync(user);
                 var cookieOptions = new CookieOptions
                 {
-                HttpOnly = true,
-                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
-                Expires = DateTime.UtcNow.AddDays(-1)
+                    HttpOnly = true,
+                    SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                    Expires = DateTime.UtcNow.AddDays(-1)
                 };
                 Response.Cookies.Append("refreshToken", "", cookieOptions);
                 return Ok("Email confirmed successfully");
