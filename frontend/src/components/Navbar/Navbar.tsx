@@ -37,6 +37,13 @@ export const Navbar = () => {
         redirectTo: location.pathname === '/register' ? '/' : location.pathname,
       },
     });
+    if (user && user.role) {
+      localStorage.setItem('userRole', user.role);
+      console.log('User role successfully saved to local storage:', user.role);
+    }
+    else{
+      console.log('User role is not stored');
+    }
   };
 
   const handleRegister = () => {
@@ -131,8 +138,12 @@ export const Navbar = () => {
               {isAuthenticated ? (
                 <>
                   <Link
-                    to='/single-user-review'
-                    onClick={() => setIsMenuToggled(false)}
+                    to='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleMyProfile();
+                    }}
                   >
                     My Profile
                   </Link>

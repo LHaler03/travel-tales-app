@@ -4,7 +4,7 @@ import {
   UserItem,
   Title,
   RedActionButton,
-  VerificationText,
+  // VerificationText,
   EmailLink,
   SearchContainer,
   SearchInput,
@@ -59,9 +59,9 @@ const UsersReview = () => {
             <EmailLink href={user.email ?? '#'}>
               {user.email ?? 'No email'}
             </EmailLink>
-            {!user.emailConfirmed && (
+            {/* {!user.emailConfirmed && (
               <VerificationText>Email not verified</VerificationText>
-            )}
+            )} */}
             <RedActionButton onClick={() => {
               navigate(`/single-user-review/${user.id}`);
             }}>
