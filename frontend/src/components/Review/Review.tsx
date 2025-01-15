@@ -13,6 +13,7 @@ import {
   RatingDots,
   Error,
 } from './Review.styled';
+import { useAuth } from '../../context/AuthContext';
 
 type ReviewProps = {
   city: string;
@@ -24,7 +25,7 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
   const [rating, setRating] = useState<number | ''>();
   const [errorrating, setErrorrating] = useState('');
   const [errorcomment, setErrorcomment] = useState('');
-  const userId = '009790e7-34ed-47dd-bdb6-7376f2c406c7';
+  const { user } = useAuth();
 
   const handleSubmit = async (rev: React.FormEvent) => {
     rev.preventDefault();
@@ -44,7 +45,7 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
           comment,
           rating,
           locationId,
-          userId,
+          userId: user?.id,
         },
       );
 
