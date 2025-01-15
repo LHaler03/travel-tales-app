@@ -40,7 +40,7 @@ const UsersReview = () => {
   return (
     <>
       <Title>
-        <h1>Travel Tales users</h1>
+        Travel Tales users
       </Title>
       <SearchContainer>
         <SearchInput
@@ -55,7 +55,7 @@ const UsersReview = () => {
       </SearchContainer>
       <UserList>
         {filteredUsers.map((user: UserType) => (
-          <UserItem key={user.username}>
+          <UserItem key={user.id}>
             <EmailLink href={user.email ?? '#'}>
               {user.email ?? 'No email'}
             </EmailLink>
@@ -63,7 +63,6 @@ const UsersReview = () => {
               <VerificationText>Email not verified</VerificationText>
             )}
             <RedActionButton onClick={() => {
-              console.log('Reviewing user with ID:', user.id);
               navigate(`/single-user-review/${user.id}`);
             }}>
               Review Profile

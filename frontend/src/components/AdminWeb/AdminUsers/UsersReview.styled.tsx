@@ -8,7 +8,7 @@ export const UserList = styled.ul`
 export const Title = styled.h1`
   padding: 1.3rem;
   padding-bottom: 0;
-  font-size: 1.6rem;
+  font-size: 3rem;
   font-weight: 600;
 
   @media (max-width: 600px) {

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { useParams } from 'react-router-dom';
+import { ProfileContainer, ProfileImage, UserInfo, EmailWarning } from './singleUser.styled';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
@@ -34,11 +35,17 @@ const SingleUser = () => {
   if (!userData) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{userData.firstName}'s Profile</h1>
-      <p>Email: {userData.email}</p>
-      <p>Username: {userData.userName}</p>
-    </div>
+    <ProfileContainer>
+      <ProfileImage src="" alt="Profile" />
+      <UserInfo>
+        <h1>{userData.userName.toUpperCase()}'s Profile</h1>
+        <p>Email: {userData.email}</p>
+        <p>{userData.firstName} {userData.lastName}</p>
+        {userData.emailVerified === false && (
+          <EmailWarning>Email not verified</EmailWarning>
+        )}
+      </UserInfo>
+    </ProfileContainer>
   );
 };
 
