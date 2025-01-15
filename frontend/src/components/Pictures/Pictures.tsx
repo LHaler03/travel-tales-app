@@ -15,10 +15,9 @@ const Pictures: React.FC<City> = ({ city }) => {
         const response = await axios.get(
           `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${city}`,
         );
-        //console.log(response.data)
         setPictures(response.data);
       } catch (error) {
-        console.log(`Error fetching pictures for ${city}:`, error);
+        console.error(`Error fetching pictures for ${city}:`, error);
       }
     };
 

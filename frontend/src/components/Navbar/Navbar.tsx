@@ -37,12 +37,12 @@ export const Navbar = () => {
         redirectTo: location.pathname === '/register' ? '/' : location.pathname,
       },
     });
-    if (user && user.role) {
-      localStorage.setItem('userRole', user.role);
-      console.log('User role successfully saved to local storage:', user.role);
-    } else {
-      console.log('User role is not stored');
-    }
+    // if (user && user.role) {
+    //   localStorage.setItem('userRole', user.role);
+    //   console.log('User role successfully saved to local storage:', user.role);
+    // } else {
+    //   console.log('User role is not stored');
+    // }
   };
 
   const handleRegister = () => {

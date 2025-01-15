@@ -130,10 +130,9 @@ export const FullMap = () => {
       const response = await axios.get(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${cityName}`,
       );
-      //console.log(response.data)
       setPictures(response.data);
     } catch (error) {
-      console.log(`Error fetching pictures for ${cityName}:`, error);
+      console.error(`Error fetching pictures for ${cityName}:`, error);
     }
   };
 
@@ -142,7 +141,6 @@ export const FullMap = () => {
       const response = await axios.get(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews/location/${id}`,
       );
-      //console.log(response.data);
       const rates = response.data.map(
         (rate: {
           id: number;
@@ -158,10 +156,9 @@ export const FullMap = () => {
           userName: rate.userName,
         }),
       );
-      console.log(rates);
       setInforating(rates);
     } catch (error) {
-      console.log(`Error fetching rating for ${id}:`, error);
+      console.error(`Error fetching rating for ${id}:`, error);
     }
   };
 

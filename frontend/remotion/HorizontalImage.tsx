@@ -36,7 +36,7 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
       );
       setPictures(response.data);
     } catch (error) {
-      console.log(`Error fetching pictures for ${cityName}:`, error);
+      console.error(`Error fetching pictures for ${cityName}:`, error);
     }
   };
 

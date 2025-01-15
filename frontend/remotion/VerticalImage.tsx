@@ -35,7 +35,6 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
     const width2 = event.currentTarget.naturalWidth;
     setImageWidth2(width2);
     setImageHeight2(height2);
-    console.log(width2, height2);
   };
 
   const fetchPictures = async (cityName: string) => {
@@ -45,7 +44,7 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
       );
       setPictures(response.data);
     } catch (error) {
-      console.log(`Error fetching pictures for ${cityName}:`, error);
+      console.error(`Error fetching pictures for ${cityName}:`, error);
     }
   };
 
