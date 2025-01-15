@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Title,
   ImageGrid,
@@ -6,33 +6,48 @@ import {
   ModalImage,
   ModalButtons,
   Thumbnail,
-} from './ImageReview.styled.tsx'; // Uključujemo stilove
-import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton'; // Import novih gumba
+} from './ImageReview.styled.tsx'; 
+import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton'; 
+import axios from 'axios';
 
-const images = [
-  '/images/1.avif',
-  '/images/2.jpg',
-  '/images/1.avif',
-  '/images/2.jpg',
-  '/images/1.avif',
-  '/images/2.jpg',
-  '/images/1.avif',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/2.jpg',
-  '/images/1.avif',
-  '/images/1.avif',
-  '/images/1.avif',
-  '/images/1.avif',
-  '/images/1.avif',
-];
+// const images = [
+//   '/images/1.avif',
+//   '/images/2.jpg',
+//   '/images/1.avif',
+//   '/images/2.jpg',
+//   '/images/1.avif',
+//   '/images/2.jpg',
+//   '/images/1.avif',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/2.jpg',
+//   '/images/1.avif',
+//   '/images/1.avif',
+//   '/images/1.avif',
+//   '/images/1.avif',
+//   '/images/1.avif',
+// ];
 
 const ImageReview = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [images, setImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get('http://localhost:5185/api/');
+        setImages(response.data);
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
