@@ -150,16 +150,15 @@ namespace backend.Controllers
             };
             Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);
 
-            var userId = user.Id;
             return Ok(
                 new LoggedInUserDto
                 {
-                    Id = userId,
+                    Id = user.Id,
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
                     EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
-                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault(),
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User"
                 }
             );
         }
@@ -286,8 +285,8 @@ namespace backend.Controllers
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
-                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
-                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault(),
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
+                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
                 }
             );
             }
