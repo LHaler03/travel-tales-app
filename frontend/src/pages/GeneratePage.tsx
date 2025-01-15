@@ -1,4 +1,4 @@
-import { Generate } from "../components/Generate/Generate";
+import { Generate } from '../components/Generate/Generate';
 
 function GeneratePage() {
   return (

@@ -38,12 +38,15 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
       return;
     }
     try {
-      await axios.post('http://localhost:5185/api/reviews', {
-        comment,
-        rating,
-        locationId,
-        userId,
-      });
+      await axios.post(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews`,
+        {
+          comment,
+          rating,
+          locationId,
+          userId,
+        },
+      );
 
       setComment('');
       setRating('');

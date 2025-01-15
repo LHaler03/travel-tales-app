@@ -13,7 +13,7 @@ const Pictures: React.FC<City> = ({ city }) => {
     const fetchPictures = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5185/api/s3/${city}`,
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${city}`,
         );
         //console.log(response.data)
         setPictures(response.data);

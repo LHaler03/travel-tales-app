@@ -1,4 +1,4 @@
-import { Generate1Image } from "../components/Generate1Image/Generate1Image";
+import { Generate1Image } from '../components/Generate1Image/Generate1Image';
 
 function Generate1ImagePage() {
   return (

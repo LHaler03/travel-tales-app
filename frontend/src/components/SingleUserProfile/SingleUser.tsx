@@ -2,26 +2,33 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { useParams } from 'react-router-dom';
-import { ProfileContainer, ProfileImage, UserInfo, EmailWarning } from './singleUser.styled';
+import {
+  ProfileContainer,
+  ProfileImage,
+  UserInfo,
+  EmailWarning,
+} from './SingleUser.styled';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
   const { id } = useParams();
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [userRole, setUserRole] = useState<string | null>(localStorage.getItem('userRole'));
+  const [userRole, setUserRole] = useState<string | null>(
+    localStorage.getItem('userRole'),
+  );
 
   useEffect(() => {
     if (isAuthenticated && user?.id) {
       localStorage.setItem('userId', user.id);
     }
-    
+
     const fetchUserById = async () => {
       const userId = id || localStorage.getItem('userId');
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:5185/api/users/${userId}`,
+            `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${userId}`,
           );
           setUserData(response.data);
           setUserRole(response.data.role);
@@ -42,11 +49,13 @@ const SingleUser = () => {
 
   return (
     <ProfileContainer>
-      <ProfileImage src="" alt="Profile" />
+      <ProfileImage src='' alt='Profile' />
       <UserInfo>
         <h1>{userData.userName.toUpperCase()}'s Profile</h1>
         <p>Email: {userData.email}</p>
-        <p>{userData.firstName} {userData.lastName}</p>
+        <p>
+          {userData.firstName} {userData.lastName}
+        </p>
         {userData.emailVerified === false && (
           <EmailWarning>Email not verified</EmailWarning>
         )}

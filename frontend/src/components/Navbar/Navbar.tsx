@@ -40,8 +40,7 @@ export const Navbar = () => {
     if (user && user.role) {
       localStorage.setItem('userRole', user.role);
       console.log('User role successfully saved to local storage:', user.role);
-    }
-    else{
+    } else {
       console.log('User role is not stored');
     }
   };
@@ -99,7 +98,9 @@ export const Navbar = () => {
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={handleMyProfile}>My Profile</ActionButton>
+                <ActionButton onClick={handleMyProfile}>
+                  My Profile
+                </ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
               </>
             ) : (

@@ -22,7 +22,9 @@ const UsersReview = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5185/api/users');
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users`,
+        );
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -39,9 +41,7 @@ const UsersReview = () => {
 
   return (
     <>
-      <Title>
-        Travel Tales users
-      </Title>
+      <Title>Travel Tales users</Title>
       <SearchContainer>
         <SearchInput
           type='text'
@@ -62,9 +62,11 @@ const UsersReview = () => {
             {/* {!user.emailConfirmed && (
               <VerificationText>Email not verified</VerificationText>
             )} */}
-            <RedActionButton onClick={() => {
-              navigate(`/single-user-review/${user.id}`);
-            }}>
+            <RedActionButton
+              onClick={() => {
+                navigate(`/single-user-review/${user.id}`);
+              }}
+            >
               Review Profile
             </RedActionButton>
           </UserItem>

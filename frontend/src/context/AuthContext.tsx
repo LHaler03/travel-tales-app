@@ -8,7 +8,7 @@ import {
 } from 'react';
 import axios from 'axios';
 
-interface UserType {
+export interface UserType {
   username: string;
   email?: string;
   emailConfirmed: boolean;
@@ -52,7 +52,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://localhost:5185/api',
+  baseURL: `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api`,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -287,4 +287,3 @@ const useAuth = () => {
 };
 
 export { useAuth, AuthProvider };
-export type { UserType };

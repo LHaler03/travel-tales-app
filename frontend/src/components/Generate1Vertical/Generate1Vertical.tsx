@@ -1,7 +1,14 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Player } from '@remotion/player';
 import { Vertical1Image } from '../../../remotion/Vertical1Image';
-import { CityName, PlayerContainer, Wrapper, Sidebar, InputContainer, ButtonsContainer } from '../GenerateVertical/GenerateVertical.styled';
+import {
+  CityName,
+  PlayerContainer,
+  Wrapper,
+  Sidebar,
+  InputContainer,
+  ButtonsContainer,
+} from '../GenerateVertical/GenerateVertical.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
@@ -13,23 +20,23 @@ export const Generate1Vertical = () => {
     city: 'Default City',
   };
 
-  const [titleColor, setTitleColor] = useState("#000000");
-  const [fromColor, setFromColor] = useState("#000000");
-  const [borderColor, setBorderColor] = useState("#ffffff");
-  const [fromText, setFromText] = useState("travel tales");
+  const [titleColor, setTitleColor] = useState('#000000');
+  const [fromColor, setFromColor] = useState('#000000');
+  const [borderColor, setBorderColor] = useState('#ffffff');
+  const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
 
   const handleFormatReverse = () => {
     navigate('/generate1', {
-        state: { city: city},
-      });
+      state: { city: city },
+    });
   };
 
   const handleNumberChange = () => {
     navigate('/generatevertical', {
-        state: { city: city},
-      });
+      state: { city: city },
+    });
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +45,7 @@ export const Generate1Vertical = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         if (typeof reader.result === 'string') {
-            setCustomImage1(reader.result);
+          setCustomImage1(reader.result);
         }
       };
       reader.readAsDataURL(file);
@@ -49,7 +56,7 @@ export const Generate1Vertical = () => {
     debounce((values: string) => {
       setDebouncedKey(values);
     }, 150),
-    []
+    [],
   );
 
   React.useEffect(() => {
@@ -59,77 +66,79 @@ export const Generate1Vertical = () => {
 
   return (
     <>
-        <Wrapper>
-            <Sidebar>
-                <CityName>{city}</CityName>
-                <InputContainer>
-                    <label>Image:</label>
-                    <input 
-                        type="file" 
-                        accept="image/*"
-                        onChange={(e) => handleImageUpload(e)}
-                    />
-                </InputContainer>
-                <InputContainer>
-                    <label>Title Color:</label>
-                    <input 
-                        type="color" 
-                        value={titleColor} 
-                        onChange={(e) => setTitleColor(e.target.value)} 
-                    />
-                </InputContainer>
-                <InputContainer>
-                    <label>From Text Color:</label>
-                    <input 
-                        type="color" 
-                        value={fromColor} 
-                        onChange={(e) => setFromColor(e.target.value)} 
-                    />
-                </InputContainer>
-                <InputContainer>
-                    <label>Border Color:</label>
-                    <input 
-                        type="color" 
-                        value={borderColor} 
-                        onChange={(e) => setBorderColor(e.target.value)} 
-                    />
-                </InputContainer>
-                <InputContainer>
-                    <label>From Text:</label>
-                    <input 
-                        type="text" 
-                        value={fromText} 
-                        onChange={(e) => setFromText(e.target.value)} 
-                    />
-                </InputContainer>
-                <ButtonsContainer>
-                  <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
-                  <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
-                  <ActionButton>Generate</ActionButton>
-                </ButtonsContainer>
-            </Sidebar>
-            <PlayerContainer>
-                <Player
-                    key={debouncedKey}
-                    component={Vertical1Image}
-                    compositionWidth={1080}
-                    compositionHeight={1920}
-                    durationInFrames={1}
-                    fps={30}
-                    style={{
-                        width: '100%'
-                    }}
-                    inputProps={{
-                        fromText: fromText, 
-                        titleColor: titleColor, 
-                        fromColor: fromColor, 
-                        borderColor: borderColor,
-                        cityName: city,
-                        customImage1,
-                    }}
-                />
-            </PlayerContainer>
-        </Wrapper>
+      <Wrapper>
+        <Sidebar>
+          <CityName>{city}</CityName>
+          <InputContainer>
+            <label>Image:</label>
+            <input
+              type='file'
+              accept='image/*'
+              onChange={(e) => handleImageUpload(e)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <label>Title Color:</label>
+            <input
+              type='color'
+              value={titleColor}
+              onChange={(e) => setTitleColor(e.target.value)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <label>From Text Color:</label>
+            <input
+              type='color'
+              value={fromColor}
+              onChange={(e) => setFromColor(e.target.value)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <label>Border Color:</label>
+            <input
+              type='color'
+              value={borderColor}
+              onChange={(e) => setBorderColor(e.target.value)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <label>From Text:</label>
+            <input
+              type='text'
+              value={fromText}
+              onChange={(e) => setFromText(e.target.value)}
+            />
+          </InputContainer>
+          <ButtonsContainer>
+            <ActionButton onClick={handleFormatReverse}>
+              Reverse Format
+            </ActionButton>
+            <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
+            <ActionButton>Generate</ActionButton>
+          </ButtonsContainer>
+        </Sidebar>
+        <PlayerContainer>
+          <Player
+            key={debouncedKey}
+            component={Vertical1Image}
+            compositionWidth={1080}
+            compositionHeight={1920}
+            durationInFrames={1}
+            fps={30}
+            style={{
+              width: '100%',
+            }}
+            inputProps={{
+              fromText: fromText,
+              titleColor: titleColor,
+              fromColor: fromColor,
+              borderColor: borderColor,
+              cityName: city,
+              customImage1,
+            }}
+          />
+        </PlayerContainer>
+      </Wrapper>
     </>
   );
-}
+};

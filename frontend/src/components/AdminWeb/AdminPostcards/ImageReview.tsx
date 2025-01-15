@@ -6,8 +6,8 @@ import {
   ModalImage,
   ModalButtons,
   Thumbnail,
-} from './ImageReview.styled.tsx'; 
-import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton'; 
+} from './ImageReview.styled.tsx';
+import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton';
 import axios from 'axios';
 
 // const images = [
@@ -39,7 +39,9 @@ const ImageReview = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:5185/api/');
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/images-to-review`,
+        );
         setImages(response.data);
       } catch (error) {
         console.error('Error fetching images:', error);

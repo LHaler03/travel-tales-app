@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const ProfileContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: 20px; 
+  margin: 20px;
   @media (max-width: 768px) {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
   }
 `;
 

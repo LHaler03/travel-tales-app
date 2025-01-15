@@ -98,7 +98,9 @@ export const FullMap = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://localhost:5185/api/locations');
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
+        );
         const locations = response.data.map(
           (location: {
             id: number;
@@ -123,7 +125,7 @@ export const FullMap = () => {
   const fetchPictures = async (cityName: string) => {
     try {
       const response = await axios.get(
-        `http://localhost:5185/api/s3/${cityName}`,
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${cityName}`,
       );
       //console.log(response.data)
       setPictures(response.data);
@@ -135,7 +137,7 @@ export const FullMap = () => {
   const fetchRating = async (id: number) => {
     try {
       const response = await axios.get(
-        `http://localhost:5185/api/reviews/location/${id}`,
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews/location/${id}`,
       );
       //console.log(response.data);
       const rates = response.data.map(

@@ -36,12 +36,21 @@ function App() {
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/review' element={<ReviewsPage />} />
-            <Route path='/generatevertical' element={<GeneratePageVertical />} />
+            <Route
+              path='/generatevertical'
+              element={<GeneratePageVertical />}
+            />
             <Route path='/generate1' element={<Generate1ImagePage />} />
-            <Route path='/generate1vertical' element={<Generate1VerticalPage />} />
+            <Route
+              path='/generate1vertical'
+              element={<Generate1VerticalPage />}
+            />
             <Route path='/image-review' element={<ImageReviewPage />} />
             <Route path='/users-review' element={<UsersReviewPage />} />
-            <Route path='/single-user-review/:id' element={<SingleUserPage />} />
+            <Route
+              path='/single-user-review/:id'
+              element={<SingleUserPage />}
+            />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

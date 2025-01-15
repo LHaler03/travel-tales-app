@@ -1,4 +1,4 @@
-import { GenerateVertical } from "../components/GenerateVertical/GenerateVertical";
+import { GenerateVertical } from '../components/GenerateVertical/GenerateVertical';
 
 function GeneratePageVertical() {
   return (
