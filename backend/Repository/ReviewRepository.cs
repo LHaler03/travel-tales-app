@@ -32,17 +32,19 @@ namespace backend.Repository
         }
         public async Task<Review> AddReviewAsync(Review reviewModel)
         {
-            // Verify the Location exists
             var location = await _context.Locations.FindAsync(reviewModel.LocationId);
             if (location == null)
                 throw new KeyNotFoundException($"Location with ID {reviewModel.LocationId} not found");
 
-            // Verify the User exists
             var user = await _context.Users.FindAsync(reviewModel.UserId);
             if (user == null)
                 throw new KeyNotFoundException($"User with ID {reviewModel.UserId} not found");
 
-            // Only add the review, don't create new Location or User
+            var existingReview = await _context.Reviews.FirstOrDefaultAsync(r => r.LocationId == reviewModel.LocationId && r.UserId == reviewModel.UserId);
+
+            if (existingReview != null)
+                throw new InvalidOperationException("User has already submitted a review for this location!");
+                
             reviewModel.Location = location;
             reviewModel.User = user;
             

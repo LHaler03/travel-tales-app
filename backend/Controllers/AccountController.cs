@@ -153,10 +153,12 @@ namespace backend.Controllers
             return Ok(
                 new LoggedInUserDto
                 {
+                    Id = user.Id,
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
-                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
+                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User"
                 }
             );
         }
@@ -279,9 +281,11 @@ namespace backend.Controllers
                 return Ok(
                 new LoggedInUserDto
                 {
+                    Id = user.Id,
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
                     EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
                 }
             );

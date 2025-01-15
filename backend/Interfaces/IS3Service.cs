@@ -7,6 +7,8 @@ public interface IS3Service
     Task<List<string>> GetAllFilesFromObjectAsPreSignedUrlsAsync(string locationName);
     Task<Stream> GetFileAsync(string key);
     Task<string> GetPreSignedUrlAsync(string key, int expirationMinutes = 60);
-    Task<string> UploadPostcardAsync(string base64Image, string userId, string locationName);
-    Task DeleteObjectAsync(string key);
+    Task<string> UploadFileAsync(string base64Image, string folderPath);
+    Task<bool> DeleteObjectAsync(string key);
+    Task<List<string>> ListFilesInFolderAsync(string folderPath);
+    Task<string> MoveFileAsync(string sourceKey, string destinationKey);
 }
