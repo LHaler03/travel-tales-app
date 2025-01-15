@@ -52,6 +52,14 @@ export const Navbar = () => {
     navigate('/');
   };
 
+  const handleMyProfile = () => {
+    if (user && user.id) {
+      navigate(`/single-user-review/${user.id}`);
+    } else {
+      console.error('User ID is undefined');
+    }
+  };
+
   return (
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
@@ -78,9 +86,7 @@ export const Navbar = () => {
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={() => navigate('/single-user-review')}>
-                  My Profile
-                </ActionButton>
+                <ActionButton onClick={handleMyProfile}>My Profile</ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
               </>
             ) : (

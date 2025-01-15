@@ -33,7 +33,7 @@ function App() {
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/image-review' element={<ImageReviewPage />} />
             <Route path='/users-review' element={<UsersReviewPage />} />
-            <Route path='/single-user-review' element={<SingleUserPage />} />
+            <Route path='/single-user-review/:id' element={<SingleUserPage />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

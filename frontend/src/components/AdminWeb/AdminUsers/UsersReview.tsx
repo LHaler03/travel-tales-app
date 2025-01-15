@@ -62,7 +62,10 @@ const UsersReview = () => {
             {!user.emailConfirmed && (
               <VerificationText>Email not verified</VerificationText>
             )}
-            <RedActionButton onClick={() => navigate('/single-user-review')}>
+            <RedActionButton onClick={() => {
+              console.log('Reviewing user with ID:', user.id);
+              navigate(`/single-user-review/${user.id}`);
+            }}>
               Review Profile
             </RedActionButton>
           </UserItem>
