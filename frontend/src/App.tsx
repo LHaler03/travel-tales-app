@@ -13,6 +13,7 @@ import ImageReviewPage from './pages/ImageReviewPage';
 import UsersReviewPage from './pages/UsersReviewPage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
+import ReviewsPage from './pages/ReviewsPage';
 import GeneratePageVertical from './pages/GeneratePageVertical';
 import Generate1ImagePage from './pages/Generate1ImagePage';
 import Generate1VerticalPage from './pages/Generate1VerticalPage';
@@ -34,6 +35,7 @@ function App() {
             <Route path='/about' element={<AboutUsPage />} />
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
+            <Route path='/review' element={<ReviewsPage />} />
             <Route path='/generatevertical' element={<GeneratePageVertical />} />
             <Route path='/generate1' element={<Generate1ImagePage />} />
             <Route path='/generate1vertical' element={<Generate1VerticalPage />} />
