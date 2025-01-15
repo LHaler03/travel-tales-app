@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Player } from '@remotion/player';
 import { Horizontal1Image } from '../../../remotion/Horizontal1Image';
-import { CityName, PlayerContainer, Wrapper, Sidebar } from '../Generate/Generate.styled';
+import { CityName, PlayerContainer, Wrapper, Sidebar, InputContainer } from '../Generate/Generate.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
+import { ButtonsContainer } from '../Generate/Generate.styled';
 
 export const Generate1Image = () => {
   const location = useLocation();
@@ -62,49 +63,51 @@ export const Generate1Image = () => {
         <Wrapper>
             <Sidebar>
                 <CityName>{city}</CityName>
-                <div>
+                <InputContainer>
                     <label>Image:</label>
                     <input 
                         type="file" 
                         accept="image/*"
                         onChange={(e) => handleImageUpload(e)}
                     />
-                </div>
-                <div>
+                </InputContainer>
+                <InputContainer>
                     <label>Title Color:</label>
                     <input 
                         type="color" 
                         value={titleColor} 
                         onChange={(e) => setTitleColor(e.target.value)} 
                     />
-                </div>
-                <div>
+                </InputContainer>
+                <InputContainer>
                     <label>From Text Color:</label>
                     <input 
                         type="color" 
                         value={fromColor} 
                         onChange={(e) => setFromColor(e.target.value)} 
                     />
-                </div>
-                <div>
+                </InputContainer>
+                <InputContainer>
                     <label>Border Color:</label>
                     <input 
                         type="color" 
                         value={borderColor} 
                         onChange={(e) => setBorderColor(e.target.value)} 
                     />
-                </div>
-                <div>
+                </InputContainer>
+                <InputContainer>
                     <label>From Text:</label>
                     <input 
                         type="text" 
                         value={fromText} 
                         onChange={(e) => setFromText(e.target.value)} 
                     />
-                </div>
-                <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
-                <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
-                <ActionButton>Generate</ActionButton>
+                </InputContainer>
+                <ButtonsContainer>
+                  <ActionButton onClick={handleFormatReverse}>Reverse Format</ActionButton>
+                  <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
+                  <ActionButton>Generate</ActionButton>
+                </ButtonsContainer>
             </Sidebar>
             <PlayerContainer>
                 <Player
