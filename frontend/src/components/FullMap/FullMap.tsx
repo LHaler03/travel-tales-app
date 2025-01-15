@@ -98,7 +98,7 @@ export const FullMap = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.74.155.131/api/locations');
+        const response = await axios.get('http://localhost:5185/api/locations');
         const locations = response.data.map(
           (location: {
             id: number;

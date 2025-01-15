@@ -59,7 +59,7 @@ public class S3Service : IS3Service
         return await Task.FromResult(_s3Client.GetPreSignedURL(request));
     }
 
-    public async Task<string> UploadPostcardAsync(string base64Image, string userId, string locationName)
+    public async Task<string> UploadFileAsync(string base64Image, string folderPath)
     {
         try
         {
@@ -72,12 +72,7 @@ public class S3Service : IS3Service
                 base64Data = base64Image.Split(',')[1];
             }
 
-            string fileName = $"{Guid.NewGuid()}.jpg";
-            
-            string folderPath = string.IsNullOrEmpty(userId) || userId == "anonymous"
-                ? "postcards/temporary" 
-                : $"postcards/users/{userId}";
-            
+            string fileName = $"{Guid.NewGuid()}.jpg";         
             string key = $"{folderPath}/{fileName}";
 
             // Convert base64 to bytes
@@ -93,11 +88,8 @@ public class S3Service : IS3Service
             };
 
             await _s3Client.PutObjectAsync(putRequest);
-
-            // Set expiration to 1 hour for anonymous uploads, 1 week for registered users
-            int expirationMinutes = (userId == "anonymous") ? 60 : 10080;
             
-            return await GetPreSignedUrlAsync(key, expirationMinutes);
+            return await GetPreSignedUrlAsync(key, expirationMinutes: 10);
         }
         catch (AmazonS3Exception ex)
         {
@@ -109,14 +101,86 @@ public class S3Service : IS3Service
         }
     }
 
-    public async Task DeleteObjectAsync(string key)
+    public async Task<bool> DeleteObjectAsync(string key)
     {
+        try
+        {
+            // First check if object exists
+            var getRequest = new GetObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key
+            };
+
+            try
+            {
+                await _s3Client.GetObjectMetadataAsync(new GetObjectMetadataRequest 
+                { 
+                    BucketName = _bucketName, 
+                    Key = key 
+                });
+            }
+            catch (AmazonS3Exception ex)
+            {
+                if (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    return false;
+                throw;
+            }
+
+            // Object exists, proceed with deletion
+            var deleteRequest = new DeleteObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key
+            };
+            await _s3Client.DeleteObjectAsync(deleteRequest);
+            return true;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error deleting object: {ex.Message}", ex);
+        }
+    }
+
+    public async Task<string> MoveFileAsync(string sourceKey, string destinationKey)
+    {
+        var copyRequest = new CopyObjectRequest
+        {
+            SourceBucket = _bucketName,
+            SourceKey = sourceKey,
+            DestinationBucket = _bucketName,
+            DestinationKey = destinationKey
+        };
+
         var deleteRequest = new DeleteObjectRequest
         {
             BucketName = _bucketName,
-            Key = key
+            Key = sourceKey
         };
-        
+
+        await _s3Client.CopyObjectAsync(copyRequest);
         await _s3Client.DeleteObjectAsync(deleteRequest);
+
+        return await GetPreSignedUrlAsync(destinationKey); // Assuming a method to generate pre-signed URL
+    }
+
+    public async Task<List<string>> ListFilesInFolderAsync(string folderPath)
+    {
+        var files = new List<string>();
+
+        // List objects in the specified folder
+        var request = new ListObjectsV2Request
+        {
+            BucketName = _bucketName,
+            Prefix = folderPath
+        };
+        var response = await _s3Client.ListObjectsV2Async(request);
+
+        foreach (var obj in response.S3Objects)
+        {
+            files.Add(obj.Key); // Add file key to list
+        }
+
+        return files;
     }
 }

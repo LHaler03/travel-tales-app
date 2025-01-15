@@ -80,6 +80,7 @@ builder.Services.AddAuthorization(options =>
 //     options.Listen(IPAddress.Any, 5185);
 // });
 
+builder.Services.AddScoped<PostcardRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
@@ -111,7 +112,7 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder
-                .WithOrigins("http://localhost:5173", "http://localhost:3000")  // Your frontend URL
+                .WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:3001")  // Your frontend URL
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader();

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Img, staticFile } from 'remotion'
+import { Img, staticFile, continueRender, delayRender } from 'remotion'
 import { loadFont } from "@remotion/google-fonts/Nunito";
 import { z } from "zod";
 import { zColor } from "@remotion/zod-types";
@@ -12,6 +12,9 @@ export const ImageSchema = z.object({
   titleColor: zColor(),
   fromColor: zColor(),
   borderColor: zColor(),
+  cityName: z.string(),
+  customImage1: z.string().optional(),
+  customImage2: z.string().optional()
 });
 
 export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
@@ -19,13 +22,15 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
+  cityName,
+  customImage1,
+  customImage2,
 }) => {
     const [pictures, setPictures] = useState<string[]>([]);
     const [imageHeight, setImageHeight] = useState(0);
     const [imageHeight2, setImageHeight2] = useState(0);
     const [imageWidth, setImageWidth] = useState(0);
-
-    const cityName = 'Reykjavik'
+    const [handle] = useState(() => delayRender());
 
     const fetchPictures = async (cityName: string) => {
         try {
@@ -50,11 +55,28 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
     };
 
     React.useEffect(() => {
-        fetchPictures(cityName);
-    }, []);
+      const loadImages = async () => {
+        if (customImage1 || customImage2) {
+          if (!customImage1 || !customImage2) {
+            await fetchPictures(cityName);
+          }
+          setPictures(currentPictures => {
+            const updatedPictures = [...currentPictures];
+            if (customImage1) updatedPictures[0] = customImage1;
+            if (customImage2) updatedPictures[1] = customImage2;
+            return updatedPictures;
+          });
+        } else {
+          await fetchPictures(cityName);
+        }
+        continueRender(handle);
+      };
+    
+      loadImages();
+    }, [cityName, customImage1, customImage2]);
 
-    const imageSource1 = pictures[0] || staticFile("images/white.avif");
-    const imageSource2 = pictures[1] || staticFile("images/white.avif");
+    const imageSource1 = pictures[0] || staticFile("images/white.jpg");
+    const imageSource2 = pictures[1] || staticFile("images/white.jpg");
 
     return (
        <div 

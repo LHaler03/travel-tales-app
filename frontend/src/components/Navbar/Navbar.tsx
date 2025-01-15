@@ -25,6 +25,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated, logout } = useAuth();
+  const { user } = useAuth();
 
   const handleClose = () => {
     setIsMenuToggled(false);
@@ -36,6 +37,13 @@ export const Navbar = () => {
         redirectTo: location.pathname === '/register' ? '/' : location.pathname,
       },
     });
+    if (user && user.role) {
+      localStorage.setItem('userRole', user.role);
+      console.log('User role successfully saved to local storage:', user.role);
+    }
+    else{
+      console.log('User role is not stored');
+    }
   };
 
   const handleRegister = () => {
@@ -49,6 +57,20 @@ export const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate('/');
+  };
+
+  const handleMyProfile = () => {
+    const storedUserId = localStorage.getItem('userId');
+    if (!storedUserId && user && user.id) {
+      localStorage.setItem('userId', user.id);
+    } else if ((!user || !user.id) && !storedUserId) {
+      console.error('User ID is undefined in local storage');
+    }
+    if (storedUserId) {
+      navigate(`/single-user-review/${storedUserId}`);
+    } else {
+      console.error('User ID is undefined');
+    }
   };
 
   return (
@@ -67,13 +89,17 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
+            {/* {user && user.role === 'admin' && (
+              <> */}
+            <Link to='/users-review'>Users Review</Link>
+            <Link to='/image-review'>Image Review</Link>
+            {/* </>
+            )} */}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={() => navigate('/profile')}>
-                  My Profile
-                </ActionButton>
+                <ActionButton onClick={handleMyProfile}>My Profile</ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
               </>
             ) : (
@@ -111,7 +137,14 @@ export const Navbar = () => {
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <Link to='/' onClick={() => setIsMenuToggled(false)}>
+                  <Link
+                    to='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleMyProfile();
+                    }}
+                  >
                     My Profile
                   </Link>
                   <a
@@ -161,6 +194,22 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
+              {user && user.role === 'admin' && (
+                <>
+                  <Link
+                    to='/users-review'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
+                    Users Review
+                  </Link>
+                  <Link
+                    to='/image-review'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
+                    Image Review
+                  </Link>
+                </>
+              )}
             </MenuItems>
           </Sidebar>
         </>

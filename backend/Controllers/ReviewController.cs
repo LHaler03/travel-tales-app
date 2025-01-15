@@ -43,6 +43,9 @@ namespace backend.Controllers
         var createdReview = await _reviewRepo.AddReviewAsync(createReviewDto.ToReviewFromCreateDto());
         return CreatedAtAction(nameof(GetById), new { id = createdReview.Id }, createdReview.ToReviewDto());
       }
+      catch(InvalidOperationException ex) {
+        return BadRequest(new { message = ex.Message });
+      }
       catch (KeyNotFoundException ex)
       {
         return NotFound(ex.Message);

@@ -12,6 +12,8 @@ interface UserType {
   username: string;
   email?: string;
   emailConfirmed: boolean;
+  role: string; //admin role
+  id: string;
 }
 
 interface LoginFormData {
@@ -32,6 +34,8 @@ interface LoginResponse {
   email: string;
   token: string;
   emailConfirmed: boolean;
+  role: string;
+  id: string;
 }
 
 type AuthContextType = {
@@ -48,7 +52,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL: 'http://3.74.155.131/api',
+  baseURL: 'http://localhost:5185/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -119,10 +123,16 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         formData,
       );
 
+      if (!response.data.id) {
+        throw new Error('Invalid user ID received');
+      }
+
       const user: UserType = {
         username: response.data.username,
         email: response.data.email,
         emailConfirmed: response.data.emailConfirmed,
+        role: response.data.role,
+        id: response.data.id,
       };
 
       localStorage.setItem('token', response.data.token);
@@ -159,6 +169,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           username: response.data.username,
           email: response.data.email,
           emailConfirmed: response.data.emailConfirmed,
+          role: response.data.role, //admin role
+          id: response.data.id,
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);
@@ -275,3 +287,4 @@ const useAuth = () => {
 };
 
 export { useAuth, AuthProvider };
+export type { UserType };

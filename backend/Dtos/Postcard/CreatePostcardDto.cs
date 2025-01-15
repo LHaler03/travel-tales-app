@@ -9,10 +9,11 @@ namespace backend.Dtos.Postcard
     public class CreatePostcardDto
     {
         [Required]
-        public string ImageUrl { get; set; } = string.Empty;
+        public string Base64Image { get; set; } = string.Empty;
         [Required]
         public int LocationId { get; set; }
         public string? UserId { get; set; }
+        public bool SavePostcard { get; set; }
     }
 
 }
