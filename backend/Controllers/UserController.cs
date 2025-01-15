@@ -25,7 +25,7 @@ namespace backend.Controllers
         }
         // GET: api/users
         [HttpGet]
-        //[Authorize (Roles = "Admin")]
+        [Authorize (Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userRepo.GetAllAsync();

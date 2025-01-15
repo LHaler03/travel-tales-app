@@ -9,7 +9,7 @@ namespace backend.Models
     public class Postcard
     {
         public int Id { get; set; }
-        public string ImageUrl { get; set; } = string.Empty;
+        public string Base64Image { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? ExpiresAt { get; set; }
         [ForeignKey("User")]

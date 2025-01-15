@@ -80,6 +80,7 @@ builder.Services.AddAuthorization(options =>
 //     options.Listen(IPAddress.Any, 5185);
 // });
 
+builder.Services.AddScoped<PostcardRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
