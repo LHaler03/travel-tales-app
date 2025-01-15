@@ -25,6 +25,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export const FullMap = () => {
   const imageSliderSettings = {
@@ -94,6 +95,8 @@ export const FullMap = () => {
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
 
   const navigate = useNavigate();
+
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -293,15 +296,17 @@ export const FullMap = () => {
               >
                 Generate postcard
               </Modal_button_generate>
-              <Modal_button_generate
-                onClick={() =>
-                  navigate('/review', {
-                    state: { city: selectedCity, id: selectedId },
-                  })
-                }
-              >
-                Make review
-              </Modal_button_generate>
+              {user && (
+                <Modal_button_generate
+                  onClick={() =>
+                    navigate('/review', {
+                      state: { city: selectedCity, id: selectedId },
+                    })
+                  }
+                >
+                  Make review
+                </Modal_button_generate>
+              )}
             </Buttons>
           </Modal_content>
         </Modal>
