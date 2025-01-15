@@ -72,7 +72,7 @@ public class S3Controller : ControllerBase
 
                     var reviewFolderPath = $"images/review/{request.LocationId}";
                     var reviewUrl = await _s3Service.UploadFileAsync(image, reviewFolderPath);
-                    
+
                     var userFolderPath = $"images/users/{request.UserId}/{location.Name}";
                     var userUrl = await _s3Service.UploadFileAsync(image, userFolderPath);
 
@@ -111,7 +111,8 @@ public class S3Controller : ControllerBase
             if (string.IsNullOrEmpty(request.UserId))
             {
                 folderPath = "temporary";
-            } else
+            }
+            else
             {
                 var user = await _context.Users.FindAsync(request.UserId);
                 if (user == null)
@@ -120,9 +121,9 @@ public class S3Controller : ControllerBase
                     ? $"postcards/users/{request.UserId}"
                     : "temporary";
             }
-            
+
             var url = await _s3Service.UploadFileAsync(request.Base64Image, folderPath);
-            
+
             request.Base64Image = url; // Set the URL for the uploaded postcard image
             var createResult = await _postcardRepo.CreatePostcardAsync(request);
 
@@ -136,21 +137,27 @@ public class S3Controller : ControllerBase
     }
 
     [HttpGet("images-to-review")]
-    [Authorize (Roles = "Admin")]
+    // [Authorize (Roles = "Admin")]
     public async Task<IActionResult> GetImagesToReview()
     {
         var imagesToReview = await _s3Service.ListFilesInFolderAsync("images/review");
-        return Ok(imagesToReview);
+        var imagesToReviewLinks = await _s3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync("images/review");
+        var imagePairs = imagesToReview.Zip(imagesToReviewLinks, (image, link) => new { ImageName = image, ImageUrl = link });
+        return Ok(imagePairs);
     }
 
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     [HttpPost("approve-image")]
     public async Task<IActionResult> ApproveImage([FromBody] ApproveRejectImageRequest request)
     {
         try
         {
-            var imageKey = $"images/review/{request.LocationId}/{request.ImageName}.jpg";
-            var validFolderPath = $"valid/{request.CityName}/{request.ImageName}.jpg";
+            var cityName = _context.Locations.FirstOrDefault(location => location.Id == request.LocationId)?.Name;
+            if (cityName == null)
+                return BadRequest("Invalid location ID");
+
+            var imageKey = request.ImageName;
+            var validFolderPath = $"valid/{cityName}/{request.ImageName}.jpg";
 
             var url = await _s3Service.MoveFileAsync(imageKey, validFolderPath);
             return Ok(new { Message = "Image approved", Url = url });
@@ -166,10 +173,10 @@ public class S3Controller : ControllerBase
     {
         try
         {
-            var imageKey = $"images/review/{request.LocationId}/{request.ImageName}.jpg";
+            var imageKey = request.ImageName;
             var success = await _s3Service.DeleteObjectAsync(imageKey);
-            
-            return success 
+
+            return success
                 ? Ok(new { Message = "Image rejected" })
                 : NotFound(new { Message = "Image not found" });
         }

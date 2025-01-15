@@ -287,7 +287,11 @@ export const FullMap = () => {
               <Modal_button_generate
                 onClick={() =>
                   navigate('/generate', {
-                    state: { city: selectedCity, geocode: selectedGeocode },
+                    state: {
+                      city: selectedCity,
+                      cityId: selectedId,
+                      geocode: selectedGeocode,
+                    },
                   })
                 }
               >

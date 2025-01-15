@@ -33,8 +33,13 @@ import axios from 'axios';
 // ];
 
 const ImageReview = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [images, setImages] = useState<string[]>([]);
+  const [selectedImage, setSelectedImage] = useState<{
+    imageName: string;
+    imageUrl: string;
+  } | null>(null);
+  const [images, setImages] = useState<
+    { imageName: string; imageUrl: string }[]
+  >([]);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -51,7 +56,7 @@ const ImageReview = () => {
     fetchImages();
   }, []);
 
-  const handleImageClick = (image: string) => {
+  const handleImageClick = (image: { imageName: string; imageUrl: string }) => {
     setSelectedImage(image);
   };
 
@@ -66,7 +71,7 @@ const ImageReview = () => {
         {images.map((image, index) => (
           <Thumbnail
             key={index}
-            src={image}
+            src={image.imageUrl}
             alt={`Review ${index}`}
             onClick={() => handleImageClick(image)}
           />
@@ -75,11 +80,20 @@ const ImageReview = () => {
 
       {selectedImage && (
         <Modal onClick={closeModal}>
-          <ModalImage src={selectedImage} alt='Selected' />
+          <ModalImage src={selectedImage.imageUrl} alt='Selected' />
           <ModalButtons>
             <ApproveButton
-              onClick={() => {
-                /* Handle approve logic */
+              onClick={async () => {
+                const locationPartsArray = selectedImage.imageName.split('/');
+                const locationId =
+                  locationPartsArray[locationPartsArray.length - 2];
+                await axios.post(
+                  `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/approve-image`,
+                  {
+                    imageName: selectedImage.imageName,
+                    locationId,
+                  },
+                );
               }}
             >
               Approve

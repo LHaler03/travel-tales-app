@@ -77,9 +77,17 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
               },
             });
 
+            const user: UserType = {
+              username: userResponse.data.username,
+              email: userResponse.data.email,
+              emailConfirmed: userResponse.data.emailConfirmed,
+              role: userResponse.data.role,
+              id: userResponse.data.id,
+            };
+
             setIsAuthenticated(true);
             setToken(savedToken);
-            setUser(userResponse.data);
+            setUser(user);
             setIsLoading(false);
             return;
           } catch (error) {
@@ -98,9 +106,17 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
             },
           });
 
+          const user: UserType = {
+            username: userResponse.data.username,
+            email: userResponse.data.email,
+            emailConfirmed: userResponse.data.emailConfirmed,
+            role: userResponse.data.role,
+            id: userResponse.data.id,
+          };
+
           setIsAuthenticated(true);
           setToken(response.data.accessToken);
-          setUser(userResponse.data);
+          setUser(user);
         }
       } catch (error) {
         console.error('Auth initialization error:', error);
@@ -136,6 +152,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       };
 
       localStorage.setItem('token', response.data.token);
+      console.log(user);
       setIsAuthenticated(true);
       setToken(response.data.token);
       setUser(user);
@@ -233,12 +250,18 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           originalRequest._retry = true;
 
           try {
-            const response = await api.get<{ accessToken: string }>(
-              '/account/refresh-token',
-            );
+            const response = await api.get('/account/refresh-token');
 
             if (response.data.accessToken) {
+              const user: UserType = {
+                username: response.data.username,
+                email: response.data.email,
+                emailConfirmed: response.data.emailConfirmed,
+                role: response.data.role, //admin role
+                id: response.data.id,
+              };
               setToken(response.data.accessToken);
+              setUser(user);
               originalRequest.headers.Authorization = `Bearer ${response.data.accessToken}`;
               return api(originalRequest);
             }

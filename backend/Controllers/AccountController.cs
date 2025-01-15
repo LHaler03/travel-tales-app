@@ -198,7 +198,15 @@ namespace backend.Controllers
             };
             Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
 
-            return Ok(new { AccessToken = newAccessToken });
+            return Ok(new
+            {
+                AccessToken = newAccessToken,
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
+            });
         }
 
         [HttpPost("logout")]
@@ -305,9 +313,11 @@ namespace backend.Controllers
 
             return Ok(new
             {
+                Id = user.Id,
                 Username = user.UserName,
                 Email = user.Email,
-                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
             });
         }
 

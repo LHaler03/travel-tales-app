@@ -16,7 +16,7 @@ import { ActionButton } from '../../shared/ActionButton';
 export const Generate1Vertical = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { city } = location.state || {
+  const { city, cityId } = location.state || {
     city: 'Default City',
   };
 
@@ -29,13 +29,13 @@ export const Generate1Vertical = () => {
 
   const handleFormatReverse = () => {
     navigate('/generate1', {
-      state: { city: city },
+      state: { city, cityId },
     });
   };
 
   const handleNumberChange = () => {
     navigate('/generatevertical', {
-      state: { city: city },
+      state: { city, cityId },
     });
   };
 
