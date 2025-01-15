@@ -21,21 +21,36 @@ export const Form = styled.form`
   gap: 20px;
 `;
 
-export const InputContainer = styled.div`
-  max-width: 75px;
+export const RatingContainer = styled.div`
+  display: flex;
+  gap: 8px;
   @media (min-width: 600px) {
-    max-width: 100px;
   }
 `;
 
-export const Rating = styled.input`
-  padding: 10px;
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  min-height: 20px;
-  width: 100%;
+export const Rating = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+`;
+
+export const RatingNumbers = styled.div`
+  font-size: 1rem;
+`;
+
+type RatingProps = {
+  select: boolean;
+};
+
+export const RatingDots = styled.div<RatingProps>`
+  font-size: 3rem;
+  color: ${(s) => (s.select ? 'yellow' : 'white')};
+  transition: color 0.2s;
+  cursor: pointer;
+  &:hover {
+    color: yellow;
+  }
 `;
 
 export const Comment = styled.textarea`
@@ -60,4 +75,9 @@ export const SubmitButton = styled.button`
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-end;
+`;
+
+export const Error = styled.div`
+  color: red;
+  font-size: 1rem;
 `;

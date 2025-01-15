@@ -6,9 +6,12 @@ import {
   FormContainer,
   Comment,
   Rating,
-  InputContainer,
+  RatingContainer,
   SubmitButton,
   Buttons,
+  RatingNumbers,
+  RatingDots,
+  Error,
 } from './Review.styled';
 
 type ReviewProps = {
@@ -19,10 +22,21 @@ type ReviewProps = {
 export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState<number | ''>();
+  const [errorrating, setErrorrating] = useState('');
+  const [errorcomment, setErrorcomment] = useState('');
   const userId = '009790e7-34ed-47dd-bdb6-7376f2c406c7';
 
   const handleSubmit = async (rev: React.FormEvent) => {
     rev.preventDefault();
+
+    if (!rating) {
+      setErrorrating('Please enter a rating!!!');
+      return;
+    }
+    if (!comment) {
+      setErrorcomment('Please enter a comment!!!');
+      return;
+    }
     try {
       await axios.post('http://localhost:5185/api/reviews', {
         comment,
@@ -33,6 +47,7 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
 
       setComment('');
       setRating('');
+      setErrorrating('');
     } catch (error) {
       console.error('Error submitting review', error);
     }
@@ -43,28 +58,36 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
       <City>{city}</City>
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-          <p>Rating:</p>
-          <InputContainer>
-            <Rating
-              type='number'
-              min={1}
-              max={5}
-              value={rating}
-              onChange={(r) =>
-                setRating(r.target.value === '' ? '' : Number(r.target.value))
-              }
-              placeholder='Rate 1-5'
-              required
-            />
-          </InputContainer>
-          <p>Comment:</p>
+          <p>Rating:*</p>
+          <RatingContainer>
+            {[1, 2, 3, 4, 5].map((dots) => (
+              <Rating key={dots}>
+                <RatingNumbers>{dots}</RatingNumbers>
+                <RatingDots
+                  key={dots}
+                  select={dots <= (rating || 0)}
+                  onClick={() => {
+                    setRating(dots);
+                    setErrorrating('');
+                  }}
+                >
+                  ●
+                </RatingDots>
+              </Rating>
+            ))}
+          </RatingContainer>
+          {errorrating && <Error>{errorrating}</Error>}
+          <p>Comment:*</p>
           <Comment
             value={comment}
-            onChange={(c) => setComment(c.target.value)}
+            onChange={(c) => {
+              setComment(c.target.value);
+              setErrorcomment('');
+            }}
             placeholder='Write your review here...'
-            required
             maxLength={500}
           />
+          {errorcomment && <Error>{errorcomment}</Error>}
           <Buttons>
             <SubmitButton type='submit'>Submit review</SubmitButton>
           </Buttons>
