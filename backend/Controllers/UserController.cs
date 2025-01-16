@@ -25,7 +25,7 @@ namespace backend.Controllers
         }
         // GET: api/users
         [HttpGet]
-        [Authorize (Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userRepo.GetAllAsync();
@@ -53,7 +53,7 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-            
+
             return Ok(user.MapToUserDto());
         }
 
