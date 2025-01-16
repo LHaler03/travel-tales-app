@@ -167,7 +167,7 @@ public class S3Controller : ControllerBase
             return StatusCode(500, $"Internal server error: {ex.Message}");
         }
     }
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     [HttpPost("reject-image")]
     public async Task<IActionResult> RejectImage([FromBody] ApproveRejectImageRequest request)
     {

@@ -40,6 +40,7 @@ const ImageReview = () => {
   const [images, setImages] = useState<
     { imageName: string; imageUrl: string }[]
   >([]);
+  const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -54,7 +55,7 @@ const ImageReview = () => {
     };
 
     fetchImages();
-  }, []);
+  }, [refreshTrigger]);
 
   const handleImageClick = (image: { imageName: string; imageUrl: string }) => {
     setSelectedImage(image);
@@ -62,6 +63,41 @@ const ImageReview = () => {
 
   const closeModal = () => {
     setSelectedImage(null);
+  };
+
+  const getLocationId = (imageName: string) => {
+    const locationPartsArray = imageName.split('/');
+    return locationPartsArray[locationPartsArray.length - 2];
+  };
+
+  const approveImage = async (selectedImage: {
+    imageName: string;
+    imageUrl: string;
+  }) => {
+    const locationId = getLocationId(selectedImage.imageName);
+    await axios.post(
+      `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/approve-image`,
+      {
+        imageName: selectedImage.imageName,
+        locationId,
+      },
+    );
+    setRefreshTrigger((prev) => prev + 1);
+  };
+
+  const rejectImage = async (selectedImage: {
+    imageName: string;
+    imageUrl: string;
+  }) => {
+    const locationId = getLocationId(selectedImage.imageName);
+    await axios.post(
+      `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/reject-image`,
+      {
+        imageName: selectedImage.imageName,
+        locationId,
+      },
+    );
+    setRefreshTrigger((prev) => prev + 1);
   };
 
   return (
@@ -82,27 +118,10 @@ const ImageReview = () => {
         <Modal onClick={closeModal}>
           <ModalImage src={selectedImage.imageUrl} alt='Selected' />
           <ModalButtons>
-            <ApproveButton
-              onClick={async () => {
-                const locationPartsArray = selectedImage.imageName.split('/');
-                const locationId =
-                  locationPartsArray[locationPartsArray.length - 2];
-                await axios.post(
-                  `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/approve-image`,
-                  {
-                    imageName: selectedImage.imageName,
-                    locationId,
-                  },
-                );
-              }}
-            >
+            <ApproveButton onClick={async () => approveImage(selectedImage)}>
               Approve
             </ApproveButton>
-            <DisapproveButton
-              onClick={() => {
-                /* Handle disapprove logic */
-              }}
-            >
+            <DisapproveButton onClick={() => rejectImage(selectedImage)}>
               Disapprove
             </DisapproveButton>
           </ModalButtons>
