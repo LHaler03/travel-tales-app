@@ -72,6 +72,8 @@ export const Navbar = () => {
     }
   };
 
+  console.log('isAuth: ', isAuthenticated);
+
   return (
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
@@ -90,10 +92,13 @@ export const Navbar = () => {
             <Link to='/support'>Support</Link>
             {/* {user && user.role === 'admin' && (
               <> */}
-            <Link to='/users-review'>Users Review</Link>
-            <Link to='/image-review'>Image Review</Link>
-            {/* </>
-            )} */}
+
+            {isAuthenticated ? (
+              <>
+                <Link to='/users-review'>Users Review</Link>
+                <Link to='/image-review'>Image Review</Link>
+              </>
+            ) : null}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -195,7 +200,7 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {user && user.role === 'admin' && (
+              {isAuthenticated && user && user.role === 'admin' && (
                 <>
                   <Link
                     to='/users-review'

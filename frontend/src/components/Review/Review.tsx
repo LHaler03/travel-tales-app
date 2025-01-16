@@ -38,6 +38,12 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
       setErrorcomment('Please enter a comment!!!');
       return;
     }
+    console.log('review: ', {
+      comment,
+      rating,
+      locationId,
+      userId: user?.id,
+    });
     try {
       await axios.post(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews`,
