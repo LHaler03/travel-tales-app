@@ -12,8 +12,8 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250115223841_AddReviewUpdatedAt")]
-    partial class AddReviewUpdatedAt
+    [Migration("20250116211938_AddUpdatedAtToReview")]
+    partial class AddUpdatedAtToReview
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,13 +53,13 @@ namespace backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e9ea1ea3-d422-4391-ac33-6dcfadb1fc1e",
+                            Id = "d95f7d39-5f76-428b-8d37-e391831cfc3b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "3ec18c1c-b70c-45ea-9a6d-cb67c81a9015",
+                            Id = "6973dde7-e989-4d28-8a51-01e94ec60688",
                             Name = "User",
                             NormalizedName = "USER"
                         });
