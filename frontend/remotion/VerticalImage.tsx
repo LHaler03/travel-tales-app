@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { continueRender, delayRender, Img, staticFile } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Nunito';
 import { z } from 'zod';
 import { ImageSchema } from './HorizontalImage';
 import axios from 'axios';
-
-const { fontFamily } = loadFont();
 
 export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   fromText: text1,
