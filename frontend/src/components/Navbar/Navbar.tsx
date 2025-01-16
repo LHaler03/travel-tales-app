@@ -200,7 +200,7 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {isAuthenticated && user && user.role === 'admin' && (
+              {isAuthenticated && (
                 <>
                   <Link
                     to='/users-review'
