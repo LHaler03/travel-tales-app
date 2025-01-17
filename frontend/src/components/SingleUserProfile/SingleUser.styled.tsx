@@ -28,3 +28,12 @@ export const EmailWarning = styled.p`
   color: red;
   font-size: 0.9em;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; 
+  margin-top: 3rem; 
+`;
+
+

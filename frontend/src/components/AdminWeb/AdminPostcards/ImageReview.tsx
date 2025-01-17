@@ -10,28 +10,6 @@ import {
 import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton';
 import axios from 'axios';
 
-// const images = [
-//   '/images/1.avif',
-//   '/images/2.jpg',
-//   '/images/1.avif',
-//   '/images/2.jpg',
-//   '/images/1.avif',
-//   '/images/2.jpg',
-//   '/images/1.avif',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/2.jpg',
-//   '/images/1.avif',
-//   '/images/1.avif',
-//   '/images/1.avif',
-//   '/images/1.avif',
-//   '/images/1.avif',
-// ];
-
 const ImageReview = () => {
   const [selectedImage, setSelectedImage] = useState<{
     imageName: string;

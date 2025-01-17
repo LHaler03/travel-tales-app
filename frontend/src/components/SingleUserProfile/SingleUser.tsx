@@ -7,7 +7,10 @@ import {
   ProfileImage,
   UserInfo,
   EmailWarning,
+  ButtonContainer,
 } from './SingleUser.styled';
+import { DisapproveButton } from '../../shared/ActionButton';
+import { useNavigate } from 'react-router-dom';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
@@ -17,6 +20,21 @@ const SingleUser = () => {
   const [userRole, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
+  const navigate = useNavigate();
+
+  const handleDeleteUser = async () => {
+    if (window.confirm('Are you sure you want to delete this user?')) {
+      try {
+        await axios.delete(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}`,
+        );
+        alert('User deleted successfully.');
+      } catch (error) {
+        console.error('Error deleting user:', error);
+        setError('Failed to delete user.');
+      }
+    }
+  };
 
   useEffect(() => {
     if (isAuthenticated && user?.id) {
@@ -59,13 +77,19 @@ const SingleUser = () => {
         {userData.emailVerified === false && (
           <EmailWarning>Email not verified</EmailWarning>
         )}
-        {userRole === 'admin' && (
-          <div>
-            <h2>Admin Functions</h2>
-            {/* Ovdje možete dodati dodatne funkcionalnosti za admina */}
-          </div>
-        )}
       </UserInfo>
+      {/* {userRole === 'admin' && ( */}
+      <ButtonContainer>
+      <DisapproveButton
+        onClick={async () => {
+          await handleDeleteUser();
+          navigate('/users-review');
+        }}
+      >
+        Delete User
+      </DisapproveButton>
+    </ButtonContainer>
+      {/* )} */}
     </ProfileContainer>
   );
 };
