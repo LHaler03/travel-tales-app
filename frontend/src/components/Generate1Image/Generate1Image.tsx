@@ -7,15 +7,41 @@ import {
   Wrapper,
   Sidebar,
   InputContainer,
+  Picturechoice,
+  CityPicture,
+  ButtonsContainer,
 } from '../Generate/Generate.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
-import { ButtonsContainer } from '../Generate/Generate.styled';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
+import Slider from 'react-slick';
+import { SingleCard } from '../Card/Card.styled';
+import { Cardmap } from '../Card/Card.styled';
+import { Cards } from '../Card/Card.styled';
 
 export const Generate1Image = () => {
+  const imageSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
   const location = useLocation();
   const navigate = useNavigate();
   const { city, cityId } = location.state || {
@@ -30,6 +56,32 @@ export const Generate1Image = () => {
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
+  const [pictures, setPictures] = useState<string[]>([]);
+  const [showpictures1, setShowpictures1] = useState(false);
+  const [isForStock, setIsForStock] = useState(false);
+
+  const fetchPictures = async () => {
+    try {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${city}`,
+      );
+      setPictures(response.data);
+    } catch (error) {
+      console.error(`Error fetching pictures for ${city}:`, error);
+    }
+  };
+
+  const handlePictureSelect = (imageUrl: string) => {
+    setCustomImage1(imageUrl);
+    setShowpictures1(false);
+  };
+
+  const handleOdabirSlike = () => {
+    setShowpictures1(!showpictures1);
+    if (!pictures.length) {
+      fetchPictures();
+    }
+  };
 
   const handleFormatReverse = () => {
     navigate('/generate1vertical', {
@@ -53,16 +105,20 @@ export const Generate1Image = () => {
             console.log('user:', user);
             console.log('userId:', user?.id);
             if (!user) return;
-            const result = await axios.post(
-              `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
-              {
-                images: [reader.result],
-                userId: user?.id,
-                reviewRequired: true,
-                locationId: cityId,
-              },
-            );
-            setCustomImage1(result.data.urls[0]);
+            if (isForStock) {
+              const result = await axios.post(
+                `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
+                {
+                  images: [reader.result],
+                  userId: user?.id,
+                  reviewRequired: true,
+                  locationId: cityId,
+                },
+              );
+              setCustomImage1(result.data.urls[0]);
+            } else {
+              setCustomImage1(reader.result);
+            }
           } catch (error) {
             console.log(error);
           }
@@ -95,6 +151,35 @@ export const Generate1Image = () => {
               type='file'
               accept='image/*'
               onChange={(e) => handleImageUpload(e)}
+            />
+            <Picturechoice onClick={() => handleOdabirSlike()}>
+              Select image
+            </Picturechoice>
+          </InputContainer>
+          {showpictures1 && (
+            <Cards>
+              <Cardmap>
+                <Slider {...imageSliderSettings}>
+                  {pictures.map((picture, index) => (
+                    <SingleCard key={index}>
+                      <CityPicture
+                        key={index}
+                        src={picture}
+                        alt={`${city}`}
+                        onClick={() => handlePictureSelect(picture)}
+                      />
+                    </SingleCard>
+                  ))}
+                </Slider>
+              </Cardmap>
+            </Cards>
+          )}
+          <InputContainer>
+            <label>I want my uploaded image in stock photos: </label>
+            <input
+              type='checkbox'
+              checked={isForStock}
+              onChange={(e) => setIsForStock(e.target.checked)}
             />
           </InputContainer>
           <InputContainer>

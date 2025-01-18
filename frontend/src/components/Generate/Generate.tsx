@@ -14,9 +14,7 @@ import {
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import Slider from 'react-slick';
-
 import axios from 'axios';
-
 import { ActionButton } from '../../shared/ActionButton';
 import { useAuth } from '../../context/AuthContext';
 import { SingleCard } from '../Card/Card.styled';
