@@ -28,13 +28,15 @@ export const Generate = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
     responsive: [
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -60,6 +62,7 @@ export const Generate = () => {
   const [pictures, setPictures] = useState<string[]>([]);
   const [showpictures1, setShowpictures1] = useState(false);
   const [showpictures2, setShowpictures2] = useState(false);
+  const [isForStock, setIsForStock] = useState(false);
 
   const fetchPictures = async () => {
     try {
@@ -118,20 +121,28 @@ export const Generate = () => {
             console.log('user:', user);
             console.log('userId:', user?.id);
             if (!user) return;
-            const result = await axios.post(
-              `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
-              {
-                images: [reader.result],
-                userId: user?.id,
-                reviewRequired: true,
-                locationId: cityId,
-              },
-            );
-            if (imageNumber === 1) {
-              setCustomImage1(result.data.urls[0]);
+            if (isForStock) {
+              const result = await axios.post(
+                `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
+                {
+                  images: [reader.result],
+                  userId: user?.id,
+                  reviewRequired: true,
+                  locationId: cityId,
+                },
+              );
+              if (imageNumber === 1) {
+                setCustomImage1(result.data.urls[0]);
+              } else {
+                setCustomImage2(result.data.urls[0]);
+              }
             } else {
-              setCustomImage2(result.data.urls[0]);
-            } 
+              if (imageNumber === 1) {
+                setCustomImage1(reader.result);
+              } else {
+                setCustomImage2(reader.result);
+              }
+            }
           } catch (error) {
             console.log(error);
           }
@@ -174,7 +185,7 @@ export const Generate = () => {
               onChange={(e) => handleImageUpload(e, 1)}
             />
             <Picturechoice onClick={() => handleOdabirSlike(1)}>
-              Choose picture
+              Select image
             </Picturechoice>
           </InputContainer>
           {showpictures1 && (
@@ -203,7 +214,7 @@ export const Generate = () => {
               onChange={(e) => handleImageUpload(e, 2)}
             />
             <Picturechoice onClick={() => handleOdabirSlike(2)}>
-              Choose picture
+              Select image
             </Picturechoice>
           </InputContainer>
           {showpictures2 && (
@@ -224,6 +235,14 @@ export const Generate = () => {
               </Cardmap>
             </Cards>
           )}
+          <InputContainer>
+            <label>I want my uploaded image in stock photos: </label>
+            <input
+              type='checkbox'
+              checked={isForStock}
+              onChange={(e) => setIsForStock(e.target.checked)}
+            />
+          </InputContainer>
           <InputContainer>
             <label>Title Color:</label>
             <input
