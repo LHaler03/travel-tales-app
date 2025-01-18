@@ -81,3 +81,8 @@ export const Error = styled.div`
   color: red;
   font-size: 1rem;
 `;
+
+export const Success = styled.div`
+  color: green;
+  font-size: 1rem;
+`;

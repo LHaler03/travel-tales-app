@@ -12,6 +12,7 @@ import {
   RatingNumbers,
   RatingDots,
   Error,
+  Success,
 } from './Review.styled';
 import { useAuth } from '../../context/AuthContext';
 
@@ -23,12 +24,16 @@ type ReviewProps = {
 export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState<number | ''>();
+  const [errordoublesubmit, setErrordoublesubmit] = useState('');
   const [errorrating, setErrorrating] = useState('');
   const [errorcomment, setErrorcomment] = useState('');
+  const [submitsuccess, setSubmitsuccess] = useState('');
   const { user } = useAuth();
 
   const handleSubmit = async (rev: React.FormEvent) => {
     rev.preventDefault();
+    setErrordoublesubmit('');
+    setSubmitsuccess('');
 
     if (!rating) {
       setErrorrating('Please enter a rating!!!');
@@ -58,7 +63,13 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
       setComment('');
       setRating('');
       setErrorrating('');
-    } catch (error) {
+      setErrorcomment('');
+      setErrordoublesubmit('');
+      setSubmitsuccess('Your review was submitted successfully! Thank you!');
+    } catch (error: any) {
+      if (error.response?.status === 400) {
+        setErrordoublesubmit('You can not review a location twice!!');
+      }
       console.error('Error submitting review', error);
     }
   };
@@ -101,6 +112,8 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
           <Buttons>
             <SubmitButton type='submit'>Submit review</SubmitButton>
           </Buttons>
+          {errordoublesubmit && <Error>{errordoublesubmit}</Error>}
+          {submitsuccess && <Success>{submitsuccess}</Success>}
         </Form>
       </FormContainer>
     </>
