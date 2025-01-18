@@ -13,12 +13,15 @@ import {
 } from './Generate.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
-import { ActionButton } from '../../shared/ActionButton';
+import Slider from 'react-slick';
+
 import axios from 'axios';
+
+import { ActionButton } from '../../shared/ActionButton';
+import { useAuth } from '../../context/AuthContext';
 import { SingleCard } from '../Card/Card.styled';
 import { Cardmap } from '../Card/Card.styled';
 import { Cards } from '../Card/Card.styled';
-import Slider from 'react-slick';
 
 export const Generate = () => {
   const imageSliderSettings = {
@@ -44,6 +47,8 @@ export const Generate = () => {
   const { city, cityId } = location.state || {
     city: 'Default City',
   };
+
+  const { user } = useAuth();
 
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
@@ -100,19 +105,35 @@ export const Generate = () => {
     });
   };
 
-  const handleImageUpload = (
+  const handleImageUpload = async (
     e: React.ChangeEvent<HTMLInputElement>,
     imageNumber: 1 | 2,
   ) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => {
+      reader.onloadend = async () => {
         if (typeof reader.result === 'string') {
-          if (imageNumber === 1) {
-            setCustomImage1(reader.result);
-          } else {
-            setCustomImage2(reader.result);
+          try {
+            console.log('user:', user);
+            console.log('userId:', user?.id);
+            if (!user) return;
+            const result = await axios.post(
+              `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
+              {
+                images: [reader.result],
+                userId: user?.id,
+                reviewRequired: true,
+                locationId: cityId,
+              },
+            );
+            if (imageNumber === 1) {
+              setCustomImage1(result.data.urls[0]);
+            } else {
+              setCustomImage2(result.data.urls[0]);
+            } 
+          } catch (error) {
+            console.log(error);
           }
         }
       };
