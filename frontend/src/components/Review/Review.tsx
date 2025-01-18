@@ -61,8 +61,8 @@ export const Review: React.FC<ReviewProps> = ({ city, locationId }) => {
       setErrordoublesubmit('');
       setSubmitsuccess('Your review was submitted successfully! Thank you!');
     } catch (error: any) {
-      if(error.response?.status === 400){
-        setErrordoublesubmit('You can not review a location twice!!')
+      if (error.response?.status === 400) {
+        setErrordoublesubmit('You can not review a location twice!!');
       }
       console.error('Error submitting review', error);
     }

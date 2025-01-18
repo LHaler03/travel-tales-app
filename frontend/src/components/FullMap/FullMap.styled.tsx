@@ -96,7 +96,7 @@ export const Modal_button_generate = styled.button`
     background-color: #5d89d5;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  };
+  }
   @media (min-width: 600px) {
     font-size: 25px;
   }

@@ -128,3 +128,31 @@ export const ButtonsContainer = styled.div`
     }
   }
 `;
+
+export const Picturechoice = styled.button`
+  background: #7ea1de;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: #0056b3;
+  }
+`;
+
+export const CityPicture = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 5px;
+
+  @media (min-width: 1024px) {
+    width: 300px;
+    height: 250px;
+  }
+`;

@@ -8,12 +8,37 @@ import {
   Sidebar,
   InputContainer,
   ButtonsContainer,
+  Picturechoice,
+  CityPicture,
 } from './Generate.styled';
 import React, { useCallback, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
+import axios from 'axios';
+import { SingleCard } from '../Card/Card.styled';
+import { Cardmap } from '../Card/Card.styled';
+import { Cards } from '../Card/Card.styled';
+import Slider from 'react-slick';
 
 export const Generate = () => {
+  const imageSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
   const location = useLocation();
   const navigate = useNavigate();
   const { city, cityId } = location.state || {
@@ -27,6 +52,41 @@ export const Generate = () => {
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
   const [customImage2, setCustomImage2] = useState<string>('');
+  const [pictures, setPictures] = useState<string[]>([]);
+  const [showpictures1, setShowpictures1] = useState(false);
+  const [showpictures2, setShowpictures2] = useState(false);
+
+  const fetchPictures = async () => {
+    try {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${city}`,
+      );
+      setPictures(response.data);
+    } catch (error) {
+      console.error(`Error fetching pictures for ${city}:`, error);
+    }
+  };
+
+  const handlePictureSelect = (imageUrl: string, imageNumber: 1 | 2) => {
+    if (imageNumber === 1) {
+      setCustomImage1(imageUrl);
+      setShowpictures1(false);
+    } else {
+      setCustomImage2(imageUrl);
+      setShowpictures2(false);
+    }
+  };
+
+  const handleOdabirSlike = (imageNumber: 1 | 2) => {
+    if (imageNumber === 1) {
+      setShowpictures1(!showpictures1);
+    } else {
+      setShowpictures2(!showpictures2);
+    }
+    if (!pictures.length) {
+      fetchPictures();
+    }
+  };
 
   const handleFormatReverse = () => {
     navigate('/generatevertical', {
@@ -92,7 +152,28 @@ export const Generate = () => {
               accept='image/*'
               onChange={(e) => handleImageUpload(e, 1)}
             />
+            <Picturechoice onClick={() => handleOdabirSlike(1)}>
+              Choose picture
+            </Picturechoice>
           </InputContainer>
+          {showpictures1 && (
+            <Cards>
+              <Cardmap>
+                <Slider {...imageSliderSettings}>
+                  {pictures.map((picture, index) => (
+                    <SingleCard key={index}>
+                      <CityPicture
+                        key={index}
+                        src={picture}
+                        alt={`${city}`}
+                        onClick={() => handlePictureSelect(picture, 1)}
+                      />
+                    </SingleCard>
+                  ))}
+                </Slider>
+              </Cardmap>
+            </Cards>
+          )}
           <InputContainer>
             <label>Right Image:</label>
             <input
@@ -100,7 +181,28 @@ export const Generate = () => {
               accept='image/*'
               onChange={(e) => handleImageUpload(e, 2)}
             />
+            <Picturechoice onClick={() => handleOdabirSlike(2)}>
+              Choose picture
+            </Picturechoice>
           </InputContainer>
+          {showpictures2 && (
+            <Cards>
+              <Cardmap>
+                <Slider {...imageSliderSettings}>
+                  {pictures.map((picture, index) => (
+                    <SingleCard key={index}>
+                      <CityPicture
+                        key={index}
+                        src={picture}
+                        alt={`${city}`}
+                        onClick={() => handlePictureSelect(picture, 2)}
+                      />
+                    </SingleCard>
+                  ))}
+                </Slider>
+              </Cardmap>
+            </Cards>
+          )}
           <InputContainer>
             <label>Title Color:</label>
             <input
