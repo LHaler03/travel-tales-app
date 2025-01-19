@@ -11,7 +11,7 @@ import {
   Picturechoice,
   CityPicture,
 } from '../GenerateVertical/GenerateVertical.styled';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { ActionButton } from '../../shared/ActionButton';
 import { useAuth } from '../../context/AuthContext';
@@ -58,6 +58,7 @@ export const Generate1Vertical = () => {
   const [pictures, setPictures] = useState<string[]>([]);
   const [showpictures1, setShowpictures1] = useState(false);
   const [isForStock, setIsForStock] = useState(false);
+  const [link1, setLink1] = useState<string | null>(null);
 
   const fetchPictures = async () => {
     try {
@@ -127,14 +128,31 @@ export const Generate1Vertical = () => {
     }
   };
 
+  useEffect(() => {
+    if (!pictures.length) {
+      fetchPictures();
+    }
+  }, [pictures.length]);
+
+  useEffect(() => {
+    if (pictures[0]) {
+      setLink1(customImage1 || pictures[0]);
+    }
+  }, [pictures, customImage1]);
+
   const handleGenerate = async () => {
+    if (!link1) {
+      console.error('Link is not ready yet!');
+      return;
+    }
+
     const imageProps = {
       titleColor,
       fromColor,
       borderColor,
       fromText,
       city,
-      customImage1,
+      link1,
       component: "Vertical1Image",
     };
 

@@ -11,7 +11,7 @@ import {
   Picturechoice,
   CityPicture,
 } from './Generate.styled';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import Slider from 'react-slick';
 import axios from 'axios';
@@ -61,6 +61,8 @@ export const Generate = () => {
   const [showpictures1, setShowpictures1] = useState(false);
   const [showpictures2, setShowpictures2] = useState(false);
   const [isForStock, setIsForStock] = useState(false);
+  const [link1, setLink1] = useState<string | null>(null);
+  const [link2, setLink2] = useState<string | null>(null);
 
   const fetchPictures = async () => {
     try {
@@ -150,15 +152,33 @@ export const Generate = () => {
     }
   };
 
+  useEffect(() => {
+    if (!pictures.length) {
+      fetchPictures();
+    }
+  }, [pictures.length]);
+
+  useEffect(() => {
+    if (pictures[0] && pictures[1]) {
+      setLink1(customImage1 || pictures[0]);
+      setLink2(customImage2 || pictures[1]);
+    }
+  }, [pictures, customImage1, customImage2]);
+
   const handleGenerate = async () => {
+    if (!link1 || !link2) {
+      console.error('Links are not ready yet!');
+      return;
+    }
+
     const imageProps = {
       titleColor,
       fromColor,
       borderColor,
       fromText,
       city,
-      customImage1,
-      customImage2,
+      link1,
+      link2,
       component: "HorizontalImage",
     };
 
