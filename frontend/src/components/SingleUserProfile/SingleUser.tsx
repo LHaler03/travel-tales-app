@@ -4,10 +4,13 @@ import { useAuth } from '../../context/AuthContext';
 import { useParams } from 'react-router-dom';
 import {
   ProfileContainer,
-  ProfileImage,
   UserInfo,
   EmailWarning,
   ButtonContainer,
+  PostcardSection,
+  PostcardGrid,
+  Postcard,
+  PostcardImage,
 } from './SingleUser.styled';
 import { DisapproveButton } from '../../shared/ActionButton';
 import { useNavigate } from 'react-router-dom';
@@ -21,6 +24,9 @@ const SingleUser = () => {
     localStorage.getItem('userRole'),
   );
   const navigate = useNavigate();
+  const [postcards, setPostcards] = useState<
+    { imageName: string; imageUrl: string }[]
+  >([]);
 
   const handleDeleteUser = async () => {
     if (window.confirm('Are you sure you want to delete this user?')) {
@@ -59,7 +65,20 @@ const SingleUser = () => {
       }
     };
 
+    const fetchUserPostcards = async () => {
+      try {
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/postcards/user/${id}`,
+        );
+        setPostcards(response.data);
+      } catch (error) {
+        console.error('Error fetching user postcards:', error);
+        setError('Failed to fetch user postcards.');
+      }
+    };
+
     fetchUserById();
+    fetchUserPostcards();
   }, [isAuthenticated, id, user?.id]);
 
   if (error) return <div>{error}</div>;
@@ -67,7 +86,6 @@ const SingleUser = () => {
 
   return (
     <ProfileContainer>
-      <ProfileImage src='' alt='Profile' />
       <UserInfo>
         <h1>{userData.userName.toUpperCase()}'s Profile</h1>
         <p>Email: {userData.email}</p>
@@ -79,17 +97,27 @@ const SingleUser = () => {
         )}
       </UserInfo>
       {/* {userRole === 'admin' && ( */}
-      <ButtonContainer>
-      <DisapproveButton
-        onClick={async () => {
-          await handleDeleteUser();
-          navigate('/users-review');
-        }}
-      >
-        Delete User
-      </DisapproveButton>
-    </ButtonContainer>
-      {/* )} */}
+        <ButtonContainer>
+          <DisapproveButton
+            onClick={async () => {
+              await handleDeleteUser();
+              navigate('/users-review');
+            }}
+          >
+            Delete User
+          </DisapproveButton>
+        </ButtonContainer>
+      {/* // )} */}
+      <PostcardSection>
+        <h2>User's Postcards</h2>
+        <PostcardGrid>
+          {postcards.map((postcard, index) => (
+            <Postcard key={index}>
+              <PostcardImage src={postcard.imageUrl} alt={`Postcard ${index}`} />
+            </Postcard>
+          ))}
+        </PostcardGrid>
+      </PostcardSection>
     </ProfileContainer>
   );
 };
