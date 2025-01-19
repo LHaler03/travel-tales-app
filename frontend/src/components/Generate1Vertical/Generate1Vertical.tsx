@@ -127,6 +127,20 @@ export const Generate1Vertical = () => {
     }
   };
 
+  const handleGenerate = async () => {
+    const imageProps = {
+      titleColor,
+      fromColor,
+      borderColor,
+      fromText,
+      city,
+      customImage1,
+      component: "Vertical1Image",
+    };
+
+    console.log(imageProps);
+  }
+
   const debouncedUpdate = useCallback(
     debounce((values: string) => {
       setDebouncedKey(values);
@@ -218,7 +232,7 @@ export const Generate1Vertical = () => {
               Reverse Format
             </ActionButton>
             <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
-            <ActionButton>Generate</ActionButton>
+            <ActionButton onClick={handleGenerate}>Generate</ActionButton>
           </ButtonsContainer>
         </Sidebar>
         <PlayerContainer>

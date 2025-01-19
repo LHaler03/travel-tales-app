@@ -128,6 +128,20 @@ export const Generate1Image = () => {
     }
   };
 
+  const handleGenerate = async () => {
+    const imageProps = {
+      titleColor,
+      fromColor,
+      borderColor,
+      fromText,
+      city,
+      customImage1,
+      component: "Horizontal1Image",
+    };
+
+    console.log(imageProps);
+  }
+
   const debouncedUpdate = useCallback(
     debounce((values: string) => {
       setDebouncedKey(values);
@@ -219,7 +233,7 @@ export const Generate1Image = () => {
               Reverse Format
             </ActionButton>
             <ActionButton onClick={handleNumberChange}>2 Images</ActionButton>
-            <ActionButton>Generate</ActionButton>
+            <ActionButton onClick={handleGenerate}>Generate</ActionButton>
           </ButtonsContainer>
         </Sidebar>
         <PlayerContainer>
