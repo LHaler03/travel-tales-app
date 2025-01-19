@@ -73,7 +73,8 @@ export const SubmitButton = styled.button`
   vertical-align: middle;
   font-size: 0.9rem;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   &:hover {
     background: #0056b3;
   }
@@ -86,7 +87,7 @@ export const Buttons = styled.div`
 
 export const Error = styled.div`
   color: red;
-  font-size: 1rem;
+  font-size: 2rem;
 `;
 
 export const Success = styled.div`
@@ -115,55 +116,9 @@ export const Returnbutton = styled.button`
   cursor: pointer;
   vertical-align: middle;
   font-size: 0.9rem;
-  margin-top: 20px;
+  margin: 20px;
   &:hover {
     background: #0056b3;
-  }
-`;
-
-export const Modal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-`;
-
-export const Modal_content = styled.div`
-  position: relative;
-  width: 80vw;
-  height: 80vh;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #b5cfe3;
-  border: 2px solid #696969;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media (min-width: 600px) {
-    display: block;
-    padding: 30px;
-  }
-`;
-
-export const Modal_button_close = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: black;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  &:hover {
-    color: red;
   }
 `;
 
@@ -176,8 +131,7 @@ export const Editreview = styled.button`
   cursor: pointer;
   vertical-align: middle;
   font-size: 0.9rem;
-  margin-top: 20px;
-  margin-left: 10px;
+  margin: 20px;
   &:hover {
     background: #0056b3;
   }
