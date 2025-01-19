@@ -64,12 +64,19 @@ export const Comment = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
-  border-radius: 8px;
-  border-width: 1px;
-  background-color: #7ea1de;
+  background: #7ea1de;
   color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 100px;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  margin-left: 10px;
+  &:hover {
+    background: #0056b3;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -84,5 +91,32 @@ export const Error = styled.div`
 
 export const Success = styled.div`
   color: green;
-  font-size: 1rem;
+  font-size: 2.5rem;
+`;
+
+export const ReturnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 95%;
+  margin: auto;
+  position: relative;
+  height: 80vh;
+`;
+
+export const Returnbutton = styled.button`
+  background: #7ea1de;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  &:hover {
+    background: #0056b3;
+  }
 `;

@@ -70,7 +70,7 @@ export const GenerateVertical = () => {
               setCustomImage1(result.data.urls[0]);
             } else {
               setCustomImage2(result.data.urls[0]);
-            } 
+            }
           } catch (error) {
             console.log(error);
           }
