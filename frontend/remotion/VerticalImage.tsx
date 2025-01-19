@@ -3,6 +3,9 @@ import { continueRender, delayRender, Img, staticFile } from 'remotion';
 import { z } from 'zod';
 import { ImageSchema } from './HorizontalImage';
 import axios from 'axios';
+import { loadFont } from "@remotion/google-fonts/Nunito";
+
+const { fontFamily } = loadFont();
 
 export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   fromText: text1,
@@ -141,7 +144,7 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
             fontSize: '70px',
             margin: '20px',
             fontWeight: 'bold',
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: fontFamily,
             color: color1,
           }}
         >
@@ -151,7 +154,7 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
           style={{
             fontSize: '52px',
             margin: '20px',
-            fontFamily: 'Nunito, sans-serif',
+            fontFamily: fontFamily,
             color: color2,
           }}
         >

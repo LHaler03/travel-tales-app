@@ -6,7 +6,7 @@ export const PlayerContainer = styled.div`
 
   @media (min-width: 1200px) {
     width: 70vw;
-    margin: 5vh 5vw 5vh 5vw;
+    margin: 5vh 2vw 5vh 4vw;
   }
 `;
 
@@ -28,6 +28,7 @@ export const Wrapper = styled.div`
 
   @media (min-width: 1200px) {
     flex-direction: row;
+    width: 98vw;
   }
 `;
 
