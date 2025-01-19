@@ -13,10 +13,17 @@ using Microsoft.EntityFrameworkCore;
 namespace backend.Controllers
 {
   [Route("api/locations")]
-  public class LocationController(ApplicationDBContext context, ILocationRepository locationRepo) : ControllerBase
+  [ApiController]
+  public class LocationController : ControllerBase
   {
-    private readonly ApplicationDBContext _context = context;
-    private readonly ILocationRepository _locationRepo = locationRepo;
+    private readonly ApplicationDBContext _context;
+    private readonly ILocationRepository _locationRepo;
+
+    public LocationController(ApplicationDBContext context, ILocationRepository locationRepo)
+    {
+      _context = context;
+      _locationRepo = locationRepo;
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()

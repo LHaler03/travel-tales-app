@@ -10,10 +10,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Repository
 {
-    public class LocationRepository(ApplicationDBContext context) : ILocationRepository
+    public class LocationRepository : ILocationRepository
     {
+        private readonly ApplicationDBContext _context;
 
-        private readonly ApplicationDBContext _context = context;
+        public LocationRepository(ApplicationDBContext context)
+        {
+            _context = context;
+        }
 
         public async Task<List<Location>> GetAllAsync()
         {
@@ -60,6 +64,5 @@ namespace backend.Repository
 
             return locationModel;
         }
-
     }
 }
