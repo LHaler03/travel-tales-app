@@ -105,20 +105,16 @@ export const Generate1Vertical = () => {
             console.log('user:', user);
             console.log('userId:', user?.id);
             if (!user) return;
-            if (isForStock) {
-              const result = await axios.post(
-                `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
-                {
-                  images: [reader.result],
-                  userId: user?.id,
-                  reviewRequired: true,
-                  locationId: cityId,
-                },
-              );
-              setCustomImage1(result.data.urls[0]);
-            } else {
-              setCustomImage1(reader.result);
-            }
+            const result = await axios.post(
+              `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
+              {
+                images: [reader.result],
+                userId: user?.id,
+                reviewRequired: isForStock,
+                locationId: cityId,
+              },
+            );
+            setCustomImage1(result.data.urls[0]);
           } catch (error) {
             console.log(error);
           }
