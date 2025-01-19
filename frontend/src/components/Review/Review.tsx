@@ -15,6 +15,10 @@ import {
   Success,
   ReturnContainer,
   Returnbutton,
+  Modal_content,
+  Modal,
+  Modal_button_close,
+  Editreview,
 } from './Review.styled';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -23,11 +27,12 @@ import { useLocation } from 'react-router-dom';
 export const Review = () => {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState<number | ''>();
-  const [errordoublesubmit, setErrordoublesubmit] = useState('');
   const [errorrating, setErrorrating] = useState('');
   const [errorcomment, setErrorcomment] = useState('');
   const [submitsuccess, setSubmitsuccess] = useState('');
   const [showreviewform, setShowreviewform] = useState(true);
+  const [doublereview, setDoublereview] = useState(false);
+  const [submiteditreview, setSubmiteditreview] = useState(false);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,7 +40,6 @@ export const Review = () => {
 
   const handleSubmit = async (rev: React.FormEvent) => {
     rev.preventDefault();
-    setErrordoublesubmit('');
     setSubmitsuccess('');
 
     if (!rating) {
@@ -67,13 +71,32 @@ export const Review = () => {
       setRating('');
       setErrorrating('');
       setErrorcomment('');
-      setErrordoublesubmit('');
+      setDoublereview(false);
       setShowreviewform(false);
       setSubmitsuccess('Your review was submitted successfully! Thank you!');
     } catch (error: any) {
       if (error.response?.status === 400) {
-        setErrordoublesubmit('You can not review a location twice!!');
+        setDoublereview(true);
       }
+      console.error('Error submitting review', error);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setDoublereview(false);
+  };
+
+  const handleEditReview = async () => {
+    try {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews/user/${user?.id}/location/${locationId}`,
+      );
+      const userreview = response.data;
+      setComment(userreview.comment);
+      setRating(userreview.rating);
+      setDoublereview(false);
+      setSubmiteditreview(true);
+    } catch (error) {
       console.error('Error submitting review', error);
     }
   };
@@ -129,9 +152,12 @@ export const Review = () => {
                 >
                   Return to map
                 </Returnbutton>
-                <SubmitButton type='submit'>Submit review</SubmitButton>
+                {submiteditreview ? (
+                  <SubmitButton>Submit edited review</SubmitButton>
+                ) : (
+                  <SubmitButton type='submit'>Submit review</SubmitButton>
+                )}
               </Buttons>
-              {errordoublesubmit && <Error>{errordoublesubmit}</Error>}
             </Form>
           </FormContainer>
         </>
@@ -154,6 +180,41 @@ export const Review = () => {
               Return to map
             </Returnbutton>
           </ReturnContainer>
+        </>
+      )}
+      {doublereview && (
+        <>
+          <Modal>
+            <Modal_content>
+              <Modal_button_close onClick={handleCloseModal}>
+                X
+              </Modal_button_close>
+              <ReturnContainer>
+                <Error>
+                  You can not submit multiple reviews!! If you wish to change
+                  your existing press the edit review button
+                </Error>
+                <Buttons>
+                  <Returnbutton
+                    onClick={() =>
+                      navigate('/fullmap', {
+                        state: {
+                          locationIdreview: locationId,
+                          city,
+                          showModalreview: true,
+                        },
+                      })
+                    }
+                  >
+                    Return to map
+                  </Returnbutton>
+                  <Editreview onClick={handleEditReview}>
+                    Edit review
+                  </Editreview>
+                </Buttons>
+              </ReturnContainer>
+            </Modal_content>
+          </Modal>
         </>
       )}
     </>
