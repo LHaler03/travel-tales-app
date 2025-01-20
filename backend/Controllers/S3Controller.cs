@@ -114,6 +114,7 @@ public class S3Controller : ControllerBase
     [HttpPost("generate-postcard")]
     public async Task<IActionResult> GeneratePostcard([FromBody] PostcardProps request)
     {
+        var user = await _context.Users.FindAsync(request.UserId);
         try
         {
             if (request.LocationId <= 0)
@@ -127,7 +128,6 @@ public class S3Controller : ControllerBase
             }
             else
             {
-                var user = await _context.Users.FindAsync(request.UserId);
                 var location = await _context.Locations.FindAsync(request.LocationId);
                 if (user == null || location == null)
                     throw new KeyNotFoundException($"User {request.UserId} not found");
@@ -142,8 +142,15 @@ public class S3Controller : ControllerBase
 
             await RunYarnScriptAsync(request.Component, propsJson);
 
-
             var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync($"../frontend/out/{request.Component}.png", folderPath);
+
+            // Mislav - leave UserId, LocationId i CreatedAt attributes and remove the Base64Image and ExpiresAt
+            // if (folderPath != "temporary")
+            //     _context.Postcards.Add(new Postcard
+            //     {
+            //         UserId = request.UserId,
+            //         LocationId = request.LocationId
+            //     });
 
             return Ok(new { Message = "Postcard uploaded and created successfully", imageLink = links[0], downloadLink = links[1] });
         }
