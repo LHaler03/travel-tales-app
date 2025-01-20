@@ -13,22 +13,24 @@ import {
   PostcardImage,
   Modal,
   ModalImage,
+  ModalButtons,
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
-  const navigate = useNavigate();
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
-  
+
   // State za odabranu postcard sliku (za modal)
   const [selectedPostcard, setSelectedPostcard] = useState<{
     imageLink: string;
@@ -103,7 +105,6 @@ const SingleUser = () => {
           <EmailWarning>Email not verified</EmailWarning>
         )}
       </UserInfo>
-      {/* {userRole === 'admin' && ( */}
       <ButtonContainer>
         <DisapproveButton
           onClick={async () => {
@@ -114,7 +115,6 @@ const SingleUser = () => {
           Delete User
         </DisapproveButton>
       </ButtonContainer>
-      {/* // )} */}
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>
@@ -133,19 +133,21 @@ const SingleUser = () => {
 
       {selectedPostcard && (
         <Modal onClick={() => setSelectedPostcard(null)}>
-          <div onClick={(e) => e.stopPropagation()} style={{ textAlign: 'center' }}>
+          <div onClick={(e) => e.stopPropagation()}>
             <ModalImage
               src={selectedPostcard.imageLink}
               alt='Enlarged Postcard'
             />
-            <a
-              href={selectedPostcard.downloadLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
-            >
-              <ApproveButton>Download</ApproveButton>
-            </a>
+            <ModalButtons>
+              <a
+                href={selectedPostcard.downloadLink}
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{ textDecoration: 'none' }}
+              >
+                <ApproveButton>Download</ApproveButton>
+              </a>
+            </ModalButtons>
           </div>
         </Modal>
       )}

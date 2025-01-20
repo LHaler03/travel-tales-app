@@ -64,7 +64,10 @@ export const Explore: React.FC = () => {
             key={destination.id}
             onClick={() => handleDestinationClick(destination.name)}
           >
-            <S.DestinationImage src={destination.image} alt={destination.name} />
+            <S.DestinationImage
+              src={destination.image}
+              alt={destination.name}
+            />
             <S.DestinationName>{destination.name}</S.DestinationName>
             <S.DestinationCountry>{destination.country}</S.DestinationCountry>
           </S.DestinationCard>
