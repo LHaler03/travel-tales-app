@@ -1,4 +1,4 @@
-using System;
+/* using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,4 +15,4 @@ namespace backend.Dtos.Postcard
         public string S3Key { get; set; } = string.Empty;
     }
 
-}
+} */

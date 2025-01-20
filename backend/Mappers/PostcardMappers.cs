@@ -17,7 +17,7 @@ namespace backend.Mappers
             };
         }
 
-        public static Postcard ToModel(CreatePostcardDto dto)
+/*        public static Postcard ToModel(CreatePostcardDto dto)
         {
             return new Postcard
             {
@@ -27,4 +27,6 @@ namespace backend.Mappers
             };
         }
     }
+*/
+}
 }

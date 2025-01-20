@@ -91,32 +91,5 @@ namespace backend.Repository
                 throw;
             }
         }
-
-        public async Task<Postcard?> CreatePostcardAsync(CreatePostcardDto createPostcardDto)
-        {
-            // Validate location existence
-            var location = await _context.Locations.FindAsync(createPostcardDto.LocationId);
-            if (location == null)
-                throw new KeyNotFoundException($"Location {createPostcardDto.LocationId} not found");
-
-            // Validate user existence if UserId is provided
-            if (!string.IsNullOrEmpty(createPostcardDto.UserId))
-            {
-                var user = await _context.Users.FindAsync(createPostcardDto.UserId);
-                if (user == null)
-                    throw new KeyNotFoundException($"User {createPostcardDto.UserId} not found");
-            }
-
-            // Map DTO to Postcard model
-            var postcard = PostcardMapper.ToModel(createPostcardDto);
-            postcard.UserId = string.IsNullOrEmpty(createPostcardDto.UserId) ? null : createPostcardDto.UserId;
-            postcard.Location = location;
-
-            // Save postcard
-            await _context.Postcards.AddAsync(postcard);
-            await _context.SaveChangesAsync();
-
-            return postcard;
-        }
     }
 }

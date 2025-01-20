@@ -8,8 +8,7 @@ namespace backend.Interfaces
     {
         Task<IEnumerable<Postcard>> GetPostcardsByUserIdAsync(string userId);
         Task<Postcard?> GetPostcardByIdAsync(int id);
-        Task<Postcard> CreatePostcardAsync(Postcard postcard);
         Task<bool> DeletePostcardAsync(int id);
-        Task<Postcard?> CreatePostcardAsync(CreatePostcardDto createPostcardDto);
+        Task<Postcard> CreatePostcardAsync(Postcard postcard);
     }
 }
