@@ -1,5 +1,6 @@
 using Amazon.S3;
 using Amazon.S3.Model;
+using backend.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +36,27 @@ public class S3Service : IS3Service
         return urls;
     }
 
+    public async Task<List<FileUrl>> GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync(string locationName)
+    {
+        var request = new ListObjectsV2Request
+        {
+            BucketName = _bucketName,
+            Prefix = locationName
+        };
+
+        var response = await _s3Client.ListObjectsV2Async(request);
+        var urls = new List<FileUrl>();
+
+        foreach (var obj in response.S3Objects)
+        {
+            var imageLink = await GetPreSignedUrlAsync(obj.Key, expirationMinutes: 10);
+            var downloadLink = await GetPreSignedDownloadUrlAsync(obj.Key, expirationMinutes: 10);
+            urls.Add(new FileUrl { ImageLink = imageLink, DownloadLink = downloadLink });
+        }
+
+        return urls;
+    }
+
     public async Task<Stream> GetFileAsync(string key)
     {
         var request = new GetObjectRequest
@@ -58,6 +80,21 @@ public class S3Service : IS3Service
 
         return await Task.FromResult(_s3Client.GetPreSignedURL(request));
     }
+    public async Task<string> GetPreSignedDownloadUrlAsync(string key, int expirationMinutes = 10)
+    {
+        var request = new GetPreSignedUrlRequest
+        {
+            BucketName = _bucketName,
+            Key = key,
+            Expires = DateTime.UtcNow.AddMinutes(expirationMinutes),
+            ResponseHeaderOverrides = new ResponseHeaderOverrides
+            {
+                ContentDisposition = "attachment"
+            }
+        };
+
+        return await Task.FromResult(_s3Client.GetPreSignedURL(request));
+    }
 
     public async Task<string> UploadFileAsync(string base64Image, string folderPath)
     {
@@ -72,7 +109,7 @@ public class S3Service : IS3Service
                 base64Data = base64Image.Split(',')[1];
             }
 
-            string fileName = $"{Guid.NewGuid()}.jpg";         
+            string fileName = $"{Guid.NewGuid()}.jpg";
             string key = $"{folderPath}/{fileName}";
 
             // Convert base64 to bytes
@@ -88,7 +125,7 @@ public class S3Service : IS3Service
             };
 
             await _s3Client.PutObjectAsync(putRequest);
-            
+
             return await GetPreSignedUrlAsync(key, expirationMinutes: 10);
         }
         catch (AmazonS3Exception ex)
@@ -98,6 +135,45 @@ public class S3Service : IS3Service
         catch (Exception ex)
         {
             throw new Exception($"Error uploading postcard: {ex.Message}", ex);
+        }
+    }
+
+    public async Task<List<string>> UploadFileAndGetImageAndDownloadLinksAsync(string filePath, string folderPath)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+                throw new ArgumentException("File path is invalid or file does not exist");
+
+            string fileName = $"{Guid.NewGuid()}.jpg";
+            string key = $"{folderPath}/{fileName}";
+
+            // Read file bytes
+            byte[] imageBytes = await File.ReadAllBytesAsync(filePath);
+
+            using var stream = new MemoryStream(imageBytes);
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key,
+                InputStream = stream,
+                ContentType = "image/jpeg"
+            };
+
+            await _s3Client.PutObjectAsync(putRequest);
+
+            var imageLink = await GetPreSignedUrlAsync(key, expirationMinutes: 10);
+            var downloadLink = await GetPreSignedDownloadUrlAsync(key, expirationMinutes: 10);
+
+            return [imageLink, downloadLink];
+        }
+        catch (AmazonS3Exception ex)
+        {
+            throw new Exception($"S3 upload failed: {ex.Message}", ex);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error uploading file: {ex.Message}", ex);
         }
     }
 
@@ -114,10 +190,10 @@ public class S3Service : IS3Service
 
             try
             {
-                await _s3Client.GetObjectMetadataAsync(new GetObjectMetadataRequest 
-                { 
-                    BucketName = _bucketName, 
-                    Key = key 
+                await _s3Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+                {
+                    BucketName = _bucketName,
+                    Key = key
                 });
             }
             catch (AmazonS3Exception ex)

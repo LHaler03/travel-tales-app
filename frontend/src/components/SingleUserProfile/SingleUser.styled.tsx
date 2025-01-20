@@ -30,7 +30,7 @@ export const PostcardSection = styled.div`
   width: 100%;
   max-width: 1200px;
   padding: 20px;
-  text-align: center; 
+  text-align: center;
 `;
 
 export const PostcardGrid = styled.div`
@@ -50,11 +50,13 @@ export const Postcard = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: #f0f0f0;
+  width: 300px;
+  height: 200px;
 `;
 
 export const PostcardImage = styled.img`
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
 `;

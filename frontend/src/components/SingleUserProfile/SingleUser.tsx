@@ -25,7 +25,7 @@ const SingleUser = () => {
   );
   const navigate = useNavigate();
   const [postcards, setPostcards] = useState<
-    { imageName: string; imageUrl: string }[]
+    { imageLink: string; downloadLink: string }[]
   >([]);
 
   const handleDeleteUser = async () => {
@@ -68,7 +68,7 @@ const SingleUser = () => {
     const fetchUserPostcards = async () => {
       try {
         const response = await axios.get(
-          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/postcards/user/${id}`,
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/postcards/${id}`,
         );
         setPostcards(response.data);
       } catch (error) {
@@ -97,25 +97,31 @@ const SingleUser = () => {
         )}
       </UserInfo>
       {/* {userRole === 'admin' && ( */}
-        <ButtonContainer>
-          <DisapproveButton
-            onClick={async () => {
-              await handleDeleteUser();
-              navigate('/users-review');
-            }}
-          >
-            Delete User
-          </DisapproveButton>
-        </ButtonContainer>
+      <ButtonContainer>
+        <DisapproveButton
+          onClick={async () => {
+            await handleDeleteUser();
+            navigate('/users-review');
+          }}
+        >
+          Delete User
+        </DisapproveButton>
+      </ButtonContainer>
       {/* // )} */}
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>
-          {postcards.map((postcard, index) => (
-            <Postcard key={index}>
-              <PostcardImage src={postcard.imageUrl} alt={`Postcard ${index}`} />
-            </Postcard>
-          ))}
+          {postcards.length > 0 &&
+            postcards.map((postcard, index) => (
+              <Postcard key={index}>
+                {/* <a href={postcard.downloadLink} target='_blank'> */}
+                <PostcardImage
+                  src={postcard.imageLink}
+                  alt={`Postcard ${index}`}
+                />
+                {/* </a> */}
+              </Postcard>
+            ))}
         </PostcardGrid>
       </PostcardSection>
     </ProfileContainer>

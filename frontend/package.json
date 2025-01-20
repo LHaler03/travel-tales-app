@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
-    "studio": "remotion studio remotion/index.ts"
+    "studio": "remotion studio remotion/index.ts",
+    "render": "remotion still ./remotion/index.ts",
+    "render:demo": "remotion still ./remotion/index.ts Vertical1Image --props='{\"titleColor\":\"#000000\",\"fromColor\":\"#000000\",\"borderColor\":\"#ffffff\",\"fromText\":\"travel tales\",\"city\":\"Paris\",\"link1\":\"https://s3-travel-tales.s3.eu-central-1.amazonaws.com/valid/Paris/1.jpg?X-Amz-Expires=600&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYQNJSW3J6YSOEOJY%2F20250120%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250120T113847Z&X-Amz-SignedHeaders=host&X-Amz-Signature=266876891d49f235f4bea7e404431762cb6bb21612b588d6b4eddc103a89c12f\"}'"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
