@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './Explore.styled';
 
 export const Explore: React.FC = () => {
+  const navigate = useNavigate();
+
   const destinations = [
     { id: 1, name: 'Paris', country: 'France' },
     { id: 2, name: 'Rome', country: 'Italy' },
@@ -10,6 +13,10 @@ export const Explore: React.FC = () => {
     { id: 5, name: 'Prague', country: 'Czech Republic' },
     { id: 6, name: 'Dubrovnik', country: 'Croatia' },
   ];
+
+  const handleDestinationClick = (destinationName: string) => {
+    navigate('/fullmap', { state: { selectedDestination: destinationName } });
+  };
 
   return (
     <S.ExploreContainer>
@@ -23,7 +30,10 @@ export const Explore: React.FC = () => {
       </S.Text>
       <S.DestinationsGrid>
         {destinations.map((destination) => (
-          <S.DestinationCard key={destination.id}>
+          <S.DestinationCard
+            key={destination.id}
+            onClick={() => handleDestinationClick(destination.name)}
+          >
             <S.DestinationImage />
             <S.DestinationName>{destination.name}</S.DestinationName>
             <S.DestinationCountry>{destination.country}</S.DestinationCountry>
