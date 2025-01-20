@@ -37,12 +37,6 @@ export const Navbar = () => {
         redirectTo: location.pathname === '/register' ? '/' : location.pathname,
       },
     });
-    // if (user && user.role) {
-    //   localStorage.setItem('userRole', user.role);
-    //   console.log('User role successfully saved to local storage:', user.role);
-    // } else {
-    //   console.log('User role is not stored');
-    // }
   };
 
   const handleRegister = () => {
@@ -55,22 +49,19 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     logout();
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userRole');
     navigate('/');
   };
 
   const handleMyProfile = () => {
-    const storedUserId = localStorage.getItem('userId');
-    if (!storedUserId && user && user.id) {
-      localStorage.setItem('userId', user.id);
-    } else if ((!user || !user.id) && !storedUserId) {
-      console.error('User ID is undefined in local storage');
-    }
-    if (storedUserId) {
-      navigate(`/single-user-review/${storedUserId}`);
+    if (user && user.id) {
+      navigate(`/single-user-review/${user.id}`);
     } else {
       console.error('User ID is undefined');
     }
   };
+  
 
   console.log('isAuth: ', isAuthenticated);
 

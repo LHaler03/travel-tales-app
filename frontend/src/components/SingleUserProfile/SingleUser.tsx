@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   ProfileContainer,
   UserInfo,
@@ -11,9 +11,10 @@ import {
   PostcardGrid,
   Postcard,
   PostcardImage,
+  Modal,
+  ModalImage,
 } from './SingleUser.styled';
-import { DisapproveButton } from '../../shared/ActionButton';
-import { useNavigate } from 'react-router-dom';
+import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
@@ -27,6 +28,12 @@ const SingleUser = () => {
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
+  
+  // State za odabranu postcard sliku (za modal)
+  const [selectedPostcard, setSelectedPostcard] = useState<{
+    imageLink: string;
+    downloadLink: string;
+  } | null>(null);
 
   const handleDeleteUser = async () => {
     if (window.confirm('Are you sure you want to delete this user?')) {
@@ -114,16 +121,34 @@ const SingleUser = () => {
           {postcards.length > 0 &&
             postcards.map((postcard, index) => (
               <Postcard key={index}>
-                {/* <a href={postcard.downloadLink} target='_blank'> */}
                 <PostcardImage
                   src={postcard.imageLink}
                   alt={`Postcard ${index}`}
+                  onClick={() => setSelectedPostcard(postcard)}
                 />
-                {/* </a> */}
               </Postcard>
             ))}
         </PostcardGrid>
       </PostcardSection>
+
+      {selectedPostcard && (
+        <Modal onClick={() => setSelectedPostcard(null)}>
+          <div onClick={(e) => e.stopPropagation()} style={{ textAlign: 'center' }}>
+            <ModalImage
+              src={selectedPostcard.imageLink}
+              alt='Enlarged Postcard'
+            />
+            <a
+              href={selectedPostcard.downloadLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
+            >
+              <ApproveButton>Download</ApproveButton>
+            </a>
+          </div>
+        </Modal>
+      )}
     </ProfileContainer>
   );
 };
