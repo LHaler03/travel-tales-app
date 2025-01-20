@@ -57,8 +57,6 @@ namespace backend.Repository
                 
                 postcard.User = user;
             }
-            else
-                postcard.ExpiresAt = DateTime.UtcNow.AddHours(24);
             
             postcard.Location = location;
             await _context.Postcards.AddAsync(postcard);
@@ -67,53 +65,22 @@ namespace backend.Repository
             return postcard;
         }
 
-        public async Task<bool> DeleteExpiredPostcardsAsync()
-        {
-            try 
-            {
-                var expiredPostcards = await _context.Postcards
-                    .Where(p => p.ExpiresAt.HasValue && p.ExpiresAt < DateTime.UtcNow)
-                    .ToListAsync();
-
-                if (expiredPostcards.Any())
-                {
-                    foreach (var postcard in expiredPostcards)
-                    {
-                        try
-                        {
-                            var uri = new Uri(postcard.Base64Image);
-                            var key = uri.AbsolutePath.TrimStart('/');
-                            await _s3Service.DeleteObjectAsync(key);
-                        }
-                        catch (Exception ex)
-                        {
-                            _logger.LogError($"Failed to delete S3 object for postcard {postcard.Id}: {ex.Message}");
-                        }
-                    }
-
-                    _context.Postcards.RemoveRange(expiredPostcards);
-                    await _context.SaveChangesAsync();
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Failed to delete expired postcards: {ex.Message}");
-                return false;
-            }
-        }
-
         public async Task<bool> DeletePostcardAsync(int id)
         {
-            var postcard = await _context.Postcards.FindAsync(id);
+            var postcard = await _context.Postcards
+                .FirstOrDefaultAsync(p => p.Id == id);
+            
             if (postcard == null) return false;
 
             try
             {
-                var uri = new Uri(postcard.Base64Image);
-                var key = uri.AbsolutePath.TrimStart('/');
-                await _s3Service.DeleteObjectAsync(key);
+                // Delete from S3 using the stored key
+                if (!string.IsNullOrEmpty(postcard.S3Key))
+                {
+                    await _s3Service.DeleteObjectAsync(postcard.S3Key);
+                }
+
+                // Delete from database
                 _context.Postcards.Remove(postcard);
                 await _context.SaveChangesAsync();
                 return true;
@@ -121,41 +88,8 @@ namespace backend.Repository
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to delete postcard {id}: {ex.Message}");
-                throw; // Re-throw to let the controller handle the error
+                throw;
             }
         }
-
-        public async Task<Postcard?> CreatePostcardAsync(CreatePostcardDto createPostcardDto)
-        {
-            // Validate location existence
-            var location = await _context.Locations.FindAsync(createPostcardDto.LocationId);
-            if (location == null)
-                throw new KeyNotFoundException($"Location {createPostcardDto.LocationId} not found");
-
-            // Validate user existence if UserId is provided
-            if (!string.IsNullOrEmpty(createPostcardDto.UserId))
-            {
-                var user = await _context.Users.FindAsync(createPostcardDto.UserId);
-                if (user == null)
-                    throw new KeyNotFoundException($"User {createPostcardDto.UserId} not found");
-            }
-
-            // Map DTO to Postcard model
-            var postcard = PostcardMapper.ToModel(createPostcardDto);
-            postcard.UserId = string.IsNullOrEmpty(createPostcardDto.UserId) ? null : createPostcardDto.UserId;
-
-            postcard.Location = location;
-
-            // Handle postcard expiration
-            if (string.IsNullOrEmpty(postcard.UserId) || createPostcardDto.SavePostcard == false)
-                postcard.ExpiresAt = DateTime.UtcNow.AddHours(24);
-
-            // Save postcard
-            await _context.Postcards.AddAsync(postcard);
-            await _context.SaveChangesAsync();
-
-            return postcard;
-        }
-
     }
 }

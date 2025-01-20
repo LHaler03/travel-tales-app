@@ -8,7 +8,7 @@ namespace backend.Dtos.Postcard
     public class PostcardDto
     {
         public int Id { get; set; }
-        public string Base64Image { get; set; } = string.Empty;
+        public string S3Key { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime? ExpiresAt { get; set; }
         public string UserName { get; set; } = string.Empty;

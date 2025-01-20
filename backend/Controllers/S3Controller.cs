@@ -121,36 +121,42 @@ public class S3Controller : ControllerBase
                 return BadRequest("Invalid request");
 
             string folderPath;
+            string s3Key;
 
             if (string.IsNullOrEmpty(request.UserId))
             {
                 folderPath = "temporary";
+                s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
             }
             else
             {
                 var location = await _context.Locations.FindAsync(request.LocationId);
                 if (user == null || location == null)
-                    throw new KeyNotFoundException($"User {request.UserId} not found");
+                    throw new KeyNotFoundException($"User {request.UserId} or location not found");
 
                 folderPath = $"postcards/{request.UserId}/{location.Name}";
+                s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
+                
+                // Create postcard record with the same S3 key that will be used for upload
+                await _postcardRepo.CreatePostcardAsync(new Postcard
+                {
+                    UserId = request.UserId,
+                    LocationId = request.LocationId,
+                    S3Key = s3Key
+                });
             }
 
             var props = new { city = request.City, titleColor = request.TitleColor, fromText = request.FromText, fromColor = request.FromColor, borderColor = request.BorderColor, link1 = request.Link1, link2 = request.Link2 };
             var propsJson = JsonConvert.SerializeObject(props);
-
             propsJson = propsJson.Replace("\"", "\\\"");
 
             await RunYarnScriptAsync(request.Component, propsJson);
 
-            var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync($"../frontend/out/{request.Component}.png", folderPath);
-
-            // Mislav - leave UserId, LocationId i CreatedAt attributes and remove the Base64Image and ExpiresAt
-            // if (folderPath != "temporary")
-            //     _context.Postcards.Add(new Postcard
-            //     {
-            //         UserId = request.UserId,
-            //         LocationId = request.LocationId
-            //     });
+            // Pass the specific S3 key to use
+            var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync(
+                $"../frontend/out/{request.Component}.png", 
+                s3Key
+            );
 
             return Ok(new { Message = "Postcard uploaded and created successfully", imageLink = links[0], downloadLink = links[1] });
         }

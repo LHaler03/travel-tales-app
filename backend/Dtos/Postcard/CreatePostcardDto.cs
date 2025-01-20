@@ -1,4 +1,4 @@
-using System;
+/* using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,11 +9,10 @@ namespace backend.Dtos.Postcard
     public class CreatePostcardDto
     {
         [Required]
-        public string Base64Image { get; set; } = string.Empty;
-        [Required]
         public int LocationId { get; set; }
         public string? UserId { get; set; }
         public bool SavePostcard { get; set; }
+        public string S3Key { get; set; } = string.Empty;
     }
 
-}
+} */

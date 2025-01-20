@@ -10,22 +10,23 @@ namespace backend.Mappers
             return new PostcardDto
             {
                 Id = postcard.Id,
-                Base64Image = postcard.Base64Image,
+                S3Key = postcard.S3Key,
                 CreatedAt = postcard.CreatedAt,
-                ExpiresAt = postcard.ExpiresAt,
                 UserName = postcard.User?.UserName ?? string.Empty,
                 LocationName = postcard.Location.Name
             };
         }
 
-        public static Postcard ToModel(CreatePostcardDto dto)
+/*        public static Postcard ToModel(CreatePostcardDto dto)
         {
             return new Postcard
             {
-                Base64Image = dto.Base64Image,
+                S3Key = dto.S3Key,
                 LocationId = dto.LocationId,
                 UserId = dto.UserId
             };
         }
     }
+*/
+}
 }
