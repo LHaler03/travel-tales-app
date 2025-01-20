@@ -64,16 +64,18 @@ export const DestinationCard = styled.div`
   }
 `;
 
-export const DestinationImage = styled.div`
-  height: 200px;
+export const DestinationImage = styled.img`
+  width: 100%;          
+  height: 200px;       
+  object-fit: cover;   
+  object-position: center; 
   background-color: #e0e0e0;
-  background-size: cover;
-  background-position: center;
 
   @media (max-width: 600px) {
     height: 180px;
   }
 `;
+
 
 export const DestinationName = styled.h2`
   margin-left: 1rem;
