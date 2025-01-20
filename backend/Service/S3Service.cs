@@ -1,5 +1,6 @@
 using Amazon.S3;
 using Amazon.S3.Model;
+using backend.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,27 @@ public class S3Service : IS3Service
         foreach (var obj in response.S3Objects)
         {
             urls.Add(await GetPreSignedUrlAsync(obj.Key));
+        }
+
+        return urls;
+    }
+
+    public async Task<List<FileUrl>> GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync(string locationName)
+    {
+        var request = new ListObjectsV2Request
+        {
+            BucketName = _bucketName,
+            Prefix = locationName
+        };
+
+        var response = await _s3Client.ListObjectsV2Async(request);
+        var urls = new List<FileUrl>();
+
+        foreach (var obj in response.S3Objects)
+        {
+            var imageLink = await GetPreSignedUrlAsync(obj.Key, expirationMinutes: 10);
+            var downloadLink = await GetPreSignedDownloadUrlAsync(obj.Key, expirationMinutes: 10);
+            urls.Add(new FileUrl { ImageLink = imageLink, DownloadLink = downloadLink });
         }
 
         return urls;
