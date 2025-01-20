@@ -138,32 +138,27 @@ public class S3Service : IS3Service
         }
     }
 
-    public async Task<List<string>> UploadFileAndGetImageAndDownloadLinksAsync(string filePath, string folderPath)
+    public async Task<List<string>> UploadFileAndGetImageAndDownloadLinksAsync(string filePath, string s3Key)
     {
         try
         {
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
                 throw new ArgumentException("File path is invalid or file does not exist");
 
-            string fileName = $"{Guid.NewGuid()}.jpg";
-            string key = $"{folderPath}/{fileName}";
-
-            // Read file bytes
-            byte[] imageBytes = await File.ReadAllBytesAsync(filePath);
-
-            using var stream = new MemoryStream(imageBytes);
+            using var fileStream = File.OpenRead(filePath);
             var putRequest = new PutObjectRequest
             {
                 BucketName = _bucketName,
-                Key = key,
-                InputStream = stream,
+                Key = s3Key,
+                InputStream = fileStream,
                 ContentType = "image/jpeg"
             };
 
             await _s3Client.PutObjectAsync(putRequest);
 
-            var imageLink = await GetPreSignedUrlAsync(key, expirationMinutes: 10);
-            var downloadLink = await GetPreSignedDownloadUrlAsync(key, expirationMinutes: 10);
+            // Get presigned URLs for viewing and downloading
+            var imageLink = await GetPreSignedUrlAsync(s3Key, 60); // 1 hour for viewing
+            var downloadLink = await GetPreSignedUrlAsync(s3Key, 10); // 10 minutes for downloading
 
             return [imageLink, downloadLink];
         }
