@@ -26,6 +26,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useLocation } from 'react-router-dom';
 
 export const FullMap = () => {
   const imageSliderSettings = {
@@ -97,6 +98,19 @@ export const FullMap = () => {
   const navigate = useNavigate();
 
   const { user } = useAuth();
+
+  const location = useLocation();
+  const { locationIdreview, city, showModalreview } = location.state || {};
+
+  useEffect(() => {
+    if (showModalreview) {
+      setSelectedCity(city);
+      setShowModal(showModalreview);
+      fetchPictures(city);
+      fetchRating(locationIdreview);
+      setSelectedId(locationIdreview);
+    }
+  }, [showModalreview]);
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -301,7 +315,7 @@ export const FullMap = () => {
                 <Modal_button_generate
                   onClick={() =>
                     navigate('/review', {
-                      state: { city: selectedCity, id: selectedId },
+                      state: { city: selectedCity, locationId: selectedId },
                     })
                   }
                 >
