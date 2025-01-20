@@ -3,6 +3,7 @@ using backend.Controllers;
 using backend.Data;
 using backend.Dtos.Postcard;
 using backend.Mappers;
+using backend.Models;
 using backend.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+
 
 [Route("api/s3")]
 [ApiController]
@@ -17,13 +23,15 @@ public class S3Controller : ControllerBase
 {
     private readonly IS3Service _s3Service;
     private readonly PostcardRepository _postcardRepo;
-    private ApplicationDBContext _context;
+    private readonly ApplicationDBContext _context;
+    private readonly string _remotionProjectPath;
 
-    public S3Controller(IS3Service s3Service, PostcardRepository postcardRepo, ApplicationDBContext context)
+    public S3Controller(IS3Service s3Service, PostcardRepository postcardRepo, ApplicationDBContext context, IConfiguration configuration)
     {
         _s3Service = s3Service;
         _postcardRepo = postcardRepo;
         _context = context;
+        _remotionProjectPath = configuration["RemotionProjectPath"];
     }
 
     [HttpGet("{locationName}")]
@@ -96,15 +104,13 @@ public class S3Controller : ControllerBase
         }
     }
 
-    [HttpPost("upload-postcard")]
-    public async Task<IActionResult> UploadPostcard([FromBody] CreatePostcardDto request)
+    [HttpPost("generate-postcard")]
+    public async Task<IActionResult> GeneratePostcard([FromBody] PostcardProps request)
     {
         try
         {
-            if (string.IsNullOrEmpty(request.Base64Image) || request.LocationId <= 0)
+            if (request.LocationId <= 0)
                 return BadRequest("Invalid request");
-            if (string.IsNullOrEmpty(request.UserId) && request.SavePostcard == true)
-                return BadRequest("Anonymous users can't save their postcards. Please login or register.");
 
             string folderPath;
 
@@ -115,20 +121,24 @@ public class S3Controller : ControllerBase
             else
             {
                 var user = await _context.Users.FindAsync(request.UserId);
-                if (user == null)
+                var location = await _context.Locations.FindAsync(request.LocationId);
+                if (user == null || location == null)
                     throw new KeyNotFoundException($"User {request.UserId} not found");
-                folderPath = request.SavePostcard
-                    ? $"postcards/users/{request.UserId}"
-                    : "temporary";
+
+                folderPath = $"postcards/{request.UserId}/{location.Name}";
             }
 
-            var url = await _s3Service.UploadFileAsync(request.Base64Image, folderPath);
+            var props = new { city = request.City, titleColor = request.TitleColor, fromText = request.FromText, fromColor = request.FromColor, borderColor = request.BorderColor, link1 = request.Link1, link2 = request.Link2 };
+            var propsJson = JsonConvert.SerializeObject(props);
 
-            request.Base64Image = url; // Set the URL for the uploaded postcard image
-            var createResult = await _postcardRepo.CreatePostcardAsync(request);
+            propsJson = propsJson.Replace("\"", "\\\"");
 
-            // Return success response with the postcard creation result
-            return Ok(new { Message = "Postcard uploaded and created successfully", Postcard = PostcardMapper.ToDto(createResult) });
+            await RunYarnScriptAsync(request.Component, propsJson);
+
+
+            var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync($"../frontend/out/{request.Component}.png", folderPath);
+
+            return Ok(new { Message = "Postcard uploaded and created successfully", imageLink = links[0], downloadLink = links[1] });
         }
         catch (Exception ex)
         {
@@ -183,6 +193,47 @@ public class S3Controller : ControllerBase
         catch (Exception ex)
         {
             return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    private async Task RunYarnScriptAsync(string composition, string props)
+    {
+        var directory = _remotionProjectPath;
+
+        string scriptName = "render";
+
+        try
+        {
+            var processStartInfo = new ProcessStartInfo
+            {
+                FileName = "/bin/zsh",
+                Arguments = $"-c \"cd {directory} && yarn {scriptName} {composition} --props='{props}'\"",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (var process = new Process { StartInfo = processStartInfo })
+            {
+                process.Start();
+
+                var outputTask = process.StandardOutput.ReadToEndAsync();
+                var errorTask = process.StandardError.ReadToEndAsync();
+
+                await Task.WhenAll(outputTask, errorTask);
+
+                if (process.ExitCode != 0)
+                {
+                    throw new Exception($"Error running yarn script: {await errorTask}");
+                }
+
+                Console.WriteLine(await outputTask);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
         }
     }
 
