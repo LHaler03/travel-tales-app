@@ -64,6 +64,13 @@ export const Generate = () => {
   const [link1, setLink1] = useState<string | null>(null);
   const [link2, setLink2] = useState<string | null>(null);
 
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const [isGenerated, setIsGenerated] = useState<boolean>(false);
+  const [generatedImage, setGeneratedImage] = useState<{
+    imageLink: string;
+    downloadLink: string;
+  }>({ imageLink: '', downloadLink: '' });
+
   const fetchPictures = async () => {
     try {
       const response = await axios.get(
@@ -176,8 +183,25 @@ export const Generate = () => {
       component: 'HorizontalImage',
     };
 
-    console.log(imageProps);
-    console.log(JSON.stringify(imageProps));
+    try {
+      setIsGenerating(true);
+      console.log(imageProps);
+      console.log(JSON.stringify(imageProps));
+      const result = await axios.post(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/generate-postcard`,
+        imageProps,
+      );
+      const generatedImage = result.data;
+      setIsGenerated(true);
+      setGeneratedImage({
+        imageLink: generatedImage.imageLink,
+        downloadLink: generatedImage.downloadLink,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   const debouncedUpdate = useCallback(
@@ -200,139 +224,149 @@ export const Generate = () => {
     customImage2,
   ]);
 
+  if (isGenerating) return <Wrapper> LOADING </Wrapper>;
+
   return (
     <>
       <Wrapper>
-        <Sidebar>
-          <CityName>{city}</CityName>
-          <InputContainer>
-            <label>Left Image:</label>
-            <input
-              type='file'
-              accept='image/*'
-              onChange={(e) => handleImageUpload(e, 1)}
-            />
-            <Picturechoice onClick={() => handleOdabirSlike(1)}>
-              Select image
-            </Picturechoice>
-          </InputContainer>
-          {showpictures1 && (
-            <Cards>
-              <Cardmap>
-                <Slider {...imageSliderSettings}>
-                  {pictures.map((picture, index) => (
-                    <SingleCard key={index}>
-                      <CityPicture
-                        key={index}
-                        src={picture}
-                        alt={`${city}`}
-                        onClick={() => handlePictureSelect(picture, 1)}
-                      />
-                    </SingleCard>
-                  ))}
-                </Slider>
-              </Cardmap>
-            </Cards>
-          )}
-          <InputContainer>
-            <label>Right Image:</label>
-            <input
-              type='file'
-              accept='image/*'
-              onChange={(e) => handleImageUpload(e, 2)}
-            />
-            <Picturechoice onClick={() => handleOdabirSlike(2)}>
-              Select image
-            </Picturechoice>
-          </InputContainer>
-          {showpictures2 && (
-            <Cards>
-              <Cardmap>
-                <Slider {...imageSliderSettings}>
-                  {pictures.map((picture, index) => (
-                    <SingleCard key={index}>
-                      <CityPicture
-                        key={index}
-                        src={picture}
-                        alt={`${city}`}
-                        onClick={() => handlePictureSelect(picture, 2)}
-                      />
-                    </SingleCard>
-                  ))}
-                </Slider>
-              </Cardmap>
-            </Cards>
-          )}
-          <InputContainer>
-            <label>I want my uploaded image in stock photos: </label>
-            <input
-              type='checkbox'
-              checked={isForStock}
-              onChange={(e) => setIsForStock(e.target.checked)}
-            />
-          </InputContainer>
-          <InputContainer>
-            <label>Title Color:</label>
-            <input
-              type='color'
-              value={titleColor}
-              onChange={(e) => setTitleColor(e.target.value)}
-            />
-          </InputContainer>
-          <InputContainer>
-            <label>From Text Color:</label>
-            <input
-              type='color'
-              value={fromColor}
-              onChange={(e) => setFromColor(e.target.value)}
-            />
-          </InputContainer>
-          <InputContainer>
-            <label>Border Color:</label>
-            <input
-              type='color'
-              value={borderColor}
-              onChange={(e) => setBorderColor(e.target.value)}
-            />
-          </InputContainer>
-          <InputContainer>
-            <label>From Text:</label>
-            <input
-              type='text'
-              value={fromText}
-              onChange={(e) => setFromText(e.target.value)}
-            />
-          </InputContainer>
-          <ButtonsContainer>
-            <ActionButton onClick={handleFormatReverse}>
-              Reverse Format
-            </ActionButton>
-            <ActionButton onClick={handleNumberChange}>1 Image</ActionButton>
-            <ActionButton onClick={handleGenerate}>Generate</ActionButton>
-          </ButtonsContainer>
-        </Sidebar>
-        <PlayerContainer>
-          <Player
-            key={debouncedKey}
-            component={HorizontalImage}
-            compositionWidth={1920}
-            compositionHeight={1080}
-            durationInFrames={1}
-            fps={30}
-            style={{
-              width: '100%',
-            }}
-            inputProps={{
-              fromText: fromText,
-              titleColor: titleColor,
-              fromColor: fromColor,
-              borderColor: borderColor,
-              cityName: city,
-              customImage1,
-              customImage2,
-            }}
-          />
-        </PlayerContainer>
+        {isGenerated ? (
+          <a href={generatedImage.downloadLink} target='_blank'>
+            <img src={generatedImage.imageLink} style={{ maxHeight: '98vh' }} />
+          </a>
+        ) : (
+          <>
+            <Sidebar>
+              <CityName>{city}</CityName>
+              <InputContainer>
+                <label>Left Image:</label>
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={(e) => handleImageUpload(e, 1)}
+                />
+                <Picturechoice onClick={() => handleOdabirSlike(1)}>
+                  Select image
+                </Picturechoice>
+              </InputContainer>
+              {showpictures1 && (
+                <Cards>
+                  <Cardmap>
+                    <Slider {...imageSliderSettings}>
+                      {pictures.map((picture, index) => (
+                        <SingleCard key={index}>
+                          <CityPicture
+                            key={index}
+                            src={picture}
+                            alt={`${city}`}
+                            onClick={() => handlePictureSelect(picture, 1)}
+                          />
+                        </SingleCard>
+                      ))}
+                    </Slider>
+                  </Cardmap>
+                </Cards>
+              )}
+              <InputContainer>
+                <label>Right Image:</label>
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={(e) => handleImageUpload(e, 2)}
+                />
+                <Picturechoice onClick={() => handleOdabirSlike(2)}>
+                  Select image
+                </Picturechoice>
+              </InputContainer>
+              {showpictures2 && (
+                <Cards>
+                  <Cardmap>
+                    <Slider {...imageSliderSettings}>
+                      {pictures.map((picture, index) => (
+                        <SingleCard key={index}>
+                          <CityPicture
+                            key={index}
+                            src={picture}
+                            alt={`${city}`}
+                            onClick={() => handlePictureSelect(picture, 2)}
+                          />
+                        </SingleCard>
+                      ))}
+                    </Slider>
+                  </Cardmap>
+                </Cards>
+              )}
+              <InputContainer>
+                <label>I want my uploaded image in stock photos: </label>
+                <input
+                  type='checkbox'
+                  checked={isForStock}
+                  onChange={(e) => setIsForStock(e.target.checked)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <label>Title Color:</label>
+                <input
+                  type='color'
+                  value={titleColor}
+                  onChange={(e) => setTitleColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <label>From Text Color:</label>
+                <input
+                  type='color'
+                  value={fromColor}
+                  onChange={(e) => setFromColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <label>Border Color:</label>
+                <input
+                  type='color'
+                  value={borderColor}
+                  onChange={(e) => setBorderColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <label>From Text:</label>
+                <input
+                  type='text'
+                  value={fromText}
+                  onChange={(e) => setFromText(e.target.value)}
+                />
+              </InputContainer>
+              <ButtonsContainer>
+                <ActionButton onClick={handleFormatReverse}>
+                  Reverse Format
+                </ActionButton>
+                <ActionButton onClick={handleNumberChange}>1 Image</ActionButton>
+                <ActionButton onClick={handleGenerate}>Generate</ActionButton>
+              </ButtonsContainer>
+            </Sidebar>
+            <PlayerContainer>
+              <Player
+                key={debouncedKey}
+                component={HorizontalImage}
+                compositionWidth={1920}
+                compositionHeight={1080}
+                durationInFrames={1}
+                fps={30}
+                style={{
+                  width: '100%',
+                }}
+                inputProps={{
+                  fromText: fromText,
+                  titleColor: titleColor,
+                  fromColor: fromColor,
+                  borderColor: borderColor,
+                  cityName: city,
+                  customImage1,
+                  customImage2,
+                }}
+              />
+            </PlayerContainer>
+          </>
+        )}
       </Wrapper>
     </>
   );
