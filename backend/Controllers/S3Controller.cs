@@ -41,6 +41,13 @@ public class S3Controller : ControllerBase
         return await _s3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync(key);
     }
 
+    [HttpGet("postcards/{userId}")]
+    public async Task<List<FileUrl>> ListUserPostcardsAsync(string userId)
+    {
+        var key = $"postcards/{userId}";
+        return await _s3Service.GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync(key);
+    }
+
     [HttpGet("file")]
     public async Task<IActionResult> GetFile([FromQuery] string key)
     {
