@@ -171,11 +171,11 @@ export const GenerateVertical = () => {
       city,
       link1,
       link2,
-      component: "VerticalImage",
+      component: 'VerticalImage',
     };
 
     console.log(imageProps);
-  }
+  };
 
   const debouncedUpdate = useCallback(
     debounce((values: string) => {

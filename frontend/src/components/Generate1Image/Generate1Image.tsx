@@ -142,7 +142,7 @@ export const Generate1Image = () => {
       console.error('Link is not ready yet!');
       return;
     }
-    
+
     const imageProps = {
       titleColor,
       fromColor,
@@ -150,11 +150,12 @@ export const Generate1Image = () => {
       fromText,
       city,
       link1,
-      component: "Horizontal1Image",
+      component: 'Horizontal1Image',
     };
 
     console.log(imageProps);
-  }
+    console.log(JSON.stringify(imageProps));
+  };
 
   const debouncedUpdate = useCallback(
     debounce((values: string) => {

@@ -149,11 +149,12 @@ export const Generate1Vertical = () => {
       fromText,
       city,
       link1,
-      component: "Vertical1Image",
+      component: 'Vertical1Image',
     };
 
     console.log(imageProps);
-  }
+    console.log(JSON.stringify(imageProps));
+  };
 
   const debouncedUpdate = useCallback(
     debounce((values: string) => {

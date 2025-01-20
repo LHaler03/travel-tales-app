@@ -171,11 +171,12 @@ export const Generate = () => {
       city,
       link1,
       link2,
-      component: "HorizontalImage",
+      component: 'HorizontalImage',
     };
 
     console.log(imageProps);
-  }
+    console.log(JSON.stringify(imageProps));
+  };
 
   const debouncedUpdate = useCallback(
     debounce((values: string) => {
