@@ -124,3 +124,23 @@ export const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
 `;
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+`;
+
+export const ModalImage = styled.img`
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 100px);
+  object-fit: contain;
+`;
