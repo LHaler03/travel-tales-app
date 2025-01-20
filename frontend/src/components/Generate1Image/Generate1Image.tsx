@@ -145,6 +145,8 @@ export const Generate1Image = () => {
 
     const imageProps = {
       titleColor,
+      userId: user?.id,
+      locationId: cityId,
       fromColor,
       borderColor,
       fromText,

@@ -165,6 +165,8 @@ export const GenerateVertical = () => {
 
     const imageProps = {
       titleColor,
+      userId: user?.id,
+      locationId: cityId,
       fromColor,
       borderColor,
       fromText,
