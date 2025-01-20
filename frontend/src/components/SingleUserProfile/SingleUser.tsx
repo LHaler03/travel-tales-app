@@ -111,15 +111,15 @@ const SingleUser = () => {
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>
-          {postcards.length &&
+          {postcards.length > 0 &&
             postcards.map((postcard, index) => (
               <Postcard key={index}>
-                <a href={postcard.downloadLink} target='_blank'>
-                  <PostcardImage
-                    src={postcard.imageLink}
-                    alt={`Postcard ${index}`}
-                  />
-                </a>
+                {/* <a href={postcard.downloadLink} target='_blank'> */}
+                <PostcardImage
+                  src={postcard.imageLink}
+                  alt={`Postcard ${index}`}
+                />
+                {/* </a> */}
               </Postcard>
             ))}
         </PostcardGrid>
