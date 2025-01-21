@@ -18,6 +18,8 @@ import GeneratePageVertical from './pages/GeneratePageVertical';
 import Generate1ImagePage from './pages/Generate1ImagePage';
 import Generate1VerticalPage from './pages/Generate1VerticalPage';
 import SingleUserPage from './pages/SingleUserPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -32,6 +34,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/fullmap' element={<MapPage />} />
             <Route path='/support' element={<SupportPage />} />
+            <Route path='/termsOfService' element={<TermsOfServicePage />} />
+            <Route path='/privacyPolicy' element={<PrivacyPolicyPage />} />
             <Route path='/about' element={<AboutUsPage />} />
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />

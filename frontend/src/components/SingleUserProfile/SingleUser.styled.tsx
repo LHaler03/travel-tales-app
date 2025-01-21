@@ -35,7 +35,7 @@ export const PostcardSection = styled.div`
 
 export const PostcardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 15px;
   margin-top: 20px;
 
@@ -50,15 +50,19 @@ export const Postcard = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: #f0f0f0;
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  cursor: pointer;
 `;
 
 export const PostcardImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  cursor: pointer;
+  object-position: center;
+
+  @media (max-width: 768px) {
+    height: 180px;
+  }
 `;
 
 export const Modal = styled.div`
@@ -79,4 +83,19 @@ export const ModalImage = styled.img`
   max-width: calc(100% - 40px);
   max-height: calc(100% - 100px);
   object-fit: contain;
+`;
+
+export const ModalButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: 1rem;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;

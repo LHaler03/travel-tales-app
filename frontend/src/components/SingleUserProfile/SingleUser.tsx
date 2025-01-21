@@ -13,23 +13,24 @@ import {
   PostcardImage,
   Modal,
   ModalImage,
+  ModalButtons,
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [_, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
-  const navigate = useNavigate();
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
 
-  // State za odabranu postcard sliku (za modal)
   const [selectedPostcard, setSelectedPostcard] = useState<{
     imageLink: string;
     downloadLink: string;
@@ -103,7 +104,6 @@ const SingleUser = () => {
           <EmailWarning>Email not verified</EmailWarning>
         )}
       </UserInfo>
-      {/* {userRole === 'admin' && ( */}
       <ButtonContainer>
         <DisapproveButton
           onClick={async () => {
@@ -114,7 +114,6 @@ const SingleUser = () => {
           Delete User
         </DisapproveButton>
       </ButtonContainer>
-      {/* // )} */}
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>
