@@ -25,6 +25,7 @@ public class S3Controller : ControllerBase
     private readonly PostcardRepository _postcardRepo;
     private readonly ApplicationDBContext _context;
     private readonly string _remotionProjectPath;
+    private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
 
     public S3Controller(IS3Service s3Service, PostcardRepository postcardRepo, ApplicationDBContext context, IConfiguration configuration)
     {
@@ -136,7 +137,7 @@ public class S3Controller : ControllerBase
 
                 folderPath = $"postcards/{request.UserId}/{location.Name}";
                 s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
-                
+
                 // Create postcard record with the same S3 key that will be used for upload
                 await _postcardRepo.CreatePostcardAsync(new Postcard
                 {
@@ -154,9 +155,11 @@ public class S3Controller : ControllerBase
 
             // Pass the specific S3 key to use
             var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync(
-                $"../frontend/out/{request.Component}.png", 
+                $"../frontend/out/{request.Component}.png",
                 s3Key
             );
+
+            Console.WriteLine("GENERIRANA SLIKA");
 
             return Ok(new { Message = "Postcard uploaded and created successfully", imageLink = links[0], downloadLink = links[1] });
         }
@@ -218,12 +221,14 @@ public class S3Controller : ControllerBase
 
     private async Task RunYarnScriptAsync(string composition, string props)
     {
-        var directory = _remotionProjectPath;
 
-        string scriptName = "render";
+        await _semaphore.WaitAsync();
 
         try
         {
+            var directory = _remotionProjectPath;
+
+            string scriptName = "render";
             var processStartInfo = new ProcessStartInfo
             {
                 FileName = "/bin/zsh",
@@ -243,6 +248,8 @@ public class S3Controller : ControllerBase
 
                 await Task.WhenAll(outputTask, errorTask);
 
+                process.WaitForExit();
+
                 if (process.ExitCode != 0)
                 {
                     throw new Exception($"Error running yarn script: {await errorTask}");
@@ -254,6 +261,10 @@ public class S3Controller : ControllerBase
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+        finally
+        {
+            _semaphore.Release();
         }
     }
 
