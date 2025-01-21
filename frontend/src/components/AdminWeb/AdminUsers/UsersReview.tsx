@@ -13,7 +13,6 @@ import { UserType } from '../../../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-// useWindowWidth hook unutar istog fajla
 const useWindowWidth = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
 
@@ -51,7 +50,6 @@ const UsersReview = () => {
     user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false
   );
 
-  // Ako je širina prozora <=600px, koristit ćemo "Review", inače "Review Profile"
   const buttonText = windowWidth <= 600 ? 'Review' : 'Review Profile';
 
   return (

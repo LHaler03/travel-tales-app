@@ -31,7 +31,6 @@ const SingleUser = () => {
     { imageLink: string; downloadLink: string }[]
   >([]);
 
-  // State za odabranu postcard sliku (za modal)
   const [selectedPostcard, setSelectedPostcard] = useState<{
     imageLink: string;
     downloadLink: string;
