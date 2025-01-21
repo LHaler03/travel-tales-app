@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Explore.styled';
 
@@ -13,25 +12,25 @@ export const Explore: React.FC = () => {
       image: '/public/images/Paris.jpeg',
     },
     {
-      id: 2,
+      id: 4,
       name: 'Rome',
       country: 'Italy',
       image: '/public/images/Rome.jpeg',
     },
     {
-      id: 3,
+      id: 13,
       name: 'Barcelona',
       country: 'Spain',
       image: '/public/images/Barcelona.jpeg',
     },
     {
-      id: 4,
+      id: 27,
       name: 'Bali',
       country: 'Indonesia',
       image: '/public/images/Bali.jpeg',
     },
     {
-      id: 5,
+      id: 35,
       name: 'London',
       country: 'England',
       image: '/public/images/London.jpeg',
@@ -43,10 +42,6 @@ export const Explore: React.FC = () => {
       image: '/public/images/Newyork.jpeg',
     },
   ];
-
-  const handleDestinationClick = (destinationName: string) => {
-    navigate('/fullmap', { state: { selectedDestination: destinationName } });
-  };
 
   return (
     <S.ExploreContainer>
@@ -62,7 +57,15 @@ export const Explore: React.FC = () => {
         {destinations.map((destination) => (
           <S.DestinationCard
             key={destination.id}
-            onClick={() => handleDestinationClick(destination.name)}
+            onClick={() =>
+              navigate('/fullmap', {
+                state: {
+                  locationIdreview: destination.id,
+                  city: destination.name,
+                  showModalreview: true,
+                },
+              })
+            }
           >
             <S.DestinationImage
               src={destination.image}

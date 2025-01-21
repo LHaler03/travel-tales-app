@@ -1,72 +1,15 @@
 import { TileLayer, Marker } from 'react-leaflet';
-import {
-  Modal,
-  Modal_button_generate,
-  Modal_button_close,
-  Modal_content,
-  Wrapper,
-  StyledFullMapContainer,
-  CityPicture,
-  StyledFaStarHalfAlt,
-  StyledFaStar,
-  StarsContainer,
-  StarsTitle,
-  CityTitle,
-  Buttons,
-  Comment,
-  Comments,
-} from './FullMap.styled';
+import { Wrapper, StyledFullMapContainer } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
-import { Cards, Cardmap, SingleCard } from '../Card/Card.styled';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
 import { useLocation } from 'react-router-dom';
+import { CityPopup } from '../CityPopup/CityPopup';
 
 export const FullMap = () => {
-  const imageSliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-    ],
-  };
-
-  const commentSliderSettings = (itemCount: number) => ({
-    dots: true,
-    infinite: itemCount > 2,
-    speed: 500,
-    slidesToShow: Math.min(2, itemCount),
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: itemCount > 1,
-          dots: true,
-        },
-      },
-    ],
-  });
-
   const [markers, setMarkers] = useState<
     { id: number; geocode: [number, number]; popUp: string }[]
   >([]);
@@ -83,9 +26,6 @@ export const FullMap = () => {
       userName: string;
     }[]
   >([]);
-  const [selectedGeocode, setSelectedGeocode] = useState<
-    [number, number] | null
-  >(null);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -94,11 +34,6 @@ export const FullMap = () => {
   });
 
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
-
-  const navigate = useNavigate();
-
-  const { user } = useAuth();
-
   const location = useLocation();
   const { locationIdreview, city, showModalreview } = location.state || {};
 
@@ -176,16 +111,11 @@ export const FullMap = () => {
     }
   };
 
-  const handleMarkerClick = (
-    cityName: string,
-    geocode: [number, number],
-    id: number,
-  ) => {
+  const handleMarkerClick = (cityName: string, id: number) => {
     setSelectedCity(cityName);
     setShowModal(true);
     fetchPictures(cityName);
     fetchRating(id);
-    setSelectedGeocode(geocode);
     setSelectedId(id);
   };
 
@@ -193,13 +123,6 @@ export const FullMap = () => {
     setShowModal(false);
     setSelectedCity(null);
   };
-
-  /*const HandleToGeneratePage: FC = () => {
-    useMapEvents({
-      click: () => navigate('/generate'),
-    });
-    return null;
-  };*/
 
   return (
     <Wrapper>
@@ -221,110 +144,20 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () =>
-                handleMarkerClick(marker.popUp, marker.geocode, marker.id),
+              click: () => handleMarkerClick(marker.popUp, marker.id),
             }}
           />
         ))}
       </StyledFullMapContainer>
 
       {showModal && (
-        <Modal>
-          <Modal_content>
-            <Modal_button_close onClick={handleCloseModal}>
-              X
-            </Modal_button_close>
-            <CityTitle>{selectedCity}</CityTitle>
-            <Cards>
-              <Cardmap>
-                <Slider {...imageSliderSettings}>
-                  {pictures.map((picture, index) => (
-                    <SingleCard key={index}>
-                      <CityPicture
-                        key={index}
-                        src={picture}
-                        alt={`${selectedCity}`}
-                      />
-                    </SingleCard>
-                  ))}
-                </Slider>
-              </Cardmap>
-            </Cards>
-            <StarsContainer>
-              <StarsTitle>Average rating:</StarsTitle>
-              <div>
-                {[...Array(5)].map((_, index) => {
-                  const currentrating = index + 1;
-                  const averageRating =
-                    inforating.reduce((acc, curr) => acc + curr.rating, 0) /
-                      inforating.length || 0;
-
-                  let starIcon;
-                  if (currentrating <= Math.floor(averageRating)) {
-                    starIcon = <StyledFaStar key={index} color='yellow' />;
-                  } else if (
-                    currentrating === Math.ceil(averageRating) &&
-                    averageRating % 1 !== 0
-                  ) {
-                    starIcon = (
-                      <StyledFaStarHalfAlt key={index} color='yellow' />
-                    );
-                  } else {
-                    starIcon = <StyledFaStar key={index} color='white' />;
-                  }
-                  return <label key={currentrating}>{starIcon}</label>;
-                })}
-              </div>
-            </StarsContainer>
-            <Cards>
-              <Cardmap>
-                <Slider {...commentSliderSettings(inforating.length)}>
-                  {inforating.length > 0 ? (
-                    inforating.map((inforat, index) => (
-                      <SingleCard key={index}>
-                        <Comments>
-                          <Comment>{inforat.comment}</Comment>
-                        </Comments>
-                      </SingleCard>
-                    ))
-                  ) : (
-                    <SingleCard>
-                      <Comments>
-                        <Comment>No reviews yet</Comment>
-                      </Comments>
-                    </SingleCard>
-                  )}
-                </Slider>
-              </Cardmap>
-            </Cards>
-            <Buttons>
-              <Modal_button_generate
-                onClick={() =>
-                  navigate('/generate', {
-                    state: {
-                      city: selectedCity,
-                      cityId: selectedId,
-                      geocode: selectedGeocode,
-                    },
-                  })
-                }
-              >
-                Generate postcard
-              </Modal_button_generate>
-              {user && (
-                <Modal_button_generate
-                  onClick={() =>
-                    navigate('/review', {
-                      state: { city: selectedCity, locationId: selectedId },
-                    })
-                  }
-                >
-                  Make review
-                </Modal_button_generate>
-              )}
-            </Buttons>
-          </Modal_content>
-        </Modal>
+        <CityPopup
+          selectedCity={selectedCity}
+          pictures={pictures}
+          inforating={inforating}
+          selectedId={selectedId}
+          handleCloseModal={handleCloseModal}
+        />
       )}
     </Wrapper>
   );

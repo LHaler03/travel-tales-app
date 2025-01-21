@@ -3,6 +3,7 @@ import {
   StyledButton,
   ApproveButton as StyledApproveButton,
   DisapproveButton as StyledDisapproveButton,
+  ReviewButton as StyledReviewButton,
 } from './ActionButton.styled';
 
 interface ActionButtonProps {
@@ -19,3 +20,4 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
 
 export const ApproveButton = StyledApproveButton;
 export const DisapproveButton = StyledDisapproveButton;
+export const ReviewButton = StyledReviewButton;

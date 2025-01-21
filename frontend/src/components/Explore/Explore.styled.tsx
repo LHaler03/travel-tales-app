@@ -65,8 +65,8 @@ export const DestinationCard = styled.div`
 `;
 
 export const DestinationImage = styled.img`
-  width: 100%;
   height: 200px;
+  width: 100%;
   object-fit: cover;
   object-position: center;
   background-color: #e0e0e0;

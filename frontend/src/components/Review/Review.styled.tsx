@@ -63,23 +63,6 @@ export const Comment = styled.textarea`
   resize: vertical;
 `;
 
-export const SubmitButton = styled.button`
-  background: #7ea1de;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  vertical-align: middle;
-  font-size: 0.9rem;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  &:hover {
-    background: #0056b3;
-  }
-`;
-
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -105,34 +88,4 @@ export const ReturnContainer = styled.div`
   margin: auto;
   position: relative;
   height: 80vh;
-`;
-
-export const Returnbutton = styled.button`
-  background: #7ea1de;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  vertical-align: middle;
-  font-size: 0.9rem;
-  margin: 20px;
-  &:hover {
-    background: #0056b3;
-  }
-`;
-
-export const Editreview = styled.button`
-  background: #7ea1de;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  vertical-align: middle;
-  font-size: 0.9rem;
-  margin: 20px;
-  &:hover {
-    background: #0056b3;
-  }
 `;

@@ -24,7 +24,7 @@ const SingleUser = () => {
 
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [userRole, setUserRole] = useState<string | null>(
+  const [_, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
   const [postcards, setPostcards] = useState<
@@ -132,21 +132,22 @@ const SingleUser = () => {
 
       {selectedPostcard && (
         <Modal onClick={() => setSelectedPostcard(null)}>
-          <div onClick={(e) => e.stopPropagation()}>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ textAlign: 'center' }}
+          >
             <ModalImage
               src={selectedPostcard.imageLink}
               alt='Enlarged Postcard'
             />
-            <ModalButtons>
-              <a
-                href={selectedPostcard.downloadLink}
-                target='_blank'
-                rel='noopener noreferrer'
-                style={{ textDecoration: 'none' }}
-              >
-                <ApproveButton>Download</ApproveButton>
-              </a>
-            </ModalButtons>
+            <a
+              href={selectedPostcard.downloadLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{ textDecoration: 'none' }}
+            >
+              <ApproveButton>Download</ApproveButton>
+            </a>
           </div>
         </Modal>
       )}

@@ -7,19 +7,17 @@ import {
   Comment,
   Rating,
   RatingContainer,
-  SubmitButton,
   Buttons,
   RatingNumbers,
   RatingDots,
   Error,
   Success,
   ReturnContainer,
-  Returnbutton,
-  Editreview,
 } from './Review.styled';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { ReviewButton } from '../../shared/ActionButton';
 
 export const Review = () => {
   const [comment, setComment] = useState('');
@@ -156,7 +154,7 @@ export const Review = () => {
               />
               {errorcomment && <Error>{errorcomment}</Error>}
               <Buttons>
-                <Returnbutton
+                <ReviewButton
                   onClick={() =>
                     navigate('/fullmap', {
                       state: {
@@ -168,13 +166,13 @@ export const Review = () => {
                   }
                 >
                   Return to map
-                </Returnbutton>
+                </ReviewButton>
                 {submiteditreview ? (
-                  <SubmitButton onClick={handleSubmiteditreview}>
+                  <ReviewButton onClick={handleSubmiteditreview}>
                     Submit edited review
-                  </SubmitButton>
+                  </ReviewButton>
                 ) : (
-                  <SubmitButton type='submit'>Submit review</SubmitButton>
+                  <ReviewButton type='submit'>Submit review</ReviewButton>
                 )}
               </Buttons>
             </Form>
@@ -188,8 +186,10 @@ export const Review = () => {
               Your review was submitted successfully! Thank you!
             </Success>
             <Buttons>
-              <Editreview onClick={handleEditReview}>Edit review</Editreview>
-              <Returnbutton
+              <ReviewButton onClick={handleEditReview}>
+                Edit review
+              </ReviewButton>
+              <ReviewButton
                 onClick={() =>
                   navigate('/fullmap', {
                     state: {
@@ -201,7 +201,7 @@ export const Review = () => {
                 }
               >
                 Return to map
-              </Returnbutton>
+              </ReviewButton>
             </Buttons>
           </ReturnContainer>
         </>
@@ -214,7 +214,7 @@ export const Review = () => {
               existing press the edit review button
             </Error>
             <Buttons>
-              <Returnbutton
+              <ReviewButton
                 onClick={() =>
                   navigate('/fullmap', {
                     state: {
@@ -226,8 +226,10 @@ export const Review = () => {
                 }
               >
                 Return to map
-              </Returnbutton>
-              <Editreview onClick={handleEditReview}>Edit review</Editreview>
+              </ReviewButton>
+              <ReviewButton onClick={handleEditReview}>
+                Edit review
+              </ReviewButton>
             </Buttons>
           </ReturnContainer>
         </>
