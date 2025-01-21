@@ -159,8 +159,6 @@ public class S3Controller : ControllerBase
                 s3Key
             );
 
-            Console.WriteLine("GENERIRANA SLIKA");
-
             return Ok(new { Message = "Postcard uploaded and created successfully", imageLink = links[0], downloadLink = links[1] });
         }
         catch (Exception ex)
