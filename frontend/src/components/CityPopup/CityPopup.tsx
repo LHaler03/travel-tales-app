@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Popup,
-  Popup_button_generate,
   Popup_button_close,
   Popup_content,
   CityPicture,
@@ -20,13 +19,13 @@ import { useAuth } from '../../context/AuthContext';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { ActionButton } from '../../shared/ActionButton';
 
 type CityPopupProps = {
   selectedCity: string | null;
   pictures: string[];
   inforating: { comment: string; rating: number }[];
   selectedId: number | null;
-  selectedGeocode: [number, number] | null;
   handleCloseModal: () => void;
 };
 
@@ -35,7 +34,6 @@ export const CityPopup: React.FC<CityPopupProps> = ({
   pictures,
   inforating,
   selectedId,
-  selectedGeocode,
   handleCloseModal,
 }) => {
   const imageSliderSettings = {
@@ -143,21 +141,20 @@ export const CityPopup: React.FC<CityPopupProps> = ({
           </Cardmap>
         </Cards>
         <Buttons>
-          <Popup_button_generate
+          <ActionButton
             onClick={() =>
               navigate('/generate', {
                 state: {
                   city: selectedCity,
                   cityId: selectedId,
-                  geocode: selectedGeocode,
                 },
               })
             }
           >
             Generate postcard
-          </Popup_button_generate>
+          </ActionButton>
           {user && (
-            <Popup_button_generate
+            <ActionButton
               onClick={() =>
                 navigate('/review', {
                   state: { city: selectedCity, locationId: selectedId },
@@ -165,7 +162,7 @@ export const CityPopup: React.FC<CityPopupProps> = ({
               }
             >
               Make review
-            </Popup_button_generate>
+            </ActionButton>
           )}
         </Buttons>
       </Popup_content>

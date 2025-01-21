@@ -45,3 +45,7 @@ export const DisapproveButton = styled(StyledButton)`
     background-color: #e53935;
   }
 `;
+
+export const ReviewButton = styled(StyledButton)`
+  margin: 20px;
+`;

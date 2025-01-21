@@ -26,9 +26,6 @@ export const FullMap = () => {
       userName: string;
     }[]
   >([]);
-  const [selectedGeocode, setSelectedGeocode] = useState<
-    [number, number] | null
-  >(null);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -116,14 +113,12 @@ export const FullMap = () => {
 
   const handleMarkerClick = (
     cityName: string,
-    geocode: [number, number],
     id: number,
   ) => {
     setSelectedCity(cityName);
     setShowModal(true);
     fetchPictures(cityName);
     fetchRating(id);
-    setSelectedGeocode(geocode);
     setSelectedId(id);
   };
 
@@ -153,7 +148,7 @@ export const FullMap = () => {
             icon={iconformarkers}
             eventHandlers={{
               click: () =>
-                handleMarkerClick(marker.popUp, marker.geocode, marker.id),
+                handleMarkerClick(marker.popUp, marker.id),
             }}
           />
         ))}
@@ -165,7 +160,6 @@ export const FullMap = () => {
           pictures={pictures}
           inforating={inforating}
           selectedId={selectedId}
-          selectedGeocode={selectedGeocode}
           handleCloseModal={handleCloseModal}
         />
       )}
