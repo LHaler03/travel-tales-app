@@ -19,18 +19,13 @@ export const Title = styled.h1`
 export const UserItem = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Ostavlja elemente poravnanim u sredini */
   padding: 10px;
   border-bottom: 1px solid black;
   margin-bottom: 10px;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-export const VerificationText = styled.div`
-  color: red;
+  
+  /* Za mobilne uređaje, umjesto prelaska na column, ostavljamo row
+     i možemo, ako je potrebno, smanjiti padding ili margine */
 `;
 
 export const RedActionButton = styled.button`
@@ -63,12 +58,21 @@ export const RedActionButton = styled.button`
     padding: 10px 20px;
     font-size: 16px;
   }
+
+  /* Uklonili smo margin-top jer ne želimo da se gumb pomakne ispod */
 `;
 
 export const EmailLink = styled.a`
   color: black;
   text-decoration: none;
-  margin-left: 0.5rem;
+  margin-right: 10px; /* Umjesto lijevog margina, koristimo desnu marginu za razmak */
+  font-weight: bold; /* Podebljanje email adrese */
+  
+  /* Osiguravamo da email zauzme preostali prostor */
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     text-decoration: underline;
