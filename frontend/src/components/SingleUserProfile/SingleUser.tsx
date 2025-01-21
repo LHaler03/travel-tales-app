@@ -21,7 +21,7 @@ const SingleUser = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [userRole, setUserRole] = useState<string | null>(
+  const [_, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
   const navigate = useNavigate();

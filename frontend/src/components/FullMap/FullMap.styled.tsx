@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { MapContainer } from 'react-leaflet';
 
-
 export const Wrapper = styled.div`
   height: calc(100vh - 5rem);
 `;
@@ -19,7 +18,3 @@ export const StyledFullMapContainer = styled(MapContainer)`
   height: 100%;
   z-index: 10;
 `;
-
-
-
-

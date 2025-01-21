@@ -111,10 +111,7 @@ export const FullMap = () => {
     }
   };
 
-  const handleMarkerClick = (
-    cityName: string,
-    id: number,
-  ) => {
+  const handleMarkerClick = (cityName: string, id: number) => {
     setSelectedCity(cityName);
     setShowModal(true);
     fetchPictures(cityName);
@@ -147,8 +144,7 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () =>
-                handleMarkerClick(marker.popUp, marker.id),
+              click: () => handleMarkerClick(marker.popUp, marker.id),
             }}
           />
         ))}

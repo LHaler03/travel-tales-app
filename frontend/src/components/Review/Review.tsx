@@ -186,7 +186,9 @@ export const Review = () => {
               Your review was submitted successfully! Thank you!
             </Success>
             <Buttons>
-              <ReviewButton onClick={handleEditReview}>Edit review</ReviewButton>
+              <ReviewButton onClick={handleEditReview}>
+                Edit review
+              </ReviewButton>
               <ReviewButton
                 onClick={() =>
                   navigate('/fullmap', {
@@ -225,7 +227,9 @@ export const Review = () => {
               >
                 Return to map
               </ReviewButton>
-              <ReviewButton onClick={handleEditReview}>Edit review</ReviewButton>
+              <ReviewButton onClick={handleEditReview}>
+                Edit review
+              </ReviewButton>
             </Buttons>
           </ReturnContainer>
         </>

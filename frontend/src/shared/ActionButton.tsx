@@ -3,7 +3,7 @@ import {
   StyledButton,
   ApproveButton as StyledApproveButton,
   DisapproveButton as StyledDisapproveButton,
-  ReviewButton as StyledReviewButton
+  ReviewButton as StyledReviewButton,
 } from './ActionButton.styled';
 
 interface ActionButtonProps {
