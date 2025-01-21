@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -8,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace backend.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdatePostcards : Migration
+    public partial class AddDevAdmin : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,41 +15,32 @@ namespace backend.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "6973dde7-e989-4d28-8a51-01e94ec60688");
+                keyValue: "05631b08-94c8-4ba1-bace-d85a570cc76f");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "d95f7d39-5f76-428b-8d37-e391831cfc3b");
-
-            migrationBuilder.DropColumn(
-                name: "ExpiresAt",
-                table: "Postcards");
-
-            migrationBuilder.RenameColumn(
-                name: "Base64Image",
-                table: "Postcards",
-                newName: "S3Key");
+                keyValue: "d9a10e40-4ae8-4f04-abc7-f83742a70d6f");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "9ce14525-f89c-45b9-9489-b85334f9b053", null, "User", "USER" },
-                    { "fd25606a-e653-4473-90b8-01acdba13fcc", null, "Admin", "ADMIN" }
+                    { "00381a0b-4b7b-485f-b13d-780b1f3b5513", null, "User", "USER" },
+                    { "5248bd4c-719b-4669-a354-32586041d631", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { 
-                    "Id", 
-                    "UserName", 
-                    "NormalizedUserName", 
-                    "Email", 
-                    "NormalizedEmail", 
-                    "EmailConfirmed", 
-                    "PasswordHash", 
+                columns: new[] {
+                    "Id",
+                    "UserName",
+                    "NormalizedUserName",
+                    "Email",
+                    "NormalizedEmail",
+                    "EmailConfirmed",
+                    "PasswordHash",
                     "SecurityStamp",
                     "ConcurrencyStamp",
                     "PhoneNumberConfirmed",
@@ -62,7 +52,7 @@ namespace backend.Migrations
                     "RefreshToken",
                     "RefreshTokenExpiry"
                 },
-                values: new object[] { 
+                values: new object[] {
                     "admin",
                     "admin",
                     "ADMIN",
@@ -85,54 +75,44 @@ namespace backend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "UserId", "RoleId" },
-                values: new object[] { 
+                values: new object[] {
                     "admin", // Same ID as above
-                    "fd25606a-e653-4473-90b8-01acdba13fcc" // This is your Admin role ID from earlier in the migration
+                    "5248bd4c-719b-4669-a354-32586041d631" // This is your Admin role ID from earlier in the migration
                 });
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(
-                table: "AspNetUserRoles",
-                keyColumns: new[] { "UserId", "RoleId" },
-                keyValues: new object[] { "admin", "fd25606a-e653-4473-90b8-01acdba13fcc" });
-
-            migrationBuilder.DeleteData(
-                table: "AspNetUsers",
+                table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "admin");
+                keyValue: "00381a0b-4b7b-485f-b13d-780b1f3b5513");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "9ce14525-f89c-45b9-9489-b85334f9b053");
-
-            migrationBuilder.DeleteData(
-                table: "AspNetRoles",
-                keyColumn: "Id",
-                keyValue: "fd25606a-e653-4473-90b8-01acdba13fcc");
-
-            migrationBuilder.RenameColumn(
-                name: "S3Key",
-                table: "Postcards",
-                newName: "Base64Image");
-
-            migrationBuilder.AddColumn<DateTime>(
-                name: "ExpiresAt",
-                table: "Postcards",
-                type: "timestamp with time zone",
-                nullable: true);
+                keyValue: "5248bd4c-719b-4669-a354-32586041d631");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "6973dde7-e989-4d28-8a51-01e94ec60688", null, "User", "USER" },
-                    { "d95f7d39-5f76-428b-8d37-e391831cfc3b", null, "Admin", "ADMIN" }
+                    { "05631b08-94c8-4ba1-bace-d85a570cc76f", null, "Admin", "ADMIN" },
+                    { "d9a10e40-4ae8-4f04-abc7-f83742a70d6f", null, "User", "USER" }
                 });
+
+            migrationBuilder.DeleteData(
+                table: "AspNetUserRoles",
+                keyColumns: new[] { "UserId", "RoleId" },
+                keyValues: new object[] { "admin", "5248bd4c-719b-4669-a354-32586041d631" });
+
+            migrationBuilder.DeleteData(
+                table: "AspNetUsers",
+                keyColumn: "Id",
+                keyValue: "admin");
         }
     }
 }

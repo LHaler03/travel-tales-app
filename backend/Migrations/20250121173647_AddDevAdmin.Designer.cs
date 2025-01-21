@@ -12,8 +12,8 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250120200441_UpdatePostcards")]
-    partial class UpdatePostcards
+    [Migration("20250121173647_AddDevAdmin")]
+    partial class AddDevAdmin
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,13 +53,13 @@ namespace backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fd25606a-e653-4473-90b8-01acdba13fcc",
+                            Id = "5248bd4c-719b-4669-a354-32586041d631",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "9ce14525-f89c-45b9-9489-b85334f9b053",
+                            Id = "00381a0b-4b7b-485f-b13d-780b1f3b5513",
                             Name = "User",
                             NormalizedName = "USER"
                         });
