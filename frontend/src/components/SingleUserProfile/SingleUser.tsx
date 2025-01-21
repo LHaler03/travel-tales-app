@@ -13,7 +13,7 @@ import {
   PostcardImage,
   Modal,
   ModalImage,
-  ModalButtons, 
+  ModalButtons,
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
@@ -24,7 +24,9 @@ const SingleUser = () => {
 
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [_, setUserRole] = useState<string | null>(localStorage.getItem('userRole'));
+  const [_, setUserRole] = useState<string | null>(
+    localStorage.getItem('userRole'),
+  );
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
@@ -132,25 +134,20 @@ const SingleUser = () => {
 
       {selectedPostcard && (
         <Modal onClick={() => setSelectedPostcard(null)}>
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{ textAlign: 'center' }}
-          >
-            <ModalImage
-              src={selectedPostcard.imageLink}
-              alt="Enlarged Postcard"
-            />
-            <ModalButtons>
-              <a
-                href={selectedPostcard.downloadLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                <ApproveButton>Download</ApproveButton>
-              </a>
-            </ModalButtons>
-          </div>
+          <ModalImage
+            src={selectedPostcard.imageLink}
+            alt='Enlarged Postcard'
+          />
+          <ModalButtons>
+            <a
+              href={selectedPostcard.downloadLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{ textDecoration: 'none' }}
+            >
+              <ApproveButton>Download</ApproveButton>
+            </a>
+          </ModalButtons>
         </Modal>
       )}
     </ProfileContainer>
