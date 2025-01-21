@@ -13,6 +13,7 @@ import {
   PostcardImage,
   Modal,
   ModalImage,
+  ModalButtons, 
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
@@ -23,9 +24,7 @@ const SingleUser = () => {
 
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [_, setUserRole] = useState<string | null>(
-    localStorage.getItem('userRole'),
-  );
+  const [_, setUserRole] = useState<string | null>(localStorage.getItem('userRole'));
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
@@ -139,16 +138,18 @@ const SingleUser = () => {
           >
             <ModalImage
               src={selectedPostcard.imageLink}
-              alt='Enlarged Postcard'
+              alt="Enlarged Postcard"
             />
-            <a
-              href={selectedPostcard.downloadLink}
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{ textDecoration: 'none' }}
-            >
-              <ApproveButton>Download</ApproveButton>
-            </a>
+            <ModalButtons>
+              <a
+                href={selectedPostcard.downloadLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <ApproveButton>Download</ApproveButton>
+              </a>
+            </ModalButtons>
           </div>
         </Modal>
       )}
