@@ -1,5 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import * as S from './Explore.styled';
+import {
+  DestinationCard,
+  DestinationCountry,
+  DestinationImage,
+  DestinationName,
+  DestinationsGrid,
+  ExploreContainer,
+  ExploreTitle,
+  Text,
+} from './Explore.styled';
 
 export const Explore: React.FC = () => {
   const navigate = useNavigate();
@@ -44,18 +53,18 @@ export const Explore: React.FC = () => {
   ];
 
   return (
-    <S.ExploreContainer>
-      <S.ExploreTitle>Explore our top destinations</S.ExploreTitle>
-      <S.Text>
+    <ExploreContainer>
+      <ExploreTitle>Explore our top destinations</ExploreTitle>
+      <Text>
         Take a virtual journey through some of the world's most iconic
         destinations! Discover postcards from legendary cities and must-see
         spots that everyone dreams of visiting. Each destination holds unique
         stories, stunning landmarks, and rich cultures. Click through and create
         your own memories from places that inspire.
-      </S.Text>
-      <S.DestinationsGrid>
+      </Text>
+      <DestinationsGrid>
         {destinations.map((destination) => (
-          <S.DestinationCard
+          <DestinationCard
             key={destination.id}
             onClick={() =>
               navigate('/fullmap', {
@@ -67,16 +76,13 @@ export const Explore: React.FC = () => {
               })
             }
           >
-            <S.DestinationImage
-              src={destination.image}
-              alt={destination.name}
-            />
-            <S.DestinationName>{destination.name}</S.DestinationName>
-            <S.DestinationCountry>{destination.country}</S.DestinationCountry>
-          </S.DestinationCard>
+            <DestinationImage src={destination.image} alt={destination.name} />
+            <DestinationName>{destination.name}</DestinationName>
+            <DestinationCountry>{destination.country}</DestinationCountry>
+          </DestinationCard>
         ))}
-      </S.DestinationsGrid>
-    </S.ExploreContainer>
+      </DestinationsGrid>
+    </ExploreContainer>
   );
 };
 

@@ -50,6 +50,7 @@ export const DestinationCard = styled.div`
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  cursor: pointer;
 
   @media (max-width: 600px) {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
