@@ -23,7 +23,7 @@ export const UserItem = styled.li`
   padding: 10px;
   border-bottom: 1px solid black;
   margin-bottom: 10px;
-  
+
   /* Za mobilne uređaje, umjesto prelaska na column, ostavljamo row
      i možemo, ako je potrebno, smanjiti padding ili margine */
 `;
@@ -67,7 +67,7 @@ export const EmailLink = styled.a`
   text-decoration: none;
   margin-right: 10px; /* Umjesto lijevog margina, koristimo desnu marginu za razmak */
   font-weight: bold; /* Podebljanje email adrese */
-  
+
   /* Osiguravamo da email zauzme preostali prostor */
   flex: 1;
   white-space: nowrap;

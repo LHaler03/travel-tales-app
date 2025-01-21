@@ -24,8 +24,7 @@ export const Navbar = () => {
   const isAboveMediumScreens = useMediaQuery('(min-width: 1200px)');
   const navigate = useNavigate();
   const location = useLocation();
-  const { isAuthenticated, logout } = useAuth();
-  const { user } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const handleClose = () => {
     setIsMenuToggled(false);
@@ -80,10 +79,8 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
-            {/* {user && user.role === 'admin' && (
-              <> */}
 
-            {isAuthenticated ? (
+            {user?.role === 'Admin' ? (
               <>
                 <Link to='/users-review'>Users Review</Link>
                 <Link to='/image-review'>Image Review</Link>
@@ -190,7 +187,7 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {isAuthenticated && (
+              {user?.role === 'Admin' && (
                 <>
                   <Link
                     to='/users-review'

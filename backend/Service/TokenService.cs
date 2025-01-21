@@ -36,7 +36,7 @@ namespace backend.Service
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim("username", user.UserName)
             };
-            
+
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {

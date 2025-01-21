@@ -35,7 +35,7 @@ const UsersReview = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users`
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users`,
         );
         setUsers(response.data);
       } catch (error) {
@@ -46,8 +46,9 @@ const UsersReview = () => {
     fetchUsers();
   }, []);
 
-  const filteredUsers = users.filter((user) =>
-    user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false
+  const filteredUsers = users.filter(
+    (user) =>
+      user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false,
   );
 
   const buttonText = windowWidth <= 600 ? 'Review' : 'Review Profile';
@@ -57,8 +58,8 @@ const UsersReview = () => {
       <Title>Travel Tales users</Title>
       <SearchContainer>
         <SearchInput
-          type="text"
-          placeholder="Search Users..."
+          type='text'
+          placeholder='Search Users...'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -73,7 +74,7 @@ const UsersReview = () => {
               {user.email ?? 'No email'}
             </EmailLink>
             <RedActionButton
-              onClick={() => navigate(`/single-user-review/${user.id}`)}
+              onClick={() => navigate(`/admin-single-user-review/${user.id}`)}
             >
               {buttonText}
             </RedActionButton>

@@ -20,6 +20,7 @@ import Generate1VerticalPage from './pages/Generate1VerticalPage';
 import SingleUserPage from './pages/SingleUserPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import ProtectedAdminRoute from './components/ProtectedAdminRoute/ProtectedAdminRoute';
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -49,12 +50,21 @@ function App() {
               path='/generate1vertical'
               element={<Generate1VerticalPage />}
             />
-            <Route path='/image-review' element={<ImageReviewPage />} />
-            <Route path='/users-review' element={<UsersReviewPage />} />
+            <Route path='/single-user-review/:id' element={<SingleUserPage />}>
+              <Route path='' element={<SingleUserPage />} />
+            </Route>
+            <Route path='/image-review' element={<ProtectedAdminRoute />}>
+              <Route path='' element={<ImageReviewPage />} />
+            </Route>
+            <Route path='/users-review' element={<ProtectedAdminRoute />}>
+              <Route path='' element={<UsersReviewPage />} />
+            </Route>
             <Route
-              path='/single-user-review/:id'
-              element={<SingleUserPage />}
-            />
+              path='/admin-single-user-review/:id'
+              element={<ProtectedAdminRoute />}
+            >
+              <Route path='' element={<SingleUserPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
