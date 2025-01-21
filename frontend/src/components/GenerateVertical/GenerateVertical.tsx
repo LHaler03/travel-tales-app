@@ -339,7 +339,9 @@ export const GenerateVertical = () => {
                 <ActionButton onClick={handleFormatReverse}>
                   Reverse Format
                 </ActionButton>
-                <ActionButton onClick={handleNumberChange}>1 Image</ActionButton>
+                <ActionButton onClick={handleNumberChange}>
+                  1 Image
+                </ActionButton>
                 <ActionButton onClick={handleGenerate}>Generate</ActionButton>
               </ButtonsContainer>
             </Sidebar>

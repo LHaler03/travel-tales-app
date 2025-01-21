@@ -6,12 +6,42 @@ export const Explore: React.FC = () => {
   const navigate = useNavigate();
 
   const destinations = [
-    { id: 1, name: 'Paris', country: 'France' },
-    { id: 2, name: 'Rome', country: 'Italy' },
-    { id: 3, name: 'Barcelona', country: 'Spain' },
-    { id: 4, name: 'Amsterdam', country: 'Netherlands' },
-    { id: 5, name: 'Prague', country: 'Czech Republic' },
-    { id: 6, name: 'Dubrovnik', country: 'Croatia' },
+    {
+      id: 1,
+      name: 'Paris',
+      country: 'France',
+      image: '/public/images/Paris.jpeg',
+    },
+    {
+      id: 2,
+      name: 'Rome',
+      country: 'Italy',
+      image: '/public/images/Rome.jpeg',
+    },
+    {
+      id: 3,
+      name: 'Barcelona',
+      country: 'Spain',
+      image: '/public/images/Barcelona.jpeg',
+    },
+    {
+      id: 4,
+      name: 'Bali',
+      country: 'Indonesia',
+      image: '/public/images/Bali.jpeg',
+    },
+    {
+      id: 5,
+      name: 'London',
+      country: 'England',
+      image: '/public/images/London.jpeg',
+    },
+    {
+      id: 6,
+      name: 'New York',
+      country: 'USA',
+      image: '/public/images/Newyork.jpeg',
+    },
   ];
 
   const handleDestinationClick = (destinationName: string) => {
@@ -34,7 +64,10 @@ export const Explore: React.FC = () => {
             key={destination.id}
             onClick={() => handleDestinationClick(destination.name)}
           >
-            <S.DestinationImage />
+            <S.DestinationImage
+              src={destination.image}
+              alt={destination.name}
+            />
             <S.DestinationName>{destination.name}</S.DestinationName>
             <S.DestinationCountry>{destination.country}</S.DestinationCountry>
           </S.DestinationCard>

@@ -4,7 +4,6 @@ import {
   UserItem,
   Title,
   RedActionButton,
-  // VerificationText,
   EmailLink,
   SearchContainer,
   SearchInput,
@@ -14,16 +13,29 @@ import { UserType } from '../../../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const useWindowWidth = () => {
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
+};
+
 const UsersReview = () => {
   const [users, setUsers] = useState<UserType[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const navigate = useNavigate();
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users`,
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users`
         );
         setUsers(response.data);
       } catch (error) {
@@ -34,18 +46,19 @@ const UsersReview = () => {
     fetchUsers();
   }, []);
 
-  const filteredUsers = users.filter(
-    (user) =>
-      user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false,
+  const filteredUsers = users.filter((user) =>
+    user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false
   );
+
+  const buttonText = windowWidth <= 600 ? 'Review' : 'Review Profile';
 
   return (
     <>
       <Title>Travel Tales users</Title>
       <SearchContainer>
         <SearchInput
-          type='text'
-          placeholder='Search Users...'
+          type="text"
+          placeholder="Search Users..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -59,15 +72,10 @@ const UsersReview = () => {
             <EmailLink href={user.email ?? '#'}>
               {user.email ?? 'No email'}
             </EmailLink>
-            {/* {!user.emailConfirmed && (
-              <VerificationText>Email not verified</VerificationText>
-            )} */}
             <RedActionButton
-              onClick={() => {
-                navigate(`/single-user-review/${user.id}`);
-              }}
+              onClick={() => navigate(`/single-user-review/${user.id}`)}
             >
-              Review Profile
+              {buttonText}
             </RedActionButton>
           </UserItem>
         ))}
