@@ -61,7 +61,6 @@ export const Navbar = () => {
       console.error('User ID is undefined');
     }
   };
-  
 
   console.log('isAuth: ', isAuthenticated);
 

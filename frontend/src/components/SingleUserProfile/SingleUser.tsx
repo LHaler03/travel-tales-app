@@ -28,7 +28,7 @@ const SingleUser = () => {
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
-  
+
   // State za odabranu postcard sliku (za modal)
   const [selectedPostcard, setSelectedPostcard] = useState<{
     imageLink: string;
@@ -133,15 +133,18 @@ const SingleUser = () => {
 
       {selectedPostcard && (
         <Modal onClick={() => setSelectedPostcard(null)}>
-          <div onClick={(e) => e.stopPropagation()} style={{ textAlign: 'center' }}>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ textAlign: 'center' }}
+          >
             <ModalImage
               src={selectedPostcard.imageLink}
               alt='Enlarged Postcard'
             />
             <a
               href={selectedPostcard.downloadLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              target='_blank'
+              rel='noopener noreferrer'
               style={{ textDecoration: 'none' }}
             >
               <ApproveButton>Download</ApproveButton>
