@@ -13,7 +13,6 @@ import {
   PostcardImage,
   Modal,
   ModalImage,
-  ModalButtons,
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
@@ -104,16 +103,18 @@ const SingleUser = () => {
           <EmailWarning>Email not verified</EmailWarning>
         )}
       </UserInfo>
-      <ButtonContainer>
-        <DisapproveButton
-          onClick={async () => {
-            await handleDeleteUser();
-            navigate('/users-review');
-          }}
-        >
-          Delete User
-        </DisapproveButton>
-      </ButtonContainer>
+      {user?.role === 'Admin' ? (
+        <ButtonContainer>
+          <DisapproveButton
+            onClick={async () => {
+              await handleDeleteUser();
+              navigate('/users-review');
+            }}
+          >
+            Delete User
+          </DisapproveButton>
+        </ButtonContainer>
+      ) : null}
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>

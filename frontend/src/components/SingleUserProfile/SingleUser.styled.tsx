@@ -80,22 +80,9 @@ export const Modal = styled.div`
 `;
 
 export const ModalImage = styled.img`
-  max-width: calc(100% - 40px);
-  max-height: calc(100% - 100px);
+  max-width: calc(60% - 40px);
+  max-height: calc(60% - 100px);
   object-fit: contain;
 `;
 
-export const ModalButtons = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  position: absolute;
-  bottom: 1rem;
-  gap: 2rem;
-  width: 100%;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
