@@ -20,11 +20,13 @@ import { ReviewButton } from '../../shared/ActionButton';
 import { useNavigate } from 'react-router-dom';
 
 const AddLocation: React.FC = () => {
-  const [imageFiles, setImageFiles] = useState<File[]>([]);
+  const [_, setImageFiles] = useState<File[]>([]);
   const [encodedImages, setEncodedImages] = useState<
     (string | ArrayBuffer | null)[]
   >([]);
+  const [name, Setname] = useState('');
   const [showform, setShowform] = useState(true);
+  const [messagenoname, setMessagenoname] = useState(false);
   const [messageSucces, setMessageSucces] = useState(false);
   const [messagenoaddress, setMessagenoaddress] = useState(false);
   const [messagevalidaddress, setMessagevalidaddress] = useState(false);
@@ -38,7 +40,6 @@ const AddLocation: React.FC = () => {
     lon: '',
   });
   const [locationDetails, setLocationDetails] = useState({
-    name: '',
     country: '',
   });
   const navigate = useNavigate();
@@ -59,11 +60,9 @@ const AddLocation: React.FC = () => {
       console.log(response.data);
       if (response.data && response.data.length > 0) {
         const { lat, lon, address } = response.data[0];
-        const name =
-          address?.city || address?.town || address?.village || 'N/A';
         const country = address?.country || 'N/A';
         setCoordinates({ lat, lon });
-        setLocationDetails({ name, country });
+        setLocationDetails({ country });
       } else {
         setMessagevalidaddress(true);
       }
@@ -78,6 +77,7 @@ const AddLocation: React.FC = () => {
     if (e.target.files) {
       const filesArray = Array.from(e.target.files);
       setImageFiles(filesArray);
+
       const encodedArray: (string | ArrayBuffer | null)[] = [];
       filesArray.forEach((file) => {
         const reader = new FileReader();
@@ -100,8 +100,13 @@ const AddLocation: React.FC = () => {
       setMessagetwopictures(true);
       return;
     }
+    if (!name) {
+      setMessagenoname(true);
+      return;
+    }
+
     const locationData = {
-      name: locationDetails.name,
+      name: name,
       country: locationDetails.country,
       lat: coordinates.lat,
       lon: coordinates.lon,
@@ -117,7 +122,8 @@ const AddLocation: React.FC = () => {
       console.log(result.data);
 
       setCoordinates({ lat: '', lon: '' });
-      setLocationDetails({ name: '', country: '' });
+      setLocationDetails({ country: '' });
+      Setname('');
       setShowform(false);
       setMessageSucces(true);
     } catch (error) {
@@ -154,12 +160,15 @@ const AddLocation: React.FC = () => {
                   id='name'
                   name='name'
                   type='text'
-                  placeholder='Location name'
-                  value={locationDetails.name}
-                  required
+                  placeholder='Enter location name...'
+                  value={name}
+                  onChange={(c) => {
+                    Setname(c.target.value);
+                    setMessagenoname(false);
+                  }}
                 />
               </FormField>
-
+              {messagenoname && <Error>Please enter a valid name!</Error>}
               <FormField>
                 <Label htmlFor='country'>Country:</Label>
                 <Input
