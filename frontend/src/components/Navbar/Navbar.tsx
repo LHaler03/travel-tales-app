@@ -82,8 +82,7 @@ export const Navbar = () => {
 
             {user?.role === 'Admin' ? (
               <>
-                <Link to='/users-review'>Users Review</Link>
-                <Link to='/image-review'>Image Review</Link>
+                <Link to='/adminDashboard'>Admin Dashboard</Link>
               </>
             ) : null}
           </NavLinks>
@@ -190,16 +189,10 @@ export const Navbar = () => {
               {user?.role === 'Admin' && (
                 <>
                   <Link
-                    to='/users-review'
+                    to='/adminDashboard'
                     onClick={() => setIsMenuToggled(false)}
                   >
-                    Users Review
-                  </Link>
-                  <Link
-                    to='/image-review'
-                    onClick={() => setIsMenuToggled(false)}
-                  >
-                    Image Review
+                    Admin Dashboard
                   </Link>
                 </>
               )}

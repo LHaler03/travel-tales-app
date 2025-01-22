@@ -21,6 +21,9 @@ import SingleUserPage from './pages/SingleUserPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute/ProtectedAdminRoute';
+import AdminDashboardPage from './pages/AdminDashboardPage';
+import AddLocationPage from './pages/AddLocationPage';
+
 function App() {
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -41,6 +44,8 @@ function App() {
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/review' element={<ReviewsPage />} />
+            <Route path='/adminDashboard' element={<AdminDashboardPage />} />
+            <Route path='/addLocation' element={<AddLocationPage />} />
             <Route
               path='/generatevertical'
               element={<GeneratePageVertical />}
