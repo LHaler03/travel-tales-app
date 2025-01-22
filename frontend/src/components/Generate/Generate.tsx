@@ -10,6 +10,10 @@ import {
   ButtonsContainer,
   Picturechoice,
   CityPicture,
+  LoadingText,
+  DisplayedPostcard,
+  PostcardWrapper,
+  Links,
 } from './Generate.styled';
 import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
@@ -224,15 +228,23 @@ export const Generate = () => {
     customImage2,
   ]);
 
-  if (isGenerating) return <Wrapper> LOADING </Wrapper>;
+  if (isGenerating) return <LoadingText> Your postcard is loading... </LoadingText>;
 
   return (
     <>
       <Wrapper>
         {isGenerated ? (
-          <a href={generatedImage.downloadLink} target='_blank'>
-            <img src={generatedImage.imageLink} style={{ maxHeight: '98vh' }} />
-          </a>
+          <PostcardWrapper>
+            <DisplayedPostcard src={generatedImage.imageLink} />
+            <Links>
+              <a href={generatedImage.downloadLink} target='_blank'>
+                <ActionButton> Download image </ActionButton>
+              </a>
+              <a href="/fullmap">
+                <ActionButton> Return to the Map </ActionButton>
+              </a>
+            </Links>
+          </PostcardWrapper>
         ) : (
           <>
             <Sidebar>

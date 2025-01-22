@@ -10,6 +10,10 @@ import {
   ButtonsContainer,
   Picturechoice,
   CityPicture,
+  PostcardWrapper,
+  Links,
+  DisplayedPostcard,
+  LoadingText,
 } from '../GenerateVertical/GenerateVertical.styled';
 import React, { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
@@ -195,15 +199,23 @@ export const Generate1Vertical = () => {
     debouncedUpdate(newKey);
   }, [fromText, titleColor, fromColor, borderColor, city, customImage1]);
 
-  if (isGenerating) return <Wrapper> LOADING </Wrapper>;
+  if (isGenerating) return <LoadingText> Your postcard is loading... </LoadingText>;
 
   return (
     <>
       <Wrapper>
         {isGenerated ? (
-          <a href={generatedImage.downloadLink} target='_blank'>
-            <img src={generatedImage.imageLink} style={{ maxHeight: '98vh' }} />
-          </a>
+          <PostcardWrapper>
+            <DisplayedPostcard src={generatedImage.imageLink} />
+            <Links>
+              <a href={generatedImage.downloadLink} target='_blank'>
+                <ActionButton> Download image </ActionButton>
+              </a>
+              <a href="/fullmap">
+                <ActionButton> Return to the Map </ActionButton>
+              </a>
+            </Links>
+          </PostcardWrapper>
         ) : (
           <>
             <Sidebar>
