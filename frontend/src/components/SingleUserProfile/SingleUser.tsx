@@ -18,7 +18,7 @@ import {
   SwitchLabel,
   SwitchInput,
   SwitchSlider,
-  SwitchText, 
+  SwitchText,
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
@@ -33,7 +33,6 @@ const SingleUser = () => {
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
-
   const [selectedPostcard, setSelectedPostcard] = useState<{
     imageLink: string;
     downloadLink: string;
@@ -110,6 +109,14 @@ const SingleUser = () => {
     fetchUserPostcards();
   }, [isAuthenticated, id, user?.id]);
 
+  useEffect(() => {
+    if (userData && userData.role === 'Admin') {
+      setIsAdminRole(true);
+    } else {
+      setIsAdminRole(false);
+    }
+  }, [userData]);
+
   // if (error) return <div>{error}</div>;
   if (!userData) return <div>Loading...</div>;
 
@@ -126,7 +133,7 @@ const SingleUser = () => {
         )}
       </UserInfo>
 
-      {/* {user?.role === 'Admin' ? ( */}
+      {/* {user?.role === 'Admin' && ( */}
         <>
           <ButtonContainer>
             <DisapproveButton
@@ -150,7 +157,7 @@ const SingleUser = () => {
             </SwitchLabel>
           </SwitchContainer>
         </>
-      {/* ) : null} */}
+      {/* )} */}
 
       <PostcardSection>
         <h2>User's Postcards</h2>
