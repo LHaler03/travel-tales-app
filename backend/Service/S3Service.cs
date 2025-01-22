@@ -138,6 +138,46 @@ public class S3Service : IS3Service
         }
     }
 
+    public async Task UploadStockImagesAsync(string base64Image, string folderPath)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(base64Image))
+                throw new ArgumentException("Image data cannot be empty");
+
+            string base64Data = base64Image;
+            if (base64Image.Contains(","))
+            {
+                base64Data = base64Image.Split(',')[1];
+            }
+
+            string fileName = $"{Guid.NewGuid()}.jpg";
+            string key = $"{folderPath}/{fileName}";
+
+            // Convert base64 to bytes
+            byte[] imageBytes = Convert.FromBase64String(base64Data);
+
+            using var stream = new MemoryStream(imageBytes);
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key,
+                InputStream = stream,
+                ContentType = "image/jpeg"
+            };
+
+            await _s3Client.PutObjectAsync(putRequest);
+        }
+        catch (AmazonS3Exception ex)
+        {
+            throw new Exception($"S3 upload failed: {ex.Message}", ex);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Error uploading postcard: {ex.Message}", ex);
+        }
+    }
+
     public async Task<List<string>> UploadFileAndGetImageAndDownloadLinksAsync(string filePath, string s3Key)
     {
         try

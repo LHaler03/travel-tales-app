@@ -44,7 +44,17 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-            return Ok(user.MapToUserDto());
+            return Ok(
+                new
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User"
+                }
+            );
         }
 
         // PUT: api/users/{id}

@@ -21,6 +21,9 @@ import { useNavigate } from 'react-router-dom';
 
 const AddLocation: React.FC = () => {
   const [imageFiles, setImageFiles] = useState<File[]>([]);
+  const [encodedImages, setEncodedImages] = useState<
+    (string | ArrayBuffer | null)[]
+  >([]);
   const [showform, setShowform] = useState(true);
   const [messageSucces, setMessageSucces] = useState(false);
   const [messagenoaddress, setMessagenoaddress] = useState(false);
@@ -73,19 +76,27 @@ const AddLocation: React.FC = () => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessagetwopictures(false);
     if (e.target.files) {
-      // We expect exactly two images, but can allow more validation later.
-      setImageFiles(Array.from(e.target.files));
+      const filesArray = Array.from(e.target.files);
+      setImageFiles(filesArray);
+      const encodedArray: (string | ArrayBuffer | null)[] = [];
+      filesArray.forEach((file) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          encodedArray.push(reader.result);
+        };
+        reader.readAsDataURL(file);
+      });
+      setEncodedImages(encodedArray);
     }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(imageFiles.length);
     if (!address) {
       setMessagenoaddress(true);
       return;
     }
-    if (imageFiles.length < 2) {
+    if (encodedImages.length < 2) {
       setMessagetwopictures(true);
       return;
     }
@@ -94,24 +105,16 @@ const AddLocation: React.FC = () => {
       country: locationDetails.country,
       lat: coordinates.lat,
       lon: coordinates.lon,
+      images: encodedImages,
     };
 
     try {
-      const response = await axios.put(
+      const result = await axios.post(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
         locationData,
       );
 
-      const formDataImages = new FormData();
-      formDataImages.append('image1', imageFiles[0]);
-      formDataImages.append('image2', imageFiles[1]);
-      formDataImages.append('locationId', response.data.id);
-
-      await axios.post(
-        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations/upload-images`,
-        formDataImages,
-        { headers: { 'Content-Type': 'multipart/form-data' } },
-      );
+      console.log(result.data);
 
       setCoordinates({ lat: '', lon: '' });
       setLocationDetails({ name: '', country: '' });
@@ -154,7 +157,6 @@ const AddLocation: React.FC = () => {
                   placeholder='Location name'
                   value={locationDetails.name}
                   required
-                  readOnly
                 />
               </FormField>
 

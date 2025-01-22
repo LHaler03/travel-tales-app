@@ -62,12 +62,9 @@ const SingleUser = () => {
     if (newValue) {
       try {
         await axios.put(
-          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}/role`,
-          {
-            role: 'Admin',
-          },
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/change-role/${id}`,
         );
-        alert('User role updated to Admin.');
+        alert('User role updated.');
       } catch (error) {
         console.error('Error updating user role:', error);
         setError('Failed to update user role.');
@@ -87,6 +84,7 @@ const SingleUser = () => {
           const response = await axios.get(
             `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${userId}`,
           );
+          console.log(response.data);
           setUserData(response.data);
           setUserRole(response.data.role);
         } catch (error) {
@@ -151,7 +149,7 @@ const SingleUser = () => {
             </DisapproveButton>
           </ButtonContainer>
           <SwitchContainer>
-            <SwitchText>Change user's role to admin</SwitchText>
+            <SwitchText>Admin</SwitchText>
             <SwitchLabel>
               <SwitchInput
                 type='checkbox'
