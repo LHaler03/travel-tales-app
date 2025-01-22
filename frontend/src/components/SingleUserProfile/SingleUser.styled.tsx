@@ -19,7 +19,7 @@ export const UserInfo = styled.div`
     overflow-wrap: break-word;
     max-width: 100%;
     @media (max-width: 768px) {
-      font-size: 1.5rem; /* Adjusted for smaller screens */
+      font-size: 1.5rem; 
     }
   }
 `;

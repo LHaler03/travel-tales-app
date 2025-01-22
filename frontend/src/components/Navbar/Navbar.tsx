@@ -79,6 +79,7 @@ export const Navbar = () => {
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
+            <Link to='/adminDashboard'>Admin Dashboard</Link>
 
             {user?.role === 'Admin' ? (
               <>
