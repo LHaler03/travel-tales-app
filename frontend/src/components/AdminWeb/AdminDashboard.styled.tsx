@@ -4,9 +4,9 @@ export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   padding: 1rem;
-  padding-top: 2rem; 
+  padding-top: 2rem;
   min-height: 100vh;
 `;
 

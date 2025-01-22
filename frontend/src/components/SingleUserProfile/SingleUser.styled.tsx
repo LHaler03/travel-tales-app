@@ -19,7 +19,7 @@ export const UserInfo = styled.div`
     overflow-wrap: break-word;
     max-width: 100%;
     @media (max-width: 768px) {
-      font-size: 1.5rem; 
+      font-size: 1.5rem;
     }
   }
 `;
@@ -150,7 +150,7 @@ export const SwitchSlider = styled.span`
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 18px;
     width: 18px;
     left: 3px;

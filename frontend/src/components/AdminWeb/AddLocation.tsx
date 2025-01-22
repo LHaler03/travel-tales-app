@@ -25,7 +25,7 @@ const AddLocation: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +50,7 @@ const AddLocation: React.FC = () => {
       // First, send location data (adjust endpoint as needed)
       const response = await axios.put(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
-        locationData
+        locationData,
       );
 
       // Optionally, handle image uploads (this can be sent in a separate request)
@@ -66,10 +66,10 @@ const AddLocation: React.FC = () => {
         await axios.post(
           `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations/upload-images`,
           formDataImages,
-          { headers: { 'Content-Type': 'multipart/form-data' } }
+          { headers: { 'Content-Type': 'multipart/form-data' } },
         );
       }
-      
+
       setMessage('Location added successfully!');
       // Reset form or redirect as needed.
     } catch (error) {
@@ -82,18 +82,20 @@ const AddLocation: React.FC = () => {
     <Container>
       <Title>Add New Location</Title>
       <Description>
-        Please fill in the details below. Enter the location’s display name, country, and its coordinates.
-        You can also upload at least two images for the location. The coordinates may be obtained via an address search API.
+        Please fill in the details below. Enter the location’s display name,
+        country, and its coordinates. You can also upload at least two images
+        for the location. The coordinates may be obtained via an address search
+        API.
       </Description>
 
       <Form onSubmit={handleSubmit}>
         <FormField>
-          <Label htmlFor="name">Display Name</Label>
+          <Label htmlFor='name'>Display Name</Label>
           <Input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Enter location name"
+            id='name'
+            name='name'
+            type='text'
+            placeholder='Enter location name'
             value={formData.name}
             onChange={handleChange}
             required
@@ -101,12 +103,12 @@ const AddLocation: React.FC = () => {
         </FormField>
 
         <FormField>
-          <Label htmlFor="country">Country</Label>
+          <Label htmlFor='country'>Country</Label>
           <Input
-            id="country"
-            name="country"
-            type="text"
-            placeholder="Enter country"
+            id='country'
+            name='country'
+            type='text'
+            placeholder='Enter country'
             value={formData.country}
             onChange={handleChange}
             required
@@ -114,12 +116,12 @@ const AddLocation: React.FC = () => {
         </FormField>
 
         <FormField>
-          <Label htmlFor="lat">Latitude</Label>
+          <Label htmlFor='lat'>Latitude</Label>
           <Input
-            id="lat"
-            name="lat"
-            type="text"
-            placeholder="Enter latitude"
+            id='lat'
+            name='lat'
+            type='text'
+            placeholder='Enter latitude'
             value={formData.lat}
             onChange={handleChange}
             required
@@ -127,12 +129,12 @@ const AddLocation: React.FC = () => {
         </FormField>
 
         <FormField>
-          <Label htmlFor="lon">Longitude</Label>
+          <Label htmlFor='lon'>Longitude</Label>
           <Input
-            id="lon"
-            name="lon"
-            type="text"
-            placeholder="Enter longitude"
+            id='lon'
+            name='lon'
+            type='text'
+            placeholder='Enter longitude'
             value={formData.lon}
             onChange={handleChange}
             required
@@ -143,8 +145,8 @@ const AddLocation: React.FC = () => {
           <Label>Upload Images (minimum 2)</Label>
           <UploadContainer>
             <FileInput
-              type="file"
-              accept="image/*"
+              type='file'
+              accept='image/*'
               multiple
               onChange={handleFileChange}
               required
@@ -152,7 +154,7 @@ const AddLocation: React.FC = () => {
           </UploadContainer>
         </FormField>
 
-        <Button type="submit">Add Location</Button>
+        <Button type='submit'>Add Location</Button>
       </Form>
 
       {message && <p>{message}</p>}

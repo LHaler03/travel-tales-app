@@ -15,8 +15,8 @@ const AdminDashboard: React.FC = () => {
     <DashboardContainer>
       <Header>Welcome to the Admin Dashboard</Header>
       <SubHeader>
-        Use the links below to access administrative tools and manage the Travel Tales
-        website.
+        Use the links below to access administrative tools and manage the Travel
+        Tales website.
       </SubHeader>
       <LinksContainer>
         <DashboardLink onClick={() => navigate('/image-review')}>

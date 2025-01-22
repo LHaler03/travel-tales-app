@@ -29,7 +29,9 @@ const SingleUser = () => {
 
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [_, setUserRole] = useState<string | null>(localStorage.getItem('userRole'));
+  const [_, setUserRole] = useState<string | null>(
+    localStorage.getItem('userRole'),
+  );
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
@@ -59,9 +61,12 @@ const SingleUser = () => {
     setIsAdminRole(newValue);
     if (newValue) {
       try {
-        await axios.put(`http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}/role`, {
-          role: 'Admin',
-        });
+        await axios.put(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}/role`,
+          {
+            role: 'Admin',
+          },
+        );
         alert('User role updated to Admin.');
       } catch (error) {
         console.error('Error updating user role:', error);
@@ -117,7 +122,7 @@ const SingleUser = () => {
     }
   }, [userData]);
 
-  // if (error) return <div>{error}</div>;
+  if (error) return <div>{error}</div>;
   if (!userData) return <div>Loading...</div>;
 
   return (
@@ -133,7 +138,7 @@ const SingleUser = () => {
         )}
       </UserInfo>
 
-      {/* {user?.role === 'Admin' && ( */}
+      {user?.role === 'Admin' && (
         <>
           <ButtonContainer>
             <DisapproveButton
@@ -149,7 +154,7 @@ const SingleUser = () => {
             <SwitchText>Change user's role to admin</SwitchText>
             <SwitchLabel>
               <SwitchInput
-                type="checkbox"
+                type='checkbox'
                 checked={isAdminRole}
                 onChange={handleRoleSwitch}
               />
@@ -157,7 +162,7 @@ const SingleUser = () => {
             </SwitchLabel>
           </SwitchContainer>
         </>
-      {/* )} */}
+      )}
 
       <PostcardSection>
         <h2>User's Postcards</h2>
@@ -183,13 +188,13 @@ const SingleUser = () => {
           >
             <ModalImage
               src={selectedPostcard.imageLink}
-              alt="Enlarged Postcard"
+              alt='Enlarged Postcard'
             />
             <ModalButtons>
               <a
                 href={selectedPostcard.downloadLink}
-                target="_blank"
-                rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
                 style={{ textDecoration: 'none' }}
               >
                 <ApproveButton>Download</ApproveButton>
