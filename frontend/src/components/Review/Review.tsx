@@ -22,8 +22,8 @@ import { ReviewButton } from '../../shared/ActionButton';
 export const Review = () => {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState<number | ''>();
-  const [errorrating, setErrorrating] = useState('');
-  const [errorcomment, setErrorcomment] = useState('');
+  const [errorrating, setErrorrating] = useState(false);
+  const [errorcomment, setErrorcomment] = useState(false);
   const [submitsuccess, setSubmitsuccess] = useState(false);
   const [showreviewform, setShowreviewform] = useState(true);
   const [doublereview, setDoublereview] = useState(false);
@@ -45,8 +45,8 @@ export const Review = () => {
       );
       setComment('');
       setRating('');
-      setErrorrating('');
-      setErrorcomment('');
+      setErrorrating(false);
+      setErrorcomment(false);
       setShowreviewform(false);
       setSubmitsuccess(true);
     } catch (error) {
@@ -59,11 +59,11 @@ export const Review = () => {
     setSubmitsuccess(false);
 
     if (!rating) {
-      setErrorrating('Please enter a rating!!!');
+      setErrorrating(true);
       return;
     }
     if (!comment) {
-      setErrorcomment('Please enter a comment!!!');
+      setErrorcomment(true);
       return;
     }
     console.log('review: ', {
@@ -85,8 +85,8 @@ export const Review = () => {
 
       setComment('');
       setRating('');
-      setErrorrating('');
-      setErrorcomment('');
+      setErrorrating(false);
+      setErrorcomment(false);
       setDoublereview(false);
       setShowreviewform(false);
       setSubmitsuccess(true);
@@ -133,7 +133,7 @@ export const Review = () => {
                       select={dots <= (rating || 0)}
                       onClick={() => {
                         setRating(dots);
-                        setErrorrating('');
+                        setErrorrating(false);
                       }}
                     >
                       ●
@@ -141,18 +141,18 @@ export const Review = () => {
                   </Rating>
                 ))}
               </RatingContainer>
-              {errorrating && <Error>{errorrating}</Error>}
+              {errorrating && <Error>Please enter a rating!</Error>}
               <p>Comment:*</p>
               <Comment
                 value={comment}
                 onChange={(c) => {
                   setComment(c.target.value);
-                  setErrorcomment('');
+                  setErrorcomment(false);
                 }}
                 placeholder='Write your review here...'
                 maxLength={500}
               />
-              {errorcomment && <Error>{errorcomment}</Error>}
+              {errorcomment && <Error>Please enter a comment!</Error>}
               <Buttons>
                 <ReviewButton
                   onClick={() =>
