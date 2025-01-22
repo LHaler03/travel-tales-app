@@ -41,9 +41,17 @@ namespace backend.Controllers
       return location != null ? Ok(location) : NotFound();
     }
 
-    [HttpPost]
+    [HttpPost("add-location")]
     public async Task<IActionResult> Create([FromBody] CreateLocationRequestDto locationDto)
     {
+      var existingLocation = (await _locationRepo.GetAllAsync())
+          .FirstOrDefault(l => (l.Name == locationDto.Name && l.Country == locationDto.Country) ||
+                               (Math.Abs(l.Lat - locationDto.Lat) < 0.001m &&
+                                Math.Abs(l.Lon - locationDto.Lon) < 0.001m));
+
+      if (existingLocation != null)
+        return Forbid("Location too close to an existing one.");
+
       var locationModel = await _locationRepo.CreateAsync(locationDto.ToLocationFromCreateDTO());
 
       return CreatedAtAction(nameof(GetById), new { id = locationModel.Id }, locationModel);
