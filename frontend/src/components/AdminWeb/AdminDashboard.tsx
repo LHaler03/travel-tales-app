@@ -25,7 +25,7 @@ const AdminDashboard: React.FC = () => {
         <DashboardLink onClick={() => navigate('/users-review')}>
           Users Review
         </DashboardLink>
-        <DashboardLink onClick={() => navigate('/add-locations')}>
+        <DashboardLink onClick={() => navigate('/addLocation')}>
           Add Locations
         </DashboardLink>
       </LinksContainer>

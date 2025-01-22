@@ -22,6 +22,7 @@ import TermsOfServicePage from './pages/TermsOfServicePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute/ProtectedAdminRoute';
 import AdminDashboardPage from './pages/AdminDashboardPage';
+import AddLocationPage from './pages/AddLocationPage';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/review' element={<ReviewsPage />} />
             <Route path='/adminDashboard' element={<AdminDashboardPage />} />
+            <Route path='/addLocation' element={<AddLocationPage />} />
             <Route
               path='/generatevertical'
               element={<GeneratePageVertical />}
