@@ -157,3 +157,36 @@ export const CityPicture = styled.img`
     height: 250px;
   }
 `;
+
+export const LoadingText = styled.div`
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+`
+
+export const DisplayedPostcard = styled.img`
+  width: 90vw;
+  margin: 5vh;
+
+  @media (min-width: 1200px) {
+    height: 60vh;
+    width: auto;
+  }
+`
+
+export const PostcardWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const Links = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+`
