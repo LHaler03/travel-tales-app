@@ -115,7 +115,7 @@ const AddLocation: React.FC = () => {
 
     try {
       const result = await axios.post(
-        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations/add-location`,
         locationData,
       );
 
