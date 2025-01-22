@@ -14,6 +14,11 @@ import {
   Modal,
   ModalImage,
   ModalButtons,
+  SwitchContainer,
+  SwitchLabel,
+  SwitchInput,
+  SwitchSlider,
+  SwitchText, 
 } from './SingleUser.styled';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
 
@@ -24,9 +29,7 @@ const SingleUser = () => {
 
   const [userData, setUserData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [_, setUserRole] = useState<string | null>(
-    localStorage.getItem('userRole'),
-  );
+  const [_, setUserRole] = useState<string | null>(localStorage.getItem('userRole'));
   const [postcards, setPostcards] = useState<
     { imageLink: string; downloadLink: string }[]
   >([]);
@@ -35,6 +38,8 @@ const SingleUser = () => {
     imageLink: string;
     downloadLink: string;
   } | null>(null);
+
+  const [isAdminRole, setIsAdminRole] = useState<boolean>(false);
 
   const handleDeleteUser = async () => {
     if (window.confirm('Are you sure you want to delete this user?')) {
@@ -46,6 +51,22 @@ const SingleUser = () => {
       } catch (error) {
         console.error('Error deleting user:', error);
         setError('Failed to delete user.');
+      }
+    }
+  };
+
+  const handleRoleSwitch = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.checked;
+    setIsAdminRole(newValue);
+    if (newValue) {
+      try {
+        await axios.put(`http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}/role`, {
+          role: 'Admin',
+        });
+        alert('User role updated to Admin.');
+      } catch (error) {
+        console.error('Error updating user role:', error);
+        setError('Failed to update user role.');
       }
     }
   };
@@ -89,7 +110,7 @@ const SingleUser = () => {
     fetchUserPostcards();
   }, [isAuthenticated, id, user?.id]);
 
-  if (error) return <div>{error}</div>;
+  // if (error) return <div>{error}</div>;
   if (!userData) return <div>Loading...</div>;
 
   return (
@@ -104,18 +125,33 @@ const SingleUser = () => {
           <EmailWarning>Email not verified</EmailWarning>
         )}
       </UserInfo>
-      {user?.role === 'Admin' ? (
-        <ButtonContainer>
-          <DisapproveButton
-            onClick={async () => {
-              await handleDeleteUser();
-              navigate('/users-review');
-            }}
-          >
-            Delete User
-          </DisapproveButton>
-        </ButtonContainer>
-      ) : null}
+
+      {/* {user?.role === 'Admin' ? ( */}
+        <>
+          <ButtonContainer>
+            <DisapproveButton
+              onClick={async () => {
+                await handleDeleteUser();
+                navigate('/users-review');
+              }}
+            >
+              Delete User
+            </DisapproveButton>
+          </ButtonContainer>
+          <SwitchContainer>
+            <SwitchText>Change user's role to admin</SwitchText>
+            <SwitchLabel>
+              <SwitchInput
+                type="checkbox"
+                checked={isAdminRole}
+                onChange={handleRoleSwitch}
+              />
+              <SwitchSlider />
+            </SwitchLabel>
+          </SwitchContainer>
+        </>
+      {/* ) : null} */}
+
       <PostcardSection>
         <h2>User's Postcards</h2>
         <PostcardGrid>
@@ -134,20 +170,25 @@ const SingleUser = () => {
 
       {selectedPostcard && (
         <Modal onClick={() => setSelectedPostcard(null)}>
-          <ModalImage
-            src={selectedPostcard.imageLink}
-            alt='Enlarged Postcard'
-          />
-          <ModalButtons>
-            <a
-              href={selectedPostcard.downloadLink}
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{ textDecoration: 'none' }}
-            >
-              <ApproveButton>Download</ApproveButton>
-            </a>
-          </ModalButtons>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ textAlign: 'center' }}
+          >
+            <ModalImage
+              src={selectedPostcard.imageLink}
+              alt="Enlarged Postcard"
+            />
+            <ModalButtons>
+              <a
+                href={selectedPostcard.downloadLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <ApproveButton>Download</ApproveButton>
+              </a>
+            </ModalButtons>
+          </div>
         </Modal>
       )}
     </ProfileContainer>
