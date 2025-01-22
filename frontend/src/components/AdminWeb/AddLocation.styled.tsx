@@ -96,3 +96,50 @@ export const Button = styled.button`
     padding: 0.8rem;
   }
 `;
+
+export const Search = styled.input`
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 0.5rem;
+  width: 190px;
+  @media (min-width: 600px) {
+    width: 500px;
+  }
+  &:focus {
+    border-color: #0077ff;
+    outline: none;
+  }
+`;
+
+export const Success = styled.div`
+  color: green;
+  font-size: 2.5rem;
+`;
+
+export const Error = styled.div`
+  color: red;
+  font-size: 1rem;
+  @media (min-width: 600px) {
+    font-size: 2rem;
+  }
+`;
+
+export const ReturnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 95%;
+  margin: auto;
+  position: relative;
+  height: 80vh;
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
