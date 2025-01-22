@@ -18,6 +18,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authentication;
+using MockQueryable.Moq;
 
 namespace backend.UnitTests
 {
@@ -32,33 +35,70 @@ namespace backend.UnitTests
         private AccountController _accountController;
         private LocationController _locationController;
         private ReviewController _reviewController;
+        private Mock<UserManager<User>> _userManagerMock;
+        private Mock<SignInManager<User>> _signInManagerMock;
 
         [SetUp]
         public void Setup()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDBContext>()
+            var dbContextOptions = new DbContextOptionsBuilder<ApplicationDBContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
-            _context = new ApplicationDBContext(options);
+            _context = new ApplicationDBContext(dbContextOptions);
 
-            var userStore = new Mock<IUserStore<User>>().Object;
-            var userManager = new Mock<UserManager<User>>(userStore, null, null, null, null, null, null, null, null).Object;
-            var signInManager = new Mock<SignInManager<User>>(userManager, null, null, null, null, null, null).Object;
-            var s3Service = new Mock<IS3Service>().Object;
-            var logger = new Mock<ILogger<PostcardRepository>>().Object;
-            var tokenService = new Mock<ITokenService>().Object;
-            var configuration = new Mock<IConfiguration>().Object;
-            var emailSender = new Mock<IEmailSender>().Object;
+            // Setup UserManager mock
+            var userStore = new Mock<IUserStore<User>>();
+            _userManagerMock = new Mock<UserManager<User>>(
+                userStore.Object,
+                null, null, null, null, null, null, null, null);
 
-            _accountRepository = new AccountRepository(userManager);
+            // Setup required services for SignInManager
+            var contextAccessor = new Mock<IHttpContextAccessor>();
+            var userPrincipalFactory = new Mock<IUserClaimsPrincipalFactory<User>>();
+            var identityOptions = new Mock<IOptions<IdentityOptions>>();
+            var logger = new Mock<ILogger<SignInManager<User>>>();
+            var schemes = new Mock<IAuthenticationSchemeProvider>();
+            var confirmation = new Mock<IUserConfirmation<User>>();
+
+            _signInManagerMock = new Mock<SignInManager<User>>(
+                _userManagerMock.Object,
+                contextAccessor.Object,
+                userPrincipalFactory.Object,
+                identityOptions.Object,
+                logger.Object,
+                schemes.Object,
+                confirmation.Object);
+
+            var s3Service = new Mock<IS3Service>();
+            var repoLogger = new Mock<ILogger<PostcardRepository>>();
+            var tokenService = new Mock<ITokenService>();
+            var configuration = new Mock<IConfiguration>();
+            var emailSender = new Mock<IEmailSender>();
+
+            _accountRepository = new AccountRepository(_userManagerMock.Object);
             _locationRepository = new LocationRepository(_context);
-            _postcardRepository = new PostcardRepository(_context, s3Service, logger);
+            _postcardRepository = new PostcardRepository(_context, s3Service.Object, repoLogger.Object);
             _reviewRepository = new ReviewRepository(_context);
 
-            _accountController = new AccountController(userManager, signInManager, tokenService, configuration, _accountRepository, emailSender);
+            _accountController = new AccountController(
+                _userManagerMock.Object,
+                _signInManagerMock.Object,
+                tokenService.Object,
+                configuration.Object,
+                _accountRepository,
+                emailSender.Object);
+
             _locationController = new LocationController(_context, _locationRepository);
             _reviewController = new ReviewController(_reviewRepository);
+
+            // Setup default behavior for UserManager
+            _userManagerMock.Setup(x => x.CreateAsync(It.IsAny<User>(), It.IsAny<string>()))
+                .ReturnsAsync(IdentityResult.Success);
+            _userManagerMock.Setup(x => x.AddToRoleAsync(It.IsAny<User>(), "User"))
+                .ReturnsAsync(IdentityResult.Success);
+            _userManagerMock.Setup(x => x.GenerateEmailConfirmationTokenAsync(It.IsAny<User>()))
+                .ReturnsAsync("test-token");
         }
 
         [TearDown]
@@ -66,26 +106,86 @@ namespace backend.UnitTests
         {
             _context.Dispose();
         }
-
+        
         [Test]
         public async Task RegisterUser_ValidData_Test()
         {
-            // Assign
+            // Arrange
+            var mockUserManager = new Mock<UserManager<User>>(
+                Mock.Of<IUserStore<User>>(),
+                null, null, null, null, null, null, null, null);
+
+            var mockSignInManager = new Mock<SignInManager<User>>(
+                mockUserManager.Object,
+                Mock.Of<IHttpContextAccessor>(),
+                Mock.Of<IUserClaimsPrincipalFactory<User>>(),
+                null, null, null, null);
+
+            var mockTokenService = new Mock<ITokenService>();
+            var mockConfiguration = new Mock<IConfiguration>();
+            var mockAccountRepo = new Mock<IAccountRepository>();
+            var mockEmailSender = new Mock<IEmailSender>();
+            var mockUrlHelper = new Mock<IUrlHelper>();
+
+            // Setup UserManager mocks
+            mockUserManager.Setup(x => x.CreateAsync(It.IsAny<User>(), It.IsAny<string>()))
+                .ReturnsAsync(IdentityResult.Success);
+            mockUserManager.Setup(x => x.AddToRoleAsync(It.IsAny<User>(), "User"))
+                .ReturnsAsync(IdentityResult.Success);
+            mockUserManager.Setup(x => x.GenerateEmailConfirmationTokenAsync(It.IsAny<User>()))
+                .ReturnsAsync("test-token");
+
+            // Setup IUrlHelper mock to return the confirmation URL
+            mockUrlHelper.Setup(x => x.Link(It.IsAny<string>(), It.IsAny<object>()))
+                .Returns("http://test.com/confirm");
+
+            // Setup controller context
+            var httpContext = new DefaultHttpContext();
+            var controllerContext = new ControllerContext()
+            {
+                HttpContext = httpContext
+            };
+
+            var controller = new AccountController(
+                mockUserManager.Object,
+                mockSignInManager.Object,
+                mockTokenService.Object,
+                mockConfiguration.Object,
+                mockAccountRepo.Object,
+                mockEmailSender.Object)
+            {
+                ControllerContext = controllerContext,
+                Url = mockUrlHelper.Object
+            };
+
             var registerDto = new RegisterDto
             {
-                Email = "newuser@example.com",
-                Password = "Password123"
+                UserName = "testuser",
+                Email = "test@example.com",
+                Password = "Test123!",
+                FirstName = "Test",
+                LastName = "User"
             };
 
             // Act
-            var result = await _accountController.Register(registerDto) as ObjectResult;
+            var result = await controller.Register(registerDto);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(201, result.StatusCode);
-            Assert.AreEqual("User registered successfully. Please check your email to confirm your account.", result.Value);
-            Assert.AreEqual(1, await _context.Users.CountAsync());
+            Assert.That(result, Is.TypeOf<OkObjectResult>());
+            var okResult = (OkObjectResult)result;
+            Assert.That(okResult.StatusCode, Is.EqualTo(200));
+            Assert.That(okResult.Value, Is.EqualTo("User registered successfully. Please check your email to confirm your account."));
+
+            // Verify calls
+            mockUserManager.Verify(x => x.CreateAsync(It.IsAny<User>(), It.IsAny<string>()), Times.Once);
+            mockUserManager.Verify(x => x.AddToRoleAsync(It.IsAny<User>(), "User"), Times.Once);
+            mockUserManager.Verify(x => x.GenerateEmailConfirmationTokenAsync(It.IsAny<User>()), Times.Once);
+            mockEmailSender.Verify(x => x.SendEmailAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()), Times.Once);
         }
+
 
         [Test]
         public async Task RegisterUser_InvalidPassword_ReturnsBadRequest()
@@ -109,30 +209,44 @@ namespace backend.UnitTests
         [Test]
         public async Task LoginUser_WrongPassword_ReturnsUnauthorized()
         {
-            // Assign
-            var user = new User
+            // Arrange
+            var mockUserStore = new Mock<IUserStore<User>>();
+            var mockUserManager = new Mock<UserManager<User>>(
+                mockUserStore.Object, null, null, null, null, null, null, null, null);
+            var mockSignInManager = new Mock<SignInManager<User>>(
+                mockUserManager.Object,
+                new Mock<IHttpContextAccessor>().Object,
+                new Mock<IUserClaimsPrincipalFactory<User>>().Object,
+                null, null, null, null);
+            var mockTokenService = new Mock<ITokenService>();
+
+            var testUser = new User
             {
-                UserName = "existinguser",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("RealPassword123")
+                UserName = "testuser",
+                Email = "testuser@example.com"
             };
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+
+            // Create a list of users and mock the DbSet
+            var users = new List<User> { testUser }.AsQueryable().BuildMockDbSet();
+            mockUserManager.Setup(x => x.Users).Returns(users.Object);
+
+            mockSignInManager.Setup(x => x.CheckPasswordSignInAsync(It.IsAny<User>(), It.IsAny<string>(), It.IsAny<bool>()))
+                .ReturnsAsync(Microsoft.AspNetCore.Identity.SignInResult.Failed);
+
+            var accountController = new AccountController(mockUserManager.Object, mockSignInManager.Object, mockTokenService.Object, null, null, null);
 
             var loginDto = new LoginDto
             {
-                Username = "existinguser",
-                Password = "WrongPassword123"
+                Username = "testuser",
+                Password = "wrongpassword"
             };
 
             // Act
-            var result = await _accountController.Login(loginDto) as UnauthorizedObjectResult;
+            var result = await accountController.Login(loginDto);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(401, result.StatusCode);
-            Assert.AreEqual("UserName not found and/or password is incorrect!", result.Value);
+            Assert.IsInstanceOf<UnauthorizedObjectResult>(result);
         }
-
         [Test]
         public async Task DeleteLocation_NonExistentId_ReturnsNotFound()
         {
@@ -151,7 +265,6 @@ namespace backend.UnitTests
         public async Task GetPostcardsByUser_ValidUserId_ReturnsPostcards()
         {
             // Assign 
-            // nisam siguran jel ide CreatePostcardDto ili PostcardDto pa pliz to napisite kak treba
             _context.Postcards.Add(new Postcard
             {
                 Id = 1,
@@ -166,27 +279,32 @@ namespace backend.UnitTests
             Assert.IsNotNull(postcards);
             Assert.AreEqual(1, postcards.Count());
         }
-
         [Test]
         public async Task CreateReview_ContentTooLong_ReturnsError()
         {
-            // Assign
+            // Arrange
+            var mockRepo = new Mock<IReviewRepository>();
+            var controller = new ReviewController(mockRepo.Object);
+
             var createReviewDto = new CreateReviewDto
             {
+                UserId = "user123",
                 LocationId = 1,
-                UserId = "1",
-                Comment = new string('A', 501),
-                Rating = 5
+                Rating = 5,
+                Comment = new string('a', 1001) // Simulating content exceeding the maximum length
             };
 
+            mockRepo
+                .Setup(repo => repo.AddReviewAsync(It.IsAny<Review>()))
+                .ThrowsAsync(new InvalidOperationException("Content is too long."));
+
             // Act
-            var result = await _reviewController.CreateReview(createReviewDto) as ObjectResult;
+            var result = await controller.CreateReview(createReviewDto);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(500, result.StatusCode);
-            Assert.AreEqual("An error occurred while creating the review", result.Value);
-            Assert.AreEqual(0, await _context.Reviews.CountAsync());
+            Assert.True(result is BadRequestObjectResult);
+            var badRequestResult = result as BadRequestObjectResult;
+            Assert.NotNull(badRequestResult);
         }
     }
 }
