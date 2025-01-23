@@ -14,7 +14,7 @@ export const CityName = styled.div`
   text-align: center;
   font-size: 40px;
   font-weight: bold;
-  margin: 3vh 0vh 3vh 0vh;
+  margin: 3vh 0vh 1vh 0vh;
 
   @media (min-width: 600px) and (max-width: 1199px) {
     font-size: 60px;
@@ -99,7 +99,8 @@ export const InputContainer = styled.div`
   }
 
   @media (min-width: 600px) and (max-width: 1199px) {
-    margin-left: 25vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
     font-size: 1.8rem;
   }
 `;
