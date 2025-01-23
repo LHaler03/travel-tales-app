@@ -10,6 +10,13 @@ import {
   Text,
 } from './Explore.styled';
 
+import Paris from '/public/images/Paris.jpeg';
+import Rome from '/public/images/Rome.jpeg';
+import Barcelona from '/public/images/Barcelona.jpeg';
+import Bali from '/public/images/Bali.jpeg';
+import London from '/public/images/London.jpeg';
+import NewYork from '/public/images/Newyork.jpeg';
+
 export const Explore: React.FC = () => {
   const navigate = useNavigate();
 
@@ -18,37 +25,37 @@ export const Explore: React.FC = () => {
       id: 1,
       name: 'Paris',
       country: 'France',
-      image: '/public/images/Paris.jpeg',
+      image: Paris,
     },
     {
       id: 4,
       name: 'Rome',
       country: 'Italy',
-      image: '/public/images/Rome.jpeg',
+      image: Rome,
     },
     {
       id: 13,
       name: 'Barcelona',
       country: 'Spain',
-      image: '/public/images/Barcelona.jpeg',
+      image: Barcelona,
     },
     {
       id: 27,
       name: 'Bali',
       country: 'Indonesia',
-      image: '/public/images/Bali.jpeg',
+      image: Bali,
     },
     {
       id: 35,
       name: 'London',
       country: 'England',
-      image: '/public/images/London.jpeg',
+      image: London,
     },
     {
       id: 6,
       name: 'New York',
       country: 'USA',
-      image: '/public/images/Newyork.jpeg',
+      image: NewYork,
     },
   ];
 
