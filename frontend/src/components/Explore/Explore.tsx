@@ -10,12 +10,12 @@ import {
   Text,
 } from './Explore.styled';
 
-import Paris from '/public/images/Paris.jpeg';
-import Rome from '/public/images/Rome.jpeg';
-import Barcelona from '/public/images/Barcelona.jpeg';
-import Bali from '/public/images/Bali.jpeg';
-import London from '/public/images/London.jpeg';
-import NewYork from '/public/images/Newyork.jpeg';
+const Paris = '/images/Paris.jpeg';
+const Rome = '/images/Rome.jpeg';
+const Barcelona = '/images/Barcelona.jpeg';
+const Bali = '/images/Bali.jpeg';
+const London = '/images/London.jpeg';
+const NewYork = '/images/NewYork.jpeg';
 
 export const Explore: React.FC = () => {
   const navigate = useNavigate();
