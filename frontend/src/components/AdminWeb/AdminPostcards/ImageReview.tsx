@@ -10,7 +10,7 @@ import {
 import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton';
 import axios from 'axios';
 
-const ImageReview = () => {
+const ImageReview = (imageReviewProps: { handleVisit: () => void }) => {
   const [selectedImage, setSelectedImage] = useState<{
     imageName: string;
     imageUrl: string;
@@ -32,6 +32,7 @@ const ImageReview = () => {
       }
     };
 
+    imageReviewProps.handleVisit();
     fetchImages();
   }, [refreshTrigger]);
 

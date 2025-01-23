@@ -9,7 +9,6 @@ import MapPage from './pages/MapPage';
 import SupportPage from './pages/SupportPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ExplorePage from './pages/ExplorePage';
-import ImageReviewPage from './pages/ImageReviewPage';
 import UsersReviewPage from './pages/UsersReviewPage';
 import { Navbar } from './components/Navbar/Navbar';
 import GeneratePage from './pages/GeneratePage';
@@ -25,9 +24,11 @@ import AddLocationPage from './pages/AddLocationPage';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { AdminDashboard } from './components/AdminWeb/AdminDashboard';
+import ImageReview from './components/AdminWeb/AdminPostcards/ImageReview';
 
 function App() {
   const [imagesAwaitingReview, setImagesAwaitingReview] = useState<number>(0);
+  const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
 
   useEffect(() => {
     const getImagesAwaitingReview = async () => {
@@ -38,7 +39,11 @@ function App() {
     };
 
     getImagesAwaitingReview();
-  }, []);
+  }, [refreshTrigger]);
+
+  const triggerRefresh = () => {
+    setRefreshTrigger((prev) => prev + 1);
+  };
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
@@ -79,7 +84,10 @@ function App() {
               <Route path='' element={<SingleUserPage />} />
             </Route>
             <Route path='/image-review' element={<ProtectedAdminRoute />}>
-              <Route path='' element={<ImageReviewPage />} />
+              <Route
+                path=''
+                element={<ImageReview handleVisit={triggerRefresh} />}
+              />
             </Route>
             <Route path='/users-review' element={<ProtectedAdminRoute />}>
               <Route path='' element={<UsersReviewPage />} />
