@@ -12,6 +12,7 @@ export const ImageSchema = z.object({
   titleColor: zColor(),
   fromColor: zColor(),
   borderColor: zColor(),
+  textbgColor: zColor(),
   cityName: z.string(),
   customImage1: z.string().optional(),
   customImage2: z.string().optional(),
@@ -22,6 +23,7 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
+  textbgColor: color4,
   cityName,
   customImage1,
   customImage2,
@@ -132,7 +134,8 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
           top: 0,
           left: 0,
           padding: '35px',
-          background: 'rgba(255, 255, 255, 0.4)',
+          background: color4,
+          opacity: 0.9,
         }}
       >
         <div

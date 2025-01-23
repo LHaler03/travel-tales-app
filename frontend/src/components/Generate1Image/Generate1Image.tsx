@@ -57,6 +57,7 @@ export const Generate1Image = () => {
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
+  const [textbgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -161,6 +162,7 @@ export const Generate1Image = () => {
       fromColor,
       borderColor,
       fromText,
+      textbgColor,
       city,
       link1,
       component: 'Horizontal1Image',
@@ -195,9 +197,9 @@ export const Generate1Image = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
+    const newKey = `${titleColor}-${fromColor}-${textbgColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
     debouncedUpdate(newKey);
-  }, [fromText, titleColor, fromColor, borderColor, city, customImage1]);
+  }, [fromText, titleColor, fromColor, textbgColor, borderColor, city, customImage1]);
 
   if (isGenerating) return <LoadingText> Your postcard is loading... </LoadingText>;
 
@@ -274,6 +276,14 @@ export const Generate1Image = () => {
                 />
               </InputContainer>
               <InputContainer>
+                <label>Text Background:</label>
+                <input
+                  type='color'
+                  value={textbgColor}
+                  onChange={(e) => setTextbgColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
                 <label>Border Color:</label>
                 <input
                   type='color'
@@ -315,6 +325,7 @@ export const Generate1Image = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
+                  textbgColor: textbgColor,
                   cityName: city,
                   customImage1,
                 }}

@@ -57,6 +57,7 @@ export const GenerateVertical = () => {
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
+  const [textbgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -181,6 +182,7 @@ export const GenerateVertical = () => {
       fromColor,
       borderColor,
       fromText,
+      textbgColor,
       city,
       link1,
       link2,
@@ -216,12 +218,13 @@ export const GenerateVertical = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${city}-${customImage1}-${customImage2}`;
+    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${textbgColor}-${city}-${customImage1}-${customImage2}`;
     debouncedUpdate(newKey);
   }, [
     fromText,
     titleColor,
     fromColor,
+    textbgColor,
     borderColor,
     city,
     customImage1,
@@ -332,6 +335,14 @@ export const GenerateVertical = () => {
                 />
               </InputContainer>
               <InputContainer>
+                <label>Text Background:</label>
+                <input
+                  type='color'
+                  value={textbgColor}
+                  onChange={(e) => setTextbgColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
                 <label>Border Color:</label>
                 <input
                   type='color'
@@ -373,6 +384,7 @@ export const GenerateVertical = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
+                  textbgColor: textbgColor,
                   cityName: city,
                   customImage1,
                   customImage2,

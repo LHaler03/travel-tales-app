@@ -12,6 +12,7 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
+  textbgColor: color4,
   cityName,
   customImage1,
   customImage2,
@@ -136,7 +137,8 @@ export const VerticalImage: React.FC<z.infer<typeof ImageSchema>> = ({
           left: '50%',
           transform: 'translate(-50%, -50%)',
           padding: '35px',
-          background: 'rgba(255, 255, 255, 0.6)',
+          background: color4,
+          opacity: 0.9,
         }}
       >
         <div
