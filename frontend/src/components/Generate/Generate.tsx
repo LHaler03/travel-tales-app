@@ -228,7 +228,8 @@ export const Generate = () => {
     customImage2,
   ]);
 
-  if (isGenerating) return <LoadingText> Your postcard is loading... </LoadingText>;
+  if (isGenerating)
+    return <LoadingText> Your postcard is loading... </LoadingText>;
 
   return (
     <>
@@ -237,10 +238,14 @@ export const Generate = () => {
           <PostcardWrapper>
             <DisplayedPostcard src={generatedImage.imageLink} />
             <Links>
-              <a href={generatedImage.downloadLink} target='_blank'>
+              <a
+                href={generatedImage.downloadLink}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <ActionButton> Download image </ActionButton>
               </a>
-              <a href="/fullmap">
+              <a href='/fullmap'>
                 <ActionButton> Return to the Map </ActionButton>
               </a>
             </Links>

@@ -166,22 +166,22 @@ export const LoadingText = styled.div`
   align-items: center;
   font-size: 2rem;
   text-align: center;
-`
+`;
 
 export const DisplayedPostcard = styled.img`
   height: 65vh;
   margin: 5vh;
-`
+`;
 
 export const PostcardWrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const Links = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-`
+`;

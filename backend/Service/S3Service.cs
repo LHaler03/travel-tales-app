@@ -197,8 +197,8 @@ public class S3Service : IS3Service
             await _s3Client.PutObjectAsync(putRequest);
 
             // Get presigned URLs for viewing and downloading
-            var imageLink = await GetPreSignedUrlAsync(s3Key, 60); // 1 hour for viewing
-            var downloadLink = await GetPreSignedUrlAsync(s3Key, 10); // 10 minutes for downloading
+            var imageLink = await GetPreSignedUrlAsync(s3Key, 60);
+            var downloadLink = await GetPreSignedDownloadUrlAsync(s3Key, 10);
 
             return [imageLink, downloadLink];
         }
