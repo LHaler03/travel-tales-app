@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   DashboardContainer,
@@ -7,12 +6,12 @@ import {
   LinksContainer,
   DashboardLink,
 } from './AdminDashboard.styled';
-import { Badge } from '../Navbar/Navbar.styled'; 
+import { Badge } from '../Navbar/Navbar.styled';
 
-const AdminDashboard: React.FC = () => {
+export const AdminDashboard = (adminDashboardProps: {
+  imagesAwaitingReview: number;
+}) => {
   const navigate = useNavigate();
-
-  const imagesAwaitingReview = 10;
 
   return (
     <DashboardContainer>
@@ -23,7 +22,10 @@ const AdminDashboard: React.FC = () => {
       </SubHeader>
       <LinksContainer>
         <DashboardLink onClick={() => navigate('/image-review')}>
-          Image Review <Badge>{imagesAwaitingReview}</Badge>
+          Image Review{' '}
+          {adminDashboardProps.imagesAwaitingReview > 0 && (
+            <Badge>{adminDashboardProps.imagesAwaitingReview}</Badge>
+          )}
         </DashboardLink>
         <DashboardLink onClick={() => navigate('/users-review')}>
           Users Review
@@ -35,5 +37,3 @@ const AdminDashboard: React.FC = () => {
     </DashboardContainer>
   );
 };
-
-export default AdminDashboard;

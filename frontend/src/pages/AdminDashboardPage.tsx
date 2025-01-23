@@ -1,4 +1,4 @@
-import AdminDashboard from '../components/AdminWeb/AdminDashboard';
+import { AdminDashboard } from '../components/AdminWeb/AdminDashboard';
 
 function AdminDashboardPage() {
   return (

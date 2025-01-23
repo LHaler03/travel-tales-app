@@ -1,4 +1,3 @@
-// Navbar.tsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -12,9 +11,9 @@ import {
   CloseIcon,
   MenuItems,
   Overlay,
-  Badge, 
-  AdminDashboardLink, 
-  AdminDashboardWrapper, 
+  Badge,
+  AdminDashboardLink,
+  AdminDashboardWrapper,
 } from './Navbar.styled';
 import { ActionButton } from '../../shared/ActionButton';
 import traveltales_black from '/images/traveltales_black.png';
@@ -23,7 +22,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-export const Navbar = () => {
+export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1200px)');
   const navigate = useNavigate();
@@ -65,8 +64,6 @@ export const Navbar = () => {
     }
   };
 
-  const imagesAwaitingReview = 10; 
-
   return (
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
@@ -84,15 +81,16 @@ export const Navbar = () => {
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
 
-
             {/* {user?.role === 'Admin' && ( */}
-              <AdminDashboardWrapper>
-                <AdminDashboardLink to='/adminDashboard'>
-                  Admin Dashboard
-                </AdminDashboardLink>
-                <Badge>{imagesAwaitingReview}</Badge>
-              </AdminDashboardWrapper>
-             {/* )} */}
+            <AdminDashboardWrapper>
+              <AdminDashboardLink to='/adminDashboard'>
+                Admin Dashboard
+              </AdminDashboardLink>
+              {navbarProps.imagesAwaitingReview > 0 && (
+                <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+              )}
+            </AdminDashboardWrapper>
+            {/* )} */}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -195,16 +193,18 @@ export const Navbar = () => {
                 Support
               </Link>
               {/* {user?.role === 'Admin' && ( */}
-                <AdminDashboardWrapper>
-                  <AdminDashboardLink
-                    to='/adminDashboard'
-                    onClick={() => setIsMenuToggled(false)}
-                  >
-                    Admin Dashboard
-                  </AdminDashboardLink>
-                  <Badge>{imagesAwaitingReview}</Badge>
-                </AdminDashboardWrapper>
-               {/* )} */}
+              <AdminDashboardWrapper>
+                <AdminDashboardLink
+                  to='/adminDashboard'
+                  onClick={() => setIsMenuToggled(false)}
+                >
+                  Admin Dashboard
+                </AdminDashboardLink>
+                {navbarProps.imagesAwaitingReview > 0 && (
+                  <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+                )}
+              </AdminDashboardWrapper>
+              {/* )} */}
             </MenuItems>
           </Sidebar>
         </>

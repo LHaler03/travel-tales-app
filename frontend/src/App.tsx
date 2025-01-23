@@ -21,16 +21,31 @@ import SingleUserPage from './pages/SingleUserPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute/ProtectedAdminRoute';
-import AdminDashboardPage from './pages/AdminDashboardPage';
 import AddLocationPage from './pages/AddLocationPage';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { AdminDashboard } from './components/AdminWeb/AdminDashboard';
 
 function App() {
+  const [imagesAwaitingReview, setImagesAwaitingReview] = useState<number>(0);
+
+  useEffect(() => {
+    const getImagesAwaitingReview = async () => {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/images-to-review-count`,
+      );
+      setImagesAwaitingReview(response.data.count);
+    };
+
+    getImagesAwaitingReview();
+  }, []);
+
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
       <AuthProvider>
         <GlobalStyles />
         <BrowserRouter>
-          <Navbar />
+          <Navbar imagesAwaitingReview={imagesAwaitingReview} />
           <Routes>
             <Route index element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -44,7 +59,12 @@ function App() {
             <Route path='/explore' element={<ExplorePage />} />
             <Route path='/generate' element={<GeneratePage />} />
             <Route path='/review' element={<ReviewsPage />} />
-            <Route path='/adminDashboard' element={<AdminDashboardPage />} />
+            <Route
+              path='/adminDashboard'
+              element={
+                <AdminDashboard imagesAwaitingReview={imagesAwaitingReview} />
+              }
+            />
             <Route path='/addLocation' element={<AddLocationPage />} />
             <Route
               path='/generatevertical'
