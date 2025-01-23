@@ -52,11 +52,16 @@ export const GenerateVertical = () => {
     city: 'Default City',
   };
 
+  if (city == 'Default City') {
+    navigate('/fullmap');
+  }
+
   const { user } = useAuth();
 
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
+  const [textbgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -181,6 +186,7 @@ export const GenerateVertical = () => {
       fromColor,
       borderColor,
       fromText,
+      textbgColor,
       city,
       link1,
       link2,
@@ -216,12 +222,13 @@ export const GenerateVertical = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${city}-${customImage1}-${customImage2}`;
+    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${textbgColor}-${city}-${customImage1}-${customImage2}`;
     debouncedUpdate(newKey);
   }, [
     fromText,
     titleColor,
     fromColor,
+    textbgColor,
     borderColor,
     city,
     customImage1,
@@ -256,11 +263,13 @@ export const GenerateVertical = () => {
               <CityName>{city}</CityName>
               <InputContainer>
                 <label>Upper Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e, 1)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e, 1)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike(1)}>
                   Select image
                 </Picturechoice>
@@ -285,11 +294,13 @@ export const GenerateVertical = () => {
               )}
               <InputContainer>
                 <label>Bottom Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e, 2)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e, 2)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike(2)}>
                   Select image
                 </Picturechoice>
@@ -337,6 +348,14 @@ export const GenerateVertical = () => {
                 />
               </InputContainer>
               <InputContainer>
+                <label>Text Background:</label>
+                <input
+                  type='color'
+                  value={textbgColor}
+                  onChange={(e) => setTextbgColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
                 <label>Border Color:</label>
                 <input
                   type='color'
@@ -378,6 +397,7 @@ export const GenerateVertical = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
+                  textbgColor: textbgColor,
                   cityName: city,
                   customImage1,
                   customImage2,

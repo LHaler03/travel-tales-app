@@ -52,11 +52,16 @@ export const Generate1Vertical = () => {
     city: 'Default City',
   };
 
+  if (city == 'Default City') {
+    navigate('/fullmap');
+  }
+
   const { user } = useAuth();
 
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
+  const [textbgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -161,6 +166,7 @@ export const Generate1Vertical = () => {
       fromColor,
       borderColor,
       fromText,
+      textbgColor,
       city,
       link1,
       component: 'Vertical1Image',
@@ -195,9 +201,9 @@ export const Generate1Vertical = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
+    const newKey = `${titleColor}-${fromColor}-${textbgColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
     debouncedUpdate(newKey);
-  }, [fromText, titleColor, fromColor, borderColor, city, customImage1]);
+  }, [fromText, titleColor, fromColor, textbgColor, borderColor, city, customImage1]);
 
   if (isGenerating)
     return <LoadingText> Your postcard is loading... </LoadingText>;
@@ -227,11 +233,13 @@ export const Generate1Vertical = () => {
               <CityName>{city}</CityName>
               <InputContainer>
                 <label>Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike()}>
                   Select image
                 </Picturechoice>
@@ -279,6 +287,14 @@ export const Generate1Vertical = () => {
                 />
               </InputContainer>
               <InputContainer>
+                <label>Text Background:</label>
+                <input
+                  type='color'
+                  value={textbgColor}
+                  onChange={(e) => setTextbgColor(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
                 <label>Border Color:</label>
                 <input
                   type='color'
@@ -320,6 +336,7 @@ export const Generate1Vertical = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
+                  textbgColor: textbgColor,
                   cityName: city,
                   customImage1,
                 }}
