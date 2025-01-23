@@ -50,6 +50,15 @@ namespace backend.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
+
+                var emailExists = await _userManager.FindByEmailAsync(registerDto.Email);
+                if (emailExists != null)
+                    return BadRequest("Email is already taken");
+
+                var usernameExists = await _userManager.FindByNameAsync(registerDto.UserName);
+                if (usernameExists != null)
+                    return BadRequest("Username is already taken");
+                    
                 var user = new User
                 {
                     UserName = registerDto.UserName,
