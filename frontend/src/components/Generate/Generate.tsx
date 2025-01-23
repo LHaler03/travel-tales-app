@@ -262,6 +262,15 @@ export const Generate = () => {
             <Sidebar>
               <CityName>{city}</CityName>
               <InputContainer>
+                <label>I want my uploaded image in stock photos: </label>
+                <input
+                  type='checkbox'
+                  checked={isForStock}
+                  onChange={(e) => setIsForStock(e.target.checked)}
+                />
+              </InputContainer>
+              <h5 style = {{color: "darkred", marginLeft: "15px"}}>(must be checked before uploading)</h5>
+              <InputContainer>
                 <label>Left Image:</label>
                 {user && (
                   <input
@@ -323,14 +332,6 @@ export const Generate = () => {
                   </Cardmap>
                 </Cards>
               )}
-              <InputContainer>
-                <label>I want my uploaded image in stock photos: </label>
-                <input
-                  type='checkbox'
-                  checked={isForStock}
-                  onChange={(e) => setIsForStock(e.target.checked)}
-                />
-              </InputContainer>
               <InputContainer>
                 <label>Title Color:</label>
                 <input
