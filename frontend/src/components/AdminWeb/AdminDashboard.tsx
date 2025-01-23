@@ -7,9 +7,12 @@ import {
   LinksContainer,
   DashboardLink,
 } from './AdminDashboard.styled';
+import { Badge } from '../Navbar/Navbar.styled'; 
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
+
+  const imagesAwaitingReview = 10;
 
   return (
     <DashboardContainer>
@@ -20,7 +23,7 @@ const AdminDashboard: React.FC = () => {
       </SubHeader>
       <LinksContainer>
         <DashboardLink onClick={() => navigate('/image-review')}>
-          Image Review
+          Image Review <Badge>{imagesAwaitingReview}</Badge>
         </DashboardLink>
         <DashboardLink onClick={() => navigate('/users-review')}>
           Users Review
