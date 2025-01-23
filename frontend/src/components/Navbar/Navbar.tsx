@@ -1,3 +1,4 @@
+// Navbar.tsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -11,6 +12,9 @@ import {
   CloseIcon,
   MenuItems,
   Overlay,
+  Badge, 
+  AdminDashboardLink, 
+  AdminDashboardWrapper, 
 } from './Navbar.styled';
 import { ActionButton } from '../../shared/ActionButton';
 import traveltales_black from '/images/traveltales_black.png';
@@ -61,7 +65,7 @@ export const Navbar = () => {
     }
   };
 
-  console.log('isAuth: ', isAuthenticated);
+  const imagesAwaitingReview = 10; 
 
   return (
     <NavbarStyled>
@@ -80,11 +84,15 @@ export const Navbar = () => {
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
 
-            {user?.role === 'Admin' ? (
-              <>
-                <Link to='/adminDashboard'>Admin Dashboard</Link>
-              </>
-            ) : null}
+
+            {/* {user?.role === 'Admin' && ( */}
+              <AdminDashboardWrapper>
+                <AdminDashboardLink to='/adminDashboard'>
+                  Admin Dashboard
+                </AdminDashboardLink>
+                <Badge>{imagesAwaitingReview}</Badge>
+              </AdminDashboardWrapper>
+             {/* )} */}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -186,16 +194,17 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {user?.role === 'Admin' && (
-                <>
-                  <Link
+              {/* {user?.role === 'Admin' && ( */}
+                <AdminDashboardWrapper>
+                  <AdminDashboardLink
                     to='/adminDashboard'
                     onClick={() => setIsMenuToggled(false)}
                   >
                     Admin Dashboard
-                  </Link>
-                </>
-              )}
+                  </AdminDashboardLink>
+                  <Badge>{imagesAwaitingReview}</Badge>
+                </AdminDashboardWrapper>
+               {/* )} */}
             </MenuItems>
           </Sidebar>
         </>
