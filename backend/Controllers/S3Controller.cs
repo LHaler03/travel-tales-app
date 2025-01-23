@@ -135,7 +135,6 @@ public class S3Controller : ControllerBase
 
                 folderPath = $"postcards/{request.UserId}/{location.Name}";
                 s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
-                
                 // Create postcard record with the same S3 key that will be used for upload
                 await _postcardRepo.CreatePostcardAsync(new Postcard
                 {
@@ -173,6 +172,14 @@ public class S3Controller : ControllerBase
         var imagesToReviewLinks = await _s3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync("images/review");
         var imagePairs = imagesToReview.Zip(imagesToReviewLinks, (image, link) => new { ImageName = image, ImageUrl = link });
         return Ok(imagePairs);
+    }
+
+    [HttpGet("images-to-review-count")]
+    // [Authorize (Roles = "Admin")]
+    public async Task<IActionResult> GetImagesToReviewCount()
+    {
+        var imagesToReview = await _s3Service.ListFilesInFolderAsync("images/review");
+        return Ok(new { count = imagesToReview.Count });
     }
 
     // [Authorize(Roles = "Admin")]
