@@ -52,6 +52,10 @@ export const Generate = () => {
     city: 'Default City',
   };
 
+  if (city == 'Default City') {
+    navigate('/fullmap');
+  }
+
   const { user } = useAuth();
 
   const [titleColor, setTitleColor] = useState('#000000');
@@ -254,11 +258,13 @@ export const Generate = () => {
               <CityName>{city}</CityName>
               <InputContainer>
                 <label>Left Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e, 1)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e, 1)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike(1)}>
                   Select image
                 </Picturechoice>
@@ -283,11 +289,13 @@ export const Generate = () => {
               )}
               <InputContainer>
                 <label>Right Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e, 2)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e, 2)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike(2)}>
                   Select image
                 </Picturechoice>

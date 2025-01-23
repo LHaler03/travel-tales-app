@@ -52,6 +52,10 @@ export const Generate1Vertical = () => {
     city: 'Default City',
   };
 
+  if (city == 'Default City') {
+    navigate('/fullmap');
+  }
+
   const { user } = useAuth();
 
   const [titleColor, setTitleColor] = useState('#000000');
@@ -224,11 +228,13 @@ export const Generate1Vertical = () => {
               <CityName>{city}</CityName>
               <InputContainer>
                 <label>Image:</label>
-                <input
-                  type='file'
-                  accept='image/*'
-                  onChange={(e) => handleImageUpload(e)}
-                />
+                {user && (
+                  <input
+                    type='file'
+                    accept='image/*'
+                    onChange={(e) => handleImageUpload(e)}
+                  />
+                )}
                 <Picturechoice onClick={() => handleOdabirSlike()}>
                   Select image
                 </Picturechoice>
