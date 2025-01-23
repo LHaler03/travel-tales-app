@@ -74,18 +74,12 @@ public class S3Controller : ControllerBase
             {
                 string folderPath;
 
-                if (string.IsNullOrEmpty(request.UserId)) // anonymous user
-                {
-                    folderPath = "temporary";
-                    var url = await _s3Service.UploadFileAsync(image, folderPath);
-                    urls.Add(url);
-                }
-                else if (request.ReviewRequired) // review required
-                {
-                    var user = await _context.Users.FindAsync(request.UserId);
-                    if (user == null)
-                        throw new KeyNotFoundException($"User {request.UserId} not found");
+                var user = await _context.Users.FindAsync(request.UserId);
+                if (user == null)
+                    throw new KeyNotFoundException($"User {request.UserId} not found");
 
+                if (request.ReviewRequired) // review required
+                {
                     var reviewFolderPath = $"images/review/{request.LocationId}";
                     var reviewUrl = await _s3Service.UploadFileAsync(image, reviewFolderPath);
 
@@ -96,10 +90,7 @@ public class S3Controller : ControllerBase
                 }
                 else // review not required
                 {
-                    var user = await _context.Users.FindAsync(request.UserId);
-                    if (user == null)
-                        throw new KeyNotFoundException($"User {request.UserId} not found");
-                    folderPath = $"images/users/{request.UserId}";
+                    folderPath = "temporary";
                     var url = await _s3Service.UploadFileAsync(image, folderPath);
                     urls.Add(url);
                 }
@@ -118,8 +109,9 @@ public class S3Controller : ControllerBase
         var user = await _context.Users.FindAsync(request.UserId);
         try
         {
-            if (request.LocationId <= 0)
-                return BadRequest("Invalid request");
+            var location = await _context.Locations.FindAsync(request.LocationId);
+            if (location == null)
+                throw new KeyNotFoundException($"Location with ID {request.LocationId} not found");
 
             string folderPath;
             string s3Key;
@@ -128,16 +120,22 @@ public class S3Controller : ControllerBase
             {
                 folderPath = "temporary";
                 s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
+
+                await _postcardRepo.CreatePostcardAsync(new Postcard
+                {
+                    UserId = null,
+                    LocationId = request.LocationId,
+                    S3Key = s3Key
+                });
             }
             else
             {
-                var location = await _context.Locations.FindAsync(request.LocationId);
-                if (user == null || location == null)
-                    throw new KeyNotFoundException($"User {request.UserId} or location not found");
+                if (user == null)
+                    throw new KeyNotFoundException($"User {request.UserId} not found");
 
                 folderPath = $"postcards/{request.UserId}/{location.Name}";
                 s3Key = $"{folderPath}/{Guid.NewGuid()}.jpg";
-
+                
                 // Create postcard record with the same S3 key that will be used for upload
                 await _postcardRepo.CreatePostcardAsync(new Postcard
                 {
