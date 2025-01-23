@@ -1,0 +1,94 @@
+Running 'Login, make postcard, see all postcards, logout.'
+21:10:09
+1.
+open on / OK
+21:10:09
+2.
+setWindowSize on 1936x1048 OK
+21:10:09
+3.
+click on css=.sc-lnsxGb:nth-child(1) OK
+21:10:10
+4.
+click on name=username OK
+21:10:10
+5.
+type on name=username with value vl003 OK
+21:10:10
+6.
+click on name=password OK
+21:10:10
+7.
+type on name=password with value dadada OK
+21:10:11
+8.
+click on css=.sc-gQaihK OK
+21:10:11
+9.
+mouseOver on css=.sc-gQaihK OK
+21:10:11
+10.
+Trying to find css=.sc-ivxoEo... OK
+21:10:11
+11.
+click on css=.leaflet-marker-icon:nth-child(14) OK
+21:10:13
+12.
+mouseOver on css=.sc-kZrBCu > .sc-lnsxGb:nth-child(1) OK
+21:10:13
+13.
+mouseOut on css=.sc-kZrBCu > .sc-lnsxGb:nth-child(1) OK
+21:10:13
+14.
+click on css=.sc-kZrBCu > .sc-lnsxGb:nth-child(1) OK
+21:10:13
+15.
+click on css=.sc-DvaoS:nth-child(8) > input OK
+21:10:14
+16.
+click on css=.sc-DvaoS:nth-child(8) > input OK
+21:10:14
+17.
+doubleClick on css=.sc-DvaoS:nth-child(8) > input OK
+21:10:14
+18.
+click on css=.sc-DvaoS:nth-child(8) > input OK
+21:10:14
+19.
+type on css=.sc-DvaoS:nth-child(8) > input with value VL003 OK
+21:10:14
+20.
+click on css=.sc-lnsxGb:nth-child(3) OK
+21:10:14
+21.
+click on css=.sc-gbwXoZ > .sc-lnsxGb:nth-child(1) OK
+21:10:15
+22.
+click on css=.sc-fjBUEo:nth-child(4) > .sc-kXaPYj OK
+21:10:15
+23.
+click on css=.sc-boxNXC OK
+21:10:15
+24.
+click on css=.sc-fjBUEo:nth-child(2) > .sc-kXaPYj OK
+21:10:15
+25.
+click on css=.sc-boxNXC OK
+21:10:15
+26.
+click on css=.sc-fjBUEo:nth-child(1) > .sc-kXaPYj OK
+21:10:15
+27.
+click on css=.sc-boxNXC OK
+21:10:16
+28.
+click on css=.sc-lnsxGb:nth-child(2) OK
+21:10:16
+29.
+mouseOver on css=.sc-lnsxGb:nth-child(2) OK
+21:10:16
+30.
+mouseOut on css=.sc-lnsxGb:nth-child(2) OK
+21:10:16
+'Login, make postcard, see all postcards, logout.' completed successfully
+21:10:16
