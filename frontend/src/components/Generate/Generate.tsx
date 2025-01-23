@@ -269,7 +269,7 @@ export const Generate = () => {
                   onChange={(e) => setIsForStock(e.target.checked)}
                 />
               </InputContainer>
-              <h5 style = {{color: "darkred", marginLeft: "15px"}}>(must be checked before uploading)</h5>
+              <InputContainer style = {{color: "darkred", fontSize: "0.8rem"}}>(must be checked before uploading)</InputContainer>
               <InputContainer>
                 <label>Left Image:</label>
                 {user && (
