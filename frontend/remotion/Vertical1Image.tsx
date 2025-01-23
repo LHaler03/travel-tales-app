@@ -3,7 +3,7 @@ import { Img, staticFile, continueRender, delayRender } from 'remotion';
 import { z } from 'zod';
 import axios from 'axios';
 import { ImageSchema } from './HorizontalImage';
-import { loadFont } from "@remotion/google-fonts/Nunito";
+import { loadFont } from '@remotion/google-fonts/Nunito';
 
 const { fontFamily } = loadFont();
 
@@ -12,7 +12,7 @@ export const Vertical1Image: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
-  textbgColor: color4,
+  textBgColor: color4,
   cityName,
   customImage1,
 }) => {

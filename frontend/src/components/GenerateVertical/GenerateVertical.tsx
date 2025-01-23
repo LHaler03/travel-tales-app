@@ -61,7 +61,7 @@ export const GenerateVertical = () => {
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
-  const [textbgColor, setTextbgColor] = useState('#ffffff');
+  const [textBgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -186,7 +186,7 @@ export const GenerateVertical = () => {
       fromColor,
       borderColor,
       fromText,
-      textbgColor,
+      textBgColor,
       city,
       link1,
       link2,
@@ -222,13 +222,13 @@ export const GenerateVertical = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${textbgColor}-${city}-${customImage1}-${customImage2}`;
+    const newKey = `${titleColor}-${fromColor}-${borderColor}-${fromText}-${textBgColor}-${city}-${customImage1}-${customImage2}`;
     debouncedUpdate(newKey);
   }, [
     fromText,
     titleColor,
     fromColor,
-    textbgColor,
+    textBgColor,
     borderColor,
     city,
     customImage1,
@@ -271,7 +271,7 @@ export const GenerateVertical = () => {
                   />
                 )}
                 <Picturechoice onClick={() => handleOdabirSlike(1)}>
-                  Select image
+                  Select Image
                 </Picturechoice>
               </InputContainer>
               {showpictures1 && (
@@ -302,7 +302,7 @@ export const GenerateVertical = () => {
                   />
                 )}
                 <Picturechoice onClick={() => handleOdabirSlike(2)}>
-                  Select image
+                  Select Image
                 </Picturechoice>
               </InputContainer>
               {showpictures2 && (
@@ -351,7 +351,7 @@ export const GenerateVertical = () => {
                 <label>Text Background:</label>
                 <input
                   type='color'
-                  value={textbgColor}
+                  value={textBgColor}
                   onChange={(e) => setTextbgColor(e.target.value)}
                 />
               </InputContainer>
@@ -397,7 +397,7 @@ export const GenerateVertical = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
-                  textbgColor: textbgColor,
+                  textBgColor: textBgColor,
                   cityName: city,
                   customImage1,
                   customImage2,

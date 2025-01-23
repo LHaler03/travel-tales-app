@@ -16,6 +16,7 @@ namespace backend.Models
         public string FromText { get; set; } = string.Empty;
         public string FromColor { get; set; } = string.Empty;
         public string BorderColor { get; set; } = string.Empty;
+        public string TextBgColor { get; set; } = string.Empty;
         public string Link1 { get; set; } = string.Empty;
         public string Link2 { get; set; } = string.Empty;
     }

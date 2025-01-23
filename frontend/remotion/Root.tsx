@@ -11,7 +11,7 @@ export const RemotionRoot: React.FC = () => {
     titleColor = 'black',
     fromColor = 'black',
     borderColor = 'white',
-    textbgColor = 'white',
+    textBgColor = 'white',
     city: cityName = 'Berlin',
     link1,
     link2,
@@ -22,7 +22,7 @@ export const RemotionRoot: React.FC = () => {
     fromColor: string;
     link1: string;
     link2: string;
-    textbgColor: string;
+    textBgColor: string;
     titleColor: string;
   };
 
@@ -35,7 +35,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor,
           fromColor,
           borderColor,
-          textbgColor,
+          textBgColor,
           cityName,
           customImage1: link1,
           customImage2: link2,
@@ -53,7 +53,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor,
           fromColor,
           borderColor,
-          textbgColor,
+          textBgColor,
           cityName,
           customImage1: link1,
           customImage2: link2,
@@ -71,7 +71,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor,
           fromColor,
           borderColor,
-          textbgColor,
+          textBgColor,
           cityName,
           customImage1: link1,
         }}
@@ -88,7 +88,7 @@ export const RemotionRoot: React.FC = () => {
           titleColor,
           fromColor,
           borderColor,
-          textbgColor,
+          textBgColor,
           cityName,
           customImage1: link1,
         }}

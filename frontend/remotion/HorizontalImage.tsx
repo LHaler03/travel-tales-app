@@ -3,7 +3,7 @@ import { Img, staticFile, continueRender, delayRender } from 'remotion';
 import { z } from 'zod';
 import { zColor } from '@remotion/zod-types';
 import axios from 'axios';
-import { loadFont } from "@remotion/google-fonts/Nunito";
+import { loadFont } from '@remotion/google-fonts/Nunito';
 
 const { fontFamily } = loadFont();
 
@@ -12,7 +12,7 @@ export const ImageSchema = z.object({
   titleColor: zColor(),
   fromColor: zColor(),
   borderColor: zColor(),
-  textbgColor: zColor(),
+  textBgColor: zColor(),
   cityName: z.string(),
   customImage1: z.string().optional(),
   customImage2: z.string().optional(),
@@ -23,7 +23,7 @@ export const HorizontalImage: React.FC<z.infer<typeof ImageSchema>> = ({
   titleColor: color1,
   fromColor: color2,
   borderColor: color3,
-  textbgColor: color4,
+  textBgColor: color4,
   cityName,
   customImage1,
   customImage2,

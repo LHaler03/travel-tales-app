@@ -61,7 +61,7 @@ export const Generate1Image = () => {
   const [titleColor, setTitleColor] = useState('#000000');
   const [fromColor, setFromColor] = useState('#000000');
   const [borderColor, setBorderColor] = useState('#ffffff');
-  const [textbgColor, setTextbgColor] = useState('#ffffff');
+  const [textBgColor, setTextbgColor] = useState('#ffffff');
   const [fromText, setFromText] = useState('travel tales');
   const [debouncedKey, setDebouncedKey] = useState('');
   const [customImage1, setCustomImage1] = useState<string>('');
@@ -166,7 +166,7 @@ export const Generate1Image = () => {
       fromColor,
       borderColor,
       fromText,
-      textbgColor,
+      textBgColor,
       city,
       link1,
       component: 'Horizontal1Image',
@@ -201,9 +201,17 @@ export const Generate1Image = () => {
   );
 
   React.useEffect(() => {
-    const newKey = `${titleColor}-${fromColor}-${textbgColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
+    const newKey = `${titleColor}-${fromColor}-${textBgColor}-${borderColor}-${fromText}-${city}-${customImage1}`;
     debouncedUpdate(newKey);
-  }, [fromText, titleColor, fromColor, textbgColor, borderColor, city, customImage1]);
+  }, [
+    fromText,
+    titleColor,
+    fromColor,
+    textBgColor,
+    borderColor,
+    city,
+    customImage1,
+  ]);
 
   if (isGenerating)
     return <LoadingText> Your postcard is loading... </LoadingText>;
@@ -241,7 +249,7 @@ export const Generate1Image = () => {
                   />
                 )}
                 <Picturechoice onClick={() => handleOdabirSlike()}>
-                  Select image
+                  Select Image
                 </Picturechoice>
               </InputContainer>
               {showpictures1 && (
@@ -290,7 +298,7 @@ export const Generate1Image = () => {
                 <label>Text Background:</label>
                 <input
                   type='color'
-                  value={textbgColor}
+                  value={textBgColor}
                   onChange={(e) => setTextbgColor(e.target.value)}
                 />
               </InputContainer>
@@ -336,7 +344,7 @@ export const Generate1Image = () => {
                   titleColor: titleColor,
                   fromColor: fromColor,
                   borderColor: borderColor,
-                  textbgColor: textbgColor,
+                  textBgColor: textBgColor,
                   cityName: city,
                   customImage1,
                 }}

@@ -147,7 +147,7 @@ public class S3Controller : ControllerBase
                 });
             }
 
-            var props = new { city = request.City, titleColor = request.TitleColor, fromText = request.FromText, fromColor = request.FromColor, borderColor = request.BorderColor, link1 = request.Link1, link2 = request.Link2 };
+            var props = new { city = request.City, titleColor = request.TitleColor, fromText = request.FromText, fromColor = request.FromColor, borderColor = request.BorderColor, textBgColor = request.TextBgColor, link1 = request.Link1, link2 = request.Link2 };
             var propsJson = JsonConvert.SerializeObject(props);
             propsJson = propsJson.Replace("\"", "\\\"");
 
