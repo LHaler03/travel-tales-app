@@ -169,9 +169,16 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         username: formData.username,
         password: formData.password,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Registration error:', error);
-      throw new Error('Registration failed');
+      if (error.response?.status === 400) {
+        throw { status: error.response.status, data: error.response.data };
+      } else {
+        throw {
+          status: 500,
+          message: 'An unexpected error occurred during registration.',
+        };
+      }
     }
   };
 
