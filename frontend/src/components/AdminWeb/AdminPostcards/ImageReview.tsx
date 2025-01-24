@@ -16,7 +16,7 @@ const ImageReview = (imageReviewProps: { handleVisit: () => void }) => {
     imageUrl: string;
   } | null>(null);
   const [images, setImages] = useState<
-    { imageName: string; imageUrl: string }[]
+    { imageName: string; imageUrl: string; locationName: string }[]
   >([]);
   const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
 
@@ -84,12 +84,22 @@ const ImageReview = (imageReviewProps: { handleVisit: () => void }) => {
       <Title>Image Review</Title>
       <ImageGrid>
         {images.map((image, index) => (
-          <Thumbnail
-            key={index}
-            src={image.imageUrl}
-            alt={`Review ${index}`}
-            onClick={() => handleImageClick(image)}
-          />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              border: '1px solid',
+              backgroundColor: 'white',
+            }}
+          >
+            <Thumbnail
+              key={index}
+              src={image.imageUrl}
+              alt={`Review ${index}`}
+              onClick={() => handleImageClick(image)}
+            />
+            <div style={{ textAlign: 'center' }}>{image.locationName}</div>
+          </div>
         ))}
       </ImageGrid>
 
