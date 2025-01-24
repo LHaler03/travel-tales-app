@@ -5,6 +5,9 @@
     <innerfile refid="_i_account_repository_8cs">IAccountRepository.cs</innerfile>
     <innerfile refid="_i_email_sender_8cs">IEmailSender.cs</innerfile>
     <innerfile refid="_i_location_repository_8cs">ILocationRepository.cs</innerfile>
+    <innerfile refid="_i_postcard_repository_8cs">IPostcardRepository.cs</innerfile>
+    <innerfile refid="_i_review_repository_8cs">IReviewRepository.cs</innerfile>
+    <innerfile refid="_i_s3_service_8cs">IS3Service.cs</innerfile>
     <innerfile refid="_i_token_service_8cs">ITokenService.cs</innerfile>
     <innerfile refid="_i_user_repository_8cs">IUserRepository.cs</innerfile>
     <briefdescription>

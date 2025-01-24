@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Review::UpdateReviewDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1ae91a46b87dad11b1ff0acaf7a91d1670" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Review.UpdateReviewDto.Comment</definition>
+        <argsstring></argsstring>
+        <name>Comment</name>
+        <qualifiedname>backend.Dtos.Review.UpdateReviewDto.Comment</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" line="9" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1a79eaca00f1ad4827fe8044da9ac1161b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Dtos.Review.UpdateReviewDto.Rating</definition>
+        <argsstring></argsstring>
+        <name>Rating</name>
+        <qualifiedname>backend.Dtos.Review.UpdateReviewDto.Rating</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" line="12" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" line="5" column="7" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Review/UpdateReviewDto.cs" bodystart="6" bodyend="13"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1ae91a46b87dad11b1ff0acaf7a91d1670" prot="public" virt="non-virtual"><scope>backend::Dtos::Review::UpdateReviewDto</scope><name>Comment</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1a79eaca00f1ad4827fe8044da9ac1161b" prot="public" virt="non-virtual"><scope>backend::Dtos::Review::UpdateReviewDto</scope><name>Rating</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

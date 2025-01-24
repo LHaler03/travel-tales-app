@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_controllers_1_1_s3_controller" kind="class" language="C#" prot="public">
+    <compoundname>backend::Controllers::S3Controller</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ControllerBase</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_s3_controller_1a08a32b5a973c0e3ae08ddabd7b1030ca" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+        <definition>readonly IS3Service backend.Controllers.S3Controller._s3Service</definition>
+        <argsstring></argsstring>
+        <name>_s3Service</name>
+        <qualifiedname>backend.Controllers.S3Controller._s3Service</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="27" column="37" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_s3_controller_1a4332215297058db9d7930913856d6c22" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref></type>
+        <definition>readonly PostcardRepository backend.Controllers.S3Controller._postcardRepo</definition>
+        <argsstring></argsstring>
+        <name>_postcardRepo</name>
+        <qualifiedname>backend.Controllers.S3Controller._postcardRepo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="28" column="45" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_s3_controller_1aeef624dda5fc0ac092e1471cf57eabd3" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref></type>
+        <definition>readonly ApplicationDBContext backend.Controllers.S3Controller._context</definition>
+        <argsstring></argsstring>
+        <name>_context</name>
+        <qualifiedname>backend.Controllers.S3Controller._context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="29" column="47" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_s3_controller_1a3ebfea8391d559236733a442a912afda" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string backend.Controllers.S3Controller._remotionProjectPath</definition>
+        <argsstring></argsstring>
+        <name>_remotionProjectPath</name>
+        <qualifiedname>backend.Controllers.S3Controller._remotionProjectPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="30" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_s3_controller_1a1ecb93de7b3692804a52edad2b79a435" prot="private" static="yes" mutable="no">
+        <type>readonly SemaphoreSlim</type>
+        <definition>readonly SemaphoreSlim backend.Controllers.S3Controller._semaphore</definition>
+        <argsstring></argsstring>
+        <name>_semaphore</name>
+        <qualifiedname>backend.Controllers.S3Controller._semaphore</qualifiedname>
+        <initializer>= new SemaphoreSlim(1, 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="31" column="47" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a68136cae6d2cd9dbbad0e0eaa7668af6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Controllers.S3Controller.S3Controller</definition>
+        <argsstring>(IS3Service s3Service, PostcardRepository postcardRepo, ApplicationDBContext context, IConfiguration configuration)</argsstring>
+        <name>S3Controller</name>
+        <qualifiedname>backend.Controllers.S3Controller.S3Controller</qualifiedname>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+          <declname>s3Service</declname>
+        </param>
+        <param>
+          <type><ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref></type>
+          <declname>postcardRepo</declname>
+        </param>
+        <param>
+          <type><ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref></type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>IConfiguration</type>
+          <declname>configuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="33" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="33" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a290c66aeff16b0b116ea6dfeac46976b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; string &gt; &gt; backend.Controllers.S3Controller.ListFilesAsync</definition>
+        <argsstring>(string locationName)</argsstring>
+        <name>ListFilesAsync</name>
+        <qualifiedname>backend.Controllers.S3Controller.ListFilesAsync</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>locationName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="42" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a3468bdd1d8c7b9a45038b4b2bcbf79ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; <ref refid="classbackend_1_1_models_1_1_file_url" kindref="compound">FileUrl</ref> &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; FileUrl &gt; &gt; backend.Controllers.S3Controller.ListUserPostcardsAsync</definition>
+        <argsstring>(string userId)</argsstring>
+        <name>ListUserPostcardsAsync</name>
+        <qualifiedname>backend.Controllers.S3Controller.ListUserPostcardsAsync</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="49" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a1fed3397e9231625d6815dcf87de575d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.GetFile</definition>
+        <argsstring>([FromQuery] string key)</argsstring>
+        <name>GetFile</name>
+        <qualifiedname>backend.Controllers.S3Controller.GetFile</qualifiedname>
+        <param>
+          <attributes>[FromQuery]</attributes>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="56" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a04d7dccb303ac8a7e7c0cc9b6ce5b29c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.UploadImages</definition>
+        <argsstring>([FromBody] UploadImagesRequest request)</argsstring>
+        <name>UploadImages</name>
+        <qualifiedname>backend.Controllers.S3Controller.UploadImages</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request" kindref="compound">UploadImagesRequest</ref></type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="63" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="63" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a96529383aa3abb4cf559318452b6f548" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.GeneratePostcard</definition>
+        <argsstring>([FromBody] PostcardProps request)</argsstring>
+        <name>GeneratePostcard</name>
+        <qualifiedname>backend.Controllers.S3Controller.GeneratePostcard</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_models_1_1_postcard_props" kindref="compound">PostcardProps</ref></type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="110" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="110" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1ae2ec413899a17dc310a028a9a1c1ba8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.GetImagesToReview</definition>
+        <argsstring>()</argsstring>
+        <name>GetImagesToReview</name>
+        <qualifiedname>backend.Controllers.S3Controller.GetImagesToReview</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="172" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="172" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1afd7ed50e6ed2a6d8b700ef6110626690" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.GetImagesToReviewCount</definition>
+        <argsstring>()</argsstring>
+        <name>GetImagesToReviewCount</name>
+        <qualifiedname>backend.Controllers.S3Controller.GetImagesToReviewCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="201" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="201" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a9a3473f162de0add449ce6c9822df412" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.ApproveImage</definition>
+        <argsstring>([FromBody] ApproveRejectImageRequest request)</argsstring>
+        <name>ApproveImage</name>
+        <qualifiedname>backend.Controllers.S3Controller.ApproveImage</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request" kindref="compound">ApproveRejectImageRequest</ref></type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="209" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="209" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1a276ce31494e88068c1d3dade3928dc0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.S3Controller.RejectImage</definition>
+        <argsstring>([FromBody] ApproveRejectImageRequest request)</argsstring>
+        <name>RejectImage</name>
+        <qualifiedname>backend.Controllers.S3Controller.RejectImage</qualifiedname>
+        <param>
+          <attributes>[FromBody]</attributes>
+          <type><ref refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request" kindref="compound">ApproveRejectImageRequest</ref></type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="230" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="230" bodyend="245"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_s3_controller_1afeba15769d0eccabae6295388d7e1165" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task</type>
+        <definition>async Task backend.Controllers.S3Controller.RunYarnScriptAsync</definition>
+        <argsstring>(string composition, string props)</argsstring>
+        <name>RunYarnScriptAsync</name>
+        <qualifiedname>backend.Controllers.S3Controller.RunYarnScriptAsync</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>composition</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>props</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="247" column="28" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="247" bodyend="294"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.S3Controller</label>
+        <link refid="classbackend_1_1_controllers_1_1_s3_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="5">
+        <label>IPostcardRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository"/>
+      </node>
+      <node id="7">
+        <label>IdentityDbContext&lt; User &gt;</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.S3Controller</label>
+        <link refid="classbackend_1_1_controllers_1_1_s3_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_s3Service</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>_postcardRepo</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>_context</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>backend.Data.ApplicationDBContext</label>
+        <link refid="classbackend_1_1_data_1_1_application_d_b_context"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>backend.Interfaces.IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+      <node id="4">
+        <label>backend.Repository.PostcardRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_postcard_repository"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>_context</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_s3Service</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" line="25" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/S3Controller.cs" bodystart="26" bodyend="296"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1aeef624dda5fc0ac092e1471cf57eabd3" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>_context</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a4332215297058db9d7930913856d6c22" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>_postcardRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a3ebfea8391d559236733a442a912afda" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>_remotionProjectPath</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a08a32b5a973c0e3ae08ddabd7b1030ca" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>_s3Service</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a1ecb93de7b3692804a52edad2b79a435" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>_semaphore</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a9a3473f162de0add449ce6c9822df412" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>ApproveImage</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a96529383aa3abb4cf559318452b6f548" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>GeneratePostcard</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a1fed3397e9231625d6815dcf87de575d" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>GetFile</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1ae2ec413899a17dc310a028a9a1c1ba8d" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>GetImagesToReview</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1afd7ed50e6ed2a6d8b700ef6110626690" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>GetImagesToReviewCount</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a290c66aeff16b0b116ea6dfeac46976b" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>ListFilesAsync</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a3468bdd1d8c7b9a45038b4b2bcbf79ac" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>ListUserPostcardsAsync</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a276ce31494e88068c1d3dade3928dc0b" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>RejectImage</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1afeba15769d0eccabae6295388d7e1165" prot="private" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>RunYarnScriptAsync</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a68136cae6d2cd9dbbad0e0eaa7668af6" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>S3Controller</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a04d7dccb303ac8a7e7c0cc9b6ce5b29c" prot="public" virt="non-virtual"><scope>backend::Controllers::S3Controller</scope><name>UploadImages</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_repository_1_1_postcard_repository" kind="class" language="C#" prot="public">
+    <compoundname>backend::Repository::PostcardRepository</compoundname>
+    <basecompoundref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" prot="public" virt="non-virtual">backend.Interfaces.IPostcardRepository</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_repository_1_1_postcard_repository_1aac2da6621f8212bcbdb6ae9fb678a4fd" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref></type>
+        <definition>readonly ApplicationDBContext backend.Repository.PostcardRepository._context</definition>
+        <argsstring></argsstring>
+        <name>_context</name>
+        <qualifiedname>backend.Repository.PostcardRepository._context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="17" column="47" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_repository_1_1_postcard_repository_1a0861046aadc4e4a3fad5f1b7c80b028c" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+        <definition>readonly IS3Service backend.Repository.PostcardRepository._s3Service</definition>
+        <argsstring></argsstring>
+        <name>_s3Service</name>
+        <qualifiedname>backend.Repository.PostcardRepository._s3Service</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="18" column="37" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_repository_1_1_postcard_repository_1af84bed6f691f111c6ecef12515394033" prot="private" static="no" mutable="no">
+        <type>readonly ILogger&lt; <ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref> &gt;</type>
+        <definition>readonly ILogger&lt;PostcardRepository&gt; backend.Repository.PostcardRepository._logger</definition>
+        <argsstring></argsstring>
+        <name>_logger</name>
+        <qualifiedname>backend.Repository.PostcardRepository._logger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="19" column="34" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_postcard_repository_1a64893563acc797a1aadd2e8fd7c28505" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Repository.PostcardRepository.PostcardRepository</definition>
+        <argsstring>(ApplicationDBContext context, IS3Service s3Service, ILogger&lt; PostcardRepository &gt; logger)</argsstring>
+        <name>PostcardRepository</name>
+        <qualifiedname>backend.Repository.PostcardRepository.PostcardRepository</qualifiedname>
+        <param>
+          <type><ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref></type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+          <declname>s3Service</declname>
+        </param>
+        <param>
+          <type>ILogger&lt; <ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref> &gt;</type>
+          <declname>logger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="21" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_postcard_repository_1a49507bc77cdb4aa8075c7306213e0893" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IEnumerable&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref> &gt; &gt;</type>
+        <definition>async Task&lt; IEnumerable&lt; Postcard &gt; &gt; backend.Repository.PostcardRepository.GetPostcardsByUserIdAsync</definition>
+        <argsstring>(string userId)</argsstring>
+        <name>GetPostcardsByUserIdAsync</name>
+        <qualifiedname>backend.Repository.PostcardRepository.GetPostcardsByUserIdAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1a0216b7dd345342c04758cf5d1b86f859">GetPostcardsByUserIdAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="28" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="28" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_postcard_repository_1ae5d9b9934a86cef53d99730904b0d0e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref>?&gt;</type>
+        <definition>async Task&lt; Postcard?&gt; backend.Repository.PostcardRepository.GetPostcardByIdAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>GetPostcardByIdAsync</name>
+        <qualifiedname>backend.Repository.PostcardRepository.GetPostcardByIdAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1afdbe75521640fb4d4941b2eeccd5fb66">GetPostcardByIdAsync</reimplements>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="38" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_postcard_repository_1a2aad754723877b4edfec7bff4e38b0c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref> &gt;</type>
+        <definition>async Task&lt; Postcard &gt; backend.Repository.PostcardRepository.CreatePostcardAsync</definition>
+        <argsstring>(Postcard postcard)</argsstring>
+        <name>CreatePostcardAsync</name>
+        <qualifiedname>backend.Repository.PostcardRepository.CreatePostcardAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1aa2ddcfddc6c85544324e04d524303039">CreatePostcardAsync</reimplements>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref></type>
+          <declname>postcard</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="46" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="46" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_repository_1_1_postcard_repository_1aeff95ff30861b548fe481d150efc8566" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; bool &gt;</type>
+        <definition>async Task&lt; bool &gt; backend.Repository.PostcardRepository.DeletePostcardAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>DeletePostcardAsync</name>
+        <qualifiedname>backend.Repository.PostcardRepository.DeletePostcardAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1af27c68a5ef066b15cde30d6797300eab">DeletePostcardAsync</reimplements>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="68" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="68" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IPostcardRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository"/>
+      </node>
+      <node id="1">
+        <label>backend.Repository.PostcardRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_postcard_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IPostcardRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository"/>
+      </node>
+      <node id="4">
+        <label>IdentityDbContext&lt; User &gt;</label>
+      </node>
+      <node id="1">
+        <label>backend.Repository.PostcardRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_postcard_repository"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_context</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_s3Service</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>backend.Data.ApplicationDBContext</label>
+        <link refid="classbackend_1_1_data_1_1_application_d_b_context"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>backend.Interfaces.IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" line="15" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Repository/PostcardRepository.cs" bodystart="16" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1aac2da6621f8212bcbdb6ae9fb678a4fd" prot="private" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>_context</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1af84bed6f691f111c6ecef12515394033" prot="private" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>_logger</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a0861046aadc4e4a3fad5f1b7c80b028c" prot="private" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>_s3Service</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a2aad754723877b4edfec7bff4e38b0c0" prot="public" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>CreatePostcardAsync</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1aeff95ff30861b548fe481d150efc8566" prot="public" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>DeletePostcardAsync</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1ae5d9b9934a86cef53d99730904b0d0e0" prot="public" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>GetPostcardByIdAsync</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a49507bc77cdb4aa8075c7306213e0893" prot="public" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>GetPostcardsByUserIdAsync</name></member>
+      <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a64893563acc797a1aadd2e8fd7c28505" prot="public" virt="non-virtual"><scope>backend::Repository::PostcardRepository</scope><name>PostcardRepository</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

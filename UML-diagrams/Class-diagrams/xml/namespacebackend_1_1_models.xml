@@ -2,12 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="namespacebackend_1_1_models" kind="namespace" language="C#">
     <compoundname>backend::Models</compoundname>
+    <innerclass refid="classbackend_1_1_models_1_1_file_url" prot="public">backend::Models::FileUrl</innerclass>
     <innerclass refid="classbackend_1_1_models_1_1_location" prot="public">backend::Models::Location</innerclass>
+    <innerclass refid="classbackend_1_1_models_1_1_postcard" prot="public">backend::Models::Postcard</innerclass>
+    <innerclass refid="classbackend_1_1_models_1_1_postcard_props" prot="public">backend::Models::PostcardProps</innerclass>
+    <innerclass refid="classbackend_1_1_models_1_1_review" prot="public">backend::Models::Review</innerclass>
     <innerclass refid="classbackend_1_1_models_1_1_user" prot="public">backend::Models::User</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/PROGI/travel-tales-app/backend/Models/Location.cs" line="6" column="1"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" line="6" column="1"/>
   </compounddef>
 </doxygen>

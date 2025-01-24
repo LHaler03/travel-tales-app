@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_models_1_1_review" kind="class" language="C#" prot="public">
+    <compoundname>backend::Models::Review</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1aa522360e61c4e2df469a70176bf39017" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Models.Review.Id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <qualifiedname>backend.Models.Review.Id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="11" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1aeb3f9f2a05889e7e16eb9c6b5b5c3cbd" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.Review.Comment</definition>
+        <argsstring></argsstring>
+        <name>Comment</name>
+        <qualifiedname>backend.Models.Review.Comment</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="13" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1a3065fe400d9f2bd4766be84456ec3927" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Models.Review.Rating</definition>
+        <argsstring></argsstring>
+        <name>Rating</name>
+        <qualifiedname>backend.Models.Review.Rating</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="15" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1a8a5936b22f35fa0ab6a20489cfce2103" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime backend.Models.Review.CreatedAt</definition>
+        <argsstring></argsstring>
+        <name>CreatedAt</name>
+        <qualifiedname>backend.Models.Review.CreatedAt</qualifiedname>
+        <initializer>= DateTime.UtcNow</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="16" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1a1aa3775f936140a7ecfe0673b4c55fb9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime?</type>
+        <definition>DateTime? backend.Models.Review.UpdatedAt</definition>
+        <argsstring></argsstring>
+        <name>UpdatedAt</name>
+        <qualifiedname>backend.Models.Review.UpdatedAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="17" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1a3360fbf7378997ff92fc4a7a2fc97cca" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Models.Review.LocationId</definition>
+        <argsstring></argsstring>
+        <name>LocationId</name>
+        <qualifiedname>backend.Models.Review.LocationId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="19" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1abdea5a3aba02e1b89e8eafed9a8d7161" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref></type>
+        <definition>Location backend.Models.Review.Location</definition>
+        <argsstring></argsstring>
+        <name>Location</name>
+        <qualifiedname>backend.Models.Review.Location</qualifiedname>
+        <initializer>= new <ref refid="classbackend_1_1_models_1_1_location" kindref="compound">Location</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="20" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1ad24605c2ecef2bf2e72067f93b926e5e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.Review.UserId</definition>
+        <argsstring></argsstring>
+        <name>UserId</name>
+        <qualifiedname>backend.Models.Review.UserId</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="22" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_review_1af03ece7c8ee37f3e003ac949449909d8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref></type>
+        <definition>User backend.Models.Review.User</definition>
+        <argsstring></argsstring>
+        <name>User</name>
+        <qualifiedname>backend.Models.Review.User</qualifiedname>
+        <initializer>= new <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="23" column="21" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="23" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Models/Review.cs" line="9" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Models/Review.cs" bodystart="10" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_models_1_1_review_1aeb3f9f2a05889e7e16eb9c6b5b5c3cbd" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>Comment</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1a8a5936b22f35fa0ab6a20489cfce2103" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>CreatedAt</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1aa522360e61c4e2df469a70176bf39017" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>Id</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1abdea5a3aba02e1b89e8eafed9a8d7161" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>Location</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1a3360fbf7378997ff92fc4a7a2fc97cca" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>LocationId</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1a3065fe400d9f2bd4766be84456ec3927" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>Rating</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1a1aa3775f936140a7ecfe0673b4c55fb9" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>UpdatedAt</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1af03ece7c8ee37f3e003ac949449909d8" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>User</name></member>
+      <member refid="classbackend_1_1_models_1_1_review_1ad24605c2ecef2bf2e72067f93b926e5e" prot="public" virt="non-virtual"><scope>backend::Models::Review</scope><name>UserId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

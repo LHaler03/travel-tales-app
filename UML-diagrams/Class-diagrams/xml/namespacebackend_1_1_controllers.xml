@@ -5,6 +5,9 @@
     <innerclass refid="classbackend_1_1_controllers_1_1_account_controller" prot="public">backend::Controllers::AccountController</innerclass>
     <innerclass refid="classbackend_1_1_controllers_1_1_email_sender" prot="public">backend::Controllers::EmailSender</innerclass>
     <innerclass refid="classbackend_1_1_controllers_1_1_location_controller" prot="public">backend::Controllers::LocationController</innerclass>
+    <innerclass refid="classbackend_1_1_controllers_1_1_postcard_controller" prot="public">backend::Controllers::PostcardController</innerclass>
+    <innerclass refid="classbackend_1_1_controllers_1_1_review_controller" prot="public">backend::Controllers::ReviewController</innerclass>
+    <innerclass refid="classbackend_1_1_controllers_1_1_s3_controller" prot="public">backend::Controllers::S3Controller</innerclass>
     <innerclass refid="classbackend_1_1_controllers_1_1_user_controller" prot="public">backend::Controllers::UserController</innerclass>
     <briefdescription>
     </briefdescription>

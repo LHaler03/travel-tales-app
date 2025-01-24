@@ -3,7 +3,10 @@
   <compounddef id="dir_c4877f0fa4f3b504f97206f18b953cdb" kind="dir">
     <compoundname>C:/PROGI/travel-tales-app/backend/Dtos</compoundname>
     <innerdir refid="dir_2ffbe2baeff82cfa1e04f886ba8f2499">C:/PROGI/travel-tales-app/backend/Dtos/Account</innerdir>
+    <innerdir refid="dir_41aa293a327a8e2a21b20c0bf7ee6ffe">C:/PROGI/travel-tales-app/backend/Dtos/Image</innerdir>
     <innerdir refid="dir_6163cd6c302f129ddd0f7395cfa97076">C:/PROGI/travel-tales-app/backend/Dtos/Location</innerdir>
+    <innerdir refid="dir_09e1a1b9571b3b3915a2ec7bd2478b0c">C:/PROGI/travel-tales-app/backend/Dtos/Postcard</innerdir>
+    <innerdir refid="dir_fa37002a917330139c3b72c3e727c962">C:/PROGI/travel-tales-app/backend/Dtos/Review</innerdir>
     <innerdir refid="dir_32ac2574cc8b8c0cfd13e406a3ab9759">C:/PROGI/travel-tales-app/backend/Dtos/User</innerdir>
     <briefdescription>
     </briefdescription>

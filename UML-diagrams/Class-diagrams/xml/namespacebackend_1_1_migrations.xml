@@ -2,8 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="namespacebackend_1_1_migrations" kind="namespace" language="C#">
     <compoundname>backend::Migrations</compoundname>
+    <innerclass refid="classbackend_1_1_migrations_1_1_add_dev_admin" prot="public">backend::Migrations::AddDevAdmin</innerclass>
+    <innerclass refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review" prot="public">backend::Migrations::AddUpdatedAtToReview</innerclass>
     <innerclass refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" prot="public">backend::Migrations::ApplicationDBContextModelSnapshot</innerclass>
     <innerclass refid="classbackend_1_1_migrations_1_1_initial_create" prot="public">backend::Migrations::InitialCreate</innerclass>
+    <innerclass refid="classbackend_1_1_migrations_1_1reviews_migration" prot="public">backend::Migrations::reviewsMigration</innerclass>
+    <innerclass refid="classbackend_1_1_migrations_1_1_update_postcards" prot="public">backend::Migrations::UpdatePostcards</innerclass>
     <innerclass refid="classbackend_1_1_migrations_1_1_updating_asp_net_users" prot="public">backend::Migrations::UpdatingAspNetUsers</innerclass>
     <briefdescription>
     </briefdescription>

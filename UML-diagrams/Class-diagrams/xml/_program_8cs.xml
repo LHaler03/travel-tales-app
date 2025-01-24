@@ -8,6 +8,7 @@
     <innernamespace refid="namespace_microsoft_1_1_identity_model_1_1_tokens">Microsoft::IdentityModel::Tokens</innernamespace>
     <innernamespace refid="namespace_microsoft_1_1_asp_net_core_1_1_authentication_1_1_google">Microsoft::AspNetCore::Authentication::Google</innernamespace>
     <innernamespace refid="namespace_microsoft_1_1_open_api_1_1_models">Microsoft::OpenApi::Models</innernamespace>
+    <innernamespace refid="namespace_amazon_1_1_s3">Amazon::S3</innernamespace>
     <sectiondef kind="var">
       <memberdef kind="variable" id="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" prot="public" static="no" mutable="no">
         <type>var</type>
@@ -21,7 +22,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="17" column="5" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="17" bodyend="-1"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="18" column="5" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_program_8cs_1ae68bf920690e3e6fe0bdcf8057d39c9b" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string bucketName</definition>
+        <argsstring></argsstring>
+        <name>bucketName</name>
+        <initializer>= builder.Configuration[&quot;AWS:BucketName&quot;] ?? throw new InvalidOperationException(&quot;AWS:BucketName is not configured&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="20" column="8" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_program_8cs_1afa3f88733e24b2b63b6bef50c2f00375" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string region</definition>
+        <argsstring></argsstring>
+        <name>region</name>
+        <initializer>= builder.Configuration[&quot;AWS:Region&quot;] ?? throw new InvalidOperationException(&quot;AWS:Region is not configured&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="21" column="8" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" prot="public" static="no" mutable="no">
         <type>var</type>
@@ -35,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="136" column="5" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="136" bodyend="-1"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="151" column="5" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="151" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -50,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="19" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="19" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="23" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="23" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a0d7859f9cad50e8e9fdf015100780e07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -63,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="20" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="20" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="24" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="24" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1ae0ce43c019a5621d731d0c622c793644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -76,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="21" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="21" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="25" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="25" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a9778b1936411e27c5c21e23a6963e8bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -95,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="23" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="23" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="27" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="27" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1aa2c4aed93a4bd8176d86a6992b859050" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -114,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="28" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="28" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="32" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="32" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1ad21d6edb3707063a587749add60b3153" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -133,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="39" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="39" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="43" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="43" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a22f45e2b2befe5b3aca68abcffd13677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -146,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="64" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="64" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="70" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="70" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a68e8e699aeab2fec37e126b50a1cf484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -165,7 +194,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="66" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="66" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="72" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="72" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1ad2cda4468d98dff1aeed89203cfed5c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddScoped&lt; PostcardRepository &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>AddScoped&lt; PostcardRepository &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="83" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="83" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a983cef133bfc2fb38a757c7dc5b20494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -178,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="77" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="77" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="84" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="84" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a9139f4d5b9d552d9e1ec835b32711c24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -191,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="78" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="78" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="85" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="85" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a9849950cec908df52f64670df4e18f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -204,7 +246,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="79" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="79" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="86" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="86" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1a1939be1dd8434337d5d01d063878c41a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddScoped&lt; IReviewRepository, ReviewRepository &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>AddScoped&lt; IReviewRepository, ReviewRepository &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="87" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="87" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a6866196205f918f00031e6f9e8174e04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -217,18 +272,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="80" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="80" declcolumn="8"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="88" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="88" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="_program_8cs_1a04ddb3d6e7440b1c2e1b4a00d011196a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_program_8cs_1a94d78aed1708b46615faad38045b55e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
-        <definition>builder.Services. AddCors</definition>
-        <argsstring>(options=&gt; { options.AddPolicy(&quot;AllowSpecificOrigin&quot;, builder=&gt; { builder .WithOrigins(&quot;http://localhost:5173&quot;) .AllowCredentials() .AllowAnyMethod() .AllowAnyHeader();});})</argsstring>
-        <name>AddCors</name>
+        <definition>builder.Services. AddScoped&lt; IPostcardRepository, PostcardRepository &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>AddScoped&lt; IPostcardRepository, PostcardRepository &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="89" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="89" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1af2ce7dd5da4770ff40d8974d6efde850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddSingleton&lt; IAmazonS3 &gt;</definition>
+        <argsstring>(sp=&gt; new AmazonS3Client(Amazon.RegionEndpoint.GetBySystemName(region)))</argsstring>
+        <name>AddSingleton&lt; IAmazonS3 &gt;</name>
         <param>
-          <type>options</type>
+          <type>sp</type>
         </param>
         <param>
-          <type>{ options.AddPolicy(&quot;AllowSpecificOrigin&quot;, <ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>=&gt; { <ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref> .WithOrigins(&quot;http://localhost:5173&quot;) .AllowCredentials() .AllowAnyMethod() .AllowAnyHeader();});}</type>
+          <type>new </type>
+          <declname>AmazonS3Client</declname>
+          <array>Amazon.RegionEndpoint.GetBySystemName(region)</array>
         </param>
         <briefdescription>
         </briefdescription>
@@ -236,7 +306,60 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="94" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="94" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="91" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="91" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1a18e9e8c77410b05334da414ca14952a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddScoped&lt; IS3Service, S3Service &gt;</definition>
+        <argsstring>(sp=&gt; new S3Service(sp.GetRequiredService&lt; IAmazonS3 &gt;(), bucketName))</argsstring>
+        <name>AddScoped&lt; IS3Service, S3Service &gt;</name>
+        <param>
+          <type>sp</type>
+        </param>
+        <param>
+          <type>new </type>
+          <declname>S3Service</declname>
+          <array>sp.GetRequiredService&lt; IAmazonS3 &gt;(), bucketName</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="92" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="92" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1afc329b105355f9a87f62691533763a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddHostedService&lt; PostcardCleanupService &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>AddHostedService&lt; PostcardCleanupService &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="107" column="8" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="107" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_program_8cs_1aa5d23f29e8e48024cb37e380131e1f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>builder.Services.</type>
+        <definition>builder.Services. AddCors</definition>
+        <argsstring>(options=&gt; { options.AddPolicy(&quot;AllowSpecificOrigin&quot;, builder=&gt; { builder .WithOrigins(&quot;http://localhost:5173&quot;, &quot;http://localhost:3000&quot;, &quot;http://localhost:3001&quot;) .AllowCredentials() .AllowAnyMethod() .AllowAnyHeader();});})</argsstring>
+        <name>AddCors</name>
+        <param>
+          <type>options</type>
+        </param>
+        <param>
+          <type>{ options.AddPolicy(&quot;AllowSpecificOrigin&quot;, <ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>=&gt; { <ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref> .WithOrigins(&quot;http://localhost:5173&quot;, &quot;http://localhost:3000&quot;, &quot;http://localhost:3001&quot;) .AllowCredentials() .AllowAnyMethod() .AllowAnyHeader();});}</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="109" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="109" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1ae4852beee8ee6738630e9a333695edec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>builder.Services.</type>
@@ -255,7 +378,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="107" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="107" declcolumn="16"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="122" column="16" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="122" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a07573b2ad5cf983fb1fc078d54a4c884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -274,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="139" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="139" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="154" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="154" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a79a944c7f0e25196ca3c5a8638b919b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -292,7 +415,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="146" column="1" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="146" bodyend="150"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="161" column="1" bodyfile="C:/PROGI/travel-tales-app/backend/Program.cs" bodystart="161" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a7153e43f2a5653ea857551462407813b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -308,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="154" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="154" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="169" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="169" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a6435d8beeff4999dc0b0c6d60a86a4e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -321,7 +444,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="156" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="156" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="171" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="171" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1af6f72d752b2e73aa0292f74bd13237ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -334,7 +457,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="157" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="157" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="172" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="172" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1a9e2ee3170aa6279b68eefd1651f7d96c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -347,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="159" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="159" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="174" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="174" declcolumn="4"/>
       </memberdef>
       <memberdef kind="function" id="_program_8cs_1aaa3dbf02e269c3ef7e8546d290c6b3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>app.</type>
@@ -360,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="161" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="161" declcolumn="4"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Program.cs" line="176" column="4" declfile="C:/PROGI/travel-tales-app/backend/Program.cs" declline="176" declcolumn="4"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -383,152 +506,167 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.AspNetCore.Authentication.Google;</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.OpenApi.Models;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_controllers" kindref="compound">backend.Controllers</ref>;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">var<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref><sp/>=<sp/>WebApplication.CreateBuilder(args);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddControllers();</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddEndpointsApiExplorer();</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddSwaggerGen();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Amazon.S3;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">var<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref><sp/>=<sp/>WebApplication.CreateBuilder(args);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="_program_8cs_1ae68bf920690e3e6fe0bdcf8057d39c9b" kindref="member">bucketName</ref><sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;AWS:BucketName&quot;</highlight><highlight class="normal">]<sp/>??<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>InvalidOperationException(</highlight><highlight class="stringliteral">&quot;AWS:BucketName<sp/>is<sp/>not<sp/>configured&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="_program_8cs_1afa3f88733e24b2b63b6bef50c2f00375" kindref="member">region</ref><sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;AWS:Region&quot;</highlight><highlight class="normal">]<sp/>??<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>InvalidOperationException(</highlight><highlight class="stringliteral">&quot;AWS:Region<sp/>is<sp/>not<sp/>configured&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddDbContext&lt;<ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref>&gt;(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>options.UseNpgsql(<ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration.GetConnectionString(</highlight><highlight class="stringliteral">&quot;DefaultConnection&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">}).AddTransient&lt;ApplicationDBContext&gt;();</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddIdentity&lt;<ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>,<sp/>IdentityRole&gt;(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireDigit<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireLowercase<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireUppercase<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireNonAlphanumeric<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Tokens.PasswordResetTokenProvider<sp/>=<sp/>TokenOptions.DefaultEmailProvider;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">})</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">.AddDefaultTokenProviders()</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">.AddEntityFrameworkStores&lt;<ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref>&gt;();</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddAuthentication(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultAuthenticateScheme<sp/>=</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultForbidScheme<sp/>=</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultChallengeScheme<sp/>=<sp/>JwtBearerDefaults.AuthenticationScheme;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal">}).AddJwtBearer(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>options.TokenValidationParameters<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>TokenValidationParameters</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateIssuer<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidIssuer<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:Issuer&quot;</highlight><highlight class="normal">],</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateAudience<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidAudience<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:Audience&quot;</highlight><highlight class="normal">],</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateIssuerSigningKey<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IssuerSigningKey<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(<ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:SigningKey&quot;</highlight><highlight class="normal">])),</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateLifetime<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ClockSkew<sp/>=<sp/>System.TimeSpan.Zero</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">).AddGoogle(GoogleOptions<sp/>=&gt;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>GoogleOptions.ClientId<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;Google:ClientId&quot;</highlight><highlight class="normal">];</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>GoogleOptions.ClientSecret<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;Google:ClientSecret&quot;</highlight><highlight class="normal">];</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">});</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddTransient&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_email_sender" kindref="compound">IEmailSender</ref>,<sp/><ref refid="classbackend_1_1_controllers_1_1_email_sender" kindref="compound">EmailSender</ref>&gt;();</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddAuthorization(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>options.AddPolicy(</highlight><highlight class="stringliteral">&quot;AdminPolicy&quot;</highlight><highlight class="normal">,<sp/>policy<sp/>=&gt;<sp/>policy.RequireRole(</highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">});</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>builder.WebHost.ConfigureKestrel(options<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.Listen(IPAddress.Any,<sp/>5000);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.Listen(IPAddress.Any,<sp/>5185);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>});</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddControllers();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddEndpointsApiExplorer();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddSwaggerGen();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddDbContext&lt;<ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref>&gt;(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>options.UseNpgsql(<ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration.GetConnectionString(</highlight><highlight class="stringliteral">&quot;DefaultConnection&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}).AddTransient&lt;ApplicationDBContext&gt;();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddIdentity&lt;<ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref>,<sp/>IdentityRole&gt;(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireDigit<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireLowercase<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireUppercase<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Password.RequireNonAlphanumeric<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>options.Tokens.PasswordResetTokenProvider<sp/>=<sp/>TokenOptions.DefaultEmailProvider;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">})</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">.AddDefaultTokenProviders()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">.AddEntityFrameworkStores&lt;<ref refid="classbackend_1_1_data_1_1_application_d_b_context" kindref="compound">ApplicationDBContext</ref>&gt;();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddAuthentication(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultAuthenticateScheme<sp/>=</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultForbidScheme<sp/>=</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>options.DefaultChallengeScheme<sp/>=<sp/>JwtBearerDefaults.AuthenticationScheme;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}).AddJwtBearer(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>options.TokenValidationParameters<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>TokenValidationParameters</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateIssuer<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidIssuer<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:Issuer&quot;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateAudience<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidAudience<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:Audience&quot;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateIssuerSigningKey<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IssuerSigningKey<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(<ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;JWT:SigningKey&quot;</highlight><highlight class="normal">])),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValidateLifetime<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ClockSkew<sp/>=<sp/>System.TimeSpan.Zero</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">).AddGoogle(GoogleOptions<sp/>=&gt;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>GoogleOptions.ClientId<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;Google:ClientId&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>GoogleOptions.ClientSecret<sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Configuration[</highlight><highlight class="stringliteral">&quot;Google:ClientSecret&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddTransient&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_email_sender" kindref="compound">IEmailSender</ref>,<sp/><ref refid="classbackend_1_1_controllers_1_1_email_sender" kindref="compound">EmailSender</ref>&gt;();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddAuthorization(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>options.AddPolicy(</highlight><highlight class="stringliteral">&quot;AdminPolicy&quot;</highlight><highlight class="normal">,<sp/>policy<sp/>=&gt;<sp/>policy.RequireRole(</highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">});</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kindref="compound">IAccountRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_account_repository" kindref="compound">AccountRepository</ref>&gt;();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kindref="compound">IUserRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_user_repository" kindref="compound">UserRepository</ref>&gt;();</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_location_repository" kindref="compound">LocationRepository</ref>&gt;();</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kindref="compound">ITokenService</ref>,<sp/><ref refid="classbackend_1_1_service_1_1_token_service" kindref="compound">TokenService</ref>&gt;();</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>builder.Services.AddCors(options<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.AddPolicy(&quot;AllowAllOrigins&quot;,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>builder<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>builder.AllowAnyOrigin()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyMethod()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyHeader()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowCredentials();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/>});</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddCors(options<sp/>=&gt;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>options.AddPolicy(</highlight><highlight class="stringliteral">&quot;AllowSpecificOrigin&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref><sp/>=&gt;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.WithOrigins(</highlight><highlight class="stringliteral">&quot;http://localhost:5173&quot;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="comment">//<sp/>Your<sp/>frontend<sp/>URL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowCredentials()</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyMethod()</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyHeader();</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="105"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/>builder.WebHost.ConfigureKestrel(options<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.Listen(IPAddress.Any,<sp/>5000);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.Listen(IPAddress.Any,<sp/>5185);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>});</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_account_repository" kindref="compound">IAccountRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_account_repository" kindref="compound">AccountRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kindref="compound">IUserRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_user_repository" kindref="compound">UserRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_location_repository" kindref="compound">LocationRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" kindref="compound">IReviewRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_review_repository" kindref="compound">ReviewRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kindref="compound">ITokenService</ref>,<sp/><ref refid="classbackend_1_1_service_1_1_token_service" kindref="compound">TokenService</ref>&gt;();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kindref="compound">IPostcardRepository</ref>,<sp/><ref refid="classbackend_1_1_repository_1_1_postcard_repository" kindref="compound">PostcardRepository</ref>&gt;();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddSingleton&lt;IAmazonS3&gt;(sp<sp/>=&gt;<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>AmazonS3Client(Amazon.RegionEndpoint.GetBySystemName(<ref refid="_program_8cs_1afa3f88733e24b2b63b6bef50c2f00375" kindref="member">region</ref>)));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddScoped&lt;<ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref>,<sp/><ref refid="classbackend_1_1_service_1_1_s3_service" kindref="compound">S3Service</ref>&gt;(sp<sp/>=&gt;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_service_1_1_s3_service" kindref="compound">S3Service</ref>(sp.GetRequiredService&lt;IAmazonS3&gt;(),<sp/><ref refid="_program_8cs_1ae68bf920690e3e6fe0bdcf8057d39c9b" kindref="member">bucketName</ref>));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//<sp/>builder.Services.AddCors(options<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>options.AddPolicy(&quot;AllowAllOrigins&quot;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>builder<sp/>=&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>builder.AllowAnyOrigin()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyMethod()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyHeader()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowCredentials();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//<sp/>});</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddSwaggerGen(c<sp/>=&gt;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>c.AddSecurityDefinition(</highlight><highlight class="stringliteral">&quot;Bearer&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityScheme</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>=<sp/>ParameterLocation.Header,</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>enter<sp/>a<sp/>valid<sp/>token&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Authorization&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>=<sp/>SecuritySchemeType.Http,</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BearerFormat<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;JWT&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Scheme<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;bearer&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>c.AddSecurityRequirement(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityRequirement</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityScheme</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiReference</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>=<sp/>ReferenceType.SecurityScheme,</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Bearer&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[]<sp/>{<sp/>}</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddHostedService&lt;<ref refid="classbackend_1_1_service_1_1_postcard_cleanup_service" kindref="compound">PostcardCleanupService</ref>&gt;();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddCors(options<sp/>=&gt;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>options.AddPolicy(</highlight><highlight class="stringliteral">&quot;AllowSpecificOrigin&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref><sp/>=&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.WithOrigins(</highlight><highlight class="stringliteral">&quot;http://localhost:5173&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;http://localhost:3000&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;http://localhost:3001&quot;</highlight><highlight class="normal">)<sp/><sp/></highlight><highlight class="comment">//<sp/>Your<sp/>frontend<sp/>URL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowCredentials()</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyMethod()</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AllowAnyHeader();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Services.AddSwaggerGen(c<sp/>=&gt;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>c.AddSecurityDefinition(</highlight><highlight class="stringliteral">&quot;Bearer&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityScheme</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In<sp/>=<sp/>ParameterLocation.Header,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Description<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>enter<sp/>a<sp/>valid<sp/>token&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Authorization&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>=<sp/>SecuritySchemeType.Http,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BearerFormat<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;JWT&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Scheme<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;bearer&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="133"><highlight class="normal">});</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal">var<sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref><sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Build();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>middleware<sp/>to<sp/>set<sp/>Cross-Origin<sp/>headers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Use(async<sp/>(context,<sp/>next)<sp/>=&gt;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>context.Response.Headers.Append(</highlight><highlight class="stringliteral">&quot;Cross-Origin-Opener-Policy&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;same-origin&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>context.Response.Headers.Append(</highlight><highlight class="stringliteral">&quot;Cross-Origin-Embedder-Policy&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;require-corp&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>await<sp/>next();</highlight></codeline>
-<codeline lineno="144"><highlight class="normal">});</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Environment.IsDevelopment())</highlight></codeline>
-<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseSwagger();</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseSwaggerUI();</highlight></codeline>
-<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">//<sp/>app.UseHttpsRedirection();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseCors(</highlight><highlight class="stringliteral">&quot;AllowSpecificOrigin&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseAuthentication();</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseAuthorization();</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.MapControllers();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>c.AddSecurityRequirement(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityRequirement</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiSecurityScheme</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>OpenApiReference</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type<sp/>=<sp/>ReferenceType.SecurityScheme,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Bearer&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[]<sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">});</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">var<sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref><sp/>=<sp/><ref refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kindref="member">builder</ref>.Build();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>middleware<sp/>to<sp/>set<sp/>Cross-Origin<sp/>headers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Use(async<sp/>(context,<sp/>next)<sp/>=&gt;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>context.Response.Headers.Append(</highlight><highlight class="stringliteral">&quot;Cross-Origin-Opener-Policy&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;same-origin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>context.Response.Headers.Append(</highlight><highlight class="stringliteral">&quot;Cross-Origin-Embedder-Policy&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;require-corp&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>await<sp/>next();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">});</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Run();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Environment.IsDevelopment())</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseSwagger();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseSwaggerUI();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">//<sp/>app.UseHttpsRedirection();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseCors(</highlight><highlight class="stringliteral">&quot;AllowSpecificOrigin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseAuthentication();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.UseAuthorization();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.MapControllers();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><ref refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kindref="member">app</ref>.Run();</highlight></codeline>
     </programlisting>
     <location file="C:/PROGI/travel-tales-app/backend/Program.cs"/>
   </compounddef>

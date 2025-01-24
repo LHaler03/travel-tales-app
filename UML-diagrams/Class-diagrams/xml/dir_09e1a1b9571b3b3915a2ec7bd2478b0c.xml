@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_09e1a1b9571b3b3915a2ec7bd2478b0c" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Dtos/Postcard</compoundname>
+    <innerfile refid="_create_postcard_dto_8cs">CreatePostcardDto.cs</innerfile>
+    <innerfile refid="_postcard_dto_8cs">PostcardDto.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/"/>
+  </compounddef>
+</doxygen>

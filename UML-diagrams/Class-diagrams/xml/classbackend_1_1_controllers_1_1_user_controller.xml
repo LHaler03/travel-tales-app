@@ -16,19 +16,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="21" column="42" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="21" bodyend="-1"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="22" column="42" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_user_controller_1a17d90722a9abfd715c9611884633d7ba" prot="private" static="no" mutable="no">
+        <type>readonly UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly UserManager&lt;User&gt; backend.Controllers.UserController._userManager</definition>
+        <argsstring></argsstring>
+        <name>_userManager</name>
+        <qualifiedname>backend.Controllers.UserController._userManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="23" column="38" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="23" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1ac415605e9de4e8d056fcc03f41e46539" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>backend.Controllers.UserController.UserController</definition>
-        <argsstring>(IUserRepository userRepo)</argsstring>
+        <argsstring>(IUserRepository userRepo, UserManager&lt; User &gt; userManager)</argsstring>
         <name>UserController</name>
         <qualifiedname>backend.Controllers.UserController.UserController</qualifiedname>
         <param>
           <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_user_repository" kindref="compound">IUserRepository</ref></type>
           <declname>userRepo</declname>
+        </param>
+        <param>
+          <type>UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>userManager</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -36,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="22" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="22" bodyend="25"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="24" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="24" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -50,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="29" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="29" bodyend="33"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="32" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="32" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -69,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="37" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="37" bodyend="45"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="40" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="40" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -93,7 +111,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="49" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="49" bodyend="58"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="62" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="62" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1af770843a2192e619869f4cfafb683e21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.UserController.ChangeUserRole</definition>
+        <argsstring>([FromRoute] string id)</argsstring>
+        <name>ChangeUserRole</name>
+        <qualifiedname>backend.Controllers.UserController.ChangeUserRole</qualifiedname>
+        <param>
+          <attributes>[FromRoute]</attributes>
+          <type>string</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="74" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="74" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -112,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="62" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="62" bodyend="70"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="99" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="99" bodyend="107"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -139,16 +176,25 @@
         <link refid="classbackend_1_1_controllers_1_1_user_controller"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_userRepo</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>backend.Interfaces.IUserRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_user_repository"/>
       </node>
     </collaborationgraph>
-    <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="19" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="20" bodyend="71"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" line="20" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/UserController.cs" bodystart="21" bodyend="108"/>
     <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a17d90722a9abfd715c9611884633d7ba" prot="private" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>_userManager</name></member>
       <member refid="classbackend_1_1_controllers_1_1_user_controller_1a79e3840bf039e9011a8639493d37d92a" prot="private" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>_userRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1af770843a2192e619869f4cfafb683e21" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>ChangeUserRole</name></member>
       <member refid="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>DeleteUser</name></member>
       <member refid="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>GetAllUsers</name></member>
       <member refid="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>GetUserById</name></member>
       <member refid="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>UpdateUser</name></member>
-      <member refid="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>UserController</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_user_controller_1ac415605e9de4e8d056fcc03f41e46539" prot="public" virt="non-virtual"><scope>backend::Controllers::UserController</scope><name>UserController</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

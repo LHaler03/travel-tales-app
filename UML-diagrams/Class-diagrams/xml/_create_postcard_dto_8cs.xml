@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_create_postcard_dto_8cs" kind="file" language="C#">
+    <compoundname>CreatePostcardDto.cs</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>using<sp/>System;</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">using<sp/>System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">using<sp/>System.ComponentModel.DataAnnotations;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">using<sp/>System.Linq;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">using<sp/>System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">namespace<sp/>backend.Dtos.Postcard</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>public<sp/>class<sp/>CreatePostcardDto</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[Required]</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>int<sp/>LocationId<sp/>{<sp/>get;<sp/>set;<sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>string?<sp/>UserId<sp/>{<sp/>get;<sp/>set;<sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>bool<sp/>SavePostcard<sp/>{<sp/>get;<sp/>set;<sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>string<sp/>S3Key<sp/>{<sp/>get;<sp/>set;<sp/>}<sp/>=<sp/>string.Empty;</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">}<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/CreatePostcardDto.cs"/>
+  </compounddef>
+</doxygen>

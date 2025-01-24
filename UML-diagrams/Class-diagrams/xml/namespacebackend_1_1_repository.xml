@@ -4,6 +4,8 @@
     <compoundname>backend::Repository</compoundname>
     <innerclass refid="classbackend_1_1_repository_1_1_account_repository" prot="public">backend::Repository::AccountRepository</innerclass>
     <innerclass refid="classbackend_1_1_repository_1_1_location_repository" prot="public">backend::Repository::LocationRepository</innerclass>
+    <innerclass refid="classbackend_1_1_repository_1_1_postcard_repository" prot="public">backend::Repository::PostcardRepository</innerclass>
+    <innerclass refid="classbackend_1_1_repository_1_1_review_repository" prot="public">backend::Repository::ReviewRepository</innerclass>
     <innerclass refid="classbackend_1_1_repository_1_1_user_repository" prot="public">backend::Repository::UserRepository</innerclass>
     <briefdescription>
     </briefdescription>

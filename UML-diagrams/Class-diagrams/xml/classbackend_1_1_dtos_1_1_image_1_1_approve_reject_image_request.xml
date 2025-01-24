@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Image::ApproveRejectImageRequest</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1ac8d74fcd7b85c5004a8099d8071f7655" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Image.ApproveRejectImageRequest.ImageName</definition>
+        <argsstring></argsstring>
+        <name>ImageName</name>
+        <qualifiedname>backend.Dtos.Image.ApproveRejectImageRequest.ImageName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" line="10" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1a4ca3c23337942350126130cbab52da5a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Dtos.Image.ApproveRejectImageRequest.LocationId</definition>
+        <argsstring></argsstring>
+        <name>LocationId</name>
+        <qualifiedname>backend.Dtos.Image.ApproveRejectImageRequest.LocationId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" line="11" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Image/ApproveRejectImageRequest.cs" bodystart="9" bodyend="12"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1ac8d74fcd7b85c5004a8099d8071f7655" prot="public" virt="non-virtual"><scope>backend::Dtos::Image::ApproveRejectImageRequest</scope><name>ImageName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1a4ca3c23337942350126130cbab52da5a" prot="public" virt="non-virtual"><scope>backend::Dtos::Image::ApproveRejectImageRequest</scope><name>LocationId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

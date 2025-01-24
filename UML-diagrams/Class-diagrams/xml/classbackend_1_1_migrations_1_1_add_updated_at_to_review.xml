@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_migrations_1_1_add_updated_at_to_review" kind="class" language="C#" prot="public">
+    <compoundname>backend::Migrations::AddUpdatedAtToReview</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Migration</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1a7b51c1340988c180f6e6d736f18e34fe" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.AddUpdatedAtToReview.Up</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Up</name>
+        <qualifiedname>backend.Migrations.AddUpdatedAtToReview.Up</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.cs" line="14" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.cs" bodystart="14" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1ab46aa4023a98e381d190879169a540bf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.AddUpdatedAtToReview.Down</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Down</name>
+        <qualifiedname>backend.Migrations.AddUpdatedAtToReview.Down</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.cs" line="48" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.cs" bodystart="48" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1afa460dc15d82f8c85b8da401e7fef581" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.AddUpdatedAtToReview.BuildTargetModel</definition>
+        <argsstring>(ModelBuilder modelBuilder)</argsstring>
+        <name>BuildTargetModel</name>
+        <qualifiedname>backend.Migrations.AddUpdatedAtToReview.BuildTargetModel</qualifiedname>
+        <param>
+          <type>ModelBuilder</type>
+          <declname>modelBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.Designer.cs" line="19" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.Designer.cs" bodystart="19" bodyend="443"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.AddUpdatedAtToReview</label>
+        <link refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.AddUpdatedAtToReview</label>
+        <link refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.cs" line="11" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250116211938_AddUpdatedAtToReview.Designer.cs" bodystart="17" bodyend="444"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1afa460dc15d82f8c85b8da401e7fef581" prot="protected" virt="non-virtual"><scope>backend::Migrations::AddUpdatedAtToReview</scope><name>BuildTargetModel</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1ab46aa4023a98e381d190879169a540bf" prot="protected" virt="non-virtual"><scope>backend::Migrations::AddUpdatedAtToReview</scope><name>Down</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1a7b51c1340988c180f6e6d736f18e34fe" prot="protected" virt="non-virtual"><scope>backend::Migrations::AddUpdatedAtToReview</scope><name>Up</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

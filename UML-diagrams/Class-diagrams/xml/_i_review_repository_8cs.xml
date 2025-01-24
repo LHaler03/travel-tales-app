@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_i_review_repository_8cs" kind="file" language="C#">
+    <compoundname>IReviewRepository.cs</compoundname>
+    <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" prot="public">backend::Interfaces::IReviewRepository</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_interfaces">backend::Interfaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Linq;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_location" kindref="compound">backend.Dtos.Location</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_review" kindref="compound">backend.Dtos.Review</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_models" kindref="compound">backend.Models</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.AspNetCore.Http.HttpResults;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_interfaces" kindref="compound">backend.Interfaces</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" kindref="compound">IReviewRepository</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;IEnumerable&lt;Review&gt;&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1aee9c75f370f98e82abaa9587e1e5e584" kindref="member">GetReviewsByLocationIdAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>locationId);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Review?&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab685553d2a0f926cbe3c8e3075b67057" kindref="member">GetReviewByIdAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Review&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a35f69c0de83fdf13f46887fe1fbef3a5" kindref="member">AddReviewAsync</ref>(<ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref><sp/>reviewModel);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Review?&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab1c1d539f841f602481084ffc6d05ac9" kindref="member">DeleteReviewAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Review?&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a551d79220324a59f876bbf18a41373c3" kindref="member">GetReviewsByUserAsync</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>userId,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>locationId);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Review&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a2dc9b5a9c493bad130952fef4fedb493" kindref="member">UpdateReviewAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>reviewId,<sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" kindref="compound">UpdateReviewDto</ref><sp/>updateReviewDto);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs"/>
+  </compounddef>
+</doxygen>

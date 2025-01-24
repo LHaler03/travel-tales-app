@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_41aa293a327a8e2a21b20c0bf7ee6ffe" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Dtos/Image</compoundname>
+    <innerfile refid="_approve_reject_image_request_8cs">ApproveRejectImageRequest.cs</innerfile>
+    <innerfile refid="_upload_image_request_8cs">UploadImageRequest.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Image/"/>
+  </compounddef>
+</doxygen>

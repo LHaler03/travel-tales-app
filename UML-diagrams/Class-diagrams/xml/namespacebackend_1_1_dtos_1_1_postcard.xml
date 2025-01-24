@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespacebackend_1_1_dtos_1_1_postcard" kind="namespace" language="C#">
+    <compoundname>backend::Dtos::Postcard</compoundname>
+    <innerclass refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto" prot="public">backend::Dtos::Postcard::PostcardDto</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="6" column="1"/>
+  </compounddef>
+</doxygen>

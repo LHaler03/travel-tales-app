@@ -3,6 +3,8 @@
   <compounddef id="namespacebackend_1_1_mappers" kind="namespace" language="C#">
     <compoundname>backend::Mappers</compoundname>
     <innerclass refid="classbackend_1_1_mappers_1_1_location_mappers" prot="public">backend::Mappers::LocationMappers</innerclass>
+    <innerclass refid="classbackend_1_1_mappers_1_1_postcard_mapper" prot="public">backend::Mappers::PostcardMapper</innerclass>
+    <innerclass refid="classbackend_1_1_mappers_1_1_review_mappers" prot="public">backend::Mappers::ReviewMappers</innerclass>
     <innerclass refid="classbackend_1_1_mappers_1_1_user_mappers" prot="public">backend::Mappers::UserMappers</innerclass>
     <briefdescription>
     </briefdescription>

@@ -22,25 +22,52 @@
     <member refid="classbackend_1_1_repository_1_1_account_repository_1a104d232d486267abf2034f8ee0ddc362" kind="function"><name>AccountRepository</name></member>
     <member refid="classbackend_1_1_repository_1_1_account_repository_1a493a8d9a4ea61df0b060303ea3ba4dd0" kind="function"><name>GetOrCreateUserAsync</name></member>
   </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_add_dev_admin" kind="class"><name>backend::Migrations::AddDevAdmin</name>
+    <member refid="classbackend_1_1_migrations_1_1_add_dev_admin_1a064f477c48f39a2ae02296fc627c1e61" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_add_dev_admin_1aeef043eb09ea9fe20cf5a7aa49167316" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_add_dev_admin_1a85b6cb73ac14d8e98aacd66980a3f5e3" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review" kind="class"><name>backend::Migrations::AddUpdatedAtToReview</name>
+    <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1a7b51c1340988c180f6e6d736f18e34fe" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1ab46aa4023a98e381d190879169a540bf" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_add_updated_at_to_review_1afa460dc15d82f8c85b8da401e7fef581" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
   <compound refid="classbackend_1_1_data_1_1_application_d_b_context" kind="class"><name>backend::Data::ApplicationDBContext</name>
     <member refid="classbackend_1_1_data_1_1_application_d_b_context_1ae27b1b51b0224b60b7234ef7f15b92ed" kind="property"><name>Users</name></member>
     <member refid="classbackend_1_1_data_1_1_application_d_b_context_1aa0917ef671c925a080e05a4aebb13cd7" kind="property"><name>Locations</name></member>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1a915d81f7d602567cf88ce64fe5ce35d5" kind="property"><name>Reviews</name></member>
+    <member refid="classbackend_1_1_data_1_1_application_d_b_context_1a3a6255036eb712d1df705c1332bb7172" kind="property"><name>Postcards</name></member>
     <member refid="classbackend_1_1_data_1_1_application_d_b_context_1ac07ec68a51962a8c07daca70ef386e91" kind="function"><name>ApplicationDBContext</name></member>
     <member refid="classbackend_1_1_data_1_1_application_d_b_context_1afbbfa222aa0525941ac90d6ed68b6dca" kind="function"><name>OnModelCreating</name></member>
   </compound>
   <compound refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot" kind="class"><name>backend::Migrations::ApplicationDBContextModelSnapshot</name>
     <member refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" kind="function"><name>BuildModel</name></member>
   </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request" kind="class"><name>backend::Dtos::Image::ApproveRejectImageRequest</name>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1ac8d74fcd7b85c5004a8099d8071f7655" kind="property"><name>ImageName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_approve_reject_image_request_1a4ca3c23337942350126130cbab52da5a" kind="property"><name>LocationId</name></member>
+  </compound>
   <compound refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto" kind="class"><name>backend::Dtos::Location::CreateLocationRequestDto</name>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1add9d132dad44507cb696136fa5a74189" kind="property"><name>Name</name></member>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a770ddd27d5ae25aafc9859c66ed2ed90" kind="property"><name>Country</name></member>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" kind="property"><name>Lat</name></member>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" kind="property"><name>Lon</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a2c2ddf13bb1234729cc02a36b3a469fe" kind="property"><name>Images</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto" kind="class"><name>backend::Dtos::Review::CreateReviewDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a862b0a4c49a3af56bddb88cb4eeb8ae2" kind="property"><name>Comment</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a52559c9cad4164b8467f1a9b52cbfa15" kind="property"><name>Rating</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a71a30f8414d62bd7e3086d6a0388ed49" kind="property"><name>LocationId</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a30288063a92b18da4f7c3c5127a8843d" kind="property"><name>UserId</name></member>
   </compound>
   <compound refid="classbackend_1_1_controllers_1_1_email_sender" kind="class"><name>backend::Controllers::EmailSender</name>
     <member refid="classbackend_1_1_controllers_1_1_email_sender_1abd66edfe50f284207222849eb257eb49" kind="variable"><name>_configuration</name></member>
     <member refid="classbackend_1_1_controllers_1_1_email_sender_1a202653038eac91f30dde312347885446" kind="function"><name>EmailSender</name></member>
     <member refid="classbackend_1_1_controllers_1_1_email_sender_1ab51c8de9f9949a2dbef6112382982b69" kind="function"><name>SendEmailAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_models_1_1_file_url" kind="class"><name>backend::Models::FileUrl</name>
+    <member refid="classbackend_1_1_models_1_1_file_url_1ae22f9988748b6c312af910b1ec5db1c6" kind="property"><name>ImageLink</name></member>
+    <member refid="classbackend_1_1_models_1_1_file_url_1a45b72f7428e0f6c564bc54128e930630" kind="property"><name>DownloadLink</name></member>
   </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto" kind="class"><name>backend::Dtos::Account::GoogleLoginDto</name>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_google_login_dto_1a37a1786d019c0f92426deb1145974a10" kind="property"><name>Token</name></member>
@@ -69,6 +96,32 @@
     <member refid="classbackend_1_1_migrations_1_1_initial_create_1a03f6c74d45b898d391c658eda7a886ae" kind="function"><name>Down</name></member>
     <member refid="classbackend_1_1_migrations_1_1_initial_create_1a18718b44794dd652e146aa4c7247d732" kind="function"><name>BuildTargetModel</name></member>
   </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kind="interface"><name>backend::Interfaces::IPostcardRepository</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1a0216b7dd345342c04758cf5d1b86f859" kind="function"><name>GetPostcardsByUserIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1afdbe75521640fb4d4941b2eeccd5fb66" kind="function"><name>GetPostcardByIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1af27c68a5ef066b15cde30d6797300eab" kind="function"><name>DeletePostcardAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1aa2ddcfddc6c85544324e04d524303039" kind="function"><name>CreatePostcardAsync</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" kind="interface"><name>backend::Interfaces::IReviewRepository</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1aee9c75f370f98e82abaa9587e1e5e584" kind="function"><name>GetReviewsByLocationIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab685553d2a0f926cbe3c8e3075b67057" kind="function"><name>GetReviewByIdAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a35f69c0de83fdf13f46887fe1fbef3a5" kind="function"><name>AddReviewAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab1c1d539f841f602481084ffc6d05ac9" kind="function"><name>DeleteReviewAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a551d79220324a59f876bbf18a41373c3" kind="function"><name>GetReviewsByUserAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a2dc9b5a9c493bad130952fef4fedb493" kind="function"><name>UpdateReviewAsync</name></member>
+  </compound>
+  <compound refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kind="interface"><name>backend::Interfaces::IS3Service</name>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a5331a5dcc1340423457b5aca31eaaac3" kind="function"><name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a9b02cb5647239d45610ace977171f1df" kind="function"><name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a133773fc98a6a3b0985a2930093bb152" kind="function"><name>GetFileAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a49694c7b35fe2ebc5263b3993bededd8" kind="function"><name>GetPreSignedUrlAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ad7ce22d08ed9a215733e5cdc710e988e" kind="function"><name>UploadFileAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ab7c3630c8c22fd5f8deb1bfd45ac6939" kind="function"><name>UploadStockImagesAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a313caa54c47c9ca503e17ca2d0bab544" kind="function"><name>UploadFileAndGetImageAndDownloadLinksAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1abe1b32726c23c2bafcefc7c684858a91" kind="function"><name>DeleteObjectAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a01334b958b12cc307239f2ce34f30908" kind="function"><name>ListFilesInFolderAsync</name></member>
+    <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1aefad54f0f09a23247cd1413c425381b4" kind="function"><name>MoveFileAsync</name></member>
+  </compound>
   <compound refid="interfacebackend_1_1_interfaces_1_1_i_token_service" kind="interface"><name>backend::Interfaces::ITokenService</name>
     <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a5ab971632d84e6bda36836c7f9d7a61f" kind="function"><name>CreateAccessToken</name></member>
     <member refid="interfacebackend_1_1_interfaces_1_1_i_token_service_1a2f036ab3943e832598274559ae97bc3c" kind="function"><name>CreateRefreshToken</name></member>
@@ -89,7 +142,8 @@
   <compound refid="classbackend_1_1_controllers_1_1_location_controller" kind="class"><name>backend::Controllers::LocationController</name>
     <member refid="classbackend_1_1_controllers_1_1_location_controller_1adda7e8704c2d3dc09eb55536fe64d6c5" kind="variable"><name>_context</name></member>
     <member refid="classbackend_1_1_controllers_1_1_location_controller_1ab5eaf8bea4b3014a357278ffa2c26cfd" kind="variable"><name>_locationRepo</name></member>
-    <member refid="classbackend_1_1_controllers_1_1_location_controller_1abfbe2ed70ebaa7248763b54e4c8f47fd" kind="function"><name>LocationController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1a81e3a85d7af802709d504d2cd8310214" kind="variable"><name>_s3Service</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_location_controller_1a1082553a904dc0784a149127f1c4742b" kind="function"><name>LocationController</name></member>
     <member refid="classbackend_1_1_controllers_1_1_location_controller_1a9ac1eb40a4ed5b0e86f361cbb6d3f09a" kind="function"><name>GetAll</name></member>
     <member refid="classbackend_1_1_controllers_1_1_location_controller_1a1a0dddf0084df39f917c487bf8e85bcf" kind="function"><name>GetById</name></member>
     <member refid="classbackend_1_1_controllers_1_1_location_controller_1aafa169c99603d114369151a94d6d5100" kind="function"><name>Create</name></member>
@@ -109,8 +163,10 @@
     <member refid="classbackend_1_1_repository_1_1_location_repository_1a64165e2f1aa834bc1a660f471f8e65c9" kind="function"><name>DeleteAsync</name></member>
   </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto" kind="class"><name>backend::Dtos::Account::LoggedInUserDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1ae8a21269522255a051b4c887b650d6bc" kind="property"><name>Id</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a381a787a4e08c8deee8eed1f83f1c52a" kind="property"><name>Username</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1af99f224978b24b9b413c3a10a0ea911b" kind="property"><name>Email</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a649980ab2913057a64090ec66a47d83c" kind="property"><name>Role</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a08e20aa803773d1f205034c066e886dc" kind="property"><name>Token</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_logged_in_user_dto_1a28d686b43ab4db4abe67e7d5c584eb76" kind="property"><name>EmailConfirmed</name></member>
   </compound>
@@ -118,12 +174,154 @@
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1af42c8b1f90121359753ed09c18d03422" kind="property"><name>Username</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_login_dto_1ad36f2674dbfde70d0c4a25029d903cb5" kind="property"><name>Password</name></member>
   </compound>
+  <compound refid="classbackend_1_1_models_1_1_postcard" kind="class"><name>backend::Models::Postcard</name>
+    <member refid="classbackend_1_1_models_1_1_postcard_1ab2f80ad24add565585d9b264d77a07fa" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1a66b8d803059b61ccd1b5eb802581e447" kind="property"><name>S3Key</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1a6643da78b37646dffeef67c385c12a85" kind="property"><name>CreatedAt</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1ade0962a3b85721e696d8574f68ed8ab6" kind="property"><name>UserId</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1ab25783517c6973a91f2984e97919877d" kind="property"><name>User</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1ad1f79961df3628cd636faec55f4c1c88" kind="property"><name>LocationId</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_1a9f90a2a1fd9510f7b8e480562992bf02" kind="property"><name>Location</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_service_1_1_postcard_cleanup_service" kind="class"><name>backend::Service::PostcardCleanupService</name>
+    <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a98e81470ef2c8ab6db37514475d44d4c" kind="variable"><name>_services</name></member>
+    <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1aebb77e928135f1d952e8e66edf16bd3f" kind="variable"><name>_logger</name></member>
+    <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a29ddd1e69fb6f420f2948a0833a6727c" kind="variable"><name>_interval</name></member>
+    <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a2b05c9a117186036391431737839c832" kind="function"><name>PostcardCleanupService</name></member>
+    <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a7a87f2019e0f882e821403bd6d94cf95" kind="function"><name>ExecuteAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_postcard_controller" kind="class"><name>backend::Controllers::PostcardController</name>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a1150203e5d58f6f8c045725b2acb1c18" kind="variable"><name>_postcardRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a88a8fffb185625a5ad627eaf61aacbca" kind="variable"><name>_s3Service</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1acd1e8b2eff382dd0e2e9b2e3a18ddec2" kind="variable"><name>_locationRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a3a406875a2d05e21c91371f83a10a60e" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a8a703c15c0f13af05ebebb438201b031" kind="function"><name>PostcardController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1aafe19f5c8abc8cade4c8932594cbe8ae" kind="function"><name>GetUserPostcards</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1af5acca508e597b24bb91bc4eebd95b78" kind="function"><name>GetPostcard</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a889cfe8f4ec1f8a3815fb0a70f4fc819" kind="function"><name>DeletePostcard</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto" kind="class"><name>backend::Dtos::Postcard::PostcardDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1ab72287bc99dcfed25b248fcbd00352b1" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a7399cb30cdac05cd76bb0f41f59d52a2" kind="property"><name>S3Key</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a4f5418b08150db83a292aad4819fc5ee" kind="property"><name>CreatedAt</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1adbd7df285995e4bd8f04045473902a98" kind="property"><name>ExpiresAt</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a65f13e2a95d81906491e433b909df5eb" kind="property"><name>UserName</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1afaf891c0fb5a1a2452f781e3776d0b6d" kind="property"><name>LocationName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_mappers_1_1_postcard_mapper" kind="class"><name>backend::Mappers::PostcardMapper</name>
+    <member refid="classbackend_1_1_mappers_1_1_postcard_mapper_1a5fccb03213b31e067deade00382d7932" kind="function"><name>ToDto</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_models_1_1_postcard_props" kind="class"><name>backend::Models::PostcardProps</name>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1ae9559a90f88d755777bf1b55237a2120" kind="property"><name>UserId</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a7d45347c4a2de7996a5d9196b5da69e0" kind="property"><name>LocationId</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a765b8aac45083912f3fb7e67f67faa88" kind="property"><name>Component</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1ace1fa96a87f2810dfc4dc19e4a7b4fc9" kind="property"><name>City</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a00bd95cebe9efd38d39201f2a2d584f8" kind="property"><name>TitleColor</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1ad17b8e7f1613bacb522923e7312f9743" kind="property"><name>FromText</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a7a1c9b08c58c3bbba355886e64f988bd" kind="property"><name>FromColor</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1ab74ead0971027d453ed9f00ea8a7089d" kind="property"><name>BorderColor</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1aabb19661ee98bc0dcb382648f808f4de" kind="property"><name>TextBgColor</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a7d544f69630b6a6ec78f504be470287b" kind="property"><name>Link1</name></member>
+    <member refid="classbackend_1_1_models_1_1_postcard_props_1a4f0cdf670437fbc083cd8275bbc2f033" kind="property"><name>Link2</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_repository_1_1_postcard_repository" kind="class"><name>backend::Repository::PostcardRepository</name>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1aac2da6621f8212bcbdb6ae9fb678a4fd" kind="variable"><name>_context</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a0861046aadc4e4a3fad5f1b7c80b028c" kind="variable"><name>_s3Service</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1af84bed6f691f111c6ecef12515394033" kind="variable"><name>_logger</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a64893563acc797a1aadd2e8fd7c28505" kind="function"><name>PostcardRepository</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a49507bc77cdb4aa8075c7306213e0893" kind="function"><name>GetPostcardsByUserIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1ae5d9b9934a86cef53d99730904b0d0e0" kind="function"><name>GetPostcardByIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1a2aad754723877b4edfec7bff4e38b0c0" kind="function"><name>CreatePostcardAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_postcard_repository_1aeff95ff30861b548fe481d150efc8566" kind="function"><name>DeletePostcardAsync</name></member>
+  </compound>
   <compound refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto" kind="class"><name>backend::Dtos::Account::RegisterDto</name>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1a5cb8051a1d0cf41b9dc63f8fb8962bdb" kind="property"><name>UserName</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1af913a663d44fd10dfeeca77f5a547bb7" kind="property"><name>Email</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1aeb2dcb6ff1cf7fce25bed6a53556f9dd" kind="property"><name>Password</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ab32f9dd2818e15d77b2d3ca0d11ccf51" kind="property"><name>FirstName</name></member>
     <member refid="classbackend_1_1_dtos_1_1_account_1_1_register_dto_1ac56e7f6a1c770696cbe2a042737521d7" kind="property"><name>LastName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_models_1_1_review" kind="class"><name>backend::Models::Review</name>
+    <member refid="classbackend_1_1_models_1_1_review_1aa522360e61c4e2df469a70176bf39017" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1aeb3f9f2a05889e7e16eb9c6b5b5c3cbd" kind="property"><name>Comment</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1a3065fe400d9f2bd4766be84456ec3927" kind="property"><name>Rating</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1a8a5936b22f35fa0ab6a20489cfce2103" kind="property"><name>CreatedAt</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1a1aa3775f936140a7ecfe0673b4c55fb9" kind="property"><name>UpdatedAt</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1a3360fbf7378997ff92fc4a7a2fc97cca" kind="property"><name>LocationId</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1abdea5a3aba02e1b89e8eafed9a8d7161" kind="property"><name>Location</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1ad24605c2ecef2bf2e72067f93b926e5e" kind="property"><name>UserId</name></member>
+    <member refid="classbackend_1_1_models_1_1_review_1af03ece7c8ee37f3e003ac949449909d8" kind="property"><name>User</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_review_controller" kind="class"><name>backend::Controllers::ReviewController</name>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kind="variable"><name>_reviewRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1a617ed27e19204f324bfaac01b2fd0658" kind="function"><name>ReviewController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1a81c50f0da1781bc06649ab3eb6c1899b" kind="function"><name>GetReviewsForLocation</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1ac20acd485a3774c3f3159e41738b8986" kind="function"><name>GetById</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1a8cf329dc950b91174c815abed6a78654" kind="function"><name>GetReviewsByUser</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1aa29bb4a4424783f87d8e62823916dc03" kind="function"><name>CreateReview</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1a4e72617032e211e7ab1a2838cc6a3ae7" kind="function"><name>UpdateReview</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_review_controller_1aa783554a86c744e80be751f9cad15920" kind="function"><name>DeleteReview</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto" kind="class"><name>backend::Dtos::Review::ReviewDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1ace6d1b56b2342ba373cc6acbf5012d5a" kind="property"><name>Id</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1a937681b452d0ce90503bf25df94f72de" kind="property"><name>Comment</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1a126828e3e30fda7372a19622d52ae1a1" kind="property"><name>Rating</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1a8ac75585ca9154792d03534218d16446" kind="property"><name>CreatedAt</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1a81f09bd98f1a093b6ae21ce6b4b24080" kind="property"><name>UpdatedAt</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto_1ac8c4e064cf830b6a2d87ea463d54c03c" kind="property"><name>UserName</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_mappers_1_1_review_mappers" kind="class"><name>backend::Mappers::ReviewMappers</name>
+    <member refid="classbackend_1_1_mappers_1_1_review_mappers_1a4bc53462b595be4fadf4b6ad5abceb1f" kind="function"><name>ToReviewDto</name></member>
+    <member refid="classbackend_1_1_mappers_1_1_review_mappers_1ac3baaaee0f17b83a65959414b8821c6e" kind="function"><name>ToReviewFromCreateDto</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_repository_1_1_review_repository" kind="class"><name>backend::Repository::ReviewRepository</name>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1a1c3430cf1509e69da1adad0d7e4cb420" kind="variable"><name>_context</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1aeaa148ed1a3750e6f813d675f1f3696f" kind="function"><name>ReviewRepository</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1a0b7de691c4397530f28f703c8ed4a2f1" kind="function"><name>GetReviewsByLocationIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1a1b8080110621c3a12663777b13ba5ba4" kind="function"><name>GetReviewByIdAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1a938ce4d9622e12e25e75404641320aca" kind="function"><name>AddReviewAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1aed7398805d3b0b1765047cb3f058b333" kind="function"><name>UpdateReviewAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1ad06ed1796e247d6623f6fdbe3a135683" kind="function"><name>DeleteReviewAsync</name></member>
+    <member refid="classbackend_1_1_repository_1_1_review_repository_1aea6772879fc9b3e41329facbb72184d4" kind="function"><name>GetReviewsByUserAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_migrations_1_1reviews_migration" kind="class"><name>backend::Migrations::reviewsMigration</name>
+    <member refid="classbackend_1_1_migrations_1_1reviews_migration_1a8ac2d797c4c5bbeceb9e57ebd1e068c9" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1reviews_migration_1a7a98957d83195d5cfcaf2b4e72741d7a" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1reviews_migration_1aaf794257139fc4165e17c170a9acaae6" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_controllers_1_1_s3_controller" kind="class"><name>backend::Controllers::S3Controller</name>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a08a32b5a973c0e3ae08ddabd7b1030ca" kind="variable"><name>_s3Service</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a4332215297058db9d7930913856d6c22" kind="variable"><name>_postcardRepo</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1aeef624dda5fc0ac092e1471cf57eabd3" kind="variable"><name>_context</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a3ebfea8391d559236733a442a912afda" kind="variable"><name>_remotionProjectPath</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a1ecb93de7b3692804a52edad2b79a435" kind="variable"><name>_semaphore</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a68136cae6d2cd9dbbad0e0eaa7668af6" kind="function"><name>S3Controller</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a290c66aeff16b0b116ea6dfeac46976b" kind="function"><name>ListFilesAsync</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a3468bdd1d8c7b9a45038b4b2bcbf79ac" kind="function"><name>ListUserPostcardsAsync</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a1fed3397e9231625d6815dcf87de575d" kind="function"><name>GetFile</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a04d7dccb303ac8a7e7c0cc9b6ce5b29c" kind="function"><name>UploadImages</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a96529383aa3abb4cf559318452b6f548" kind="function"><name>GeneratePostcard</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1ae2ec413899a17dc310a028a9a1c1ba8d" kind="function"><name>GetImagesToReview</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1afd7ed50e6ed2a6d8b700ef6110626690" kind="function"><name>GetImagesToReviewCount</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a9a3473f162de0add449ce6c9822df412" kind="function"><name>ApproveImage</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1a276ce31494e88068c1d3dade3928dc0b" kind="function"><name>RejectImage</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_s3_controller_1afeba15769d0eccabae6295388d7e1165" kind="function"><name>RunYarnScriptAsync</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_service_1_1_s3_service" kind="class"><name>backend::Service::S3Service</name>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a0cfa84d4f407e0c294de677c4f7df3de" kind="variable"><name>_s3Client</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a2392f1b2665dd4d148709d059b446ac0" kind="variable"><name>_bucketName</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a9ac01ba6d3d428385d080ebdeb2dd423" kind="function"><name>S3Service</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a4d7c8e336251e23157976e7748b80e4d" kind="function"><name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a94a33e8abaf4767156af33b963d3a4ee" kind="function"><name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1ac39bc6c91ad4a7fefbcf4b921b316ac4" kind="function"><name>GetFileAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1af60cb0bb7cdcaba122eb6bef4ca313a2" kind="function"><name>GetPreSignedUrlAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a34afda00d964673b770ebc676628f50f" kind="function"><name>GetPreSignedDownloadUrlAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a69d33aca3b51f4b0f0a8b0038f133177" kind="function"><name>UploadFileAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a3be12f26b7286a3b2c40c8fd26fdf1c0" kind="function"><name>UploadStockImagesAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a4d0504a59ad92076920c075c43c6df4f" kind="function"><name>UploadFileAndGetImageAndDownloadLinksAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1ae3bb71030b4eedf8d022040c41e68bce" kind="function"><name>DeleteObjectAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1aab7534e55da8929b9dde897c4e5c483b" kind="function"><name>MoveFileAsync</name></member>
+    <member refid="classbackend_1_1_service_1_1_s3_service_1a748ff3934b1b6c05ddb176b30fac88e6" kind="function"><name>ListFilesInFolderAsync</name></member>
   </compound>
   <compound refid="classbackend_1_1_service_1_1_token_service" kind="class"><name>backend::Service::TokenService</name>
     <member refid="classbackend_1_1_service_1_1_token_service_1adf947e5a322ae008d9d0413c61cbdf5a" kind="variable"><name>_config</name></member>
@@ -146,23 +344,41 @@
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a1c9ede611ca1aa61586921ecbc876904" kind="property"><name>Lat</name></member>
     <member refid="classbackend_1_1_dtos_1_1_location_1_1_update_location_request_dto_1a6fed74aee2dbe75f964ed1d047f34b38" kind="property"><name>Lon</name></member>
   </compound>
+  <compound refid="classbackend_1_1_migrations_1_1_update_postcards" kind="class"><name>backend::Migrations::UpdatePostcards</name>
+    <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a17919aefb9fa18482f26bc0efea900d8" kind="function"><name>Up</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a732687fca77e8f57936d8127bf883361" kind="function"><name>Down</name></member>
+    <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a1b7985804e358df733204b92aa699ac8" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" kind="class"><name>backend::Dtos::Review::UpdateReviewDto</name>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1ae91a46b87dad11b1ff0acaf7a91d1670" kind="property"><name>Comment</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto_1a79eaca00f1ad4827fe8044da9ac1161b" kind="property"><name>Rating</name></member>
+  </compound>
   <compound refid="classbackend_1_1_migrations_1_1_updating_asp_net_users" kind="class"><name>backend::Migrations::UpdatingAspNetUsers</name>
     <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a0e5734007170b5e9c057caf6c26b5296" kind="function"><name>Up</name></member>
     <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1a9886271865e837645e3ec812bf4d220d" kind="function"><name>Down</name></member>
     <member refid="classbackend_1_1_migrations_1_1_updating_asp_net_users_1ab11ecba2d740160f9b846a8b6ca11cf6" kind="function"><name>BuildTargetModel</name></member>
+  </compound>
+  <compound refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request" kind="class"><name>backend::Dtos::Image::UploadImagesRequest</name>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request_1a1cb6a54fb2f6e3bd61a868422ffa7e03" kind="property"><name>Images</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request_1a99ff0b3c4b103a40b58497531b5f4141" kind="property"><name>UserId</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request_1a8dac7c45bd8c342a809a721746d8d939" kind="property"><name>ReviewRequired</name></member>
+    <member refid="classbackend_1_1_dtos_1_1_image_1_1_upload_images_request_1adc0dd7f6854402fe6d24854b1df0d745" kind="property"><name>LocationId</name></member>
   </compound>
   <compound refid="classbackend_1_1_models_1_1_user" kind="class"><name>backend::Models::User</name>
     <member refid="classbackend_1_1_models_1_1_user_1a1f2f19dfd204cb6b45c33160e91ebd00" kind="property"><name>FirstName</name></member>
     <member refid="classbackend_1_1_models_1_1_user_1ada69d62d5cca1e5ca7ac1b1120599077" kind="property"><name>LastName</name></member>
     <member refid="classbackend_1_1_models_1_1_user_1a7fee0bae73632a55ebb17853753652a1" kind="property"><name>RefreshToken</name></member>
     <member refid="classbackend_1_1_models_1_1_user_1a630965989383e874fcfe8eed0f2cde28" kind="property"><name>RefreshTokenExpiry</name></member>
+    <member refid="classbackend_1_1_models_1_1_user_1ab3bc4786684097fe9e2cde5342dcef23" kind="property"><name>Reviews</name></member>
   </compound>
   <compound refid="classbackend_1_1_controllers_1_1_user_controller" kind="class"><name>backend::Controllers::UserController</name>
     <member refid="classbackend_1_1_controllers_1_1_user_controller_1a79e3840bf039e9011a8639493d37d92a" kind="variable"><name>_userRepo</name></member>
-    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a22ef6d986513d307b4ae3fcaf82c640c" kind="function"><name>UserController</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1a17d90722a9abfd715c9611884633d7ba" kind="variable"><name>_userManager</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1ac415605e9de4e8d056fcc03f41e46539" kind="function"><name>UserController</name></member>
     <member refid="classbackend_1_1_controllers_1_1_user_controller_1af0300ff57f311ef53642dd5c0214ee6c" kind="function"><name>GetAllUsers</name></member>
     <member refid="classbackend_1_1_controllers_1_1_user_controller_1a16de7e5285535e6e0302ca1fbbbe0675" kind="function"><name>GetUserById</name></member>
     <member refid="classbackend_1_1_controllers_1_1_user_controller_1a6c8eceac454dbd3d78f95c323092fc84" kind="function"><name>UpdateUser</name></member>
+    <member refid="classbackend_1_1_controllers_1_1_user_controller_1af770843a2192e619869f4cfafb683e21" kind="function"><name>ChangeUserRole</name></member>
     <member refid="classbackend_1_1_controllers_1_1_user_controller_1a1d8e7c913ee37fc75c87e9c530021382" kind="function"><name>DeleteUser</name></member>
   </compound>
   <compound refid="classbackend_1_1_dtos_1_1_user_1_1_user_dto" kind="class"><name>backend::Dtos::User::UserDto</name>
@@ -183,6 +399,10 @@
     <member refid="classbackend_1_1_repository_1_1_user_repository_1a2b45b49ca7ae59a329eb6d542da3eac7" kind="function"><name>GetByIdAsync</name></member>
     <member refid="classbackend_1_1_repository_1_1_user_repository_1a2b306f56a7d85fcf34b951c04091885c" kind="function"><name>UpdateAsync</name></member>
   </compound>
+  <compound refid="namespace_amazon_1_1_s3" kind="namespace"><name>Amazon::S3</name>
+  </compound>
+  <compound refid="namespace_amazon_1_1_s3_1_1_model" kind="namespace"><name>Amazon::S3::Model</name>
+  </compound>
   <compound refid="namespacebackend" kind="namespace"><name>backend</name>
   </compound>
   <compound refid="namespacebackend_1_1_controllers" kind="namespace"><name>backend::Controllers</name>
@@ -193,7 +413,13 @@
   </compound>
   <compound refid="namespacebackend_1_1_dtos_1_1_account" kind="namespace"><name>backend::Dtos::Account</name>
   </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_image" kind="namespace"><name>backend::Dtos::Image</name>
+  </compound>
   <compound refid="namespacebackend_1_1_dtos_1_1_location" kind="namespace"><name>backend::Dtos::Location</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_postcard" kind="namespace"><name>backend::Dtos::Postcard</name>
+  </compound>
+  <compound refid="namespacebackend_1_1_dtos_1_1_review" kind="namespace"><name>backend::Dtos::Review</name>
   </compound>
   <compound refid="namespacebackend_1_1_dtos_1_1_user" kind="namespace"><name>backend::Dtos::User</name>
   </compound>
@@ -273,11 +499,21 @@
   </compound>
   <compound refid="namespace_microsoft_1_1_entity_framework_core_1_1_storage_1_1_value_conversion" kind="namespace"><name>Microsoft::EntityFrameworkCore::Storage::ValueConversion</name>
   </compound>
+  <compound refid="namespace_microsoft_1_1_extensions_1_1_configuration" kind="namespace"><name>Microsoft::Extensions::Configuration</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_extensions_1_1_dependency_injection" kind="namespace"><name>Microsoft::Extensions::DependencyInjection</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_extensions_1_1_hosting" kind="namespace"><name>Microsoft::Extensions::Hosting</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_extensions_1_1_logging" kind="namespace"><name>Microsoft::Extensions::Logging</name>
+  </compound>
   <compound refid="namespace_microsoft_1_1_extensions_1_1_options" kind="namespace"><name>Microsoft::Extensions::Options</name>
   </compound>
   <compound refid="namespace_microsoft_1_1_identity_model_1_1_tokens" kind="namespace"><name>Microsoft::IdentityModel::Tokens</name>
   </compound>
   <compound refid="namespace_microsoft_1_1_open_api_1_1_models" kind="namespace"><name>Microsoft::OpenApi::Models</name>
+  </compound>
+  <compound refid="namespace_newtonsoft_1_1_json" kind="namespace"><name>Newtonsoft::Json</name>
   </compound>
   <compound refid="namespace_npgsql_1_1_entity_framework_core_1_1_postgre_s_q_l_1_1_metadata" kind="namespace"><name>Npgsql::EntityFrameworkCore::PostgreSQL::Metadata</name>
   </compound>
@@ -287,13 +523,21 @@
   </compound>
   <compound refid="namespace_system_1_1_component_model_1_1_data_annotations" kind="namespace"><name>System::ComponentModel::DataAnnotations</name>
   </compound>
+  <compound refid="namespace_system_1_1_component_model_1_1_data_annotations_1_1_schema" kind="namespace"><name>System::ComponentModel::DataAnnotations::Schema</name>
+  </compound>
+  <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
+  </compound>
   <compound refid="namespace_system_1_1_identity_model_1_1_tokens_1_1_jwt" kind="namespace"><name>System::IdentityModel::Tokens::Jwt</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
   </compound>
   <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
   </compound>
   <compound refid="namespace_system_1_1_net" kind="namespace"><name>System::Net</name>
   </compound>
   <compound refid="namespace_system_1_1_net_1_1_http" kind="namespace"><name>System::Net::Http</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net_1_1_http_1_1_headers" kind="namespace"><name>System::Net::Http::Headers</name>
   </compound>
   <compound refid="namespace_system_1_1_net_1_1_mail" kind="namespace"><name>System::Net::Mail</name>
   </compound>
@@ -307,6 +551,8 @@
   </compound>
   <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
   </compound>
+  <compound refid="namespace_system_1_1_threading" kind="namespace"><name>System::Threading</name>
+  </compound>
   <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
   </compound>
   <compound refid="_account_controller_8cs" kind="file"><name>AccountController.cs</name>
@@ -314,6 +560,12 @@
   <compound refid="_email_sender_8cs" kind="file"><name>EmailSender.cs</name>
   </compound>
   <compound refid="_location_controller_8cs" kind="file"><name>LocationController.cs</name>
+  </compound>
+  <compound refid="_postcard_controller_8cs" kind="file"><name>PostcardController.cs</name>
+  </compound>
+  <compound refid="_review_controller_8cs" kind="file"><name>ReviewController.cs</name>
+  </compound>
+  <compound refid="_s3_controller_8cs" kind="file"><name>S3Controller.cs</name>
   </compound>
   <compound refid="_user_controller_8cs" kind="file"><name>UserController.cs</name>
   </compound>
@@ -329,9 +581,23 @@
   </compound>
   <compound refid="_update_dto_8cs" kind="file"><name>UpdateDto.cs</name>
   </compound>
+  <compound refid="_approve_reject_image_request_8cs" kind="file"><name>ApproveRejectImageRequest.cs</name>
+  </compound>
+  <compound refid="_upload_image_request_8cs" kind="file"><name>UploadImageRequest.cs</name>
+  </compound>
   <compound refid="_create_location_request_dto_8cs" kind="file"><name>CreateLocationRequestDto.cs</name>
   </compound>
   <compound refid="_update_location_request_dto_8cs" kind="file"><name>UpdateLocationRequestDto.cs</name>
+  </compound>
+  <compound refid="_create_postcard_dto_8cs" kind="file"><name>CreatePostcardDto.cs</name>
+  </compound>
+  <compound refid="_postcard_dto_8cs" kind="file"><name>PostcardDto.cs</name>
+  </compound>
+  <compound refid="_create_review_dto_8cs" kind="file"><name>CreateReviewDto.cs</name>
+  </compound>
+  <compound refid="_review_dto_8cs" kind="file"><name>ReviewDto.cs</name>
+  </compound>
+  <compound refid="_update_review_dto_8cs" kind="file"><name>UpdateReviewDto.cs</name>
   </compound>
   <compound refid="_user_dto_8cs" kind="file"><name>UserDto.cs</name>
   </compound>
@@ -341,11 +607,21 @@
   </compound>
   <compound refid="_i_location_repository_8cs" kind="file"><name>ILocationRepository.cs</name>
   </compound>
+  <compound refid="_i_postcard_repository_8cs" kind="file"><name>IPostcardRepository.cs</name>
+  </compound>
+  <compound refid="_i_review_repository_8cs" kind="file"><name>IReviewRepository.cs</name>
+  </compound>
+  <compound refid="_i_s3_service_8cs" kind="file"><name>IS3Service.cs</name>
+  </compound>
   <compound refid="_i_token_service_8cs" kind="file"><name>ITokenService.cs</name>
   </compound>
   <compound refid="_i_user_repository_8cs" kind="file"><name>IUserRepository.cs</name>
   </compound>
   <compound refid="_location_mappers_8cs" kind="file"><name>LocationMappers.cs</name>
+  </compound>
+  <compound refid="_postcard_mappers_8cs" kind="file"><name>PostcardMappers.cs</name>
+  </compound>
+  <compound refid="_review_mappers_8cs" kind="file"><name>ReviewMappers.cs</name>
   </compound>
   <compound refid="_role_mappers_8cs" kind="file"><name>RoleMappers.cs</name>
   </compound>
@@ -359,9 +635,33 @@
   </compound>
   <compound refid="20241112101358___updating_asp_net_users_8_designer_8cs" kind="file"><name>20241112101358_UpdatingAspNetUsers.Designer.cs</name>
   </compound>
+  <compound refid="20250113001756__reviews_migration_8cs" kind="file"><name>20250113001756_reviewsMigration.cs</name>
+  </compound>
+  <compound refid="20250113001756__reviews_migration_8_designer_8cs" kind="file"><name>20250113001756_reviewsMigration.Designer.cs</name>
+  </compound>
+  <compound refid="20250116211938___add_updated_at_to_review_8cs" kind="file"><name>20250116211938_AddUpdatedAtToReview.cs</name>
+  </compound>
+  <compound refid="20250116211938___add_updated_at_to_review_8_designer_8cs" kind="file"><name>20250116211938_AddUpdatedAtToReview.Designer.cs</name>
+  </compound>
+  <compound refid="20250120200441___update_postcards_8cs" kind="file"><name>20250120200441_UpdatePostcards.cs</name>
+  </compound>
+  <compound refid="20250120200441___update_postcards_8_designer_8cs" kind="file"><name>20250120200441_UpdatePostcards.Designer.cs</name>
+  </compound>
+  <compound refid="20250121173647___add_dev_admin_8cs" kind="file"><name>20250121173647_AddDevAdmin.cs</name>
+  </compound>
+  <compound refid="20250121173647___add_dev_admin_8_designer_8cs" kind="file"><name>20250121173647_AddDevAdmin.Designer.cs</name>
+  </compound>
   <compound refid="_application_d_b_context_model_snapshot_8cs" kind="file"><name>ApplicationDBContextModelSnapshot.cs</name>
   </compound>
+  <compound refid="_file_url_8cs" kind="file"><name>FileUrl.cs</name>
+  </compound>
   <compound refid="_location_8cs" kind="file"><name>Location.cs</name>
+  </compound>
+  <compound refid="_postcard_8cs" kind="file"><name>Postcard.cs</name>
+  </compound>
+  <compound refid="_postcard_props_8cs" kind="file"><name>PostcardProps.cs</name>
+  </compound>
+  <compound refid="_review_8cs" kind="file"><name>Review.cs</name>
   </compound>
   <compound refid="_user_8cs" kind="file"><name>User.cs</name>
   </compound>
@@ -375,6 +675,8 @@
   </compound>
   <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
     <member refid="_program_8cs_1a2f78352277081c620fd4cf92a5ce15e5" kind="variable"><name>builder</name></member>
+    <member refid="_program_8cs_1ae68bf920690e3e6fe0bdcf8057d39c9b" kind="variable"><name>bucketName</name></member>
+    <member refid="_program_8cs_1afa3f88733e24b2b63b6bef50c2f00375" kind="variable"><name>region</name></member>
     <member refid="_program_8cs_1a7b225fcb720e4d5ed2bbf60e28a25e6d" kind="variable"><name>app</name></member>
     <member refid="_program_8cs_1abc3694a0e15618f2499e5a540264f833" kind="function"><name>AddControllers</name></member>
     <member refid="_program_8cs_1a0d7859f9cad50e8e9fdf015100780e07" kind="function"><name>AddEndpointsApiExplorer</name></member>
@@ -384,11 +686,17 @@
     <member refid="_program_8cs_1ad21d6edb3707063a587749add60b3153" kind="function"><name>AddAuthentication</name></member>
     <member refid="_program_8cs_1a22f45e2b2befe5b3aca68abcffd13677" kind="function"><name>AddTransient&lt; IEmailSender, EmailSender &gt;</name></member>
     <member refid="_program_8cs_1a68e8e699aeab2fec37e126b50a1cf484" kind="function"><name>AddAuthorization</name></member>
+    <member refid="_program_8cs_1ad2cda4468d98dff1aeed89203cfed5c1" kind="function"><name>AddScoped&lt; PostcardRepository &gt;</name></member>
     <member refid="_program_8cs_1a983cef133bfc2fb38a757c7dc5b20494" kind="function"><name>AddScoped&lt; IAccountRepository, AccountRepository &gt;</name></member>
     <member refid="_program_8cs_1a9139f4d5b9d552d9e1ec835b32711c24" kind="function"><name>AddScoped&lt; IUserRepository, UserRepository &gt;</name></member>
     <member refid="_program_8cs_1a9849950cec908df52f64670df4e18f77" kind="function"><name>AddScoped&lt; ILocationRepository, LocationRepository &gt;</name></member>
+    <member refid="_program_8cs_1a1939be1dd8434337d5d01d063878c41a" kind="function"><name>AddScoped&lt; IReviewRepository, ReviewRepository &gt;</name></member>
     <member refid="_program_8cs_1a6866196205f918f00031e6f9e8174e04" kind="function"><name>AddScoped&lt; ITokenService, TokenService &gt;</name></member>
-    <member refid="_program_8cs_1a04ddb3d6e7440b1c2e1b4a00d011196a" kind="function"><name>AddCors</name></member>
+    <member refid="_program_8cs_1a94d78aed1708b46615faad38045b55e9" kind="function"><name>AddScoped&lt; IPostcardRepository, PostcardRepository &gt;</name></member>
+    <member refid="_program_8cs_1af2ce7dd5da4770ff40d8974d6efde850" kind="function"><name>AddSingleton&lt; IAmazonS3 &gt;</name></member>
+    <member refid="_program_8cs_1a18e9e8c77410b05334da414ca14952a0" kind="function"><name>AddScoped&lt; IS3Service, S3Service &gt;</name></member>
+    <member refid="_program_8cs_1afc329b105355f9a87f62691533763a08" kind="function"><name>AddHostedService&lt; PostcardCleanupService &gt;</name></member>
+    <member refid="_program_8cs_1aa5d23f29e8e48024cb37e380131e1f73" kind="function"><name>AddCors</name></member>
     <member refid="_program_8cs_1ae4852beee8ee6738630e9a333695edec" kind="function"><name>AddSwaggerGen</name></member>
     <member refid="_program_8cs_1a07573b2ad5cf983fb1fc078d54a4c884" kind="function"><name>Use</name></member>
     <member refid="_program_8cs_1a79a944c7f0e25196ca3c5a8638b919b9" kind="function"><name>if</name></member>
@@ -402,7 +710,15 @@
   </compound>
   <compound refid="_location_repository_8cs" kind="file"><name>LocationRepository.cs</name>
   </compound>
+  <compound refid="_postcard_repository_8cs" kind="file"><name>PostcardRepository.cs</name>
+  </compound>
+  <compound refid="_review_repository_8cs" kind="file"><name>ReviewRepository.cs</name>
+  </compound>
   <compound refid="_user_repository_8cs" kind="file"><name>UserRepository.cs</name>
+  </compound>
+  <compound refid="_postcard_cleanup_service_8cs" kind="file"><name>PostcardCleanupService.cs</name>
+  </compound>
+  <compound refid="_s3_service_8cs" kind="file"><name>S3Service.cs</name>
   </compound>
   <compound refid="_token_service_8cs" kind="file"><name>TokenService.cs</name>
   </compound>
@@ -418,6 +734,8 @@
   </compound>
   <compound refid="dir_c4877f0fa4f3b504f97206f18b953cdb" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos</name>
   </compound>
+  <compound refid="dir_41aa293a327a8e2a21b20c0bf7ee6ffe" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Image</name>
+  </compound>
   <compound refid="dir_35d6c25b7f18d38ff1e50b7361d756eb" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Interfaces</name>
   </compound>
   <compound refid="dir_6163cd6c302f129ddd0f7395cfa97076" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Location</name>
@@ -432,9 +750,13 @@
   </compound>
   <compound refid="dir_ad2ed221c7a18ff861af2026e6c02a22" kind="dir"><name>C:/PROGI/travel-tales-app/backend/obj</name>
   </compound>
+  <compound refid="dir_09e1a1b9571b3b3915a2ec7bd2478b0c" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Postcard</name>
+  </compound>
   <compound refid="dir_e8eafb186e11258c152b3e96f004d5d6" kind="dir"><name>C:/PROGI</name>
   </compound>
   <compound refid="dir_b20006f99825ef22b39200956831f9a1" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Repository</name>
+  </compound>
+  <compound refid="dir_fa37002a917330139c3b72c3e727c962" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Dtos/Review</name>
   </compound>
   <compound refid="dir_5721f36172bbfe5306dcba1f91ab514e" kind="dir"><name>C:/PROGI/travel-tales-app/backend/Service</name>
   </compound>
