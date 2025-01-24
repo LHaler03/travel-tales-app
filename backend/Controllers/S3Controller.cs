@@ -170,8 +170,27 @@ public class S3Controller : ControllerBase
     {
         var imagesToReview = await _s3Service.ListFilesInFolderAsync("images/review");
         var imagesToReviewLinks = await _s3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync("images/review");
-        var imagePairs = imagesToReview.Zip(imagesToReviewLinks, (image, link) => new { ImageName = image, ImageUrl = link });
-        return Ok(imagePairs);
+
+        var imageReviewData = new List<object>();
+
+        foreach (var image in imagesToReview)
+        {
+            var locationId = image.Split('/')[2];
+
+            var location = _context.Locations.FindAsync(int.Parse(locationId)).Result;
+            var locationName = location?.Name ?? "Unknown Location";
+
+            var imageUrl = imagesToReviewLinks.Find(link => link.Contains(image));
+
+            imageReviewData.Add(new
+            {
+                ImageName = image,
+                ImageUrl = imageUrl,
+                LocationName = locationName
+            });
+        } 
+        // var imagePairs = imagesToReview.Zip(imagesToReviewLinks, (image, link) => new { ImageName = image, ImageUrl = link });
+        return Ok(imageReviewData);
     }
 
     [HttpGet("images-to-review-count")]
