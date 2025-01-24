@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const City = styled.h1`
   text-align: center;
-  font-size: 2,5rem;
+  font-size: 2, 5rem;
   margin-bottom: 1rem;
   @media (min-width: 600px) {
     font-size: 5rem;
