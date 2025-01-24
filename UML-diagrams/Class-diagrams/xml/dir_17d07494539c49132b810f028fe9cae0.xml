@@ -3,6 +3,8 @@
   <compounddef id="dir_17d07494539c49132b810f028fe9cae0" kind="dir">
     <compoundname>C:/PROGI/travel-tales-app/backend/Mappers</compoundname>
     <innerfile refid="_location_mappers_8cs">LocationMappers.cs</innerfile>
+    <innerfile refid="_postcard_mappers_8cs">PostcardMappers.cs</innerfile>
+    <innerfile refid="_review_mappers_8cs">ReviewMappers.cs</innerfile>
     <innerfile refid="_role_mappers_8cs">RoleMappers.cs</innerfile>
     <innerfile refid="_user_mappers_8cs">UserMappers.cs</innerfile>
     <briefdescription>

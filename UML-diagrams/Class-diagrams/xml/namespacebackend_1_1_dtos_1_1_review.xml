@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="namespacebackend_1_1_dtos_1_1_review" kind="namespace" language="C#">
+    <compoundname>backend::Dtos::Review</compoundname>
+    <innerclass refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto" prot="public">backend::Dtos::Review::CreateReviewDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto" prot="public">backend::Dtos::Review::ReviewDto</innerclass>
+    <innerclass refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" prot="public">backend::Dtos::Review::UpdateReviewDto</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Review/CreateReviewDto.cs" line="3" column="1"/>
+  </compounddef>
+</doxygen>

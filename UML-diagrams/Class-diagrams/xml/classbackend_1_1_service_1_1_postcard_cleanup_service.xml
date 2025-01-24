@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_service_1_1_postcard_cleanup_service" kind="class" language="C#" prot="public">
+    <compoundname>backend::Service::PostcardCleanupService</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BackgroundService</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_postcard_cleanup_service_1a98e81470ef2c8ab6db37514475d44d4c" prot="private" static="no" mutable="no">
+        <type>readonly IServiceProvider</type>
+        <definition>readonly IServiceProvider backend.Service.PostcardCleanupService._services</definition>
+        <argsstring></argsstring>
+        <name>_services</name>
+        <qualifiedname>backend.Service.PostcardCleanupService._services</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="14" column="43" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_postcard_cleanup_service_1aebb77e928135f1d952e8e66edf16bd3f" prot="private" static="no" mutable="no">
+        <type>readonly ILogger&lt; <ref refid="classbackend_1_1_service_1_1_postcard_cleanup_service" kindref="compound">PostcardCleanupService</ref> &gt;</type>
+        <definition>readonly ILogger&lt;PostcardCleanupService&gt; backend.Service.PostcardCleanupService._logger</definition>
+        <argsstring></argsstring>
+        <name>_logger</name>
+        <qualifiedname>backend.Service.PostcardCleanupService._logger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="15" column="34" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_postcard_cleanup_service_1a29ddd1e69fb6f420f2948a0833a6727c" prot="private" static="no" mutable="no">
+        <type>readonly TimeSpan</type>
+        <definition>readonly TimeSpan backend.Service.PostcardCleanupService._interval</definition>
+        <argsstring></argsstring>
+        <name>_interval</name>
+        <qualifiedname>backend.Service.PostcardCleanupService._interval</qualifiedname>
+        <initializer>= TimeSpan.FromHours(12)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="16" column="35" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_postcard_cleanup_service_1a2b05c9a117186036391431737839c832" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Service.PostcardCleanupService.PostcardCleanupService</definition>
+        <argsstring>(IServiceProvider services, ILogger&lt; PostcardCleanupService &gt; logger)</argsstring>
+        <name>PostcardCleanupService</name>
+        <qualifiedname>backend.Service.PostcardCleanupService.PostcardCleanupService</qualifiedname>
+        <param>
+          <type>IServiceProvider</type>
+          <declname>services</declname>
+        </param>
+        <param>
+          <type>ILogger&lt; <ref refid="classbackend_1_1_service_1_1_postcard_cleanup_service" kindref="compound">PostcardCleanupService</ref> &gt;</type>
+          <declname>logger</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="18" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="18" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_postcard_cleanup_service_1a7a87f2019e0f882e821403bd6d94cf95" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override async Task</type>
+        <definition>override async Task backend.Service.PostcardCleanupService.ExecuteAsync</definition>
+        <argsstring>(CancellationToken stoppingToken)</argsstring>
+        <name>ExecuteAsync</name>
+        <qualifiedname>backend.Service.PostcardCleanupService.ExecuteAsync</qualifiedname>
+        <param>
+          <type>CancellationToken</type>
+          <declname>stoppingToken</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="26" column="39" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="26" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BackgroundService</label>
+      </node>
+      <node id="1">
+        <label>backend.Service.PostcardCleanupService</label>
+        <link refid="classbackend_1_1_service_1_1_postcard_cleanup_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BackgroundService</label>
+      </node>
+      <node id="1">
+        <label>backend.Service.PostcardCleanupService</label>
+        <link refid="classbackend_1_1_service_1_1_postcard_cleanup_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" line="12" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Service/PostcardCleanupService.cs" bodystart="13" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a29ddd1e69fb6f420f2948a0833a6727c" prot="private" virt="non-virtual"><scope>backend::Service::PostcardCleanupService</scope><name>_interval</name></member>
+      <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1aebb77e928135f1d952e8e66edf16bd3f" prot="private" virt="non-virtual"><scope>backend::Service::PostcardCleanupService</scope><name>_logger</name></member>
+      <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a98e81470ef2c8ab6db37514475d44d4c" prot="private" virt="non-virtual"><scope>backend::Service::PostcardCleanupService</scope><name>_services</name></member>
+      <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a7a87f2019e0f882e821403bd6d94cf95" prot="protected" virt="non-virtual"><scope>backend::Service::PostcardCleanupService</scope><name>ExecuteAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_postcard_cleanup_service_1a2b05c9a117186036391431737839c832" prot="public" virt="non-virtual"><scope>backend::Service::PostcardCleanupService</scope><name>PostcardCleanupService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

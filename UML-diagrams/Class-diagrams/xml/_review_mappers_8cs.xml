@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_review_mappers_8cs" kind="file" language="C#">
+    <compoundname>ReviewMappers.cs</compoundname>
+    <innerclass refid="classbackend_1_1_mappers_1_1_review_mappers" prot="public">backend::Mappers::ReviewMappers</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_mappers">backend::Mappers</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_review" kindref="compound">backend.Dtos.Review</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_models" kindref="compound">backend.Models</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_mappers" kindref="compound">backend.Mappers</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="classbackend_1_1_mappers_1_1_review_mappers" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbackend_1_1_mappers_1_1_review_mappers" kindref="compound">ReviewMappers</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto" kindref="compound">ReviewDto</ref><sp/><ref refid="classbackend_1_1_mappers_1_1_review_mappers_1a4bc53462b595be4fadf4b6ad5abceb1f" kindref="member">ToReviewDto</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref><sp/>reviewModel)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto" kindref="compound">ReviewDto</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Id<sp/>=<sp/>reviewModel.<ref refid="classbackend_1_1_models_1_1_review_1aa522360e61c4e2df469a70176bf39017" kindref="member">Id</ref>,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Comment<sp/>=<sp/>reviewModel.<ref refid="classbackend_1_1_models_1_1_review_1aeb3f9f2a05889e7e16eb9c6b5b5c3cbd" kindref="member">Comment</ref>,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rating<sp/>=<sp/>reviewModel.<ref refid="classbackend_1_1_models_1_1_review_1a3065fe400d9f2bd4766be84456ec3927" kindref="member">Rating</ref>,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreatedAt<sp/>=<sp/>reviewModel.<ref refid="classbackend_1_1_models_1_1_review_1a8a5936b22f35fa0ab6a20489cfce2103" kindref="member">CreatedAt</ref>,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UpdatedAt<sp/>=<sp/>reviewModel.<ref refid="classbackend_1_1_models_1_1_review_1a1aa3775f936140a7ecfe0673b4c55fb9" kindref="member">UpdatedAt</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UserName<sp/>=<sp/>reviewModel.User.UserName</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref><sp/><ref refid="classbackend_1_1_mappers_1_1_review_mappers_1ac3baaaee0f17b83a65959414b8821c6e" kindref="member">ToReviewFromCreateDto</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto" kindref="compound">CreateReviewDto</ref><sp/>reviewDto)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Comment<sp/>=<sp/>reviewDto.<ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a862b0a4c49a3af56bddb88cb4eeb8ae2" kindref="member">Comment</ref>,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rating<sp/>=<sp/>reviewDto.<ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a52559c9cad4164b8467f1a9b52cbfa15" kindref="member">Rating</ref>,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LocationId<sp/>=<sp/>reviewDto.<ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto_1a71a30f8414d62bd7e3086d6a0388ed49" kindref="member">LocationId</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UserId<sp/>=<sp/>reviewDto.UserId</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_review_controller_8cs" kind="file" language="C#">
+    <compoundname>ReviewController.cs</compoundname>
+    <innerclass refid="classbackend_1_1_controllers_1_1_review_controller" prot="public">backend::Controllers::ReviewController</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_controllers">backend::Controllers</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_data" kindref="compound">backend.Data</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_interfaces" kindref="compound">backend.Interfaces</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_models" kindref="compound">backend.Models</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Microsoft.AspNetCore.Mvc;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_mappers" kindref="compound">backend.Mappers</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_review" kindref="compound">backend.Dtos.Review</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_controllers" kindref="compound">backend.Controllers</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>[Route(</highlight><highlight class="stringliteral">&quot;api/reviews&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="14" refid="classbackend_1_1_controllers_1_1_review_controller" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbackend_1_1_controllers_1_1_review_controller" kindref="compound">ReviewController</ref><sp/>:<sp/>ControllerBase</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>readonly<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" kindref="compound">IReviewRepository</ref><sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1a617ed27e19204f324bfaac01b2fd0658" kindref="member">ReviewController</ref>(<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository" kindref="compound">IReviewRepository</ref><sp/>reviewRepo)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref><sp/>=<sp/>reviewRepo;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpGet(</highlight><highlight class="stringliteral">&quot;location/{locationId}&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1a81c50f0da1781bc06649ab3eb6c1899b" kindref="member">GetReviewsForLocation</ref>([FromRoute]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>locationId)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>reviews<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1aee9c75f370f98e82abaa9587e1e5e584" kindref="member">GetReviewsByLocationIdAsync</ref>(locationId);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>reviewsDto<sp/>=<sp/>reviews.Select(x<sp/>=&gt;<sp/>x.ToReviewDto());</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Ok(reviewsDto);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpGet(</highlight><highlight class="stringliteral">&quot;{id}&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1ac20acd485a3774c3f3159e41738b8986" kindref="member">GetById</ref>([FromRoute]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>review<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab685553d2a0f926cbe3c8e3075b67057" kindref="member">GetReviewByIdAsync</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(review<sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NotFound();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>reviewDto<sp/>=<sp/>review.ToReviewDto();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Ok(reviewDto);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpGet(</highlight><highlight class="stringliteral">&quot;user/{userId}/location/{locationId}&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1a8cf329dc950b91174c815abed6a78654" kindref="member">GetReviewsByUser</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>userId,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>locationId)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>review<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a551d79220324a59f876bbf18a41373c3" kindref="member">GetReviewsByUserAsync</ref>(userId,<sp/>locationId);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(review<sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NotFound($</highlight><highlight class="stringliteral">&quot;No<sp/>reviews<sp/>found<sp/>for<sp/>user<sp/>with<sp/>ID<sp/>{userId}<sp/>at<sp/>location<sp/>with<sp/>ID<sp/>{locationId}<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Ok(review.ToReviewDto());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpPost]</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1aa29bb4a4424783f87d8e62823916dc03" kindref="member">CreateReview</ref>([FromBody]<sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto" kindref="compound">CreateReviewDto</ref><sp/>createReviewDto)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ModelState.IsValid)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BadRequest(ModelState);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>createdReview<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a35f69c0de83fdf13f46887fe1fbef3a5" kindref="member">AddReviewAsync</ref>(createReviewDto.ToReviewFromCreateDto());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CreatedAtAction(nameof(<ref refid="classbackend_1_1_controllers_1_1_review_controller_1ac20acd485a3774c3f3159e41738b8986" kindref="member">GetById</ref>),<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>createdReview.Id<sp/>},<sp/>createdReview.ToReviewDto());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(InvalidOperationException<sp/>ex)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BadRequest(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>{<sp/>message<sp/>=<sp/>ex.Message<sp/>});</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(KeyNotFoundException<sp/>ex)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NotFound(ex.Message);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Exception<sp/>ex)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>StatusCode(500,<sp/></highlight><highlight class="stringliteral">&quot;An<sp/>error<sp/>occurred<sp/>while<sp/>creating<sp/>the<sp/>review&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpPut(</highlight><highlight class="stringliteral">&quot;{reviewId}&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1a4e72617032e211e7ab1a2838cc6a3ae7" kindref="member">UpdateReview</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>reviewId,<sp/>[FromBody]<sp/><ref refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" kindref="compound">UpdateReviewDto</ref><sp/>updateReviewDto)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ModelState.IsValid)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BadRequest(ModelState);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>updatedReview<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a2dc9b5a9c493bad130952fef4fedb493" kindref="member">UpdateReviewAsync</ref>(reviewId,<sp/>updateReviewDto);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Ok(updatedReview.ToReviewDto());</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(KeyNotFoundException<sp/>ex)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NotFound(ex.Message);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(InvalidOperationException<sp/>ex)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BadRequest(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>{<sp/>message<sp/>=<sp/>ex.Message<sp/>});</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>[HttpDelete(</highlight><highlight class="stringliteral">&quot;{id}&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>async<sp/>Task&lt;IActionResult&gt;<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1aa783554a86c744e80be751f9cad15920" kindref="member">DeleteReview</ref>([FromRoute]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>deletedReview<sp/>=<sp/>await<sp/><ref refid="classbackend_1_1_controllers_1_1_review_controller_1af2f3e02ef61cdddd75cdcaa96df37e8b" kindref="member">_reviewRepo</ref>.<ref refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab1c1d539f841f602481084ffc6d05ac9" kindref="member">DeleteReviewAsync</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>deletedReview<sp/>!=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>?<sp/>NoContent()<sp/>:<sp/>NotFound();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/ReviewController.cs"/>
+  </compounddef>
+</doxygen>

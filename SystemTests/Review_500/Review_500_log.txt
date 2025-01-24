@@ -1,0 +1,36 @@
+1.
+open on http://ec2-3-74-155-131.eu-central-1.compute.amazonaws.com/ OK
+2.
+setWindowSize on 797x824 OK
+3.
+click on css=.sc-fqujGp path OK
+4.
+Trying to find css=.sc-fqujGp path... OK
+5.
+Trying to find linkText=Login... OK
+6.
+click on name=username OK
+7.
+type on name=username with value bigmama123 OK
+8.
+click on name=password OK
+9.
+type on name=password with value Hanmabaki14 OK
+10.
+click on css=.sc-gQaihK OK
+11.
+Trying to find css=.sc-dntaoT... OK
+21:20:21
+12.
+click on css=.leaflet-marker-icon:nth-child(32) OK
+13.
+click on css=.sc-lnsxGb:nth-child(2) OK
+14.
+click on css=.sc-dSfWjt:nth-child(4) > .sc-kJZLhT OK
+15.
+click on css=.sc-lgprfV OK
+16.
+type on css=.sc-lgprfV with value 50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 OK
+17.
+click on css=.sc-lnsxGb:nth-child(2) OK
+'Review-500' completed successfully

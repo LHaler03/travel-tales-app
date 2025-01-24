@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_service_1_1_s3_service" kind="class" language="C#" prot="public">
+    <compoundname>backend::Service::S3Service</compoundname>
+    <basecompoundref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" prot="public" virt="non-virtual">backend.Interfaces.IS3Service</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_s3_service_1a0cfa84d4f407e0c294de677c4f7df3de" prot="private" static="no" mutable="no">
+        <type>readonly IAmazonS3</type>
+        <definition>readonly IAmazonS3 backend.Service.S3Service._s3Client</definition>
+        <argsstring></argsstring>
+        <name>_s3Client</name>
+        <qualifiedname>backend.Service.S3Service._s3Client</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="14" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_service_1_1_s3_service_1a2392f1b2665dd4d148709d059b446ac0" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string backend.Service.S3Service._bucketName</definition>
+        <argsstring></argsstring>
+        <name>_bucketName</name>
+        <qualifiedname>backend.Service.S3Service._bucketName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="15" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a9ac01ba6d3d428385d080ebdeb2dd423" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Service.S3Service.S3Service</definition>
+        <argsstring>(IAmazonS3 s3Client, string bucketName)</argsstring>
+        <name>S3Service</name>
+        <qualifiedname>backend.Service.S3Service.S3Service</qualifiedname>
+        <param>
+          <type>IAmazonS3</type>
+          <declname>s3Client</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>bucketName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="17" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a4d7c8e336251e23157976e7748b80e4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; string &gt; &gt; backend.Service.S3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync</definition>
+        <argsstring>(string locationName)</argsstring>
+        <name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name>
+        <qualifiedname>backend.Service.S3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a5331a5dcc1340423457b5aca31eaaac3">GetAllFilesFromObjectAsPreSignedUrlsAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>locationName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="23" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="23" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a94a33e8abaf4767156af33b963d3a4ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; <ref refid="classbackend_1_1_models_1_1_file_url" kindref="compound">FileUrl</ref> &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; FileUrl &gt; &gt; backend.Service.S3Service.GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</definition>
+        <argsstring>(string locationName)</argsstring>
+        <name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name>
+        <qualifiedname>backend.Service.S3Service.GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a9b02cb5647239d45610ace977171f1df">GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>locationName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="42" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="42" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1ac39bc6c91ad4a7fefbcf4b921b316ac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; Stream &gt;</type>
+        <definition>async Task&lt; Stream &gt; backend.Service.S3Service.GetFileAsync</definition>
+        <argsstring>(string key)</argsstring>
+        <name>GetFileAsync</name>
+        <qualifiedname>backend.Service.S3Service.GetFileAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a133773fc98a6a3b0985a2930093bb152">GetFileAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="63" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="63" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1af60cb0bb7cdcaba122eb6bef4ca313a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; string &gt;</type>
+        <definition>async Task&lt; string &gt; backend.Service.S3Service.GetPreSignedUrlAsync</definition>
+        <argsstring>(string key, int expirationMinutes=10)</argsstring>
+        <name>GetPreSignedUrlAsync</name>
+        <qualifiedname>backend.Service.S3Service.GetPreSignedUrlAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a49694c7b35fe2ebc5263b3993bededd8">GetPreSignedUrlAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>expirationMinutes</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="75" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="75" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a34afda00d964673b770ebc676628f50f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; string &gt;</type>
+        <definition>async Task&lt; string &gt; backend.Service.S3Service.GetPreSignedDownloadUrlAsync</definition>
+        <argsstring>(string key, int expirationMinutes=10)</argsstring>
+        <name>GetPreSignedDownloadUrlAsync</name>
+        <qualifiedname>backend.Service.S3Service.GetPreSignedDownloadUrlAsync</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>expirationMinutes</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="86" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="86" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a69d33aca3b51f4b0f0a8b0038f133177" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; string &gt;</type>
+        <definition>async Task&lt; string &gt; backend.Service.S3Service.UploadFileAsync</definition>
+        <argsstring>(string base64Image, string folderPath)</argsstring>
+        <name>UploadFileAsync</name>
+        <qualifiedname>backend.Service.S3Service.UploadFileAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ad7ce22d08ed9a215733e5cdc710e988e">UploadFileAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>base64Image</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="102" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="102" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a3be12f26b7286a3b2c40c8fd26fdf1c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task</type>
+        <definition>async Task backend.Service.S3Service.UploadStockImagesAsync</definition>
+        <argsstring>(string base64Image, string folderPath)</argsstring>
+        <name>UploadStockImagesAsync</name>
+        <qualifiedname>backend.Service.S3Service.UploadStockImagesAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ab7c3630c8c22fd5f8deb1bfd45ac6939">UploadStockImagesAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>base64Image</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="144" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="144" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a4d0504a59ad92076920c075c43c6df4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; string &gt; &gt; backend.Service.S3Service.UploadFileAndGetImageAndDownloadLinksAsync</definition>
+        <argsstring>(string filePath, string s3Key)</argsstring>
+        <name>UploadFileAndGetImageAndDownloadLinksAsync</name>
+        <qualifiedname>backend.Service.S3Service.UploadFileAndGetImageAndDownloadLinksAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a313caa54c47c9ca503e17ca2d0bab544">UploadFileAndGetImageAndDownloadLinksAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>s3Key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="184" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="184" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1ae3bb71030b4eedf8d022040c41e68bce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; bool &gt;</type>
+        <definition>async Task&lt; bool &gt; backend.Service.S3Service.DeleteObjectAsync</definition>
+        <argsstring>(string key)</argsstring>
+        <name>DeleteObjectAsync</name>
+        <qualifiedname>backend.Service.S3Service.DeleteObjectAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1abe1b32726c23c2bafcefc7c684858a91">DeleteObjectAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="218" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="218" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1aab7534e55da8929b9dde897c4e5c483b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; string &gt;</type>
+        <definition>async Task&lt; string &gt; backend.Service.S3Service.MoveFileAsync</definition>
+        <argsstring>(string sourceKey, string destinationKey)</argsstring>
+        <name>MoveFileAsync</name>
+        <qualifiedname>backend.Service.S3Service.MoveFileAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1aefad54f0f09a23247cd1413c425381b4">MoveFileAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>sourceKey</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>destinationKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="259" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="259" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_service_1_1_s3_service_1a748ff3934b1b6c05ddb176b30fac88e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>async Task&lt; List&lt; string &gt; &gt; backend.Service.S3Service.ListFilesInFolderAsync</definition>
+        <argsstring>(string folderPath)</argsstring>
+        <name>ListFilesInFolderAsync</name>
+        <qualifiedname>backend.Service.S3Service.ListFilesInFolderAsync</qualifiedname>
+        <reimplements refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a01334b958b12cc307239f2ce34f30908">ListFilesInFolderAsync</reimplements>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="281" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="281" bodyend="299"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+      <node id="1">
+        <label>backend.Service.S3Service</label>
+        <link refid="classbackend_1_1_service_1_1_s3_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+      <node id="1">
+        <label>backend.Service.S3Service</label>
+        <link refid="classbackend_1_1_service_1_1_s3_service"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" line="12" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Service/S3Service.cs" bodystart="13" bodyend="300"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a2392f1b2665dd4d148709d059b446ac0" prot="private" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>_bucketName</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a0cfa84d4f407e0c294de677c4f7df3de" prot="private" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>_s3Client</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1ae3bb71030b4eedf8d022040c41e68bce" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>DeleteObjectAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a94a33e8abaf4767156af33b963d3a4ee" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a4d7c8e336251e23157976e7748b80e4d" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1ac39bc6c91ad4a7fefbcf4b921b316ac4" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>GetFileAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a34afda00d964673b770ebc676628f50f" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>GetPreSignedDownloadUrlAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1af60cb0bb7cdcaba122eb6bef4ca313a2" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>GetPreSignedUrlAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a748ff3934b1b6c05ddb176b30fac88e6" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>ListFilesInFolderAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1aab7534e55da8929b9dde897c4e5c483b" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>MoveFileAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a9ac01ba6d3d428385d080ebdeb2dd423" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>S3Service</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a4d0504a59ad92076920c075c43c6df4f" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>UploadFileAndGetImageAndDownloadLinksAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a69d33aca3b51f4b0f0a8b0038f133177" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>UploadFileAsync</name></member>
+      <member refid="classbackend_1_1_service_1_1_s3_service_1a3be12f26b7286a3b2c40c8fd26fdf1c0" prot="public" virt="non-virtual"><scope>backend::Service::S3Service</scope><name>UploadStockImagesAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

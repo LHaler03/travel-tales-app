@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IPostcardRepository</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_repository_1_1_postcard_repository" prot="public" virt="non-virtual">backend.Repository.PostcardRepository</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1a0216b7dd345342c04758cf5d1b86f859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; IEnumerable&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref> &gt; &gt;</type>
+        <definition>Task&lt; IEnumerable&lt; Postcard &gt; &gt; backend.Interfaces.IPostcardRepository.GetPostcardsByUserIdAsync</definition>
+        <argsstring>(string userId)</argsstring>
+        <name>GetPostcardsByUserIdAsync</name>
+        <qualifiedname>backend.Interfaces.IPostcardRepository.GetPostcardsByUserIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_postcard_repository_1a49507bc77cdb4aa8075c7306213e0893">GetPostcardsByUserIdAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" line="9" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1afdbe75521640fb4d4941b2eeccd5fb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref>?&gt;</type>
+        <definition>Task&lt; Postcard?&gt; backend.Interfaces.IPostcardRepository.GetPostcardByIdAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>GetPostcardByIdAsync</name>
+        <qualifiedname>backend.Interfaces.IPostcardRepository.GetPostcardByIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_postcard_repository_1ae5d9b9934a86cef53d99730904b0d0e0">GetPostcardByIdAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" line="10" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1af27c68a5ef066b15cde30d6797300eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; bool &gt;</type>
+        <definition>Task&lt; bool &gt; backend.Interfaces.IPostcardRepository.DeletePostcardAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>DeletePostcardAsync</name>
+        <qualifiedname>backend.Interfaces.IPostcardRepository.DeletePostcardAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_postcard_repository_1aeff95ff30861b548fe481d150efc8566">DeletePostcardAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" line="11" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1aa2ddcfddc6c85544324e04d524303039" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref> &gt;</type>
+        <definition>Task&lt; Postcard &gt; backend.Interfaces.IPostcardRepository.CreatePostcardAsync</definition>
+        <argsstring>(Postcard postcard)</argsstring>
+        <name>CreatePostcardAsync</name>
+        <qualifiedname>backend.Interfaces.IPostcardRepository.CreatePostcardAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_postcard_repository_1a2aad754723877b4edfec7bff4e38b0c0">CreatePostcardAsync</reimplementedby>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref></type>
+          <declname>postcard</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" line="12" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IPostcardRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository"/>
+      </node>
+      <node id="2">
+        <label>backend.Repository.PostcardRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_postcard_repository"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" line="7" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs" bodystart="8" bodyend="13"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1aa2ddcfddc6c85544324e04d524303039" prot="public" virt="non-virtual"><scope>backend::Interfaces::IPostcardRepository</scope><name>CreatePostcardAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1af27c68a5ef066b15cde30d6797300eab" prot="public" virt="non-virtual"><scope>backend::Interfaces::IPostcardRepository</scope><name>DeletePostcardAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1afdbe75521640fb4d4941b2eeccd5fb66" prot="public" virt="non-virtual"><scope>backend::Interfaces::IPostcardRepository</scope><name>GetPostcardByIdAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1a0216b7dd345342c04758cf5d1b86f859" prot="public" virt="non-virtual"><scope>backend::Interfaces::IPostcardRepository</scope><name>GetPostcardsByUserIdAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

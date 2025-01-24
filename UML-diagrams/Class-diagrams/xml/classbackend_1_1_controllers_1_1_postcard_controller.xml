@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_controllers_1_1_postcard_controller" kind="class" language="C#" prot="public">
+    <compoundname>backend::Controllers::PostcardController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ControllerBase</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_postcard_controller_1a1150203e5d58f6f8c045725b2acb1c18" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kindref="compound">IPostcardRepository</ref></type>
+        <definition>readonly IPostcardRepository backend.Controllers.PostcardController._postcardRepo</definition>
+        <argsstring></argsstring>
+        <name>_postcardRepo</name>
+        <qualifiedname>backend.Controllers.PostcardController._postcardRepo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="14" column="46" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_postcard_controller_1a88a8fffb185625a5ad627eaf61aacbca" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+        <definition>readonly IS3Service backend.Controllers.PostcardController._s3Service</definition>
+        <argsstring></argsstring>
+        <name>_s3Service</name>
+        <qualifiedname>backend.Controllers.PostcardController._s3Service</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="15" column="37" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_postcard_controller_1acd1e8b2eff382dd0e2e9b2e3a18ddec2" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref></type>
+        <definition>readonly ILocationRepository backend.Controllers.PostcardController._locationRepo</definition>
+        <argsstring></argsstring>
+        <name>_locationRepo</name>
+        <qualifiedname>backend.Controllers.PostcardController._locationRepo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="16" column="46" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_postcard_controller_1a3a406875a2d05e21c91371f83a10a60e" prot="private" static="no" mutable="no">
+        <type>readonly UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+        <definition>readonly UserManager&lt;User&gt; backend.Controllers.PostcardController._userManager</definition>
+        <argsstring></argsstring>
+        <name>_userManager</name>
+        <qualifiedname>backend.Controllers.PostcardController._userManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="17" column="38" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_postcard_controller_1a8a703c15c0f13af05ebebb438201b031" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>backend.Controllers.PostcardController.PostcardController</definition>
+        <argsstring>(IPostcardRepository postcardRepo, IS3Service s3Service, ILocationRepository locationRepo, UserManager&lt; User &gt; userManager)</argsstring>
+        <name>PostcardController</name>
+        <qualifiedname>backend.Controllers.PostcardController.PostcardController</qualifiedname>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kindref="compound">IPostcardRepository</ref></type>
+          <declname>postcardRepo</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+          <declname>s3Service</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref></type>
+          <declname>locationRepo</declname>
+        </param>
+        <param>
+          <type>UserManager&lt; <ref refid="classbackend_1_1_models_1_1_user" kindref="compound">User</ref> &gt;</type>
+          <declname>userManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="19" column="16" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="19" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_postcard_controller_1aafe19f5c8abc8cade4c8932594cbe8ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.PostcardController.GetUserPostcards</definition>
+        <argsstring>(string userId)</argsstring>
+        <name>GetUserPostcards</name>
+        <qualifiedname>backend.Controllers.PostcardController.GetUserPostcards</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="28" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_postcard_controller_1af5acca508e597b24bb91bc4eebd95b78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.PostcardController.GetPostcard</definition>
+        <argsstring>(int id)</argsstring>
+        <name>GetPostcard</name>
+        <qualifiedname>backend.Controllers.PostcardController.GetPostcard</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="35" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="35" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_postcard_controller_1a889cfe8f4ec1f8a3815fb0a70f4fc819" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async Task&lt; IActionResult &gt;</type>
+        <definition>async Task&lt; IActionResult &gt; backend.Controllers.PostcardController.DeletePostcard</definition>
+        <argsstring>(int id)</argsstring>
+        <name>DeletePostcard</name>
+        <qualifiedname>backend.Controllers.PostcardController.DeletePostcard</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="43" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="43" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.PostcardController</label>
+        <link refid="classbackend_1_1_controllers_1_1_postcard_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ControllerBase</label>
+      </node>
+      <node id="1">
+        <label>backend.Controllers.PostcardController</label>
+        <link refid="classbackend_1_1_controllers_1_1_postcard_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_postcardRepo</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>_s3Service</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_locationRepo</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>backend.Interfaces.ILocationRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_location_repository"/>
+      </node>
+      <node id="3">
+        <label>backend.Interfaces.IPostcardRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository"/>
+      </node>
+      <node id="4">
+        <label>backend.Interfaces.IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" line="12" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/PostcardController.cs" bodystart="13" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1acd1e8b2eff382dd0e2e9b2e3a18ddec2" prot="private" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>_locationRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a1150203e5d58f6f8c045725b2acb1c18" prot="private" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>_postcardRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a88a8fffb185625a5ad627eaf61aacbca" prot="private" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>_s3Service</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a3a406875a2d05e21c91371f83a10a60e" prot="private" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>_userManager</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a889cfe8f4ec1f8a3815fb0a70f4fc819" prot="public" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>DeletePostcard</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1af5acca508e597b24bb91bc4eebd95b78" prot="public" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>GetPostcard</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1aafe19f5c8abc8cade4c8932594cbe8ae" prot="public" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>GetUserPostcards</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_postcard_controller_1a8a703c15c0f13af05ebebb438201b031" prot="public" virt="non-virtual"><scope>backend::Controllers::PostcardController</scope><name>PostcardController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

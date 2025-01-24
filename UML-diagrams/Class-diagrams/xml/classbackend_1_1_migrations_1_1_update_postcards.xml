@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_migrations_1_1_update_postcards" kind="class" language="C#" prot="public">
+    <compoundname>backend::Migrations::UpdatePostcards</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Migration</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_update_postcards_1a17919aefb9fa18482f26bc0efea900d8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatePostcards.Up</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Up</name>
+        <qualifiedname>backend.Migrations.UpdatePostcards.Up</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.cs" line="14" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.cs" bodystart="14" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_update_postcards_1a732687fca77e8f57936d8127bf883361" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatePostcards.Down</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Down</name>
+        <qualifiedname>backend.Migrations.UpdatePostcards.Down</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.cs" line="46" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.cs" bodystart="46" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1_update_postcards_1a1b7985804e358df733204b92aa699ac8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.UpdatePostcards.BuildTargetModel</definition>
+        <argsstring>(ModelBuilder modelBuilder)</argsstring>
+        <name>BuildTargetModel</name>
+        <qualifiedname>backend.Migrations.UpdatePostcards.BuildTargetModel</qualifiedname>
+        <param>
+          <type>ModelBuilder</type>
+          <declname>modelBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.Designer.cs" line="19" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.Designer.cs" bodystart="19" bodyend="440"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.UpdatePostcards</label>
+        <link refid="classbackend_1_1_migrations_1_1_update_postcards"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.UpdatePostcards</label>
+        <link refid="classbackend_1_1_migrations_1_1_update_postcards"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.cs" line="11" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250120200441_UpdatePostcards.Designer.cs" bodystart="17" bodyend="441"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a1b7985804e358df733204b92aa699ac8" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatePostcards</scope><name>BuildTargetModel</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a732687fca77e8f57936d8127bf883361" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatePostcards</scope><name>Down</name></member>
+      <member refid="classbackend_1_1_migrations_1_1_update_postcards_1a17919aefb9fa18482f26bc0efea900d8" prot="protected" virt="non-virtual"><scope>backend::Migrations::UpdatePostcards</scope><name>Up</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

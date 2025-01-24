@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto" kind="class" language="C#" prot="public">
+    <compoundname>backend::Dtos::Postcard::PostcardDto</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1ab72287bc99dcfed25b248fcbd00352b1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int backend.Dtos.Postcard.PostcardDto.Id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.Id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="10" column="20" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a7399cb30cdac05cd76bb0f41f59d52a2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Postcard.PostcardDto.S3Key</definition>
+        <argsstring></argsstring>
+        <name>S3Key</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.S3Key</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="11" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a4f5418b08150db83a292aad4819fc5ee" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime backend.Dtos.Postcard.PostcardDto.CreatedAt</definition>
+        <argsstring></argsstring>
+        <name>CreatedAt</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.CreatedAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="12" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1adbd7df285995e4bd8f04045473902a98" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime?</type>
+        <definition>DateTime? backend.Dtos.Postcard.PostcardDto.ExpiresAt</definition>
+        <argsstring></argsstring>
+        <name>ExpiresAt</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.ExpiresAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="13" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a65f13e2a95d81906491e433b909df5eb" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Postcard.PostcardDto.UserName</definition>
+        <argsstring></argsstring>
+        <name>UserName</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.UserName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="14" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1afaf891c0fb5a1a2452f781e3776d0b6d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Dtos.Postcard.PostcardDto.LocationName</definition>
+        <argsstring></argsstring>
+        <name>LocationName</name>
+        <qualifiedname>backend.Dtos.Postcard.PostcardDto.LocationName</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="15" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="15" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Postcard/PostcardDto.cs" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a4f5418b08150db83a292aad4819fc5ee" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>CreatedAt</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1adbd7df285995e4bd8f04045473902a98" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>ExpiresAt</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1ab72287bc99dcfed25b248fcbd00352b1" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>Id</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1afaf891c0fb5a1a2452f781e3776d0b6d" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>LocationName</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a7399cb30cdac05cd76bb0f41f59d52a2" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>S3Key</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_postcard_1_1_postcard_dto_1a65f13e2a95d81906491e433b909df5eb" prot="public" virt="non-virtual"><scope>backend::Dtos::Postcard::PostcardDto</scope><name>UserName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

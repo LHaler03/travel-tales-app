@@ -6,6 +6,14 @@
     <innerfile refid="20241105224710___initial_create_8_designer_8cs">20241105224710_InitialCreate.Designer.cs</innerfile>
     <innerfile refid="20241112101358___updating_asp_net_users_8cs">20241112101358_UpdatingAspNetUsers.cs</innerfile>
     <innerfile refid="20241112101358___updating_asp_net_users_8_designer_8cs">20241112101358_UpdatingAspNetUsers.Designer.cs</innerfile>
+    <innerfile refid="20250113001756__reviews_migration_8cs">20250113001756_reviewsMigration.cs</innerfile>
+    <innerfile refid="20250113001756__reviews_migration_8_designer_8cs">20250113001756_reviewsMigration.Designer.cs</innerfile>
+    <innerfile refid="20250116211938___add_updated_at_to_review_8cs">20250116211938_AddUpdatedAtToReview.cs</innerfile>
+    <innerfile refid="20250116211938___add_updated_at_to_review_8_designer_8cs">20250116211938_AddUpdatedAtToReview.Designer.cs</innerfile>
+    <innerfile refid="20250120200441___update_postcards_8cs">20250120200441_UpdatePostcards.cs</innerfile>
+    <innerfile refid="20250120200441___update_postcards_8_designer_8cs">20250120200441_UpdatePostcards.Designer.cs</innerfile>
+    <innerfile refid="20250121173647___add_dev_admin_8cs">20250121173647_AddDevAdmin.cs</innerfile>
+    <innerfile refid="20250121173647___add_dev_admin_8_designer_8cs">20250121173647_AddDevAdmin.Designer.cs</innerfile>
     <innerfile refid="_application_d_b_context_model_snapshot_8cs">ApplicationDBContextModelSnapshot.cs</innerfile>
     <briefdescription>
     </briefdescription>

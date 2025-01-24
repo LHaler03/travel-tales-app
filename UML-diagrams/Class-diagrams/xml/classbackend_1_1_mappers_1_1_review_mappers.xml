@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_mappers_1_1_review_mappers" kind="class" language="C#" prot="public">
+    <compoundname>backend::Mappers::ReviewMappers</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classbackend_1_1_mappers_1_1_review_mappers_1a4bc53462b595be4fadf4b6ad5abceb1f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbackend_1_1_dtos_1_1_review_1_1_review_dto" kindref="compound">ReviewDto</ref></type>
+        <definition>static ReviewDto backend.Mappers.ReviewMappers.ToReviewDto</definition>
+        <argsstring>(this Review reviewModel)</argsstring>
+        <name>ToReviewDto</name>
+        <qualifiedname>backend.Mappers.ReviewMappers.ToReviewDto</qualifiedname>
+        <param>
+          <type>this <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref></type>
+          <declname>reviewModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" line="8" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" bodystart="8" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_mappers_1_1_review_mappers_1ac3baaaee0f17b83a65959414b8821c6e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref></type>
+        <definition>static Review backend.Mappers.ReviewMappers.ToReviewFromCreateDto</definition>
+        <argsstring>(this CreateReviewDto reviewDto)</argsstring>
+        <name>ToReviewFromCreateDto</name>
+        <qualifiedname>backend.Mappers.ReviewMappers.ToReviewFromCreateDto</qualifiedname>
+        <param>
+          <type>this <ref refid="classbackend_1_1_dtos_1_1_review_1_1_create_review_dto" kindref="compound">CreateReviewDto</ref></type>
+          <declname>reviewDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" line="21" column="30" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" bodystart="21" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" line="6" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Mappers/ReviewMappers.cs" bodystart="7" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_mappers_1_1_review_mappers_1a4bc53462b595be4fadf4b6ad5abceb1f" prot="public" virt="non-virtual"><scope>backend::Mappers::ReviewMappers</scope><name>ToReviewDto</name></member>
+      <member refid="classbackend_1_1_mappers_1_1_review_mappers_1ac3baaaee0f17b83a65959414b8821c6e" prot="public" virt="non-virtual"><scope>backend::Mappers::ReviewMappers</scope><name>ToReviewFromCreateDto</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

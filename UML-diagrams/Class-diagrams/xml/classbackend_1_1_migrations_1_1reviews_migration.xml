@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_migrations_1_1reviews_migration" kind="class" language="C#" prot="public">
+    <compoundname>backend::Migrations::reviewsMigration</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Migration</basecompoundref>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1reviews_migration_1a8ac2d797c4c5bbeceb9e57ebd1e068c9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.reviewsMigration.Up</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Up</name>
+        <qualifiedname>backend.Migrations.reviewsMigration.Up</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.cs" line="15" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.cs" bodystart="15" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1reviews_migration_1a7a98957d83195d5cfcaf2b4e72741d7a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.reviewsMigration.Down</definition>
+        <argsstring>(MigrationBuilder migrationBuilder)</argsstring>
+        <name>Down</name>
+        <qualifiedname>backend.Migrations.reviewsMigration.Down</qualifiedname>
+        <param>
+          <type>MigrationBuilder</type>
+          <declname>migrationBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.cs" line="116" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.cs" bodystart="116" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classbackend_1_1_migrations_1_1reviews_migration_1aaf794257139fc4165e17c170a9acaae6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void backend.Migrations.reviewsMigration.BuildTargetModel</definition>
+        <argsstring>(ModelBuilder modelBuilder)</argsstring>
+        <name>BuildTargetModel</name>
+        <qualifiedname>backend.Migrations.reviewsMigration.BuildTargetModel</qualifiedname>
+        <param>
+          <type>ModelBuilder</type>
+          <declname>modelBuilder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.Designer.cs" line="19" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.Designer.cs" bodystart="19" bodyend="440"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.reviewsMigration</label>
+        <link refid="classbackend_1_1_migrations_1_1reviews_migration"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Migration</label>
+      </node>
+      <node id="1">
+        <label>backend.Migrations.reviewsMigration</label>
+        <link refid="classbackend_1_1_migrations_1_1reviews_migration"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.cs" line="12" column="19" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/20250113001756_reviewsMigration.Designer.cs" bodystart="17" bodyend="441"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_migrations_1_1reviews_migration_1aaf794257139fc4165e17c170a9acaae6" prot="protected" virt="non-virtual"><scope>backend::Migrations::reviewsMigration</scope><name>BuildTargetModel</name></member>
+      <member refid="classbackend_1_1_migrations_1_1reviews_migration_1a7a98957d83195d5cfcaf2b4e72741d7a" prot="protected" virt="non-virtual"><scope>backend::Migrations::reviewsMigration</scope><name>Down</name></member>
+      <member refid="classbackend_1_1_migrations_1_1reviews_migration_1a8ac2d797c4c5bbeceb9e57ebd1e068c9" prot="protected" virt="non-virtual"><scope>backend::Migrations::reviewsMigration</scope><name>Up</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

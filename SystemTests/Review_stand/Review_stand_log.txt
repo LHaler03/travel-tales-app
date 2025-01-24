@@ -1,0 +1,31 @@
+1.
+open on http://ec2-3-74-155-131.eu-central-1.compute.amazonaws.com/ OK
+2.
+setWindowSize on 797x824 OK
+3.
+click on css=.sc-fqujGp > svg OK
+4.
+click on linkText=Login OK
+5.
+click on name=username OK
+6.
+type on name=username with value bigmama123 OK
+7.
+type on name=password with value Hanmabaki14 OK
+8.
+click on css=.sc-gQaihK OK
+9.
+Trying to find css=.sc-dntaoT... OK
+10.
+click on css=.leaflet-marker-icon:nth-child(13) OK
+11.
+click on css=.sc-lnsxGb:nth-child(2) OK
+12.
+click on css=.sc-dSfWjt:nth-child(5) > .sc-kJZLhT OK
+13.
+click on css=.sc-lgprfV OK
+14.
+type on css=.sc-lgprfV with value Very beuatiful and friendly place! OK
+15.
+click on css=.sc-lnsxGb:nth-child(2) OK
+'Review-normalan' completed successfully

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_i_postcard_repository_8cs" kind="file" language="C#">
+    <compoundname>IPostcardRepository.cs</compoundname>
+    <innerclass refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" prot="public">backend::Interfaces::IPostcardRepository</innerclass>
+    <innernamespace refid="namespacebackend">backend</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_interfaces">backend::Interfaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Threading.Tasks;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_models" kindref="compound">backend.Models</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_dtos_1_1_postcard" kindref="compound">backend.Dtos.Postcard</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacebackend_1_1_interfaces" kindref="compound">backend.Interfaces</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7" refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository" kindref="compound">IPostcardRepository</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;IEnumerable&lt;Postcard&gt;&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1a0216b7dd345342c04758cf5d1b86f859" kindref="member">GetPostcardsByUserIdAsync</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>userId);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Postcard?&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1afdbe75521640fb4d4941b2eeccd5fb66" kindref="member">GetPostcardByIdAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;bool&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1af27c68a5ef066b15cde30d6797300eab" kindref="member">DeletePostcardAsync</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Task&lt;Postcard&gt;<sp/><ref refid="interfacebackend_1_1_interfaces_1_1_i_postcard_repository_1aa2ddcfddc6c85544324e04d524303039" kindref="member">CreatePostcardAsync</ref>(<ref refid="classbackend_1_1_models_1_1_postcard" kindref="compound">Postcard</ref><sp/>postcard);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IPostcardRepository.cs"/>
+  </compounddef>
+</doxygen>

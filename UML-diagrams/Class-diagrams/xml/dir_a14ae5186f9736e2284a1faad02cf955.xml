@@ -2,7 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="dir_a14ae5186f9736e2284a1faad02cf955" kind="dir">
     <compoundname>C:/PROGI/travel-tales-app/backend/Models</compoundname>
+    <innerfile refid="_file_url_8cs">FileUrl.cs</innerfile>
     <innerfile refid="_location_8cs">Location.cs</innerfile>
+    <innerfile refid="_postcard_8cs">Postcard.cs</innerfile>
+    <innerfile refid="_postcard_props_8cs">PostcardProps.cs</innerfile>
+    <innerfile refid="_review_8cs">Review.cs</innerfile>
     <innerfile refid="_user_8cs">User.cs</innerfile>
     <briefdescription>
     </briefdescription>

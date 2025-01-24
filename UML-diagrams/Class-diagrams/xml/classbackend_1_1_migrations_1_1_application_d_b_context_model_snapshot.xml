@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="16" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="16" bodyend="328"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="16" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="16" bodyend="437"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -49,7 +49,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="14" column="12" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="15" bodyend="329"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" line="14" column="12" bodyfile="C:/PROGI/travel-tales-app/backend/Migrations/ApplicationDBContextModelSnapshot.cs" bodystart="15" bodyend="438"/>
     <listofallmembers>
       <member refid="classbackend_1_1_migrations_1_1_application_d_b_context_model_snapshot_1a115cc1c24c747c694295de312e099b2a" prot="protected" virt="non-virtual"><scope>backend::Migrations::ApplicationDBContextModelSnapshot</scope><name>BuildModel</name></member>
     </listofallmembers>

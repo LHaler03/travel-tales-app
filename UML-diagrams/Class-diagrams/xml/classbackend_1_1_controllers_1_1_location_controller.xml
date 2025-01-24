@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="18" column="43" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="19" column="43" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_location_controller_1ab5eaf8bea4b3014a357278ffa2c26cfd" prot="private" static="no" mutable="no">
         <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref></type>
@@ -30,14 +30,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="19" column="42" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="19" bodyend="-1"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="20" column="42" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbackend_1_1_controllers_1_1_location_controller_1a81e3a85d7af802709d504d2cd8310214" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+        <definition>readonly IS3Service backend.Controllers.LocationController._s3Service</definition>
+        <argsstring></argsstring>
+        <name>_s3Service</name>
+        <qualifiedname>backend.Controllers.LocationController._s3Service</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="21" column="33" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1abfbe2ed70ebaa7248763b54e4c8f47fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1a1082553a904dc0784a149127f1c4742b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>backend.Controllers.LocationController.LocationController</definition>
-        <argsstring>(ApplicationDBContext context, ILocationRepository locationRepo)</argsstring>
+        <argsstring>(ApplicationDBContext context, ILocationRepository locationRepo, IS3Service s3Service)</argsstring>
         <name>LocationController</name>
         <qualifiedname>backend.Controllers.LocationController.LocationController</qualifiedname>
         <param>
@@ -48,13 +62,17 @@
           <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_location_repository" kindref="compound">ILocationRepository</ref></type>
           <declname>locationRepo</declname>
         </param>
+        <param>
+          <type><ref refid="interfacebackend_1_1_interfaces_1_1_i_s3_service" kindref="compound">IS3Service</ref></type>
+          <declname>s3Service</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="20" column="12" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="20" bodyend="24"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="23" column="12" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="23" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1a9ac1eb40a4ed5b0e86f361cbb6d3f09a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -68,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="27" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="27" bodyend="32"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="31" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="31" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1a1a0dddf0084df39f917c487bf8e85bcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -87,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="35" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="35" bodyend="40"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="39" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="39" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1aafa169c99603d114369151a94d6d5100" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -106,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="43" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="43" bodyend="48"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="47" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="47" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1aa2780ec33e0fdb7f278d79c6ca19d9ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -130,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="51" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="51" bodyend="56"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="80" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="80" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_location_controller_1ae75e0c9c5bf34531c6e66a2eb8696077" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -149,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="59" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="59" bodyend="64"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="88" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="88" bodyend="93"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -171,22 +189,49 @@
       <node id="2">
         <label>ControllerBase</label>
       </node>
+      <node id="4">
+        <label>IdentityDbContext&lt; User &gt;</label>
+      </node>
       <node id="1">
         <label>backend.Controllers.LocationController</label>
         <link refid="classbackend_1_1_controllers_1_1_location_controller"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_context</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_locationRepo</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>_s3Service</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>backend.Data.ApplicationDBContext</label>
+        <link refid="classbackend_1_1_data_1_1_application_d_b_context"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>backend.Interfaces.ILocationRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_location_repository"/>
+      </node>
+      <node id="6">
+        <label>backend.Interfaces.IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
       </node>
     </collaborationgraph>
-    <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="16" column="9" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="17" bodyend="66"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" line="17" column="9" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/LocationController.cs" bodystart="18" bodyend="95"/>
     <listofallmembers>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1adda7e8704c2d3dc09eb55536fe64d6c5" prot="private" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>_context</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1ab5eaf8bea4b3014a357278ffa2c26cfd" prot="private" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>_locationRepo</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_location_controller_1a81e3a85d7af802709d504d2cd8310214" prot="private" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>_s3Service</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1aafa169c99603d114369151a94d6d5100" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>Create</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1ae75e0c9c5bf34531c6e66a2eb8696077" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>Delete</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1a9ac1eb40a4ed5b0e86f361cbb6d3f09a" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>GetAll</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1a1a0dddf0084df39f917c487bf8e85bcf" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>GetById</name></member>
-      <member refid="classbackend_1_1_controllers_1_1_location_controller_1abfbe2ed70ebaa7248763b54e4c8f47fd" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>LocationController</name></member>
+      <member refid="classbackend_1_1_controllers_1_1_location_controller_1a1082553a904dc0784a149127f1c4742b" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>LocationController</name></member>
       <member refid="classbackend_1_1_controllers_1_1_location_controller_1aa2780ec33e0fdb7f278d79c6ca19d9ef" prot="public" virt="non-virtual"><scope>backend::Controllers::LocationController</scope><name>Update</name></member>
     </listofallmembers>
   </compounddef>

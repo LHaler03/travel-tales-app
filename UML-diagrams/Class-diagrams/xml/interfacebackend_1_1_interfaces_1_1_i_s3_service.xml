@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_s3_service" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IS3Service</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_service_1_1_s3_service" prot="public" virt="non-virtual">backend.Service.S3Service</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a5331a5dcc1340423457b5aca31eaaac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>Task&lt; List&lt; string &gt; &gt; backend.Interfaces.IS3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync</definition>
+        <argsstring>(string locationName)</argsstring>
+        <name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.GetAllFilesFromObjectAsPreSignedUrlsAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a4d7c8e336251e23157976e7748b80e4d">GetAllFilesFromObjectAsPreSignedUrlsAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>locationName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="11" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a9b02cb5647239d45610ace977171f1df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; <ref refid="classbackend_1_1_models_1_1_file_url" kindref="compound">FileUrl</ref> &gt; &gt;</type>
+        <definition>Task&lt; List&lt; FileUrl &gt; &gt; backend.Interfaces.IS3Service.GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</definition>
+        <argsstring>(string locationName)</argsstring>
+        <name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a94a33e8abaf4767156af33b963d3a4ee">GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>locationName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="12" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a133773fc98a6a3b0985a2930093bb152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; Stream &gt;</type>
+        <definition>Task&lt; Stream &gt; backend.Interfaces.IS3Service.GetFileAsync</definition>
+        <argsstring>(string key)</argsstring>
+        <name>GetFileAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.GetFileAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1ac39bc6c91ad4a7fefbcf4b921b316ac4">GetFileAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="13" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a49694c7b35fe2ebc5263b3993bededd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; string &gt;</type>
+        <definition>Task&lt; string &gt; backend.Interfaces.IS3Service.GetPreSignedUrlAsync</definition>
+        <argsstring>(string key, int expirationMinutes=60)</argsstring>
+        <name>GetPreSignedUrlAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.GetPreSignedUrlAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1af60cb0bb7cdcaba122eb6bef4ca313a2">GetPreSignedUrlAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>expirationMinutes</declname>
+          <defval>60</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="14" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ad7ce22d08ed9a215733e5cdc710e988e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; string &gt;</type>
+        <definition>Task&lt; string &gt; backend.Interfaces.IS3Service.UploadFileAsync</definition>
+        <argsstring>(string base64Image, string folderPath)</argsstring>
+        <name>UploadFileAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.UploadFileAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a69d33aca3b51f4b0f0a8b0038f133177">UploadFileAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>base64Image</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="15" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ab7c3630c8c22fd5f8deb1bfd45ac6939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task</type>
+        <definition>Task backend.Interfaces.IS3Service.UploadStockImagesAsync</definition>
+        <argsstring>(string base64Image, string folderPath)</argsstring>
+        <name>UploadStockImagesAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.UploadStockImagesAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a3be12f26b7286a3b2c40c8fd26fdf1c0">UploadStockImagesAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>base64Image</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="16" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a313caa54c47c9ca503e17ca2d0bab544" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>Task&lt; List&lt; string &gt; &gt; backend.Interfaces.IS3Service.UploadFileAndGetImageAndDownloadLinksAsync</definition>
+        <argsstring>(string filePath, string s3Key)</argsstring>
+        <name>UploadFileAndGetImageAndDownloadLinksAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.UploadFileAndGetImageAndDownloadLinksAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a4d0504a59ad92076920c075c43c6df4f">UploadFileAndGetImageAndDownloadLinksAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>s3Key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="17" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1abe1b32726c23c2bafcefc7c684858a91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; bool &gt;</type>
+        <definition>Task&lt; bool &gt; backend.Interfaces.IS3Service.DeleteObjectAsync</definition>
+        <argsstring>(string key)</argsstring>
+        <name>DeleteObjectAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.DeleteObjectAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1ae3bb71030b4eedf8d022040c41e68bce">DeleteObjectAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="18" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a01334b958b12cc307239f2ce34f30908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; List&lt; string &gt; &gt;</type>
+        <definition>Task&lt; List&lt; string &gt; &gt; backend.Interfaces.IS3Service.ListFilesInFolderAsync</definition>
+        <argsstring>(string folderPath)</argsstring>
+        <name>ListFilesInFolderAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.ListFilesInFolderAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1a748ff3934b1b6c05ddb176b30fac88e6">ListFilesInFolderAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>folderPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="19" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_s3_service_1aefad54f0f09a23247cd1413c425381b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; string &gt;</type>
+        <definition>Task&lt; string &gt; backend.Interfaces.IS3Service.MoveFileAsync</definition>
+        <argsstring>(string sourceKey, string destinationKey)</argsstring>
+        <name>MoveFileAsync</name>
+        <qualifiedname>backend.Interfaces.IS3Service.MoveFileAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_service_1_1_s3_service_1aab7534e55da8929b9dde897c4e5c483b">MoveFileAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>sourceKey</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>destinationKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="20" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IS3Service</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_s3_service"/>
+      </node>
+      <node id="2">
+        <label>backend.Service.S3Service</label>
+        <link refid="classbackend_1_1_service_1_1_s3_service"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" line="9" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IS3Service.cs" bodystart="10" bodyend="21"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1abe1b32726c23c2bafcefc7c684858a91" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>DeleteObjectAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a9b02cb5647239d45610ace977171f1df" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>GetAllFilesFromObjectAsPreSignedImageAndDownloadUrlsAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a5331a5dcc1340423457b5aca31eaaac3" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>GetAllFilesFromObjectAsPreSignedUrlsAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a133773fc98a6a3b0985a2930093bb152" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>GetFileAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a49694c7b35fe2ebc5263b3993bededd8" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>GetPreSignedUrlAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a01334b958b12cc307239f2ce34f30908" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>ListFilesInFolderAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1aefad54f0f09a23247cd1413c425381b4" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>MoveFileAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1a313caa54c47c9ca503e17ca2d0bab544" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>UploadFileAndGetImageAndDownloadLinksAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ad7ce22d08ed9a215733e5cdc710e988e" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>UploadFileAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_s3_service_1ab7c3630c8c22fd5f8deb1bfd45ac6939" prot="public" virt="non-virtual"><scope>backend::Interfaces::IS3Service</scope><name>UploadStockImagesAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

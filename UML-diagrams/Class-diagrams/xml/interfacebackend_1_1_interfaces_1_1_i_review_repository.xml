@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="interfacebackend_1_1_interfaces_1_1_i_review_repository" kind="interface" language="C#" prot="public">
+    <compoundname>backend::Interfaces::IReviewRepository</compoundname>
+    <derivedcompoundref refid="classbackend_1_1_repository_1_1_review_repository" prot="public" virt="non-virtual">backend.Repository.ReviewRepository</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1aee9c75f370f98e82abaa9587e1e5e584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; IEnumerable&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref> &gt; &gt;</type>
+        <definition>Task&lt; IEnumerable&lt; Review &gt; &gt; backend.Interfaces.IReviewRepository.GetReviewsByLocationIdAsync</definition>
+        <argsstring>(int locationId)</argsstring>
+        <name>GetReviewsByLocationIdAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.GetReviewsByLocationIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1a0b7de691c4397530f28f703c8ed4a2f1">GetReviewsByLocationIdAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>locationId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="14" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab685553d2a0f926cbe3c8e3075b67057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref>?&gt;</type>
+        <definition>Task&lt; Review?&gt; backend.Interfaces.IReviewRepository.GetReviewByIdAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>GetReviewByIdAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.GetReviewByIdAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1a1b8080110621c3a12663777b13ba5ba4">GetReviewByIdAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="15" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a35f69c0de83fdf13f46887fe1fbef3a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref> &gt;</type>
+        <definition>Task&lt; Review &gt; backend.Interfaces.IReviewRepository.AddReviewAsync</definition>
+        <argsstring>(Review reviewModel)</argsstring>
+        <name>AddReviewAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.AddReviewAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1a938ce4d9622e12e25e75404641320aca">AddReviewAsync</reimplementedby>
+        <param>
+          <type><ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref></type>
+          <declname>reviewModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="16" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab1c1d539f841f602481084ffc6d05ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref>?&gt;</type>
+        <definition>Task&lt; Review?&gt; backend.Interfaces.IReviewRepository.DeleteReviewAsync</definition>
+        <argsstring>(int id)</argsstring>
+        <name>DeleteReviewAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.DeleteReviewAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1ad06ed1796e247d6623f6fdbe3a135683">DeleteReviewAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="17" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a551d79220324a59f876bbf18a41373c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref>?&gt;</type>
+        <definition>Task&lt; Review?&gt; backend.Interfaces.IReviewRepository.GetReviewsByUserAsync</definition>
+        <argsstring>(string userId, int locationId)</argsstring>
+        <name>GetReviewsByUserAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.GetReviewsByUserAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1aea6772879fc9b3e41329facbb72184d4">GetReviewsByUserAsync</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>locationId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="18" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a2dc9b5a9c493bad130952fef4fedb493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Task&lt; <ref refid="classbackend_1_1_models_1_1_review" kindref="compound">Review</ref> &gt;</type>
+        <definition>Task&lt; Review &gt; backend.Interfaces.IReviewRepository.UpdateReviewAsync</definition>
+        <argsstring>(int reviewId, UpdateReviewDto updateReviewDto)</argsstring>
+        <name>UpdateReviewAsync</name>
+        <qualifiedname>backend.Interfaces.IReviewRepository.UpdateReviewAsync</qualifiedname>
+        <reimplementedby refid="classbackend_1_1_repository_1_1_review_repository_1aed7398805d3b0b1765047cb3f058b333">UpdateReviewAsync</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>reviewId</declname>
+        </param>
+        <param>
+          <type><ref refid="classbackend_1_1_dtos_1_1_review_1_1_update_review_dto" kindref="compound">UpdateReviewDto</ref></type>
+          <declname>updateReviewDto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="19" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>backend.Interfaces.IReviewRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_review_repository"/>
+      </node>
+      <node id="2">
+        <label>backend.Repository.ReviewRepository</label>
+        <link refid="classbackend_1_1_repository_1_1_review_repository"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" line="12" column="22" bodyfile="C:/PROGI/travel-tales-app/backend/Interfaces/IReviewRepository.cs" bodystart="13" bodyend="20"/>
+    <listofallmembers>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a35f69c0de83fdf13f46887fe1fbef3a5" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>AddReviewAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab1c1d539f841f602481084ffc6d05ac9" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>DeleteReviewAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1ab685553d2a0f926cbe3c8e3075b67057" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>GetReviewByIdAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1aee9c75f370f98e82abaa9587e1e5e584" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>GetReviewsByLocationIdAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a551d79220324a59f876bbf18a41373c3" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>GetReviewsByUserAsync</name></member>
+      <member refid="interfacebackend_1_1_interfaces_1_1_i_review_repository_1a2dc9b5a9c493bad130952fef4fedb493" prot="public" virt="non-virtual"><scope>backend::Interfaces::IReviewRepository</scope><name>UpdateReviewAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

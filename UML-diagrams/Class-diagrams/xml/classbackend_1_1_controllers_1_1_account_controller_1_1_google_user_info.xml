@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="312" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="312" bodyend="312"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="335" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="335" bodyend="335"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a963a9fa9c718c191a19f23285e655e98" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>required string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="313" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="313" bodyend="313"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="336" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="336" bodyend="336"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a1e7e79fa8b1a700ff30b628f8df3d1bf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>required string</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="314" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="314" bodyend="314"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="337" column="36" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="337" bodyend="337"/>
       </memberdef>
       <memberdef kind="property" id="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1af494b690592a5d6f5ccffa40738ba020" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>bool</type>
@@ -57,14 +57,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="315" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="315" bodyend="315"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="338" column="25" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="338" bodyend="338"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="310" column="15" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="311" bodyend="316"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="333" column="15" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="334" bodyend="339"/>
     <listofallmembers>
       <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1a28798e1b7108dba18e7b3342a4a26d2c" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Email</name></member>
       <member refid="classbackend_1_1_controllers_1_1_account_controller_1_1_google_user_info_1af494b690592a5d6f5ccffa40738ba020" prot="public" virt="non-virtual"><scope>backend::Controllers::AccountController::GoogleUserInfo</scope><name>Email_verified</name></member>

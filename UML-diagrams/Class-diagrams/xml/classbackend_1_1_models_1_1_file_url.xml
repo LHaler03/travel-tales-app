@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classbackend_1_1_models_1_1_file_url" kind="class" language="C#" prot="public">
+    <compoundname>backend::Models::FileUrl</compoundname>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_file_url_1ae22f9988748b6c312af910b1ec5db1c6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.FileUrl.ImageLink</definition>
+        <argsstring></argsstring>
+        <name>ImageLink</name>
+        <qualifiedname>backend.Models.FileUrl.ImageLink</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" line="10" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" bodystart="10" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_models_1_1_file_url_1a45b72f7428e0f6c564bc54128e930630" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string backend.Models.FileUrl.DownloadLink</definition>
+        <argsstring></argsstring>
+        <name>DownloadLink</name>
+        <qualifiedname>backend.Models.FileUrl.DownloadLink</qualifiedname>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" line="12" column="23" bodyfile="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" bodystart="12" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Models/FileUrl.cs" bodystart="9" bodyend="13"/>
+    <listofallmembers>
+      <member refid="classbackend_1_1_models_1_1_file_url_1a45b72f7428e0f6c564bc54128e930630" prot="public" virt="non-virtual"><scope>backend::Models::FileUrl</scope><name>DownloadLink</name></member>
+      <member refid="classbackend_1_1_models_1_1_file_url_1ae22f9988748b6c312af910b1ec5db1c6" prot="public" virt="non-virtual"><scope>backend::Models::FileUrl</scope><name>ImageLink</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

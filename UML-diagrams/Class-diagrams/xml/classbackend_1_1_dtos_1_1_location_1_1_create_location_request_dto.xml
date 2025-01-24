@@ -61,14 +61,30 @@
         </inbodydescription>
         <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="13" column="24" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="13" bodyend="13"/>
       </memberdef>
+      <memberdef kind="property" id="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a2c2ddf13bb1234729cc02a36b3a469fe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>List&lt; string &gt;</type>
+        <definition>List&lt;string&gt; backend.Dtos.Location.CreateLocationRequestDto.Images</definition>
+        <argsstring></argsstring>
+        <name>Images</name>
+        <qualifiedname>backend.Dtos.Location.CreateLocationRequestDto.Images</qualifiedname>
+        <initializer>= []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="14" column="21" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="9" bodyend="14"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" line="8" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Dtos/Location/CreateLocationRequestDto.cs" bodystart="9" bodyend="15"/>
     <listofallmembers>
       <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a770ddd27d5ae25aafc9859c66ed2ed90" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Country</name></member>
+      <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a2c2ddf13bb1234729cc02a36b3a469fe" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Images</name></member>
       <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1a9874d1d3bcd7582909b5f9dbf79a1ac8" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Lat</name></member>
       <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1ab5d5116ec3942ded8a81435a34cba57c" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Lon</name></member>
       <member refid="classbackend_1_1_dtos_1_1_location_1_1_create_location_request_dto_1add9d132dad44507cb696136fa5a74189" prot="public" virt="non-virtual"><scope>backend::Dtos::Location::CreateLocationRequestDto</scope><name>Name</name></member>

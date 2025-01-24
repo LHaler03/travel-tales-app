@@ -4,6 +4,8 @@
     <compoundname>C:/PROGI/travel-tales-app/backend/Repository</compoundname>
     <innerfile refid="_account_repository_8cs">AccountRepository.cs</innerfile>
     <innerfile refid="_location_repository_8cs">LocationRepository.cs</innerfile>
+    <innerfile refid="_postcard_repository_8cs">PostcardRepository.cs</innerfile>
+    <innerfile refid="_review_repository_8cs">ReviewRepository.cs</innerfile>
     <innerfile refid="_user_repository_8cs">UserRepository.cs</innerfile>
     <briefdescription>
     </briefdescription>

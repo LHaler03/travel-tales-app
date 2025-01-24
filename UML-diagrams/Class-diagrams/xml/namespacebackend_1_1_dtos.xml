@@ -3,7 +3,10 @@
   <compounddef id="namespacebackend_1_1_dtos" kind="namespace" language="C#">
     <compoundname>backend::Dtos</compoundname>
     <innernamespace refid="namespacebackend_1_1_dtos_1_1_account">backend::Dtos::Account</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos_1_1_image">backend::Dtos::Image</innernamespace>
     <innernamespace refid="namespacebackend_1_1_dtos_1_1_location">backend::Dtos::Location</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos_1_1_postcard">backend::Dtos::Postcard</innernamespace>
+    <innernamespace refid="namespacebackend_1_1_dtos_1_1_review">backend::Dtos::Review</innernamespace>
     <innernamespace refid="namespacebackend_1_1_dtos_1_1_user">backend::Dtos::User</innernamespace>
     <briefdescription>
     </briefdescription>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_fa37002a917330139c3b72c3e727c962" kind="dir">
+    <compoundname>C:/PROGI/travel-tales-app/backend/Dtos/Review</compoundname>
+    <innerfile refid="_create_review_dto_8cs">CreateReviewDto.cs</innerfile>
+    <innerfile refid="_review_dto_8cs">ReviewDto.cs</innerfile>
+    <innerfile refid="_update_review_dto_8cs">UpdateReviewDto.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/PROGI/travel-tales-app/backend/Dtos/Review/"/>
+  </compounddef>
+</doxygen>

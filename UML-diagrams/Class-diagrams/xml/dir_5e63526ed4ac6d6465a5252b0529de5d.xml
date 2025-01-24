@@ -5,6 +5,9 @@
     <innerfile refid="_account_controller_8cs">AccountController.cs</innerfile>
     <innerfile refid="_email_sender_8cs">EmailSender.cs</innerfile>
     <innerfile refid="_location_controller_8cs">LocationController.cs</innerfile>
+    <innerfile refid="_postcard_controller_8cs">PostcardController.cs</innerfile>
+    <innerfile refid="_review_controller_8cs">ReviewController.cs</innerfile>
+    <innerfile refid="_s3_controller_8cs">S3Controller.cs</innerfile>
     <innerfile refid="_user_controller_8cs">UserController.cs</innerfile>
     <briefdescription>
     </briefdescription>

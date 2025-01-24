@@ -1,0 +1,72 @@
+Running 'Admin new location'
+15:25:16
+1.
+open on / OK
+15:25:16
+2.
+setWindowSize on 1552x832 OK
+15:25:16
+3.
+click on css=.sc-lnsxGb:nth-child(1) OK
+15:25:16
+4.
+click on name=username OK
+15:25:17
+5.
+type on name=username with value admin OK
+15:25:17
+6.
+click on name=password OK
+15:25:17
+7.
+type on name=password with value ttAdmin123 OK
+15:25:17
+8.
+click on css=.sc-gQaihK OK
+15:25:17
+9.
+Trying to find linkText=Admin Dashboard... OK
+15:25:17
+10.
+click on css=.sc-eDiJSd:nth-child(3) OK
+15:25:18
+11.
+click on css=.sc-ajmIN OK
+15:25:18
+12.
+type on css=.sc-ajmIN with value Seattle OK
+15:25:18
+13.
+click on css=.sc-eDHQDy:nth-child(2) OK
+15:25:18
+14.
+click on id=name OK
+15:25:18
+15.
+type on id=name with value Seattle OK
+15:25:18
+16.
+click on css=.sc-byRyzU OK
+15:25:18
+17.
+type on css=.sc-byRyzU with value C:\Users\Mislav\Downloads\seattle1.jpg,C:\Users\Mislav\Downloads\seattle2.jpg OK
+15:25:18
+18.
+click on css=.sc-lnsxGb:nth-child(6) OK
+15:25:19
+19.
+click on linkText=Home OK
+15:25:19
+20.
+Trying to find css=.sc-dntaoT... OK
+15:25:19
+21.
+click on css=.leaflet-marker-icon:nth-child(57) OK
+15:25:22
+22.
+click on css=.sc-jhZTHU OK
+15:25:22
+23.
+click on css=.sc-lnsxGb:nth-child(2) OK
+15:25:22
+'Admin new location' completed successfully

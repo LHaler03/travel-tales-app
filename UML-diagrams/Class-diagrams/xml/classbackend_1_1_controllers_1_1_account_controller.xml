@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="47" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="47" bodyend="90"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="47" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="47" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1afdbcf426219aa208ee2e1c6116823ced" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="93" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="93" bodyend="124"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="102" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="102" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1acb60e7d472bfdbae03a916b01ea9e30d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="126" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="126" bodyend="162"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="135" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="135" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1a24ee98719e60696cc27d27478f0e2ec7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -214,7 +214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="165" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="165" bodyend="200"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="176" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="176" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ad73a1790629eab18d7eb9f62762ce6e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="203" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="203" bodyend="226"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="222" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="222" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ab9fb8e447505422b5b5830c9e07505b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -247,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="229" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="229" bodyend="293"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="248" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="248" bodyend="314"/>
       </memberdef>
       <memberdef kind="function" id="classbackend_1_1_controllers_1_1_account_controller_1ad317fa1cf98edbfc4741b20a8d17d9f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async Task&lt; IActionResult &gt;</type>
@@ -261,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="297" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="297" bodyend="308"/>
+        <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="318" column="27" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="318" bodyend="331"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -288,9 +288,30 @@
         <link refid="classbackend_1_1_controllers_1_1_account_controller"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_tokenService</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>_accountRepository</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_emailSender</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>backend.Interfaces.IAccountRepository</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_account_repository"/>
+      </node>
+      <node id="5">
+        <label>backend.Interfaces.IEmailSender</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_email_sender"/>
+      </node>
+      <node id="3">
+        <label>backend.Interfaces.ITokenService</label>
+        <link refid="interfacebackend_1_1_interfaces_1_1_i_token_service"/>
       </node>
     </collaborationgraph>
-    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="26" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="27" bodyend="317"/>
+    <location file="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" line="26" column="11" bodyfile="C:/PROGI/travel-tales-app/backend/Controllers/AccountController.cs" bodystart="27" bodyend="340"/>
     <listofallmembers>
       <member refid="classbackend_1_1_controllers_1_1_account_controller_1aa67ebbf46416ad66799a011e03860ac3" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_accountRepository</name></member>
       <member refid="classbackend_1_1_controllers_1_1_account_controller_1af447478f84b04bb004fff1077867a008" prot="private" virt="non-virtual"><scope>backend::Controllers::AccountController</scope><name>_config</name></member>
