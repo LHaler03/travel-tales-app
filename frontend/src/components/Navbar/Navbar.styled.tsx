@@ -1,4 +1,6 @@
+// Navbar.styled.ts
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NavbarStyled = styled.nav`
   display: flex;
@@ -26,16 +28,47 @@ export const NavLinks = styled.div`
   flex-direction: row;
   gap: 2.5rem;
   transition: all 0.3s ease;
+
   a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     cursor: pointer;
+
     &:hover {
       color: #5d89d5;
       transform: scale(1.1);
     }
   }
+`;
+
+export const AdminDashboardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const AdminDashboardLink = styled(Link)`
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: #5d89d5;
+    transform: scale(1.1);
+  }
+`;
+
+export const Badge = styled.span`
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.9rem;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
 `;
 
 export const ButtonContainer = styled.div`
@@ -75,11 +108,13 @@ export const MenuItems = styled.div`
   text-align: center;
   gap: 20px;
   padding: 20px;
+
   a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     cursor: pointer;
+
     &:hover {
       color: #5d89d5;
     }
@@ -97,7 +132,6 @@ export const HamburgerIcon = styled.button`
   height: 32px;
   background-size: contain;
   background-color: #97bcd8;
-
   border: none;
   cursor: pointer;
   color: white;

@@ -13,10 +13,19 @@ using Microsoft.EntityFrameworkCore;
 namespace backend.Controllers
 {
   [Route("api/locations")]
-  public class LocationController(ApplicationDBContext context, ILocationRepository locationRepo) : ControllerBase
+  [ApiController]
+  public class LocationController : ControllerBase
   {
-    private readonly ApplicationDBContext _context = context;
-    private readonly ILocationRepository _locationRepo = locationRepo;
+    private readonly ApplicationDBContext _context;
+    private readonly ILocationRepository _locationRepo;
+    private readonly IS3Service _s3Service;
+
+    public LocationController(ApplicationDBContext context, ILocationRepository locationRepo, IS3Service s3Service)
+    {
+      _context = context;
+      _locationRepo = locationRepo;
+      _s3Service = s3Service;
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
@@ -34,12 +43,37 @@ namespace backend.Controllers
       return location != null ? Ok(location) : NotFound();
     }
 
-    [HttpPost]
+    [HttpPost("add-location")]
     public async Task<IActionResult> Create([FromBody] CreateLocationRequestDto locationDto)
     {
-      var locationModel = await _locationRepo.CreateAsync(locationDto.ToLocationFromCreateDTO());
+      try
+      {
+        var existingLocation = (await _locationRepo.GetAllAsync())
+            .FirstOrDefault(l => (l.Name == locationDto.Name && l.Country == locationDto.Country) ||
+                                 (Math.Abs(l.Lat - locationDto.Lat) < 0.001m &&
+                                  Math.Abs(l.Lon - locationDto.Lon) < 0.001m));
 
-      return CreatedAtAction(nameof(GetById), new { id = locationModel.Id }, locationModel);
+        if (existingLocation != null)
+          return Forbid("Location too close to an existing one.");
+
+        var locationModel = await _locationRepo.CreateAsync(locationDto.ToLocationFromCreateDTO());
+
+        if (locationDto.Images == null || locationDto.Images.Count < 2)
+          return BadRequest("You must upload at least two images");
+
+        foreach (var image in locationDto.Images)
+        {
+          string folderPath = $"valid/{locationModel.Name}";
+          await _s3Service.UploadStockImagesAsync(image, folderPath);
+        }
+
+        return CreatedAtAction(nameof(GetById), new { id = locationModel.Id }, locationModel);
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(500, $"Internal server error: {ex.Message}");
+      }
+
     }
 
     [HttpPut("{id}")]

@@ -50,6 +50,15 @@ namespace backend.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
+
+                var emailExists = await _userManager.FindByEmailAsync(registerDto.Email);
+                if (emailExists != null)
+                    return BadRequest("Email is already taken");
+
+                var usernameExists = await _userManager.FindByNameAsync(registerDto.UserName);
+                if (usernameExists != null)
+                    return BadRequest("Username is already taken");
+                    
                 var user = new User
                 {
                     UserName = registerDto.UserName,
@@ -67,11 +76,11 @@ namespace backend.Controllers
                         return StatusCode(500, "Failed to assign role.");
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var confirmationLink = Url.Action(
-                        nameof(ConfirmEmail), 
-                        "Account", 
-                        new { userId = user.Id, token = WebUtility.UrlEncode(token) }, 
+                        nameof(ConfirmEmail),
+                        "Account",
+                        new { userId = user.Id, token = WebUtility.UrlEncode(token) },
                         Request.Scheme);
-                    
+
                     var emailBody = $"Please confirm your account by clicking <a href='{confirmationLink}'>here</a>";
                     await _emailSender.SendEmailAsync(user.Email, "Please confirm your email", emailBody);
 
@@ -110,9 +119,9 @@ namespace backend.Controllers
                 await _userManager.UpdateAsync(user);
                 var cookieOptions = new CookieOptions
                 {
-                HttpOnly = true,
-                SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
-                Expires = DateTime.UtcNow.AddDays(-1)
+                    HttpOnly = true,
+                    SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict,
+                    Expires = DateTime.UtcNow.AddDays(-1)
                 };
                 Response.Cookies.Append("refreshToken", "", cookieOptions);
                 return Ok("Email confirmed successfully");
@@ -153,10 +162,12 @@ namespace backend.Controllers
             return Ok(
                 new LoggedInUserDto
                 {
+                    Id = user.Id,
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
-                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
+                    EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User"
                 }
             );
         }
@@ -196,7 +207,15 @@ namespace backend.Controllers
             };
             Response.Cookies.Append("refreshToken", newRefreshToken, cookieOptions);
 
-            return Ok(new { AccessToken = newAccessToken });
+            return Ok(new
+            {
+                AccessToken = newAccessToken,
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
+            });
         }
 
         [HttpPost("logout")]
@@ -279,9 +298,11 @@ namespace backend.Controllers
                 return Ok(
                 new LoggedInUserDto
                 {
+                    Id = user.Id,
                     Username = user.UserName,
                     Email = user.Email,
                     Token = accessToken,
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
                     EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
                 }
             );
@@ -301,9 +322,11 @@ namespace backend.Controllers
 
             return Ok(new
             {
+                Id = user.Id,
                 Username = user.UserName,
                 Email = user.Email,
-                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user)
+                EmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
+                Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User",
             });
         }
 

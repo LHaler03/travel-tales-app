@@ -9,6 +9,7 @@ using backend.Interfaces;
 using backend.Mappers;
 using backend.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,13 +20,15 @@ namespace backend.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
-        public UserController(IUserRepository userRepo)
+        private readonly UserManager<User> _userManager;
+        public UserController(IUserRepository userRepo, UserManager<User> userManager)
         {
             _userRepo = userRepo;
+            _userManager = userManager;
         }
         // GET: api/users
         [HttpGet]
-        //[Authorize (Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userRepo.GetAllAsync();
@@ -41,7 +44,17 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-            return Ok(user.MapToUserDto());
+            return Ok(
+                new
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "User"
+                }
+            );
         }
 
         // PUT: api/users/{id}
@@ -53,8 +66,32 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-            
+
             return Ok(user.MapToUserDto());
+        }
+
+        [HttpPut("change-role/{id}")]
+        public async Task<IActionResult> ChangeUserRole([FromRoute] string id)
+        {
+            var user = await _userRepo.GetByIdAsync(id);
+
+            if (user == null) return NotFound();
+
+            IList<string> currentRolesList = await _userManager.GetRolesAsync(user!);
+
+            if (currentRolesList.Count < 1)
+            {
+                await _userManager.AddToRoleAsync(user!, "Admin");
+                return Ok(new { message = "Role successfully changed!" });
+            }
+
+            await _userManager.RemoveFromRolesAsync(user!, currentRolesList);
+
+            string newRole = currentRolesList[0] == "Admin" ? "User" : "Admin";
+
+            await _userManager.AddToRoleAsync(user!, newRole);
+
+            return Ok(new { message = "Role successfully changed!" });
         }
 
         // DELETE: api/users/{id}

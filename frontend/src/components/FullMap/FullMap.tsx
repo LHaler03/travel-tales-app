@@ -1,16 +1,13 @@
 import { TileLayer, Marker } from 'react-leaflet';
-import {
-  Modal,
-  Modal_button_generate,
-  Modal_button_close,
-  Modal_content,
-  Wrapper,
-  StyledFullMapContainer,
-} from './FullMap.styled';
+import { Wrapper, StyledFullMapContainer } from './FullMap.styled';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import L, { Icon } from 'leaflet';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useLocation } from 'react-router-dom';
+import { CityPopup } from '../CityPopup/CityPopup';
 
 export const FullMap = () => {
   const [markers, setMarkers] = useState<
@@ -18,6 +15,17 @@ export const FullMap = () => {
   >([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [pictures, setPictures] = useState<string[]>([]);
+  const [inforating, setInforating] = useState<
+    {
+      id: number;
+      comment: string;
+      rating: number;
+      createdAt: string;
+      userName: string;
+    }[]
+  >([]);
 
   const iconformarkers = new Icon({
     iconUrl: './images/mapicon.png',
@@ -26,11 +34,25 @@ export const FullMap = () => {
   });
 
   const bounds = L.latLngBounds([-83, -199], [85, 202]);
+  const location = useLocation();
+  const { locationIdreview, city, showModalreview } = location.state || {};
+
+  useEffect(() => {
+    if (showModalreview) {
+      setSelectedCity(city);
+      setShowModal(showModalreview);
+      fetchPictures(city);
+      fetchRating(locationIdreview);
+      setSelectedId(locationIdreview);
+    }
+  }, [showModalreview]);
 
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.74.155.131/api/locations');
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
+        );
         const locations = response.data.map(
           (location: {
             id: number;
@@ -52,9 +74,49 @@ export const FullMap = () => {
     fetchLocations();
   }, []);
 
-  const handleMarkerClick = (cityName: string) => {
+  const fetchPictures = async (cityName: string) => {
+    try {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/${cityName}`,
+      );
+      setPictures(response.data);
+    } catch (error) {
+      console.error(`Error fetching pictures for ${cityName}:`, error);
+    }
+  };
+
+  const fetchRating = async (id: number) => {
+    try {
+      const response = await axios.get(
+        `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/reviews/location/${id}`,
+      );
+      const rates = response.data.map(
+        (rate: {
+          id: number;
+          comment: string;
+          rating: number;
+          createdAt: string;
+          userName: string;
+        }) => ({
+          id: rate.id,
+          comment: rate.comment,
+          rating: rate.rating,
+          createdAt: rate.createdAt,
+          userName: rate.userName,
+        }),
+      );
+      setInforating(rates);
+    } catch (error) {
+      console.error(`Error fetching rating for ${id}:`, error);
+    }
+  };
+
+  const handleMarkerClick = (cityName: string, id: number) => {
     setSelectedCity(cityName);
     setShowModal(true);
+    fetchPictures(cityName);
+    fetchRating(id);
+    setSelectedId(id);
   };
 
   const handleCloseModal = () => {
@@ -82,23 +144,20 @@ export const FullMap = () => {
             position={marker.geocode}
             icon={iconformarkers}
             eventHandlers={{
-              click: () => handleMarkerClick(marker.popUp),
+              click: () => handleMarkerClick(marker.popUp, marker.id),
             }}
           />
         ))}
       </StyledFullMapContainer>
 
       {showModal && (
-        <Modal>
-          <Modal_content>
-            <Modal_button_close onClick={handleCloseModal}>
-              X
-            </Modal_button_close>
-            <h1>{selectedCity}</h1>
-            <p>Images for {selectedCity}...</p>
-            <Modal_button_generate>Generate postcard</Modal_button_generate>
-          </Modal_content>
-        </Modal>
+        <CityPopup
+          selectedCity={selectedCity}
+          pictures={pictures}
+          inforating={inforating}
+          selectedId={selectedId}
+          handleCloseModal={handleCloseModal}
+        />
       )}
     </Wrapper>
   );

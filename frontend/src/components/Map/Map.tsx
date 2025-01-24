@@ -29,7 +29,9 @@ export const Map = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('http://3.74.155.131/api/locations');
+        const response = await axios.get(
+          `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations`,
+        );
         const locations = response.data.map(
           (location: {
             id: number;

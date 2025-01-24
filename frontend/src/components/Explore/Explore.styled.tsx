@@ -50,6 +50,7 @@ export const DestinationCard = styled.div`
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  cursor: pointer;
 
   @media (max-width: 600px) {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -64,11 +65,12 @@ export const DestinationCard = styled.div`
   }
 `;
 
-export const DestinationImage = styled.div`
+export const DestinationImage = styled.img`
   height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
   background-color: #e0e0e0;
-  background-size: cover;
-  background-position: center;
 
   @media (max-width: 600px) {
     height: 180px;

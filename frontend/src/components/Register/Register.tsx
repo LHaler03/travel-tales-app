@@ -15,6 +15,7 @@ import {
   Text,
   Underline,
   Wrapper,
+  RedError,
 } from '../../shared/Signup-Login.styled';
 import React from 'react';
 import { useState } from 'react';
@@ -28,6 +29,8 @@ export const Register = () => {
   const location = useLocation();
   const redirectTo = location.state?.redirectTo || '/';
   const { register, loginWithGoogle } = useAuth();
+  const [errorusername, SetErrorusername] = useState(false);
+  const [errormail, SetErrormail] = useState(false);
 
   const [formData, setFormData] = useState<RegisteredUser>({
     firstName: '',
@@ -37,10 +40,16 @@ export const Register = () => {
     password: '',
   }); //podaci iz forma
 
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [_, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    if (name == 'username') {
+      SetErrorusername(false);
+    }
+    if (name == 'email') {
+      SetErrormail(false);
+    }
     setFormData({ ...formData, [name]: value });
     setErrorMessage(null);
   };
@@ -50,10 +59,17 @@ export const Register = () => {
     try {
       await register(formData);
       navigate(redirectTo);
-    } catch (error) {
-      console.error('Registration error:', error);
-      setErrorMessage('Error in registration!');
-      alert(errorMessage);
+    } catch (error: any) {
+      if (error.status === 400) {
+        if (error.data === 'Email is already taken') {
+          SetErrormail(true);
+        }
+        if (error.data === 'Username is already taken') {
+          SetErrorusername(true);
+        }
+      } else {
+        console.error(error.message);
+      }
     }
   };
 
@@ -116,6 +132,11 @@ export const Register = () => {
                   />
                 </Input>
               </InputContainer>
+              {errorusername && (
+                <RedError>
+                  Username {formData.username} is already in use!
+                </RedError>
+              )}
               <InputContainer>
                 <InputDescription>E-mail</InputDescription>
                 <Input>
@@ -127,6 +148,7 @@ export const Register = () => {
                   />
                 </Input>
               </InputContainer>
+              {errormail && <RedError>Email is already in use!</RedError>}
               <InputContainer>
                 <InputDescription>Password</InputDescription>
                 <Input>

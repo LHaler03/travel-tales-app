@@ -8,10 +8,12 @@ import {
 } from 'react';
 import axios from 'axios';
 
-interface UserType {
+export interface UserType {
   username: string;
   email?: string;
   emailConfirmed: boolean;
+  role: string; //admin role
+  id: string;
 }
 
 interface LoginFormData {
@@ -32,6 +34,8 @@ interface LoginResponse {
   email: string;
   token: string;
   emailConfirmed: boolean;
+  role: string;
+  id: string;
 }
 
 type AuthContextType = {
@@ -48,7 +52,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const api = axios.create({
-  baseURL:  'http://3.74.155.131/api',
+  baseURL: `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api`,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -73,9 +77,17 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
               },
             });
 
+            const user: UserType = {
+              username: userResponse.data.username,
+              email: userResponse.data.email,
+              emailConfirmed: userResponse.data.emailConfirmed,
+              role: userResponse.data.role,
+              id: userResponse.data.id,
+            };
+
             setIsAuthenticated(true);
             setToken(savedToken);
-            setUser(userResponse.data);
+            setUser(user);
             setIsLoading(false);
             return;
           } catch (error) {
@@ -94,9 +106,17 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
             },
           });
 
+          const user: UserType = {
+            username: userResponse.data.username,
+            email: userResponse.data.email,
+            emailConfirmed: userResponse.data.emailConfirmed,
+            role: userResponse.data.role,
+            id: userResponse.data.id,
+          };
+
           setIsAuthenticated(true);
           setToken(response.data.accessToken);
-          setUser(userResponse.data);
+          setUser(user);
         }
       } catch (error) {
         console.error('Auth initialization error:', error);
@@ -119,10 +139,16 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         formData,
       );
 
+      if (!response.data.id) {
+        throw new Error('Invalid user ID received');
+      }
+
       const user: UserType = {
         username: response.data.username,
         email: response.data.email,
-        emailConfirmed: response.data.emailConfirmed
+        emailConfirmed: response.data.emailConfirmed,
+        role: response.data.role,
+        id: response.data.id,
       };
 
       localStorage.setItem('token', response.data.token);
@@ -142,9 +168,16 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         username: formData.username,
         password: formData.password,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Registration error:', error);
-      throw new Error('Registration failed');
+      if (error.response?.status === 400) {
+        throw { status: error.response.status, data: error.response.data };
+      } else {
+        throw {
+          status: 500,
+          message: 'An unexpected error occurred during registration.',
+        };
+      }
     }
   };
 
@@ -158,7 +191,9 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         const user: UserType = {
           username: response.data.username,
           email: response.data.email,
-          emailConfirmed: response.data.emailConfirmed
+          emailConfirmed: response.data.emailConfirmed,
+          role: response.data.role, //admin role
+          id: response.data.id,
         };
         localStorage.setItem('token', response.data.token);
         setIsAuthenticated(true);
@@ -221,12 +256,18 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           originalRequest._retry = true;
 
           try {
-            const response = await api.get<{ accessToken: string }>(
-              '/account/refresh-token',
-            );
+            const response = await api.get('/account/refresh-token');
 
             if (response.data.accessToken) {
+              const user: UserType = {
+                username: response.data.username,
+                email: response.data.email,
+                emailConfirmed: response.data.emailConfirmed,
+                role: response.data.role, //admin role
+                id: response.data.id,
+              };
               setToken(response.data.accessToken);
+              setUser(user);
               originalRequest.headers.Authorization = `Bearer ${response.data.accessToken}`;
               return api(originalRequest);
             }

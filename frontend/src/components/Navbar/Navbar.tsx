@@ -11,6 +11,9 @@ import {
   CloseIcon,
   MenuItems,
   Overlay,
+  Badge,
+  AdminDashboardLink,
+  AdminDashboardWrapper,
 } from './Navbar.styled';
 import { ActionButton } from '../../shared/ActionButton';
 import traveltales_black from '/images/traveltales_black.png';
@@ -19,12 +22,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-export const Navbar = () => {
+export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1200px)');
   const navigate = useNavigate();
   const location = useLocation();
-  const { isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const handleClose = () => {
     setIsMenuToggled(false);
@@ -48,14 +51,24 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     logout();
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userRole');
     navigate('/');
+  };
+
+  const handleMyProfile = () => {
+    if (user && user.id) {
+      navigate(`/single-user-review/${user.id}`);
+    } else {
+      console.error('User ID is undefined');
+    }
   };
 
   return (
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <Link to='/'>
+          <Link to='/home'>
             <img src={traveltales_black} alt='Travel Tales' />
           </Link>
         </Logo>
@@ -63,15 +76,26 @@ export const Navbar = () => {
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <Link to='/'>Home</Link>
+            <Link to='/fullmap'>Map</Link>
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
+
+            {user?.role === 'Admin' && (
+              <AdminDashboardWrapper>
+                <AdminDashboardLink to='/adminDashboard'>
+                  Admin Dashboard
+                </AdminDashboardLink>
+                {navbarProps.imagesAwaitingReview > 0 && (
+                  <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+                )}
+              </AdminDashboardWrapper>
+            )}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
               <>
-                <ActionButton onClick={() => navigate('/profile')}>
+                <ActionButton onClick={handleMyProfile}>
                   My Profile
                 </ActionButton>
                 <ActionButton onClick={handleLogout}>Sign Out</ActionButton>
@@ -99,7 +123,7 @@ export const Navbar = () => {
           <Sidebar>
             <div className='sidebar-header'>
               <Logo>
-                <Link to='/'>
+                <Link to='/home'>
                   <img src={traveltales_black} alt='Travel Tales' />
                 </Link>
               </Logo>
@@ -111,7 +135,14 @@ export const Navbar = () => {
             <MenuItems>
               {isAuthenticated ? (
                 <>
-                  <Link to='/' onClick={() => setIsMenuToggled(false)}>
+                  <Link
+                    to='#'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuToggled(false);
+                      handleMyProfile();
+                    }}
+                  >
                     My Profile
                   </Link>
                   <a
@@ -149,8 +180,8 @@ export const Navbar = () => {
                   </a>
                 </>
               )}
-              <Link to='/' onClick={() => setIsMenuToggled(false)}>
-                Home
+              <Link to='/fullmap' onClick={() => setIsMenuToggled(false)}>
+                Map
               </Link>
               <Link to='/explore' onClick={() => setIsMenuToggled(false)}>
                 Explore
@@ -161,6 +192,19 @@ export const Navbar = () => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
+              {user?.role === 'Admin' && (
+                <AdminDashboardWrapper>
+                  <AdminDashboardLink
+                    to='/adminDashboard'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
+                    Admin Dashboard
+                  </AdminDashboardLink>
+                  {navbarProps.imagesAwaitingReview > 0 && (
+                    <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+                  )}
+                </AdminDashboardWrapper>
+              )}
             </MenuItems>
           </Sidebar>
         </>

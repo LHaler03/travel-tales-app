@@ -31,3 +31,21 @@ export const StyledButton = styled.button`
     font-size: 16px;
   }
 `;
+
+export const ApproveButton = styled(StyledButton)`
+  background-color: #4caf50;
+  &:hover {
+    background-color: #45a049;
+  }
+`;
+
+export const DisapproveButton = styled(StyledButton)`
+  background-color: #f44336;
+  &:hover {
+    background-color: #e53935;
+  }
+`;
+
+export const ReviewButton = styled(StyledButton)`
+  margin: 20px;
+`;

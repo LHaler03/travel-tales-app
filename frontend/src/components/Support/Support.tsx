@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SupportContainer,
   Title,
@@ -112,8 +113,8 @@ const Support: React.FC = () => {
       <SectionContainer>
         <SubTitle>Legal & Privacy</SubTitle>
         <LinkContainer>
-          <a href='/terms'>Terms of Service</a>
-          <a href='/privacy'>Privacy Policy</a>
+          <a href='/termsOfService'>Terms of Service</a>
+          <a href='/privacyPolicy'>Privacy Policy</a>
         </LinkContainer>
       </SectionContainer>
     </SupportContainer>

@@ -12,5 +12,6 @@ namespace backend.Models
         public string LastName { get; set; } = string.Empty;
         public string RefreshToken { get; set; } = string.Empty;
         public DateTime RefreshTokenExpiry { get; set; }
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

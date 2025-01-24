@@ -11,5 +11,6 @@ namespace backend.Dtos.Location
         public string Country { get; set; } = string.Empty;
         public decimal Lat { get; set; }
         public decimal Lon { get; set; }
+        public List<string> Images { get; set; } = [];
     }
 }

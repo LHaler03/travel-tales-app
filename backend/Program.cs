@@ -13,8 +13,12 @@ using System.Net;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.OpenApi.Models;
 using backend.Controllers;
+using Amazon.S3;
 
 var builder = WebApplication.CreateBuilder(args);
+
+string bucketName = builder.Configuration["AWS:BucketName"] ?? throw new InvalidOperationException("AWS:BucketName is not configured");
+string region = builder.Configuration["AWS:Region"] ?? throw new InvalidOperationException("AWS:Region is not configured");
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -61,6 +65,8 @@ builder.Services.AddAuthentication(options =>
     GoogleOptions.ClientSecret = builder.Configuration["Google:ClientSecret"];
 });
 
+
+
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Services.AddAuthorization(options =>
@@ -74,10 +80,17 @@ builder.Services.AddAuthorization(options =>
 //     options.Listen(IPAddress.Any, 5185);
 // });
 
+builder.Services.AddScoped<PostcardRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPostcardRepository, PostcardRepository>();
+
+builder.Services.AddSingleton<IAmazonS3>(sp => new AmazonS3Client(Amazon.RegionEndpoint.GetBySystemName(region)));
+builder.Services.AddScoped<IS3Service, S3Service>(sp =>
+    new S3Service(sp.GetRequiredService<IAmazonS3>(), bucketName));
 
 // builder.Services.AddCors(options =>
 // {
@@ -91,13 +104,15 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 //         });
 // });
 
+builder.Services.AddHostedService<PostcardCleanupService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
             builder
-                .WithOrigins("http://localhost:5173")  // Your frontend URL
+                .WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:3001")  // Your frontend URL
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
