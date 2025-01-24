@@ -564,7 +564,7 @@
         ["xpath=//div[@id='root']/div/form/div[5]/div/input", "xpath:idRelative"],
         ["xpath=//div[5]/div/input", "xpath:position"]
       ],
-      "value": "C:\\fakepath\\seattle1.jpg"
+      "value": "C:\\Users\\Mislav\\Downloads\\seattle1.jpg,C:\\Users\\Mislav\\Downloads\\seattle2.jpg"
     }, {
       "id": "7cdc55be-fec0-4415-b2e9-f4169880af85",
       "comment": "",
@@ -608,12 +608,12 @@
       "id": "1e17886b-e58d-4ede-84af-d155021a3661",
       "comment": "",
       "command": "click",
-      "target": "css=.leaflet-marker-icon:nth-child(58)",
+      "target": "css=.leaflet-marker-icon:nth-child(57)",
       "targets": [
-        ["css=.leaflet-marker-icon:nth-child(58)", "css:finder"],
-        ["xpath=(//img[@alt='Marker'])[58]", "xpath:img"],
-        ["xpath=//div[@id='map']/div/div[4]/img[58]", "xpath:idRelative"],
-        ["xpath=//img[58]", "xpath:position"]
+        ["css=.leaflet-marker-icon:nth-child(57)", "css:finder"],
+        ["xpath=(//img[@alt='Marker'])[57]", "xpath:img"],
+        ["xpath=//div[@id='map']/div/div[4]/img[57]", "xpath:idRelative"],
+        ["xpath=//img[57]", "xpath:position"]
       ],
       "value": ""
     }, {
