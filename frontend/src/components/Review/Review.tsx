@@ -48,6 +48,7 @@ export const Review = () => {
       setErrorrating(false);
       setErrorcomment(false);
       setShowreviewform(false);
+      setDoublereview(false);
       setSubmitsuccess(true);
     } catch (error) {
       console.error('Error submitting review', error);
@@ -120,8 +121,8 @@ export const Review = () => {
     <>
       {showreviewform && (
         <>
-          <City>{city}</City>
           <FormContainer>
+            <City>{city}</City>
             <Form onSubmit={handleSubmit}>
               <p>Rating:*</p>
               <RatingContainer>
