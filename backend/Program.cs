@@ -66,19 +66,12 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
 });
-
-// builder.WebHost.ConfigureKestrel(options =>
-// {
-//     options.Listen(IPAddress.Any, 5000);
-//     options.Listen(IPAddress.Any, 5185);
-// });
 
 builder.Services.AddScoped<PostcardRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
@@ -92,18 +85,6 @@ builder.Services.AddSingleton<IAmazonS3>(sp => new AmazonS3Client(Amazon.RegionE
 builder.Services.AddScoped<IS3Service, S3Service>(sp =>
     new S3Service(sp.GetRequiredService<IAmazonS3>(), bucketName));
 
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowAllOrigins",
-//         builder =>
-//         {
-//             builder.AllowAnyOrigin()
-//                    .AllowAnyMethod()
-//                    .AllowAnyHeader()
-//                    .AllowCredentials();
-//         });
-// });
-
 builder.Services.AddHostedService<PostcardCleanupService>();
 
 builder.Services.AddCors(options =>
@@ -112,12 +93,13 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder
-                .WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:3001")  // Your frontend URL
+                .WithOrigins("http://ec2-3-74-155-131.eu-central-1.compute.amazonaws.com", "http://localhost:5173", "http://3.74.155.131")
                 .AllowCredentials()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
         });
 });
+
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -147,24 +129,13 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 var app = builder.Build();
-
-// Add middleware to set Cross-Origin headers
-app.Use(async (context, next) =>
-{
-    context.Response.Headers.Append("Cross-Origin-Opener-Policy", "same-origin");
-    context.Response.Headers.Append("Cross-Origin-Embedder-Policy", "require-corp");
-    await next();
-});
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-// app.UseHttpsRedirection();
 
 app.UseCors("AllowSpecificOrigin");
 

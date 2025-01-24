@@ -157,7 +157,7 @@ public class S3Controller : ControllerBase
 
             // Pass the specific S3 key to use
             var links = await _s3Service.UploadFileAndGetImageAndDownloadLinksAsync(
-                $"../frontend/out/{request.Component}.png",
+                $"../../../travel-tales-app/frontend/out/{request.Component}.png",
                 s3Key
             );
 
@@ -257,7 +257,7 @@ public class S3Controller : ControllerBase
             string scriptName = "render";
             var processStartInfo = new ProcessStartInfo
             {
-                FileName = "/bin/zsh",
+                FileName = "/bin/bash",
                 Arguments = $"-c \"cd {directory} && yarn {scriptName} {composition} --props='{props}'\"",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
