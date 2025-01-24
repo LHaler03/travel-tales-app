@@ -1,3 +1,4 @@
+// SingleUser.tsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
@@ -7,20 +8,26 @@ import {
   UserInfo,
   EmailWarning,
   ButtonContainer,
-  PostcardSection,
-  PostcardGrid,
-  Postcard,
-  PostcardImage,
-  Modal,
-  ModalImage,
-  ModalButtons,
   SwitchContainer,
   SwitchLabel,
   SwitchInput,
   SwitchSlider,
   SwitchText,
 } from './SingleUser.styled';
+import {
+  Title,
+  ImageGrid,
+  Modal,
+  ModalImage,
+  ModalButtons,
+  Thumbnail,
+} from '../AdminWeb/AdminPostcards/ImageReview.styled.tsx';
 import { DisapproveButton, ApproveButton } from '../../shared/ActionButton';
+
+interface Postcard {
+  imageLink: string;
+  downloadLink: string;
+}
 
 const SingleUser = () => {
   const { user, isAuthenticated } = useAuth();
@@ -32,15 +39,30 @@ const SingleUser = () => {
   const [_, setUserRole] = useState<string | null>(
     localStorage.getItem('userRole'),
   );
-  const [postcards, setPostcards] = useState<
-    { imageLink: string; downloadLink: string }[]
-  >([]);
-  const [selectedPostcard, setSelectedPostcard] = useState<{
-    imageLink: string;
-    downloadLink: string;
-  } | null>(null);
+
+  // const [selectedPostcard, setSelectedPostcard] = useState<{
+  //   imageLink: string;
+  //   downloadLink: string;
+  // } | null>(null);
+
+  const [postcards, setPostcards] = useState<Postcard[]>([]);
+
+  const [selectedPostcard, setSelectedPostcard] = useState<Postcard | null>(
+    null,
+  );
 
   const [isAdminRole, setIsAdminRole] = useState<boolean>(false);
+
+  const handlePostcardClick = (postcard: {
+    imageLink: string;
+    downloadLink: string;
+  }) => {
+    setSelectedPostcard(postcard);
+  };
+
+  const closeModal = () => {
+    setSelectedPostcard(null);
+  };
 
   const handleDeleteUser = async () => {
     if (window.confirm('Are you sure you want to delete this user?')) {
@@ -49,6 +71,7 @@ const SingleUser = () => {
           `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${id}`,
         );
         alert('User deleted successfully.');
+        navigate('/users-review');
       } catch (error) {
         console.error('Error deleting user:', error);
         setError('Failed to delete user.');
@@ -142,7 +165,6 @@ const SingleUser = () => {
             <DisapproveButton
               onClick={async () => {
                 await handleDeleteUser();
-                navigate('/users-review');
               }}
             >
               Delete User
@@ -162,31 +184,26 @@ const SingleUser = () => {
         </>
       )}
 
-      <PostcardSection>
-        <h2>User's Postcards</h2>
-        <PostcardGrid>
+      <div>
+        <Title>User's Postcards</Title>
+        <ImageGrid>
           {postcards.length > 0 &&
             postcards.map((postcard, index) => (
-              <Postcard key={index}>
-                <PostcardImage
+              <div key={index}>
+                <Thumbnail
                   src={postcard.imageLink}
                   alt={`Postcard ${index}`}
-                  onClick={() => setSelectedPostcard(postcard)}
+                  onClick={() => handlePostcardClick(postcard)}
                 />
-              </Postcard>
+              </div>
             ))}
-        </PostcardGrid>
-      </PostcardSection>
+        </ImageGrid>
 
-      {selectedPostcard && (
-        <Modal onClick={() => setSelectedPostcard(null)}>
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{ textAlign: 'center' }}
-          >
+        {selectedPostcard && (
+          <Modal onClick={closeModal}>
             <ModalImage
               src={selectedPostcard.imageLink}
-              alt='Enlarged Postcard'
+              alt='Selected Postcard'
             />
             <ModalButtons>
               <a
@@ -198,9 +215,9 @@ const SingleUser = () => {
                 <ApproveButton>Download</ApproveButton>
               </a>
             </ModalButtons>
-          </div>
-        </Modal>
-      )}
+          </Modal>
+        )}
+      </div>
     </ProfileContainer>
   );
 };

@@ -68,7 +68,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <Link to='/'>
+          <Link to='/fullmap'>
             <img src={traveltales_black} alt='Travel Tales' />
           </Link>
         </Logo>
@@ -76,12 +76,12 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <Link to='/'>Home</Link>
+            <Link to='/fullmap'>Home</Link>
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
 
-            {/* {user?.role === 'Admin' && ( */}
+            {user?.role === 'Admin' && (
             <AdminDashboardWrapper>
               <AdminDashboardLink to='/adminDashboard'>
                 Admin Dashboard
@@ -90,7 +90,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                 <Badge>{navbarProps.imagesAwaitingReview}</Badge>
               )}
             </AdminDashboardWrapper>
-            {/* )} */}
+            )} 
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -180,7 +180,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                   </a>
                 </>
               )}
-              <Link to='/' onClick={() => setIsMenuToggled(false)}>
+              <Link to='/fullmap' onClick={() => setIsMenuToggled(false)}>
                 Home
               </Link>
               <Link to='/explore' onClick={() => setIsMenuToggled(false)}>
@@ -192,7 +192,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
               <Link to='/support' onClick={() => setIsMenuToggled(false)}>
                 Support
               </Link>
-              {/* {user?.role === 'Admin' && ( */}
+              {user?.role === 'Admin' && (
               <AdminDashboardWrapper>
                 <AdminDashboardLink
                   to='/adminDashboard'
@@ -204,7 +204,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                   <Badge>{navbarProps.imagesAwaitingReview}</Badge>
                 )}
               </AdminDashboardWrapper>
-              {/* )} */}
+               )}
             </MenuItems>
           </Sidebar>
         </>

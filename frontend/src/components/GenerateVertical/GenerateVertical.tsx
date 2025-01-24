@@ -269,7 +269,9 @@ export const GenerateVertical = () => {
                   onChange={(e) => setIsForStock(e.target.checked)}
                 />
               </InputContainer>
-              <InputContainer style = {{color: "darkred", fontSize: "0.8rem"}}>(must be checked before uploading)</InputContainer>
+              <InputContainer style={{ color: 'darkred', fontSize: '0.8rem' }}>
+                (must be checked before uploading)
+              </InputContainer>
               <InputContainer>
                 <label>Upper Image:</label>
                 {user && (
