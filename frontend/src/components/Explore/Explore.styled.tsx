@@ -13,7 +13,7 @@ export const ExploreContainer = styled.div`
 export const ExploreTitle = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: white;
 
   @media (max-width: 600px) {
     font-size: 1.8rem;
@@ -24,7 +24,7 @@ export const ExploreTitle = styled.h1`
 export const Text = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #666;
+  color: white;
   margin-bottom: 1.5rem;
 
   @media (max-width: 600px) {
@@ -51,7 +51,7 @@ export const DestinationCard = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   cursor: pointer;
-
+  background-color: #f7f7f7;
   @media (max-width: 600px) {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   }
@@ -81,7 +81,7 @@ export const DestinationName = styled.h2`
   margin-left: 1rem;
   font-size: 1.5rem;
   color: #333;
-
+  
   @media (max-width: 600px) {
     font-size: 1.3rem;
   }

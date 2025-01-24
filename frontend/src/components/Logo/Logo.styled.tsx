@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const LogoStyled = styled.div`
   text-align: center;
-  margin-top: 25px;
-
+  padding-top: 25px;
+  background: #1a1a1ade; 
   h1 {
+    color: white;
     font-size: 1.6rem;
     font-weight: 600;
     @media (min-width: 600px) {
@@ -13,6 +14,7 @@ export const LogoStyled = styled.div`
   }
 
   h2 {
+    color: white;
     font-size: 1.2rem;
     font-weight: 500;
     padding: 0 1rem;

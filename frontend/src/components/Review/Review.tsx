@@ -136,7 +136,7 @@ export const Review = () => {
                         setErrorrating(false);
                       }}
                     >
-                      ●
+                      ★
                     </RatingDots>
                   </Rating>
                 ))}

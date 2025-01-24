@@ -61,6 +61,7 @@ export const Comment = styled.textarea`
   border-color: black;
   min-height: 100px;
   resize: vertical;
+  font-family: Poppins, sans-serif;
 `;
 
 export const Buttons = styled.div`

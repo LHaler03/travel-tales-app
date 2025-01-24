@@ -34,7 +34,7 @@ export const Wrapper = styled.div`
 
 export const Sidebar = styled.div`
   width: 100vw;
-
+  background-color: #f7f7f7;
   @media (min-width: 1200px) {
     width: 30vw;
     border-right: 2px solid black;

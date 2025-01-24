@@ -19,7 +19,7 @@ export const Popup_content = styled.div`
   width: 80vw;
   padding: 20px;
   border-radius: 20px;
-  background-color: #b5cfe3;
+  background-color:#b5cfe3;
   border: 2px solid #696969;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,7 @@ export const CityTitle = styled.h1`
   text-align: center;
   margin-bottom: 2%;
   font-size: 1.5rem;
+  color:black;
   @media (min-width: 600px) {
     font-size: 3rem;
   }
@@ -53,10 +54,10 @@ export const CityTitle = styled.h1`
 
 export const Popup_button_close = styled.button`
   position: absolute;
+  color:black;
   top: 10px;
   right: 10px;
   font-size: 20px;
-  color: black;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -104,6 +105,7 @@ export const StarsContainer = styled.div`
 
 export const StarsTitle = styled.h1`
   font-size: 1rem;
+  color:black;
   @media (min-width: 600px) {
     font-size: 2rem;
   }

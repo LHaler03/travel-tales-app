@@ -19,7 +19,7 @@ export const Map = () => {
   const navigate = useNavigate();
 
   const iconformarkers = new Icon({
-    iconUrl: './images/mapicon.png',
+    iconUrl: './images/mapicon_blue.png',
     iconSize: [38, 38],
     iconAnchor: [19, 38],
   });

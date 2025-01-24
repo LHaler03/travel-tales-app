@@ -14,9 +14,10 @@ import {
   Badge,
   AdminDashboardLink,
   AdminDashboardWrapper,
+
 } from './Navbar.styled';
 import { ActionButton } from '../../shared/ActionButton';
-import traveltales_black from '/images/traveltales_black.png';
+import traveltales_white from '/images/traveltales_white.png';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -68,15 +69,15 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <Link to='/fullmap'>
-            <img src={traveltales_black} alt='Travel Tales' />
+          <Link to='/home'>
+            <img src={traveltales_white} alt='Travel Tales' />
           </Link>
         </Logo>
       )}
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <Link to='/fullmap'>Home</Link>
+            <Link to='/fullmap'>Map</Link>
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
@@ -123,8 +124,8 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
           <Sidebar>
             <div className='sidebar-header'>
               <Logo>
-                <Link to='/'>
-                  <img src={traveltales_black} alt='Travel Tales' />
+                <Link to='/home'>
+                  <img src={traveltales_white} alt='Travel Tales' />
                 </Link>
               </Logo>
               <CloseIcon onClick={handleClose}>
@@ -181,7 +182,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                 </>
               )}
               <Link to='/fullmap' onClick={() => setIsMenuToggled(false)}>
-                Home
+                Map
               </Link>
               <Link to='/explore' onClick={() => setIsMenuToggled(false)}>
                 Explore

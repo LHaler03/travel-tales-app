@@ -11,7 +11,9 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
-    background-color: #b5cfe3;
+    background-image: url('../../public/images/background.png'); 
+    background-size: cover;  
+    background-position: center; 
     padding-top: 5rem;
   }
 `;

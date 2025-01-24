@@ -13,16 +13,17 @@ const fadeIn = keyframes`
 export const StyledMapContainer = styled(MapContainer)`
   height: 65vh;
   max-width: 95%;
-  margin: auto;
-  border-radius: 10px;
   z-index: 10;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
   border: 1px solid #333;
   position: relative;
+  border-radius: 14px;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 20px;
+  box-shadow: rgba(72, 135, 202, 0.8) 0 0 25px 10px;
 
   @media (min-width: 600px) {
-    margin-top: 1.5rem;
     height: 68vh;
   }
 `;

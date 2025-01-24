@@ -9,7 +9,7 @@ export const NavbarStyled = styled.nav`
   justify-content: space-between;
   align-items: center;
   height: 5rem;
-  background-color: #97bcd8;
+  background-color: #016FB9;
   padding: 20px;
   width: 100%;
   z-index: 30;
@@ -31,7 +31,7 @@ export const NavLinks = styled.div`
 
   a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
     cursor: pointer;
 
@@ -47,6 +47,7 @@ export const AdminDashboardWrapper = styled.div`
   align-items: center;
   gap: 0.5rem;
 `;
+
 
 export const AdminDashboardLink = styled(Link)`
   text-decoration: none;
@@ -82,7 +83,7 @@ export const Sidebar = styled.div`
   right: 0;
   height: 100%;
   width: 300px;
-  background-color: #97bcd8;
+  background-color: #016FB9;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 0 30px;
   padding: 0;
@@ -111,7 +112,7 @@ export const MenuItems = styled.div`
 
   a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
     cursor: pointer;
 
@@ -131,7 +132,7 @@ export const HamburgerIcon = styled.button`
   width: 32px;
   height: 32px;
   background-size: contain;
-  background-color: #97bcd8;
+  background-color: #016FB9;
   border: none;
   cursor: pointer;
   color: white;
