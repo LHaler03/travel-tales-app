@@ -119,8 +119,6 @@ export const Generate1Image = () => {
       reader.onloadend = async () => {
         if (typeof reader.result === 'string') {
           try {
-            console.log('user:', user);
-            console.log('userId:', user?.id);
             if (!user) return;
             const result = await axios.post(
               `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/upload-image`,
@@ -133,7 +131,7 @@ export const Generate1Image = () => {
             );
             setCustomImage1(result.data.urls[0]);
           } catch (error) {
-            console.log(error);
+            console.error(error);
           }
         }
       };
@@ -174,8 +172,6 @@ export const Generate1Image = () => {
 
     try {
       setIsGenerating(true);
-      console.log(imageProps);
-      console.log(JSON.stringify(imageProps));
       const result = await axios.post(
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/s3/generate-postcard`,
         imageProps,
@@ -187,7 +183,11 @@ export const Generate1Image = () => {
         downloadLink: generatedImage.downloadLink,
       });
     } catch (error) {
-      console.log(error);
+      if (axios.isAxiosError(error) && error.response?.status === 503) {
+        alert('Server is currently busy, please try again later.');
+      } else {
+        console.error(error);
+      }
     } finally {
       setIsGenerating(false);
     }

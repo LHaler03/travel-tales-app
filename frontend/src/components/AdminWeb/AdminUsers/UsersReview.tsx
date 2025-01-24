@@ -63,9 +63,7 @@ const UsersReview = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <SearchButton onClick={() => console.log('Searching...')}>
-          Search
-        </SearchButton>
+        <SearchButton>Search</SearchButton>
       </SearchContainer>
       <UserList>
         {filteredUsers.map((user: UserType) => (

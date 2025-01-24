@@ -57,7 +57,6 @@ const AddLocation: React.FC = () => {
           address,
         )}&format=json&addressdetails=1`,
       );
-      console.log(response.data);
       if (response.data && response.data.length > 0) {
         const { lat, lon, address } = response.data[0];
         const country = address?.country || 'N/A';
@@ -118,9 +117,6 @@ const AddLocation: React.FC = () => {
         `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/locations/add-location`,
         locationData,
       );
-
-      console.log(result.data);
-
       setCoordinates({ lat: '', lon: '' });
       setLocationDetails({ country: '' });
       Setname('');

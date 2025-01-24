@@ -107,7 +107,6 @@ const SingleUser = () => {
           const response = await axios.get(
             `http://${import.meta.env.VITE_TRAVEL_TALES_API}/api/users/${userId}`,
           );
-          console.log(response.data);
           setUserData(response.data);
           setUserRole(response.data.role);
         } catch (error) {

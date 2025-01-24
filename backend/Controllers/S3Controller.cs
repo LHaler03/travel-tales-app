@@ -15,6 +15,7 @@ using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Threading;
 
 
 [Route("api/s3")]
@@ -26,6 +27,8 @@ public class S3Controller : ControllerBase
     private readonly ApplicationDBContext _context;
     private readonly string _remotionProjectPath;
     private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
+    private static int waitingCount = 0;
+    private const int MAX_CONCURRENT_REQUESTS = 4;
 
     public S3Controller(IS3Service s3Service, PostcardRepository postcardRepo, ApplicationDBContext context, IConfiguration configuration)
     {
@@ -106,6 +109,8 @@ public class S3Controller : ControllerBase
     [HttpPost("generate-postcard")]
     public async Task<IActionResult> GeneratePostcard([FromBody] PostcardProps request)
     {
+        if (waitingCount >= MAX_CONCURRENT_REQUESTS) return StatusCode(503, "Server is currently busy, please try again later.");
+
         var user = await _context.Users.FindAsync(request.UserId);
         try
         {
@@ -188,8 +193,7 @@ public class S3Controller : ControllerBase
                 ImageUrl = imageUrl,
                 LocationName = locationName
             });
-        } 
-        // var imagePairs = imagesToReview.Zip(imagesToReviewLinks, (image, link) => new { ImageName = image, ImageUrl = link });
+        }
         return Ok(imageReviewData);
     }
 
@@ -243,8 +247,8 @@ public class S3Controller : ControllerBase
 
     private async Task RunYarnScriptAsync(string composition, string props)
     {
-
         await _semaphore.WaitAsync();
+        Interlocked.Increment(ref waitingCount);
 
         try
         {
@@ -286,6 +290,7 @@ public class S3Controller : ControllerBase
         }
         finally
         {
+            Interlocked.Decrement(ref waitingCount);
             _semaphore.Release();
         }
     }

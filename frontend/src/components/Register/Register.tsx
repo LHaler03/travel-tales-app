@@ -68,7 +68,7 @@ export const Register = () => {
           SetErrorusername(true);
         }
       } else {
-        console.log(error.message);
+        console.error(error.message);
       }
     }
   };
