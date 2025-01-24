@@ -2,17 +2,28 @@ import styled from 'styled-components';
 
 export const City = styled.h1`
   text-align: center;
-  font-size: 3rem;
+  font-size: 2, 5rem;
+  margin-bottom: 1rem;
   @media (min-width: 600px) {
     font-size: 5rem;
   }
 `;
 
 export const FormContainer = styled.div`
-  max-width: 500px
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+  max-width: 95%;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  @media (min-width: 600px) {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const Form = styled.form`
@@ -24,8 +35,6 @@ export const Form = styled.form`
 export const RatingContainer = styled.div`
   display: flex;
   gap: 8px;
-  @media (min-width: 600px) {
-  }
 `;
 
 export const Rating = styled.div`
@@ -45,7 +54,7 @@ type RatingProps = {
 
 export const RatingDots = styled.div<RatingProps>`
   font-size: 3rem;
-  color: ${(s) => (s.select ? 'yellow' : 'white')};
+  color: ${(s) => (s.select ? 'yellow' : 'grey')};
   transition: color 0.2s;
   cursor: pointer;
   &:hover {

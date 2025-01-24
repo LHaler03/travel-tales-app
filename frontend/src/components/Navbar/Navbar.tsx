@@ -68,7 +68,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
     <NavbarStyled>
       {(!isMenuToggled || isAboveMediumScreens) && (
         <Logo>
-          <Link to='/fullmap'>
+          <Link to='/home'>
             <img src={traveltales_black} alt='Travel Tales' />
           </Link>
         </Logo>
@@ -76,21 +76,21 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
       {isAboveMediumScreens ? (
         <>
           <NavLinks>
-            <Link to='/fullmap'>Home</Link>
+            <Link to='/fullmap'>Map</Link>
             <Link to='/explore'>Explore</Link>
             <Link to='/about'>About Us</Link>
             <Link to='/support'>Support</Link>
 
             {user?.role === 'Admin' && (
-            <AdminDashboardWrapper>
-              <AdminDashboardLink to='/adminDashboard'>
-                Admin Dashboard
-              </AdminDashboardLink>
-              {navbarProps.imagesAwaitingReview > 0 && (
-                <Badge>{navbarProps.imagesAwaitingReview}</Badge>
-              )}
-            </AdminDashboardWrapper>
-            )} 
+              <AdminDashboardWrapper>
+                <AdminDashboardLink to='/adminDashboard'>
+                  Admin Dashboard
+                </AdminDashboardLink>
+                {navbarProps.imagesAwaitingReview > 0 && (
+                  <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+                )}
+              </AdminDashboardWrapper>
+            )}
           </NavLinks>
           <ButtonContainer>
             {isAuthenticated ? (
@@ -123,7 +123,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
           <Sidebar>
             <div className='sidebar-header'>
               <Logo>
-                <Link to='/'>
+                <Link to='/home'>
                   <img src={traveltales_black} alt='Travel Tales' />
                 </Link>
               </Logo>
@@ -181,7 +181,7 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                 </>
               )}
               <Link to='/fullmap' onClick={() => setIsMenuToggled(false)}>
-                Home
+                Map
               </Link>
               <Link to='/explore' onClick={() => setIsMenuToggled(false)}>
                 Explore
@@ -193,18 +193,18 @@ export const Navbar = (navbarProps: { imagesAwaitingReview: number }) => {
                 Support
               </Link>
               {user?.role === 'Admin' && (
-              <AdminDashboardWrapper>
-                <AdminDashboardLink
-                  to='/adminDashboard'
-                  onClick={() => setIsMenuToggled(false)}
-                >
-                  Admin Dashboard
-                </AdminDashboardLink>
-                {navbarProps.imagesAwaitingReview > 0 && (
-                  <Badge>{navbarProps.imagesAwaitingReview}</Badge>
-                )}
-              </AdminDashboardWrapper>
-               )}
+                <AdminDashboardWrapper>
+                  <AdminDashboardLink
+                    to='/adminDashboard'
+                    onClick={() => setIsMenuToggled(false)}
+                  >
+                    Admin Dashboard
+                  </AdminDashboardLink>
+                  {navbarProps.imagesAwaitingReview > 0 && (
+                    <Badge>{navbarProps.imagesAwaitingReview}</Badge>
+                  )}
+                </AdminDashboardWrapper>
+              )}
             </MenuItems>
           </Sidebar>
         </>

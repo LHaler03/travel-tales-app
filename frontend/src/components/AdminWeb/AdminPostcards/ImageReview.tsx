@@ -6,6 +6,8 @@ import {
   ModalImage,
   ModalButtons,
   Thumbnail,
+  Picturereview,
+  Picturecity,
 } from './ImageReview.styled.tsx';
 import { ApproveButton, DisapproveButton } from '../../../shared/ActionButton';
 import axios from 'axios';
@@ -84,22 +86,15 @@ const ImageReview = (imageReviewProps: { handleVisit: () => void }) => {
       <Title>Image Review</Title>
       <ImageGrid>
         {images.map((image, index) => (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              border: '1px solid',
-              backgroundColor: 'white',
-            }}
-          >
+          <Picturereview>
             <Thumbnail
               key={index}
               src={image.imageUrl}
               alt={`Review ${index}`}
               onClick={() => handleImageClick(image)}
             />
-            <div style={{ textAlign: 'center' }}>{image.locationName}</div>
-          </div>
+            <Picturecity>{image.locationName}</Picturecity>
+          </Picturereview>
         ))}
       </ImageGrid>
 

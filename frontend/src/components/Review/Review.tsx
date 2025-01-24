@@ -43,6 +43,7 @@ export const Review = () => {
           rating,
         },
       );
+      setDoublereview(false);
       setComment('');
       setRating('');
       setErrorrating(false);
@@ -91,7 +92,7 @@ export const Review = () => {
       setShowreviewform(false);
       setSubmitsuccess(true);
     } catch (error: any) {
-      if (error.response?.status === 400) {
+      if (error.response?.status === 400 && submiteditreview === false) {
         setDoublereview(true);
         setShowreviewform(false);
       }
@@ -111,6 +112,7 @@ export const Review = () => {
       setDoublereview(false);
       setSubmiteditreview(true);
       setShowreviewform(true);
+      setSubmitsuccess(false);
     } catch (error) {
       console.error('Error submitting review', error);
     }
@@ -120,8 +122,8 @@ export const Review = () => {
     <>
       {showreviewform && (
         <>
-          <City>{city}</City>
           <FormContainer>
+            <City>{city}</City>
             <Form onSubmit={handleSubmit}>
               <p>Rating:*</p>
               <RatingContainer>

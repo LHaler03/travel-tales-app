@@ -3,17 +3,22 @@ import styled from 'styled-components';
 export const Title = styled.h1`
   text-align: center;
   margin: 20px 0;
+  color: black;
 `;
 
 export const ImageGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-items: center;
   padding: 10px;
   width: 100vw;
   overflow: hidden;
-
+  background-color: #f7f7f7;
+  max-width: 95%;
+  margin: auto;
+  margin-top: 1.5rem;
+  border-radius: 14px;
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
@@ -35,6 +40,20 @@ export const Thumbnail = styled.img`
   &:hover {
     opacity: 0.7;
   }
+`;
+
+export const Picturereview = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+`;
+export const Picturecity = styled.div`
+  text-align: center;
+  background-color: #97bcd8;
+  color: black;
+  padding: 5px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 `;
 
 export const Modal = styled.div`
